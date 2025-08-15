@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Quantify – Rent vs Buy (House Affordability)</title>
   <meta charset="UTF-8" />
@@ -9,56 +10,105 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    crossorigin="anonymous">
   <style>
-    body { animation: fadeIn .6s ease-in-out; }
-    @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
-    .card { transition: transform .25s ease, box-shadow .25s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.15); }
-    .metric { display:flex; align-items:center; gap:.75rem; }
-    .metric .icon { font-size:1.75rem; }
-    .badge-soft { background:rgba(13,110,253,.1); color:#0d6efd; }
-    .rule { display:flex; align-items:center; gap:.5rem; padding:.5rem; border-radius:.5rem; }
-    .rule.pass { background:#d1e7dd; color:#0f5132; }
-    .rule.fail { background:#f8d7da; color:#842029; }
-    .tab-content .card { margin-top: .75rem; }
+    body {
+      animation: fadeIn .6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .metric .icon {
+      font-size: 1.75rem;
+    }
+
+    .badge-soft {
+      background: rgba(13, 110, 253, .1);
+      color: #0d6efd;
+    }
+
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem;
+      border-radius: .5rem;
+    }
+
+    .rule.pass {
+      background: #d1e7dd;
+      color: #0f5132;
+    }
+
+    .rule.fail {
+      background: #f8d7da;
+      color: #842029;
+    }
+
+    .tab-content .card {
+      margin-top: .75rem;
+    }
   </style>
 </head>
+
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-dark">
+  <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand fw-bold" href="../../index.html">
-        <img src="../../assets/img/favicon-32x32.png" class="me-2" alt="Quantify logo">Quantify
+        <img src="../../assets/img/favicon-32x32.png" class="me-2">Quantify
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="nav" class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Affordability</a>
+          <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
+              data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Calculators</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="./car-affordability.html">&#x1F697; Car</a>
-              <a class="dropdown-item" href="./house-affordability.html">&#x1F3E0; Home</a>
-              <a class="dropdown-item" href="./mobile-affordability.html">&#x1F4F1; Mobile</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">EMI</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="./car-affordability.html">&#x1F697; Car Loan</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Mutual Funds</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="../mutual-funds/checklist.html">&#x2705; Fund Checklist</a>
+              <a class="dropdown-item" href="./car-affordability.html">
+                <i class="bi bi-car-front-fill"></i> Car Affordability
+              </a>
+              <a class="dropdown-item" href="./house-affordability.html">
+                <i class="bi bi-house-door-fill"></i> House Affordability
+              </a>
+              <a class="dropdown-item" href="./mobile-affordability.html">
+                <i class="bi bi-phone"></i> Mobile Affordability
+              </a>
+              <a class="dropdown-item" href="./stock-average-price.html">
+                <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
+              </a>
             </div>
           </li>
         </ul>
-        <span class="badge rounded-pill badge-soft d-none d-lg-inline">House Affordability</span>
       </div>
     </div>
   </nav>
@@ -81,13 +131,16 @@
         <div class="card shadow-sm p-3">
           <ul class="nav nav-tabs" id="tabs" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#buyTab" type="button" role="tab">Buy</button>
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#buyTab" type="button"
+                role="tab">Buy</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rentTab" type="button" role="tab">Rent</button>
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rentTab" type="button"
+                role="tab">Rent</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#invTaxTab" type="button" role="tab">Investments & Tax</button>
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#invTaxTab" type="button"
+                role="tab">Investments & Tax</button>
             </li>
           </ul>
 
@@ -97,19 +150,22 @@
               <div class="row g-3 mt-2">
                 <div class="col-md-6">
                   <label class="form-label">House Value (₹)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Total on-road cost incl. stamp duty & registration."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Total on-road cost incl. stamp duty & registration."></i>
                   </label>
                   <input type="number" id="housePrice" class="form-control" value="10000000" min="0">
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Down Payment (%)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Upfront amount paid from your pocket. 20%+ recommended."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Upfront amount paid from your pocket. 20%+ recommended."></i>
                   </label>
                   <input type="number" id="downPct" class="form-control" value="20" min="0" max="100">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Interest (% p.a.)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Annual home loan interest rate."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Annual home loan interest rate."></i>
                   </label>
                   <input type="number" id="roi" class="form-control" value="9.075" step="0.01">
                 </div>
@@ -119,7 +175,8 @@
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">House Appreciation (%pa)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Expected average annual growth in property value."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Expected average annual growth in property value."></i>
                   </label>
                   <input type="number" id="appreciation" class="form-control" value="4.3" step="0.1">
                 </div>
@@ -129,28 +186,33 @@
                     <h6 class="mb-2">Associated Expenses (Annual)</h6>
                     <div class="row g-3">
                       <div class="col-md-6">
-                        <label class="form-label">Property Tax (₹) <span class="text-muted small">(grow %)</span></label>
+                        <label class="form-label">Property Tax (₹) <span class="text-muted small">(grow
+                            %)</span></label>
                         <div class="input-group">
                           <input type="number" id="propTax" class="form-control" value="50000">
-                          <input type="number" id="propTaxInc" class="form-control" value="5" title="Annual increase (%)" data-bs-toggle="tooltip">
+                          <input type="number" id="propTaxInc" class="form-control" value="5"
+                            title="Annual increase (%)" data-bs-toggle="tooltip">
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <label class="form-label">Society Maintenance (₹) <span class="text-muted small">(grow %)</span></label>
+                        <label class="form-label">Society Maintenance (₹) <span class="text-muted small">(grow
+                            %)</span></label>
                         <div class="input-group">
                           <input type="number" id="socMaint" class="form-control" value="50000">
                           <input type="number" id="socMaintInc" class="form-control" value="5">
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <label class="form-label">House Maintenance (₹) <span class="text-muted small">(grow %)</span></label>
+                        <label class="form-label">House Maintenance (₹) <span class="text-muted small">(grow
+                            %)</span></label>
                         <div class="input-group">
                           <input type="number" id="houseMaint" class="form-control" value="10000">
                           <input type="number" id="houseMaintInc" class="form-control" value="5">
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <label class="form-label">Home Insurance (₹) <span class="text-muted small">(grow %)</span></label>
+                        <label class="form-label">Home Insurance (₹) <span class="text-muted small">(grow
+                            %)</span></label>
                         <div class="input-group">
                           <input type="number" id="homeIns" class="form-control" value="0">
                           <input type="number" id="homeInsInc" class="form-control" value="0">
@@ -176,7 +238,8 @@
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Deposit + Brokerage + Other (₹)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Non-recoverable upfront costs for renting."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Non-recoverable upfront costs for renting."></i>
                   </label>
                   <input type="number" id="deposit" class="form-control" value="120000">
                 </div>
@@ -192,19 +255,22 @@
               <div class="row g-3 mt-2">
                 <div class="col-md-4">
                   <label class="form-label">SIP ROI (% p.a.)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Expected annual return for monthly SIP (EMI − Rent)."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Expected annual return for monthly SIP (EMI − Rent)."></i>
                   </label>
                   <input type="number" id="sipRoi" class="form-control" value="10" step="0.1">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Lumpsum ROI (% p.a.)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Expected annual return for down payment invested if renting."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Expected annual return for down payment invested if renting."></i>
                   </label>
                   <input type="number" id="lumpRoi" class="form-control" value="10" step="0.1">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Tax Slab (%)
-                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Used to estimate tax savings from 80C/24(b) and HRA exemption."></i>
+                    <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                      title="Used to estimate tax savings from 80C/24(b) and HRA exemption."></i>
                   </label>
                   <input type="number" id="taxRate" class="form-control" value="30" step="1">
                 </div>
@@ -229,7 +295,8 @@
                         </select>
                       </div>
                     </div>
-                    <div class="form-text">We compute HRA exemption each year using the standard rule and apply your tax slab to estimate tax savings.</div>
+                    <div class="form-text">We compute HRA exemption each year using the standard rule and apply your tax
+                      slab to estimate tax savings.</div>
                   </div>
                 </div>
 
@@ -253,7 +320,8 @@
                         </select>
                       </div>
                     </div>
-                    <div class="form-text">For self-occupied homes: 80C for principal, 24(b) for interest. We multiply allowed deductions by your tax slab % for savings.</div>
+                    <div class="form-text">For self-occupied homes: 80C for principal, 24(b) for interest. We multiply
+                      allowed deductions by your tax slab % for savings.</div>
                   </div>
                 </div>
               </div>
@@ -323,14 +391,14 @@
   <script>
     // Utilities
     const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
-    const clamp = (v,min,max)=>Math.min(Math.max(v,min),max);
+    const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 
     function countUp(el, to, prefix = '₹', duration = 800) {
-      const from = Number((el.dataset.value || "0").replace(/[^0-9.-]/g,'')) || 0;
+      const from = Number((el.dataset.value || "0").replace(/[^0-9.-]/g, '')) || 0;
       const start = performance.now();
       function frame(t) {
-        const p = clamp((t - start)/duration, 0, 1);
-        const ease = 1 - Math.pow(1-p, 3);
+        const p = clamp((t - start) / duration, 0, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
         const val = from + (to - from) * ease;
         el.textContent = prefix ? `${prefix}${Math.round(val).toLocaleString('en-IN')}` : Math.round(val).toLocaleString('en-IN');
         if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to);
@@ -356,7 +424,7 @@
           labels: ['Buy', 'Rent'],
           datasets: [{ data: [buyShare, rentShare], backgroundColor: [colorBuy, colorRent], borderWidth: 0 }]
         },
-        options: { cutout: '70%', plugins: { legend: { display:false }, tooltip: { enabled:false } }, animation: { duration: 600 } }
+        options: { cutout: '70%', plugins: { legend: { display: false }, tooltip: { enabled: false } }, animation: { duration: 600 } }
       });
     }
 
@@ -374,7 +442,7 @@
       const r = annualRate / 12 / 100;
       const n = Math.round(years * 12);
       if (r === 0) return monthly * n;
-      return monthly * ( (Math.pow(1+r, n) - 1) / r ) * (1 + r);
+      return monthly * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
     }
 
     // FV of Lumpsum (annual comp)
@@ -386,9 +454,9 @@
     function totalRent(baseMonthly, incPct, years) {
       let total = 0;
       let m = baseMonthly;
-      for (let y=1; y<=years; y++) {
+      for (let y = 1; y <= years; y++) {
         total += m * 12;
-        m *= (1 + incPct/100);
+        m *= (1 + incPct / 100);
       }
       return total;
     }
@@ -398,14 +466,14 @@
       // Exemption = min(Actual HRA, Rent paid - 10% of basic, 50%/40% of basic)
       const limitBasic = (cityMetro === 'metro') ? 0.50 * basic : 0.40 * basic;
       const eligible = Math.max(0, Math.min(hraReceived, Math.max(0, annualRent - 0.10 * basic), limitBasic));
-      return eligible * (taxRatePct/100);
+      return eligible * (taxRatePct / 100);
     }
 
     // Tax savings Buy (per year): 80C principal + 24(b) interest, limited
     function buyTaxSavingsPerYear(principalPaid, interestPaid, lim80c, lim24b, taxRatePct) {
       const allowedP = Math.min(principalPaid, lim80c);
       const allowedI = Math.min(interestPaid, lim24b);
-      return (allowedP + allowedI) * (taxRatePct/100);
+      return (allowedP + allowedI) * (taxRatePct / 100);
     }
 
     // Main calculate
@@ -453,9 +521,9 @@
       // BUY track — iterate yearly for expenses & tax savings
       let totalEMI = 0, totalInterest = 0, totalPrincipal = 0;
       let balance = loan;
-      const mRate = rate/12/100;
-      const nMonths = Math.min(years*12, tenure*12); // only count EMIs for years of comparison
-      for (let m=1; m<=nMonths; m++) {
+      const mRate = rate / 12 / 100;
+      const nMonths = Math.min(years * 12, tenure * 12); // only count EMIs for years of comparison
+      for (let m = 1; m <= nMonths; m++) {
         const interest = balance * mRate;
         const principal = Math.min(monthlyEMI - interest, balance);
         totalInterest += interest;
@@ -468,7 +536,7 @@
       // Associated expenses (annual, growing)
       function growSum(base, inc) {
         let sum = 0, v = base;
-        for (let y=1; y<=years; y++) { sum += v; v *= (1 + inc/100); }
+        for (let y = 1; y <= years; y++) { sum += v; v *= (1 + inc / 100); }
         return sum;
       }
       const sumPropTax = growSum(propTax, propTaxInc);
@@ -484,7 +552,7 @@
         const monthsPerYear = 12;
         const yearsPaid = Math.ceil(nMonths / monthsPerYear);
         let principalRemaining = totalPrincipal, interestRemaining = totalInterest;
-        for (let y=1; y<=years; y++) {
+        for (let y = 1; y <= years; y++) {
           if (principalRemaining <= 0 && interestRemaining <= 0) break;
           const principalYear = Math.min(principalRemaining, totalPrincipal / yearsPaid || 0);
           const interestYear = Math.min(interestRemaining, totalInterest / yearsPaid || 0);
@@ -495,7 +563,7 @@
       }
 
       const totalCostBuy = downPayment + totalEMI + totalExpenses - buyTaxSaved;
-      const futureValueHouse = price * Math.pow(1 + appreciation/100, years);
+      const futureValueHouse = price * Math.pow(1 + appreciation / 100, years);
       const netGainBuy = futureValueHouse - totalCostBuy;
 
       // RENT track
@@ -506,10 +574,10 @@
       // We'll sum FV of a different SIP each year because contribution changes when rent escalates
       let fvSipTotal = 0;
       let currentRentMonthly = rent;
-      for (let y=1; y<=years; y++) {
+      for (let y = 1; y <= years; y++) {
         const sipMonthly = Math.max(0, monthlyEMI - currentRentMonthly);
-        fvSipTotal += fvSIP(sipMonthly, sipRoi, years - (y-1)); // contributions start in year y for remaining horizon
-        currentRentMonthly *= (1 + rentInc/100);
+        fvSipTotal += fvSIP(sipMonthly, sipRoi, years - (y - 1)); // contributions start in year y for remaining horizon
+        currentRentMonthly *= (1 + rentInc / 100);
       }
 
       // Lumpsum: invest down payment upfront
@@ -519,9 +587,9 @@
       let hraSaved = 0;
       if (hraReceived > 0 && hraBasic > 0) {
         let annualRent = rent * 12;
-        for (let y=1; y<=years; y++) {
+        for (let y = 1; y <= years; y++) {
           hraSaved += hraSavingsPerYear(hraBasic, hraReceived, annualRent, hraCity, taxRate);
-          annualRent *= (1 + rentInc/100);
+          annualRent *= (1 + rentInc / 100);
         }
       }
 
@@ -577,4 +645,5 @@
     window.addEventListener('DOMContentLoaded', calculate);
   </script>
 </body>
+
 </html>

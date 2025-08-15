@@ -70,38 +70,36 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-dark">
+  <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand fw-bold" href="../../index.html">
-        <img src="../../assets/img/favicon-32x32.png" class="me-2" alt="Quantify logo">Quantify
+        <img src="../../assets/img/favicon-32x32.png" class="me-2">Quantify
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
-        aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="nav" class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+          <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
+              data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">Calculators</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="./car-affordability.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill me-2" viewBox="0 0 16 16">
-                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 1.358-.16 2.003-.253.654-.095 1.218-.14.622-.145.638-.09.896-.09 1.482-.09s.844 0 1.482.09c.604.005 1.218.05.622.145.645.093 1.093.18 2.003.253a.51.51 0 0 0 .497-.731l-.792-1.848A1.5 1.5 0 0 0 11.182 3H4.82a1.5 1.5 0 0 0-1.326.341z"/>
-              </svg> Affordability</a>
-              <a class="dropdown-item" href="./car-affordability.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill me-2" viewBox="0 0 16 16">
-                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 1.358-.16 2.003-.253.654-.095 1.218-.14.622-.145.638-.09.896-.09 1.482-.09s.844 0 1.482.09c.604.005 1.218.05.622.145.645.093 1.093.18 2.003.253a.51.51 0 0 0 .497-.731l-.792-1.848A1.5 1.5 0 0 0 11.182 3H4.82a1.5 1.5 0 0 0-1.326.341z"/>
-              </svg> EMI</a>
-              <a class="dropdown-item" href="../mutual-funds/checklist.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-square me-2" viewBox="0 0 16 16">
-                <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"/>
-                <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/>
-              </svg>
-                Mutual Funds</a>
+              <a class="dropdown-item" href="./car-affordability.html">
+                <i class="bi bi-car-front-fill"></i> Car Affordability
+              </a>
+              <a class="dropdown-item" href="./house-affordability.html">
+                <i class="bi bi-house-door-fill"></i> House Affordability
+              </a>
+              <a class="dropdown-item" href="./mobile-affordability.html">
+                <i class="bi bi-phone"></i> Mobile Affordability
+              </a>
+              <a class="dropdown-item" href="./stock-average-price.html">
+                <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
+              </a>
             </div>
           </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#">Blog</a>
-		  </li>
-        </ul>        
+        </ul>
       </div>
     </div>
   </nav>
@@ -111,7 +109,8 @@
     <div class="container">
       <h1 class="fw-bold mb-2"><i class="bi bi-car-front"></i> Find Your Perfect Ride, Not a Financial Burden.</h1>
       <p class="lead mb-0">
-        Our Car Affordability Calculator helps you see the true cost of ownership, so you can drive with confidence and peace of mind.
+        Our Car Affordability Calculator helps you see the true cost of ownership, so you can drive with confidence and
+        peace of mind.
       </p>
     </div>
   </section>
@@ -159,13 +158,16 @@
               data-bs-parent="#howItWorksAccordion">
               <div class="accordion-body">
                 <ul>
-                  <li><span class="badge bg-success">Affordable</span>: Your EMI is <strong>15%</strong> or less of your monthly net
+                  <li><span class="badge bg-success">Affordable</span>: Your EMI is <strong>15%</strong> or less of your
+                    monthly net
                     income. This is a healthy range, leaving you with enough money for other expenses and investments.
                   </li>
-                  <li><span class="badge bg-warning text-dark">Stretching</span>: Your EMI is between <strong>15%</strong> and <strong>25%</strong> of
+                  <li><span class="badge bg-warning text-dark">Stretching</span>: Your EMI is between
+                    <strong>15%</strong> and <strong>25%</strong> of
                     your monthly net income. This could be manageable, but it might stretch your budget. Consider a
                     higher down payment or a less expensive car.</li>
-                  <li><span class="badge bg-danger">Not Affordable</span>: Your EMI is more than <strong>25%</strong> of your monthly
+                  <li><span class="badge bg-danger">Not Affordable</span>: Your EMI is more than <strong>25%</strong> of
+                    your monthly
                     net income. This is generally considered too high and could put you at financial risk. It's strongly
                     recommended to look for a more affordable option.</li>
                 </ul>
@@ -195,13 +197,14 @@
   </section>
 
   <!-- Calculator -->
-  <section class="container py-5">    
+  <section class="container py-5">
     <div class="row g-4 justify-content-center d-flex align-items-stretch">
       <div class="col-lg-6">
         <div class="card shadow-sm p-4 h-100">
           <form id="calcForm" onsubmit="event.preventDefault()">
             <h1 class="text-center mt-3"><i class="bi bi-calculator"></i>&nbsp;Calculator</h1>
-            <br/><hr/><br/>
+            <br />
+            <hr /><br />
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Annual Income
@@ -217,7 +220,7 @@
                 </label>
                 <input type="number" id="incomeTax" class="form-control" value="0" min="0" inputmode="decimal" readonly>
               </div>
-              
+
               <div class="col-md-6">
                 <label class="form-label">Price (Ex-Showroom)
                   <i class="bi bi-info-circle help text-primary" data-bs-toggle="popover"
@@ -413,7 +416,7 @@
           }]
         },
         options: {
-          cutout: '70%',
+          cutout: '60%',
           plugins: { legend: { display: false }, tooltip: { enabled: false } },
           animation: { duration: 600 }
         }

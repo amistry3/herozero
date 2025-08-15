@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Quantify – Mobile Affordability Calculator</title>
   <meta charset="UTF-8" />
@@ -11,51 +12,93 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <style>
-    body { animation: fadeIn .6s ease-in-out; }
-    @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
-    .card { transition: transform .25s ease, box-shadow .25s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.15); }
-    .rule { display:flex; align-items:center; gap:.5rem; padding:.5rem; border-radius:.5rem; }
-    .rule.pass { background:#d1e7dd; color:#0f5132; }
-    .rule.fail { background:#f8d7da; color:#842029; }
-    .metric { display:flex; align-items:center; gap:.75rem; }
-    .metric .icon { font-size:1.75rem; }
+    body {
+      animation: fadeIn .6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    }
+
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem;
+      border-radius: .5rem;
+    }
+
+    .rule.pass {
+      background: #d1e7dd;
+      color: #0f5132;
+    }
+
+    .rule.fail {
+      background: #f8d7da;
+      color: #842029;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .metric .icon {
+      font-size: 1.75rem;
+    }
   </style>
 </head>
+
 <body>
-<!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand fw-bold" href="../../index.html">
-        <img src="../../assets/img/favicon-32x32.png" class="me-2" alt="Quantify logo">Quantify
+        <img src="../../assets/img/favicon-32x32.png" class="me-2">Quantify
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="nav" class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+          <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
+              data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">Calculators</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="./car-affordability.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill me-2" viewBox="0 0 16 16">
-                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 1.358-.16 2.003-.253.654-.095 1.218-.14.622-.145.638-.09.896-.09 1.482-.09s.844 0 1.482.09c.604.005 1.218.05.622.145.645.093 1.093.18 2.003.253a.51.51 0 0 0 .497-.731l-.792-1.848A1.5 1.5 0 0 0 11.182 3H4.82a1.5 1.5 0 0 0-1.326.341z"/>
-              </svg> Affordability</a>
-              <a class="dropdown-item" href="./car-affordability.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill me-2" viewBox="0 0 16 16">
-                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 1.358-.16 2.003-.253.654-.095 1.218-.14.622-.145.638-.09.896-.09 1.482-.09s.844 0 1.482.09c.604.005 1.218.05.622.145.645.093 1.093.18 2.003.253a.51.51 0 0 0 .497-.731l-.792-1.848A1.5 1.5 0 0 0 11.182 3H4.82a1.5 1.5 0 0 0-1.326.341z"/>
-              </svg> EMI</a>
-              <a class="dropdown-item" href="../mutual-funds/checklist.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-square me-2" viewBox="0 0 16 16">
-                <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"/>
-                <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/>
-              </svg>
-                Mutual Funds</a>
+              <a class="dropdown-item" href="./car-affordability.html">
+                <i class="bi bi-car-front-fill"></i> Car Affordability
+              </a>
+              <a class="dropdown-item" href="./house-affordability.html">
+                <i class="bi bi-house-door-fill"></i> House Affordability
+              </a>
+              <a class="dropdown-item" href="./mobile-affordability.html">
+                <i class="bi bi-phone"></i> Mobile Affordability
+              </a>
+              <a class="dropdown-item" href="./stock-average-price.html">
+                <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
+              </a>
             </div>
           </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#">Blog</a>
-		  </li>
-        </ul>        
+        </ul>
       </div>
     </div>
   </nav>
@@ -76,36 +119,60 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <h2 class="text-center mb-4">How This Calculator Works on 10-2-6-20 Rule</h2>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <!-- Tab navigation -->
+        <!-- Tab navigation -->
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="metrics-tab" data-bs-toggle="tab" data-bs-target="#metrics" type="button" role="tab" aria-controls="metrics" aria-selected="true">The 10% Rule</button>
+            <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button"
+              role="tab" aria-controls="first" aria-selected="true">
+              10% Rule
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="verdicts-tab" data-bs-toggle="tab" data-bs-target="#verdicts" type="button" role="tab" aria-controls="verdicts" aria-selected="false">The 2-Year Usage Rule</button>
+            <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#second" type="button"
+              role="tab" aria-controls="second" aria-selected="false">
+              2-Year Usage Rule
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="disclaimer-tab" data-bs-toggle="tab" data-bs-target="#disclaimer" type="button" role="tab" aria-controls="disclaimer" aria-selected="false">The 6-Month EMI Rule</button>
+            <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third" type="button"
+              role="tab" aria-controls="third" aria-selected="false">
+              6-Month EMI Rule
+            </button>
           </li>
-		  <li class="nav-item" role="presentation">
-            <button class="nav-link" id="disclaimer-tab" data-bs-toggle="tab" data-bs-target="#disclaimer" type="button" role="tab" aria-controls="disclaimer" aria-selected="false">The 20% Upfront Rule</button>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="fourth-tab" data-bs-toggle="tab" data-bs-target="#fourth" type="button"
+              role="tab" aria-controls="fourth" aria-selected="false">
+              20% Upfront Rule
+            </button>
           </li>
         </ul>
+
+        <!-- Tab content -->
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="metrics" role="tabpanel" aria-labelledby="metrics-tab">
-            <h4 class="mt-4">The 10% Rule</h4>
-            <p>The price of the phone should not exceed 10% of your annual salary. This ensures that the purchase doesn't strain your finances.</p>
+          <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+            <h4 class="mt-4 text-center">The 10% Rule</h4>
+            <p class="text-center">The price of the phone should not exceed 10% of your annual salary. This ensures that
+              the purchase doesn't strain your finances.</p>
           </div>
-          <div class="tab-pane fade" id="verdicts" role="tabpanel" aria-labelledby="verdicts-tab">
-            <h4 class="mt-4">The 2-Year Usage Rule</h4>
-            <p>You should plan to use the phone for at least two years. This helps in maximizing the value of the device and reduces the frequency of upgrades.</p>
+
+          <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
+            <h4 class="mt-4 text-center">The 2-Year Usage Rule</h4>
+            <p class="text-center">You should plan to use the phone for at least two years. This helps in maximizing the
+              value of the device and reduces the frequency of upgrades.</p>
           </div>
-          <div class="tab-pane fade" id="disclaimer" role="tabpanel" aria-labelledby="disclaimer-tab">
-            <h4 class="mt-4">The 6-Month EMI Rule</h4>
-            <p>If you are planning to buy the phone on EMI, the tenure should not be more than 6 months. This prevents you from being locked into a long-term financial commitment for a depreciating asset.</p>
+
+          <div class="tab-pane fade" id="third" role="tabpanel" aria-labelledby="third-tab">
+            <h4 class="mt-4 text-center">The 6-Month EMI Rule</h4>
+            <p class="text-center">If you are planning to buy the phone on EMI, the tenure should not be more than 6
+              months. This prevents you from being locked into a long-term financial commitment for a depreciating
+              asset.</p>
           </div>
-		  <div class="tab-pane fade" id="disclaimer" role="tabpanel" aria-labelledby="disclaimer-tab">
-            <h4 class="mt-4">The 20% Upfront Rule</h4>
-            <p>You should be able to pay at least 20% of the phone's price upfront. This reduces the loan amount and the interest burden.</p>
+
+          <div class="tab-pane fade" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
+            <h4 class="mt-4 text-center">The 20% Upfront Rule</h4>
+            <p class="text-center">You should be able to pay at least 20% of the phone's price upfront. This reduces the
+              loan amount and the interest burden.</p>
           </div>
         </div>
       </div>
@@ -120,31 +187,36 @@
           <form id="calcForm" onsubmit="event.preventDefault()">
             <div class="mb-3">
               <label class="form-label">Annual Salary (₹)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Your total yearly income before tax."></i>
+                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                  title="Your total yearly income before tax."></i>
               </label>
               <input type="number" id="salary" class="form-control" value="600000" min="0">
             </div>
             <div class="mb-3">
               <label class="form-label">Mobile Price (₹)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Total cost of the mobile phone."></i>
+                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                  title="Total cost of the mobile phone."></i>
               </label>
               <input type="number" id="price" class="form-control" value="50000" min="0">
             </div>
             <div class="mb-3">
               <label class="form-label">Upfront Payment (₹)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Amount you will pay upfront, before EMI."></i>
+                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                  title="Amount you will pay upfront, before EMI."></i>
               </label>
               <input type="number" id="upfront" class="form-control" value="15000" min="0">
             </div>
             <div class="mb-3">
               <label class="form-label">EMI Tenure (months)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="Number of months over which you will pay EMIs. Should be ≤ 6."></i>
+                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                  title="Number of months over which you will pay EMIs. Should be ≤ 6."></i>
               </label>
               <input type="number" id="tenure" class="form-control" value="6" min="1">
             </div>
             <div class="mb-3">
               <label class="form-label">Planned Usage Duration (years)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip" title="You should ideally keep your phone for at least 2 years."></i>
+                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
+                  title="You should ideally keep your phone for at least 2 years."></i>
               </label>
               <input type="number" id="usage" class="form-control" value="2" min="1">
             </div>
@@ -156,21 +228,25 @@
       <!-- Results -->
       <div class="col-lg-6">
         <div id="results" class="card shadow-sm p-4">
-          <canvas id="affordChart" height="150" class="mb-3"></canvas>
+          <canvas id="affordChart" height="150" width="150" class="mb-3"></canvas>
 
-          <div class="vstack gap-3 mb-3">
-            <div class="metric">
-              <i class="bi bi-percent icon text-primary"></i>
-              <div>
-                <div class="small text-muted">Price as % of Salary</div>
-                <div class="fs-5 fw-semibold" id="pricePercent">0%</div>
+          <div class="row g-3 mb-3">
+            <div class="col-6">
+              <div class="metric">
+                <i class="bi bi-percent icon text-primary"></i>
+                <div>
+                  <div class="small text-muted">Price as % of Salary</div>
+                  <div class="fs-5 fw-semibold" id="pricePercent">0%</div>
+                </div>
               </div>
             </div>
-            <div class="metric">
-              <i class="bi bi-cash-stack icon text-primary"></i>
-              <div>
-                <div class="small text-muted">Upfront Payment %</div>
-                <div class="fs-5 fw-semibold" id="upfrontPercent">0%</div>
+            <div class="col-6">
+              <div class="metric">
+                <i class="bi bi-cash-stack icon text-primary"></i>
+                <div>
+                  <div class="small text-muted">Upfront Payment %</div>
+                  <div class="fs-5 fw-semibold" id="upfrontPercent">0%</div>
+                </div>
               </div>
             </div>
           </div>
@@ -186,7 +262,8 @@
       </div>
     </div>
   </section>
-
+  <p class="small text-center text-muted mt-3"><em>This calculation methodology is inspired by Ankur Warikoo's <a
+        target="_blank" href="https://www.youtube.com/shorts/-W1-9BFE4PA">YouTube short.</a></em></p>
   <footer class="bg-primary text-white text-center py-3 mt-5">
     <small>&copy; 2025 Quantify. All Rights Reserved.</small>
   </footer>
@@ -238,7 +315,8 @@
         options: {
           cutout: '70%',
           plugins: { legend: { display: false }, tooltip: { enabled: false } },
-          animation: { duration: 600 }
+          animation: { duration: 600 },
+          responsive: true
         }
       });
     }
@@ -300,4 +378,5 @@
     window.addEventListener('DOMContentLoaded', calculate);
   </script>
 </body>
+
 </html>

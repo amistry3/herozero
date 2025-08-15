@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantify – Stock Average Price Calculator</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16x16.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            animation: fadeIn .6s ease-in-out;
+        }
+
+        .purchase-card {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <img src="../../assets/img/favicon-32x32.png" class="me-2">Quantify
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
+                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false">Calculators</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./car-affordability.html">
+                                <i class="bi bi-car-front-fill"></i> Car Affordability
+                            </a>
+                            <a class="dropdown-item" href="./house-affordability.html">
+                                <i class="bi bi-house-door-fill"></i> House Affordability
+                            </a>
+                            <a class="dropdown-item" href="./mobile-affordability.html">
+                                <i class="bi bi-phone"></i> Mobile Affordability
+                            </a>
+                            <a class="dropdown-item" href="./stock-average-price.html">
+                                <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br /><br /><br /><br />
+    <section class="container py-5">
+        <div class="card shadow-sm p-4">
+            <h1 class="mb-4 text-center"><i class="bi bi-bar-chart-line-fill"></i> Stock Average Price Calculator</h1>
+            <p class="text-muted small mb-4">
+                This calculator helps you determine your new average price per share after making an additional
+                purchase.
+                Simply enter the number of shares and average price for your initial purchase, then do the same for your
+                new purchase.
+                The result will show your adjusted average cost per share, which can be useful for tracking
+                profitability and making informed decisions.
+            </p>
+            <form id="stockForm" onsubmit="event.preventDefault()">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="purchase-card">
+                            <h4 class="text-center"><strong>Initial Purchase</strong></h4>
+                            <div class="mb-3">
+                                <label class="form-label">No. of Share(s)</label>
+                                <input type="number" id="shares1" class="form-control" value="0" min="0" step="1">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Average Price Per Share</label>
+                                <input type="number" id="price1" class="form-control" value="0" min="0" step="0.01">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="purchase-card">
+                            <h4 class="text-center"><strong>New Purchase</strong></h4>
+                            <div class="mb-3">
+                                <label class="form-label">No. of Share(s)</label>
+                                <input type="number" id="shares2" class="form-control" value="0" min="0" step="1">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Average Price Per Share</label>
+                                <input type="number" id="price2" class="form-control" value="0" min="0" step="0.01">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-primary" id="calcBtn">Calculate Average Price</button>
+                </div>
+            </form>
+            <!-- Result -->
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-2">
+                    <div id="shares" class="text-center mt-4">
+                        <h5 class="mb-3">Total Share(s)</h5>
+                        <div class="fs-4 fw-bold" id="totalshares">0</div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div id="results" class="text-center mt-4">
+                        <h5 class="mb-3">Average Price</h5>
+                        <div class="fs-4 fw-bold" id="avgPrice">₹0.00</div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div id="investments" class="text-center mt-4">
+                        <h5 class="mb-3">Total Investments</h5>
+                        <div class="fs-4 fw-bold" id="invetments">₹0.00</div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white text-center py-3 mt-4">
+        <small>&copy; 2025 Quantify. All Rights Reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function calculateAveragePrice() {
+            const shares1 = parseFloat(document.getElementById('shares1').value) || 0;
+            const price1 = parseFloat(document.getElementById('price1').value) || 0;
+            const shares2 = parseFloat(document.getElementById('shares2').value) || 0;
+            const price2 = parseFloat(document.getElementById('price2').value) || 0;
+
+            const totalShares = shares1 + shares2;
+            const totalCost = (shares1 * price1) + (shares2 * price2);
+
+            const avg = totalShares > 0 ? totalCost / totalShares : 0;
+            document.getElementById('avgPrice').textContent = `₹${avg.toFixed(2)}`;
+            document.getElementById('totalshares').textContent = totalShares;
+            document.getElementById('invetments').textContent = `₹${totalCost.toFixed(2)}`;
+        }
+
+        document.getElementById('calcBtn').addEventListener('click', calculateAveragePrice);
+    </script>
+</body>
+
+</html>
