@@ -1,59 +1,546 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>FinTools – Your Ultimate Financial Decision-Making Toolkit | Car Affordability</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="Fintools is your all-in-one solution for financial decision-making. This comprehensive toolkit offers practical tools for evaluating car and mobile phone affordability, assessing mutual funds with detailed checklists, and more. Perfect for personal finance enthusiasts and informed shoppers looking to make sound financial decisions easily and efficiently.">
-    <meta name="keywords"
-        content="financial tools, car affordability calculator, mobile phone affordability, mutual fund checklist, financial decision tools, personal finance, investment assessment, budget planning tools, money management, financial planning tools, financial calculators, affordability analysis">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16x16.png">
-    <link rel="manifest" href="../../site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css"
-        integrity="sha256-eQXtl1QlkkhXl2hXezguEi/adrKmcbSWmwrlAun5ARU=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI=" crossorigin="anonymous">
+  <title>Quantify – Car Affordability Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    crossorigin="anonymous">
+  <style>
+    body {
+      animation: fadeIn .6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+    }
+
+    .help {
+      cursor: help;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .metric .icon {
+      font-size: 1.75rem;
+    }
+
+    .badge-soft {
+      background: rgba(13, 110, 253, .1);
+      color: #0d6efd;
+    }
+
+    .alert-thin {
+      padding: .5rem .75rem;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../../index.html">FinTools</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Affordability</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./pages/affordability/car-affordability.html">
-                                <i class="bi bi-car-front-fill me-2"></i>Car
-                            </a>
-                            <a class="dropdown-item" href="./pages/affordability/house-affordability.html">
-                                <i class="bi bi-house-door-fill me-2"></i>House
-                            </a>
-                            <a class="dropdown-item" href="./pages/affordability/mobile-affordability.html">
-                                <i class="bi bi-phone-fill me-2"></i>Mobile
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../../index.html">
+        <img src="../../assets/img/favicon-32x32.png" class="me-2" alt="Quantify logo">Quantify
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+              aria-expanded="false">Calculators</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="./car-affordability.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill me-2" viewBox="0 0 16 16">
+                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 1.358-.16 2.003-.253.654-.095 1.218-.14.622-.145.638-.09.896-.09 1.482-.09s.844 0 1.482.09c.604.005 1.218.05.622.145.645.093 1.093.18 2.003.253a.51.51 0 0 0 .497-.731l-.792-1.848A1.5 1.5 0 0 0 11.182 3H4.82a1.5 1.5 0 0 0-1.326.341z"/>
+              </svg> Affordability</a>
+              <a class="dropdown-item" href="./car-affordability.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill me-2" viewBox="0 0 16 16">
+                <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 1.358-.16 2.003-.253.654-.095 1.218-.14.622-.145.638-.09.896-.09 1.482-.09s.844 0 1.482.09c.604.005 1.218.05.622.145.645.093 1.093.18 2.003.253a.51.51 0 0 0 .497-.731l-.792-1.848A1.5 1.5 0 0 0 11.182 3H4.82a1.5 1.5 0 0 0-1.326.341z"/>
+              </svg> EMI</a>
+              <a class="dropdown-item" href="../mutual-funds/checklist.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-square me-2" viewBox="0 0 16 16">
+                <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"/>
+                <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/>
+              </svg>
+                Mutual Funds</a>
             </div>
+          </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Blog</a>
+		  </li>
+        </ul>        
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-light text-center py-5 mt-5">
+    <div class="container">
+      <h1 class="fw-bold mb-2"><i class="bi bi-car-front"></i> Find Your Perfect Ride, Not a Financial Burden.</h1>
+      <p class="lead mb-0">
+        Our Car Affordability Calculator helps you see the true cost of ownership, so you can drive with confidence and peace of mind.
+      </p>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h2 class="text-center mb-4">How This Calculator Works</h2>
+        <div class="accordion" id="howItWorksAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <strong>Understanding the Key Metrics</strong>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#howItWorksAccordion">
+              <div class="accordion-body">
+                <ul>
+                  <li><strong>Monthly EMI:</strong> The Equated Monthly Installment for your car loan. It's calculated
+                    using the standard formula: <code>EMI = [P x R x (1+R)^N] / [(1+R)^N-1]</code> where P is the loan
+                    amount, R is the monthly interest rate, and N is the number of months.</li>
+                  <li><strong>Fuel Cost (Over Lifespan):</strong> An estimate of the total amount you'll spend on fuel
+                    over the entire period you own the car. It's based on your monthly driving distance, the car's
+                    mileage, and the fuel price.</li>
+                  <li><strong>Total Ownership Cost:</strong> This is the big picture. It includes the on-road price of
+                    the car, the total fuel cost over its lifespan, and the total insurance premiums. It gives you a
+                    better idea of the real cost of owning a car, beyond just the sticker price.</li>
+                  <li><strong>Affordability Ratio:</strong> This is the percentage of your monthly net income that goes
+                    towards your car's EMI. It's a key indicator of whether the car is a good fit for your budget.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong>Interpreting the Verdicts</strong>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#howItWorksAccordion">
+              <div class="accordion-body">
+                <ul>
+                  <li><span class="badge bg-success">Affordable</span>: Your EMI is <strong>15%</strong> or less of your monthly net
+                    income. This is a healthy range, leaving you with enough money for other expenses and investments.
+                  </li>
+                  <li><span class="badge bg-warning text-dark">Stretching</span>: Your EMI is between <strong>15%</strong> and <strong>25%</strong> of
+                    your monthly net income. This could be manageable, but it might stretch your budget. Consider a
+                    higher down payment or a less expensive car.</li>
+                  <li><span class="badge bg-danger">Not Affordable</span>: Your EMI is more than <strong>25%</strong> of your monthly
+                    net income. This is generally considered too high and could put you at financial risk. It's strongly
+                    recommended to look for a more affordable option.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <strong>Important Disclaimer</strong>
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#howItWorksAccordion">
+              <div class="accordion-body">
+                <p>This calculator provides an estimate for informational purposes only and should not be considered
+                  financial advice. The calculations are based on the data you provide and standard formulas. Actual
+                  costs may vary. It is recommended to consult with a qualified financial advisor before making any
+                  purchasing decisions.</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=" crossorigin="anonymous"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="container py-5">    
+    <div class="row g-4 justify-content-center d-flex align-items-stretch">
+      <div class="col-lg-6">
+        <div class="card shadow-sm p-4 h-100">
+          <form id="calcForm" onsubmit="event.preventDefault()">
+            <h1 class="text-center mt-3"><i class="bi bi-calculator"></i>&nbsp;Calculator</h1>
+            <br/><hr/><br/>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Annual Income
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="tooltip"
+                    title="Total income before taxes for the year."></i>
+                </label>
+                <input type="number" id="annualIncome" class="form-control" value="1000000" min="0" inputmode="decimal">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Income Tax
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="tooltip"
+                    title="Calculated based on Indian tax slabs (New Regime), assuming no investments."></i>
+                </label>
+                <input type="number" id="incomeTax" class="form-control" value="0" min="0" inputmode="decimal" readonly>
+              </div>
+              
+              <div class="col-md-6">
+                <label class="form-label">Price (Ex-Showroom)
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="popover"
+                    data-bs-title="Ex-Showroom Price"
+                    data-bs-content="Base price of the car without registration, road tax, or insurance."></i>
+                </label>
+                <input type="number" id="price" class="form-control" value="1500000" min="0" inputmode="decimal">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Road Tax + Others
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="popover"
+                    data-bs-title="On-Road Components"
+                    data-bs-content="Registration, road tax, handling, accessories, etc."></i>
+                </label>
+                <input type="number" id="roadTax" class="form-control" value="100000" min="0" inputmode="decimal">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Down Payment (%)
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="tooltip"
+                    title="Paying 20%+ reduces EMI & interest cost."></i>
+                </label>
+                <input type="number" id="downPaymentPercent" class="form-control" value="20" min="0" max="100" step="1">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Loan Tenure (Years)</label>
+                <input type="number" id="loanTenure" class="form-control" value="5" min="1" step="1">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Interest Rate (% p.a.)
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="popover" data-bs-title="Interest Rate"
+                    data-bs-content="Annual percentage rate charged by lender on the loan."></i>
+                </label>
+                <input type="number" id="interestRate" class="form-control" value="9.5" min="0" step="0.01"
+                  inputmode="decimal">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Insurance Premium (Annual)
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="tooltip"
+                    title="Approximate yearly comprehensive insurance cost."></i>
+                </label>
+                <input type="number" id="insurance" class="form-control" value="25000" min="0" inputmode="decimal">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Monthly Distance (km)</label>
+                <input type="number" id="monthlyDistance" class="form-control" value="500" min="0" step="1"
+                  inputmode="numeric">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Mileage (km/litre)
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="tooltip"
+                    title="Higher mileage means lower fuel spend."></i>
+                </label>
+                <input type="number" id="mileage" class="form-control" value="14" min="1" step="0.1"
+                  inputmode="decimal">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Fuel Price (₹/litre)</label>
+                <input type="number" id="fuelPrice" class="form-control" value="110" min="0" step="0.1"
+                  inputmode="decimal">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Car Lifespan (Years)
+                  <i class="bi bi-info-circle help text-primary" data-bs-toggle="tooltip"
+                    title="How long you plan to own this car."></i>
+                </label>
+                <input type="number" id="lifespan" class="form-control" value="7" min="1" step="1">
+              </div>
+
+              <div class="col-12">
+                <div id="dpNotice" class="alert alert-warning alert-thin d-none">
+                  <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                  Recommended down payment is at least <strong>20%</strong> of on-road price to keep EMI manageable.
+                </div>
+              </div>
+
+              <div class="col-12 d-grid">
+                <button type="button" class="btn btn-primary btn-lg" id="calcBtn">
+                  <i class="bi bi-calculator"></i> Calculate
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="col-lg-6">
+        <div id="results" class="card shadow-sm p-4 h-100" style="display:none;">
+          <canvas id="affordChart" height="140" class="mb-3"></canvas>
+
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="metric">
+                <i class="bi bi-pie-chart-fill icon text-primary"></i>
+                <div>
+                  <div class="small text-muted">Affordability Ratio</div>
+                  <div class="fs-5 fw-semibold" id="ratioPill">0%</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="metric">
+                <i class="bi bi-cash-coin icon text-primary"></i>
+                <div>
+                  <div class="small text-muted">Monthly EMI</div>
+                  <div class="fs-5 fw-semibold" id="emi">₹0</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="metric">
+                <i class="bi bi-fuel-pump icon text-primary"></i>
+                <div>
+                  <div class="small text-muted">Fuel Cost (Over Lifespan)</div>
+                  <div class="fs-5 fw-semibold" id="fuelCost">₹0</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="metric">
+                <i class="bi bi-wallet2 icon text-primary"></i>
+                <div>
+                  <div class="small text-muted">Total Ownership Cost</div>
+                  <div class="fs-5 fw-semibold" id="totalCost">₹0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-3" />
+
+          <h5 id="verdict" class="mb-2">—</h5>
+          <p id="tips" class="mb-0 small text-muted"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3 mt-5">
+    <small>&copy; 2025 Quantify. All Rights Reserved.</small>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+  <script>
+    // --- Helpers ---
+    const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+    const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
+    // Animated counter
+    function countUp(el, to, duration = 700, isPercent = false) {
+      const from = Number((el.dataset.value || "0").replace(/[^0-9.-]/g, '')) || 0;
+      const start = performance.now();
+      function frame(t) {
+        const p = clamp((t - start) / duration, 0, 1);
+        const ease = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        const val = from + (to - from) * ease;
+        if (isPercent) {
+          el.textContent = `${val.toFixed(1)}%`;
+        } else {
+          el.textContent = fmtINR.format(val);
+        }
+        if (p < 1) requestAnimationFrame(frame);
+        else el.dataset.value = String(to);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // Bootstrap tooltips & popovers
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el, { trigger: 'hover focus' }));
+
+    // Chart
+    let chart;
+    function renderChart(ratio, color) {
+      const ctx = document.getElementById('affordChart').getContext('2d');
+      if (chart) chart.destroy();
+      chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['EMI % of Monthly Net Income', 'Remaining'],
+          datasets: [{
+            data: [clamp(ratio, 0, 100), clamp(100 - ratio, 0, 100)],
+            backgroundColor: [color, '#e9ecef'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          cutout: '70%',
+          plugins: { legend: { display: false }, tooltip: { enabled: false } },
+          animation: { duration: 600 }
+        }
+      });
+    }
+
+    function calculateTax(income) {
+      let tax = 0;
+
+      if (income > 2400000) {
+        tax = 0.30 * (income - 2400000) + 0.25 * 400000 + 0.20 * 400000 + 0.15 * 400000 + 0.10 * 400000 + 0.05 * 400000;
+      } else if (income > 2000000) {
+        tax = 0.25 * (income - 2000000) + 0.20 * 400000 + 0.15 * 400000 + 0.10 * 400000 + 0.05 * 400000;
+      } else if (income > 1600000) {
+        tax = 0.20 * (income - 1600000) + 0.15 * 400000 + 0.10 * 400000 + 0.05 * 400000;
+      } else if (income > 1200000) {
+        tax = 0.15 * (income - 1200000) + 0.10 * 400000 + 0.05 * 400000;
+      } else if (income > 800000) {
+        tax = 0.10 * (income - 800000) + 0.05 * 400000;
+      } else if (income > 400000) {
+        tax = 0.05 * (income - 400000);
+      } else {
+        tax = 0;
+      }
+
+      // Apply rebate: incomes up to ₹12 lakh get full rebate (max ₹60,000)
+      if (income <= 1200000) {
+        tax = 0;
+      }
+
+      return tax;
+    }
+
+
+    function calculate() {
+      const calcBtn = document.getElementById('calcBtn');
+      const originalBtnContent = calcBtn.innerHTML;
+      calcBtn.disabled = true;
+      calcBtn.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Calculating...`;
+
+      // Inputs
+      const annualIncome = +document.getElementById('annualIncome').value || 0;
+      const incomeTaxEl = document.getElementById('incomeTax');
+      const calculatedTax = calculateTax(annualIncome);
+      incomeTaxEl.value = calculatedTax.toFixed(0);
+      const incomeTax = calculatedTax;
+      const price = +document.getElementById('price').value || 0;
+      const roadTax = +document.getElementById('roadTax').value || 0;
+      const dpPct = clamp(+document.getElementById('downPaymentPercent').value || 0, 0, 100);
+      const tenureYears = Math.max(+document.getElementById('loanTenure').value || 0, 1);
+      const rateAnnual = Math.max(+document.getElementById('interestRate').value || 0, 0);
+      const monthlyKm = +document.getElementById('monthlyDistance').value || 0;
+      const mileage = Math.max(+document.getElementById('mileage').value || 1, 0.1);
+      const fuelPrice = +document.getElementById('fuelPrice').value || 0;
+      const lifespan = Math.max(+document.getElementById('lifespan').value || 0, 1);
+      const insurance = +document.getElementById('insurance').value || 0;
+
+      // Derived
+      const netAnnual = Math.max(annualIncome - incomeTax, 0);
+      const onRoad = price + roadTax;
+      const downPayment = onRoad * (dpPct / 100);
+      const loan = Math.max(onRoad - downPayment, 0);
+      const n = tenureYears * 12;
+      const r = rateAnnual / 12 / 100;
+
+      // EMI (handle r=0)
+      let emi = 0;
+      if (loan > 0 && n > 0) {
+        emi = r === 0 ? (loan / n) : (loan * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      }
+
+      const fuelYear = (monthlyKm * 12 / mileage) * fuelPrice;
+      const totalFuel = fuelYear * lifespan;
+      const totalOwnership = onRoad + totalFuel + (insurance * lifespan);
+
+      // Affordability vs monthly net income
+      const monthlyNet = netAnnual / 12;
+      const ratio = monthlyNet > 0 ? (emi / monthlyNet) * 100 : 100;
+
+      // Verdict
+      let verdict, color, tip;
+      if (ratio <= 15) {
+        verdict = '✅ Affordable – fits comfortably within your budget.';
+        color = '#28a745'; tip = 'Great! You still have ample room for other goals and savings.';
+      } else if (ratio <= 25) {
+        verdict = '⚠️ Stretching – consider a lower variant or a higher down payment.';
+        color = '#fd7e14'; tip = 'Try raising the down payment to 25–30% or extending tenure (with caution).';
+      } else {
+        verdict = '❌ Not Affordable – EMI is high for your income.';
+        color = '#dc3545'; tip = 'Consider a more affordable car or increase down payment significantly.';
+      }
+
+      // UI updates
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('verdict').textContent = verdict;
+      document.getElementById('tips').textContent = tip;
+
+      // Animated numbers
+      countUp(document.getElementById('ratioPill'), ratio, 700, true);
+      countUp(document.getElementById('emi'), emi);
+      countUp(document.getElementById('fuelCost'), totalFuel);
+      countUp(document.getElementById('totalCost'), totalOwnership);
+
+      // Gauge
+      renderChart(ratio, color);
+
+      // DP recommendation notice
+      const dpNotice = document.getElementById('dpNotice');
+      if (dpPct < 20) dpNotice.classList.remove('d-none');
+      else dpNotice.classList.add('d-none');
+
+      calcBtn.disabled = false;
+      calcBtn.innerHTML = originalBtnContent;
+    }
+
+    // Real-time updates (debounced)
+    let debounce;
+    function triggerCalc() { clearTimeout(debounce); debounce = setTimeout(calculate, 200); }
+    document.querySelectorAll('#calcForm input').forEach(i => {
+      i.addEventListener('input', triggerCalc);
+      i.addEventListener('change', triggerCalc);
+    });
+    document.getElementById('calcBtn').addEventListener('click', calculate);
+
+    // Initial calc
+    window.addEventListener('DOMContentLoaded', calculate);
+  </script>
 </body>
 
 </html>
