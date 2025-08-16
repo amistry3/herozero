@@ -1,7 +1,7 @@
-# Qunatify - Your Ultimate Financial Decision-Making Toolkit
+# HeroZero - Your Ultimate Financial Decision-Making Toolkit
 
 
-Qunatify is a comprehensive, user-friendly suite of financial calculators and tools designed to empower you in making informed financial decisions. Whether you're planning a major purchase like a car or a new mobile phone, or looking to invest in mutual funds, Qunatify provides the practical resources you need to manage your finances with confidence.
+HeroZero is a comprehensive, user-friendly suite of financial calculators and tools designed to empower you in making informed financial decisions. Whether you're planning a major purchase like a car or a new mobile phone, or looking to invest in mutual funds, HeroZero provides the practical resources you need to manage your finances with confidence.
 
 ## Features
 
@@ -13,13 +13,13 @@ Qunatify is a comprehensive, user-friendly suite of financial calculators and to
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/HeroZero.git
+    git clone https://github.com/your-username/quantify.git
     ```
 2.  **Navigate to the project directory:**
     ```bash
     cd HeroZero
     ```
-3.  **Open `index.html` in your web browser** to access the Qunatify suite.
+3.  **Open `index.html` in your web browser** to access the HeroZero suite.
 
 ## Contributing
 
