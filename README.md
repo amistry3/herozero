@@ -13,11 +13,11 @@ Qunatify is a comprehensive, user-friendly suite of financial calculators and to
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/quantify.git
+    git clone https://github.com/your-username/HeroZero.git
     ```
 2.  **Navigate to the project directory:**
     ```bash
-    cd quantify
+    cd HeroZero
     ```
 3.  **Open `index.html` in your web browser** to access the Qunatify suite.
 

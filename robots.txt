@@ -3,4 +3,4 @@ Disallow: /private/
 Disallow: /temp/
 Allow: /
 
-Sitemap: https://amistry3.github.io/quantify/sitemap.xml
+Sitemap: https://herozero.in/sitemap.xml
