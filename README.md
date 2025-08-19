@@ -17,7 +17,7 @@ HeroZero is a comprehensive, user-friendly suite of financial calculators and to
     ```
 2.  **Navigate to the project directory:**
     ```bash
-    cd qunaitfy
+    cd quantify
     ```
 3.  **Open `index.html` in your web browser** to access the HeroZero suite.
 
