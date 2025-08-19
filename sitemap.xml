@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+        <loc>https://herozero.in/</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/about.html</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/contact.html</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/privacy-policy.html</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/terms-of-use.html</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/disclaimer.html</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/guides/guides.html</loc>
+        <lastmod>2025-08-19</lastmod>
+    </url>
+    <url>
         <loc>https://herozero.in/pages/calculators/calculators.html</loc>
+        <lastmod>2025-08-19</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/car-affordability.html</loc>
+        <lastmod>2025-08-19</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/house-affordability.html</loc>
+        <lastmod>2025-08-19</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/mobile-affordability.html</loc>
+        <lastmod>2025-08-19</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/stock-average-price.html</loc>
+        <lastmod>2025-08-19</lastmod>
     </url>
 </urlset>
