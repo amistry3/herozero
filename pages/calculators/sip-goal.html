@@ -108,12 +108,41 @@
                             class="form-control" type="number" value="10"></div>
                     <button id="calcBtn" class="btn btn-primary">Calculate</button>
                     <hr />
-                    <p class="mb-1"><strong>Required Monthly SIP (₹):</strong> <span id="required">-</span></p>
+                    <p class="mb-1 text-center"><strong>Required Monthly SIP (₹):</strong> <span id="required"></span></p>
+
+                    <div id="sipGoalResults" class="mt-3 d-none">
+                        <div id="goalTableContainer" class="table-responsive mb-3"></div>
+                        <div>
+                            <canvas id="goalChart" height="140"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script>
+        function formatINR(x) {
+            return Number(x).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+        }
+
+        let goalChart = null;
+
+        function buildYearlyForGoal(monthlySIP, annualRate, years) {
+            const monthlyRate = annualRate / 12;
+            const series = [];
+            let balance = 0;
+            let invested = 0;
+            for (let y = 1; y <= years; y++) {
+                for (let m = 0; m < 12; m++) {
+                    balance = balance * (1 + monthlyRate) + monthlySIP;
+                    invested += monthlySIP;
+                }
+                series.push({ year: y, invested: invested, value: balance });
+            }
+            return series;
+        }
+
         function calcSIPGoal() {
             const goal = parseFloat(document.getElementById('goal').value) || 0;
             const r = (parseFloat(document.getElementById('annualReturn').value) || 0) / 100;
@@ -123,8 +152,54 @@
             let SIP = 0;
             if (i === 0) SIP = goal / months;
             else SIP = goal * i / ((Math.pow(1 + i, months) - 1) * (1 + i));
-            document.getElementById('required').innerText = SIP.toFixed(2);
+            document.getElementById('required').innerText = formatINR(SIP);
+
+            // build yearly projection and show table + chart
+            const series = buildYearlyForGoal(SIP, r, n);
+            const tableContainer = document.getElementById('goalTableContainer');
+            const table = document.createElement('table');
+            table.className = 'table table-sm table-striped';
+            const thead = document.createElement('thead');
+            thead.innerHTML = '<tr><th>Year</th><th class="text-end">Total Invested (₹)</th><th class="text-end">Value at Year End (₹)</th><th class="text-end">Gain (₹)</th></tr>';
+            table.appendChild(thead);
+            const tbody = document.createElement('tbody');
+            series.forEach(row => {
+                const tr = document.createElement('tr');
+                const gain = row.value - row.invested;
+                tr.innerHTML = `<td>Year ${row.year}</td><td class="text-end">${formatINR(row.invested)}</td><td class="text-end">${formatINR(row.value)}</td><td class="text-end">${formatINR(gain)}</td>`;
+                tbody.appendChild(tr);
+            });
+            table.appendChild(tbody);
+            tableContainer.innerHTML = '';
+            tableContainer.appendChild(table);
+
+            // chart
+            const labels = series.map(s => `Year ${s.year}`);
+            const investedData = series.map(s => s.invested);
+            const valueData = series.map(s => s.value);
+            const ctx = document.getElementById('goalChart');
+            if (goalChart) goalChart.destroy();
+            goalChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [
+                        { label: 'Total Invested (₹)', data: investedData, borderColor: '#0d6efd', backgroundColor: 'rgba(13,110,253,0.08)', tension: 0.25, fill: true },
+                        { label: 'Value (₹)', data: valueData, borderColor: '#198754', backgroundColor: 'rgba(25,135,84,0.08)', tension: 0.25, fill: true }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (ctx) => ctx.dataset.label + ': ₹' + formatINR(ctx.parsed.y) } } },
+                    scales: { y: { ticks: { callback: (v) => '₹' + Number(v).toLocaleString('en-IN') } } }
+                }
+            });
+
+            // reveal results
+            const res = document.getElementById('sipGoalResults');
+            if (res) res.classList.remove('d-none');
         }
+
         document.getElementById('calcBtn').addEventListener('click', calcSIPGoal);
     </script>
     <footer class="bg-primary text-white text-center py-3 mt-5">

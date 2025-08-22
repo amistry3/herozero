@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <meta name="description" content="HeroZero SIP Calculator  estimate future value of monthly SIP investments quickly and easily.">
+    <meta name="description" content="HeroZero SIP Calculator – estimate future value of monthly SIP investments quickly and easily.">
     <meta name="keywords" content="SIP calculator, mutual fund SIP, monthly investment calculator, HeroZero">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
         crossorigin="anonymous"></script>
@@ -108,32 +108,214 @@
                     <button id="calcBtn" class="btn btn-primary">Calculate</button>
 
                     <hr />
-                    <div>
-                        <p class="mb-1"><strong>Maturity Value (₹):</strong> <span id="maturity">-</span></p>
-                        <p class="mb-1"><strong>Total Invested (₹):</strong> <span id="invested">-</span></p>
-                        <p class="mb-1"><strong>Total Gain (₹):</strong> <span id="gain">-</span></p>
+                    <div id="results" class="d-none">
+                        <div id="resultSummary" class="mb-2 d-none"></div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="mb-1"><strong>Maturity Value (₹):</strong> <span id="maturity">-</span></p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="mb-1"><strong>Total Invested (₹):</strong> <span id="invested">-</span></p>
+                                </div>                            
+                                <div class="col-12">
+                                    <p class="mb-1 fw-bold"><strong>Total Gain (₹):</strong> <span id="gain">-</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tableContainer" class="table-responsive mt-3"></div>
+                        <div id="chart-div" class="mt-4 d-none">
+                            <canvas id="sipChart" height="160"></canvas>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script>
-        function calcSIP() {
-            const P = parseFloat(document.getElementById('sipAmount').value) || 0;
-            const r = (parseFloat(document.getElementById('annualReturn').value) || 0) / 100;
-            const n = parseFloat(document.getElementById('years').value) || 0;
-            const months = n * 12;
-            const monthlyRate = r / 12;
-            // Future value of series: P * [ (1+i)^n -1 ] / i * (1+i)
-            let fv = 0;
-            if (monthlyRate === 0) fv = P * months;
-            else fv = P * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate * (1 + monthlyRate);
-            const invested = P * months;
-            document.getElementById('maturity').innerText = fv.toFixed(2);
-            document.getElementById('invested').innerText = invested.toFixed(2);
-            document.getElementById('gain').innerText = (fv - invested).toFixed(2);
+        function formatINR(x) {
+            return Number(x).toLocaleString('en-IN', { maximumFractionDigits: 2 });
         }
+
+        let sipChart = null;
+
+        function buildYearlySeries(P, annualRate, years) {
+            const monthlyRate = annualRate / 12;
+            const series = [];
+            let balance = 0;
+            let totalInvested = 0;
+
+            for (let y = 1; y <= years; y++) {
+                // accumulate for 12 months
+                for (let m = 0; m < 12; m++) {
+                    balance = balance * (1 + monthlyRate) + P;
+                    totalInvested += P;
+                }
+                series.push({
+                    year: y,
+                    invested: totalInvested,
+                    value: balance
+                });
+            }
+            return series;
+        }
+
+        function calcSIP() {
+            
+            document.getElementById('chart-div').classList.remove('d-none');
+
+            const P = parseFloat(document.getElementById('sipAmount').value);
+            const rPerc = parseFloat(document.getElementById('annualReturn').value);
+            const years = parseInt(document.getElementById('years').value, 10);
+
+            if (isNaN(P) || P <= 0) { alert('Enter a valid monthly SIP amount'); return; }
+            if (isNaN(rPerc) || rPerc < 0) { alert('Enter a valid expected annual return'); return; }
+            if (isNaN(years) || years <= 0) { alert('Enter a valid investment duration in years'); return; }
+
+            const annualRate = rPerc / 100;
+            const months = years * 12;
+
+            const series = buildYearlySeries(P, annualRate, years);
+            // build monthly progression for month-wise drilldown
+            function buildMonthlySeries(P, annualRate, years) {
+                const monthlyRate = annualRate / 12;
+                const months = years * 12;
+                const arr = [];
+                let balance = 0;
+                let invested = 0;
+                for (let m = 1; m <= months; m++) {
+                    balance = balance * (1 + monthlyRate) + P;
+                    invested += P;
+                    arr.push({ monthIndex: m, invested: invested, value: balance });
+                }
+                return arr;
+            }
+
+            const monthlySeries = buildMonthlySeries(P, annualRate, years);
+
+            const final = series[series.length - 1];
+
+            document.getElementById('maturity').innerText = formatINR(final.value);
+            document.getElementById('invested').innerText = formatINR(final.invested);
+            document.getElementById('gain').innerText = formatINR(final.value - final.invested);
+
+            // build table with right-aligned rupee values and expandable month rows
+            const tableContainer = document.getElementById('tableContainer');
+            const table = document.createElement('table');
+            // table-hover helps indicate clickable rows
+            table.className = 'table table-sm table-striped table-hover';
+            const thead = document.createElement('thead');
+            thead.innerHTML = '<tr><th>Year</th><th class="text-end">Total Invested (₹)</th><th class="text-end">Value at Year End (₹)</th><th class="text-end">Gain (₹)</th></tr>';
+            table.appendChild(thead);
+            const tbody = document.createElement('tbody');
+
+            series.forEach((row, yi) => {
+                const gain = row.value - row.invested;
+
+                // summary row for the year
+                const tr = document.createElement('tr');
+                tr.className = 'year-row';
+                tr.setAttribute('role', 'button');
+                tr.setAttribute('aria-expanded', 'false');
+                tr.style.cursor = 'pointer';
+                tr.innerHTML = `
+                    <td>Year ${row.year}</td>
+                    <td class="text-end rupee-col">${formatINR(row.invested)}</td>
+                    <td class="text-end rupee-col">${formatINR(row.value)}</td>
+                    <td class="text-end rupee-col">${formatINR(gain)}</td>
+                `;
+
+                // detail row (hidden) with month-wise table
+                const detailTr = document.createElement('tr');
+                detailTr.className = 'month-row d-none';
+                const detailTd = document.createElement('td');
+                detailTd.setAttribute('colspan', '4');
+                detailTd.innerHTML = '<div class="p-2"><table class="table table-sm table-bordered mb-0"><thead><tr><th>Month</th><th class="text-end">Invested (₹)</th><th class="text-end">Value (₹)</th><th class="text-end">Gain (₹)</th></tr></thead><tbody></tbody></table></div>';
+                detailTr.appendChild(detailTd);
+
+                // populate month rows for this year
+                const monthTbody = detailTd.querySelector('tbody');
+                const startIdx = yi * 12;
+                const monthsForYear = monthlySeries.slice(startIdx, startIdx + 12);
+                monthsForYear.forEach((m) => {
+                    const mtr = document.createElement('tr');
+                    const mgain = m.value - m.invested;
+                    // use continuous monthIndex so numbering doesn't restart each year
+                    const monthLabel = `Month ${m.monthIndex}`;
+                    mtr.innerHTML = `
+                        <td>${monthLabel}</td>
+                        <td class="text-end rupee-col">${formatINR(m.invested)}</td>
+                        <td class="text-end rupee-col">${formatINR(m.value)}</td>
+                        <td class="text-end rupee-col">${formatINR(mgain)}</td>
+                    `;
+                    monthTbody.appendChild(mtr);
+                });
+
+                // toggle handler
+                tr.addEventListener('click', () => {
+                    const expanded = tr.getAttribute('aria-expanded') === 'true';
+                    tr.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                    detailTr.classList.toggle('d-none');
+                });
+
+                tbody.appendChild(tr);
+                tbody.appendChild(detailTr);
+            });
+
+            table.appendChild(tbody);
+            tableContainer.innerHTML = '';
+            tableContainer.appendChild(table);
+
+            // build chart (invested vs value)
+            const labels = series.map(s => `Year ${s.year}`);
+            const investedData = series.map(s => s.invested);
+            const valueData = series.map(s => s.value);
+
+            const ctx = document.getElementById('sipChart');
+            if (sipChart) sipChart.destroy();
+            sipChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: 'Total Invested (₹)',
+                            data: investedData,
+                            borderColor: '#0d6efd',
+                            backgroundColor: 'rgba(13,110,253,0.08)',
+                            tension: 0.25,
+                            fill: true
+                        },
+                        {
+                            label: 'Value (₹)',
+                            data: valueData,
+                            borderColor: '#198754',
+                            backgroundColor: 'rgba(25,135,84,0.08)',
+                            tension: 0.25,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => ctx.dataset.label + ': ₹' + formatINR(ctx.parsed.y)
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { callback: (v) => '₹' + Number(v).toLocaleString('en-IN') }
+                        }
+                    }
+                }
+            });
+        }
+
         document.getElementById('calcBtn').addEventListener('click', calcSIP);
     </script>
     <footer class="bg-primary text-white text-center py-3 mt-5">
