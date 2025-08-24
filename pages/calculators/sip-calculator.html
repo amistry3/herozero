@@ -1,390 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <meta name="description" content="HeroZero SIP Calculator – estimate future value of monthly SIP investments quickly and easily.">
-    <meta name="keywords" content="SIP calculator, mutual fund SIP, monthly investment calculator, HeroZero">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-        crossorigin="anonymous"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+    <meta
+      name="description"
+      content="HeroZero SIP Calculator – estimate future value of monthly SIP investments quickly and easily."
+    />
+    <meta
+      name="keywords"
+      content="SIP calculator, mutual fund SIP, monthly investment calculator, HeroZero"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
+      crossorigin="anonymous"
+    ></script>
     <title>HeroZero – SIP Calculator</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://herozero.in/assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://herozero.in/assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://herozero.in/assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
     <script type="application/ld+json">
-        {
+      {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "HeroZero - SIP Calculator",
         "url": "https://herozero.in/pages/calculators/sip-calculator.html"
-        }
+      }
     </script>
-</head>
+  </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo">HeroZero
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                                    class="bi bi-car-front-fill"></i> Car Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html"><i
-                                    class="bi bi-house-door-fill"></i> House Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                                    class="bi bi-phone"></i> Mobile Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                                    class="bi bi-bar-chart-line-fill"></i> Stock Average Price</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                                    class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-primary"
+      data-bs-theme="dark"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
+          <img
+            src="https://herozero.in/assets/img/favicon-32x32.png"
+            class="me-2"
+            alt="HeroZero Logo"
+          />HeroZero
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="https://herozero.in/"
+                ><i class="bi bi-house-fill me-2"></i>Home</a
+              >
+            </li>
+            <li class="nav-item dropdown" data-bs-theme="light">
+              <a
+                class="nav-link active dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Calculators</a
+              >
+              <div class="dropdown-menu">
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/car-affordability.html"
+                  ><i class="bi bi-car-front-fill"></i> Car Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/house-affordability.html"
+                  ><i class="bi bi-house-door-fill"></i> House Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
+                  ><i class="bi bi-phone"></i> Mobile Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/stock-average-price.html"
+                  ><i class="bi bi-bar-chart-line-fill"></i> Stock Average
+                  Price</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-calculator.html"
+                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-goal.html"
+                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
+                  ><i class="bi bi-coin"></i> Lumpsum Return</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
+                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
+                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
+                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
+                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
+                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
+                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
+                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
+                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
+                  Estimator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
+                  ><i class="bi bi-layers"></i> MF Direct vs Regular
+                  Estimator</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/blog.html"
+                ><i class="bi bi-journal-text me-2"></i>Blog</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <main class="container" style="margin-top:5.5rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1><i class="bi bi-cash-stack"></i> SIP Calculator</h1>
-                <p class="text-muted">Estimate future value of a monthly SIP (Systematic Investment Plan).</p>
+    <main class="container" style="margin-top: 5.5rem">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h1><i class="bi bi-cash-stack"></i> SIP Calculator</h1>
+          <p class="text-muted">
+            Estimate future value of a monthly SIP (Systematic Investment Plan).
+          </p>
 
-                <div class="card p-3">
-                    <div class="mb-3">
-                        <label class="form-label">Monthly SIP amount (₹)</label>
-                        <input id="sipAmount" class="form-control" type="number" value="5000" min="500">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Expected annual return (in %)</label>
-                        <input id="annualReturn" class="form-control" type="number" value="12" min="0" step="0.1">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Investment duration (years)</label>
-                        <input id="years" class="form-control" type="number" value="10" min="1" step="1">
-                    </div>
-
-                    <button id="calcBtn" class="btn btn-primary">Calculate</button>
-
-                    <hr />
-                    <div id="results" class="d-none">
-                        <div id="resultSummary" class="mb-2"></div>
-                            <div class="row">
-                                <div class="col-6 text-start">
-                                    <h4 class="mb-1"><strong>Maturity Value (₹):</strong> <span id="maturity" class="text-success"></span></h4>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <h4 class="mb-1"><strong>Total Invested (₹):</strong> <span id="invested" class="text-success"></span></h4>
-                                </div>
-                                <br/>
-                                <hr/>                       
-                                <div class="col-12 text-center">
-                                    <h4 class="mb-1 fw-bold"><strong>Total Gain (₹):</strong> <span id="gain" class="text-success"></span></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tableContainer" class="table-responsive mt-3"></div>
-                        <div id="chart-div" class="mt-4 d-none">
-                            <canvas id="sipChart" height="160"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SIP explanatory content: simple, paraphrased guidance for users -->
-                <div class="card mt-4 p-4">
-                    <h2>About SIP (Systematic Investment Plan)</h2>
-                    <p class="mb-2">A SIP is a simple way to invest a fixed amount regularly into a mutual fund. Instead of putting a large sum at once, you invest small amounts (for example, every month). Over time this helps you build savings while keeping your investments disciplined.</p>
-
-                    <h3>How a SIP works</h3>
-                    <p class="mb-2">Each time you invest, you buy units of the chosen fund at that day's price (NAV). When prices are low you buy more units, and when prices are high you buy fewer units — this evens out your average cost over time. Your investment grows through compounding: gains are reinvested, and they can earn returns too.</p>
-
-                    <h3>Why people use SIPs</h3>
-                    <ul>
-                        <li>Starts small: you can begin with modest monthly amounts.</li>
-                        <li>Builds discipline: regular investing becomes a habit.</li>
-                        <li>Smooths market swings: buying at different prices lowers risk of bad timing.</li>
-                        <li>Benefits from compounding: reinvested returns help the value grow over the long run.</li>
-                        <li>Flexible: most funds let you pause, increase, decrease or stop your SIP.</li>
-                    </ul>
-
-                    <h3>Types of SIPs (short)</h3>
-                    <ul>
-                        <li><strong>Regular SIP:</strong> same amount at fixed intervals.</li>
-                        <li><strong>Step-up / Top-up SIP:</strong> amount increases automatically at set times.</li>
-                        <li><strong>Flexible SIP:</strong> you can change the amount based on your cash flow.</li>
-                        <li><strong>Trigger / Perpetual SIP:</strong> starts or continues based on market or time triggers, or runs indefinitely until stopped.</li>
-                    </ul>
-
-                    <h3>Quick FAQs</h3>
-                    <dl>
-                        <dt>How much can I invest?</dt>
-                        <dd>There is usually no strict upper limit; minimums vary by fund (many start around ₹500/month).</dd>
-
-                        <dt>How long should I stay invested?</dt>
-                        <dd>There is no fixed maximum. For equity funds, staying for several years helps ride out short-term ups and downs.</dd>
-
-                        <dt>Can I change or pause my SIP?</dt>
-                        <dd>Yes — most funds let you increase, decrease, pause or stop your SIP when needed.</dd>
-                    </dl>
-
-                    <p class="text-muted small">Note: The calculator above gives an estimate based on the inputs you provide. Actual returns depend on market performance, fund charges and taxes.</p>
-                </div>
-
+          <div class="card p-3">
+            <div class="mb-3">
+              <label class="form-label">Monthly SIP amount (₹)</label>
+              <input
+                id="sipAmount"
+                class="form-control"
+                type="number"
+                value="5000"
+                min="500"
+              />
             </div>
+            <div class="mb-3">
+              <label class="form-label">Expected annual return (in %)</label>
+              <input
+                id="annualReturn"
+                class="form-control"
+                type="number"
+                value="12"
+                min="0"
+                step="0.1"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Investment duration (years)</label>
+              <input
+                id="years"
+                class="form-control"
+                type="number"
+                value="10"
+                min="1"
+                step="1"
+              />
+            </div>
+
+            <button id="calcBtn" class="btn btn-primary">Calculate</button>
+
+            <hr />
+            <div id="results" class="d-none">
+              <div id="resultSummary" class="mb-2"></div>
+              <div class="row">
+                <div class="col-6 text-start">
+                  <h4 class="mb-1">
+                    <strong>Maturity Value (₹):</strong>
+                    <span id="maturity" class="text-success"></span>
+                  </h4>
+                </div>
+                <div class="col-6 text-end">
+                  <h4 class="mb-1">
+                    <strong>Total Invested (₹):</strong>
+                    <span id="invested" class="text-success"></span>
+                  </h4>
+                </div>
+                <br />
+                <hr />
+                <div class="col-12 text-center">
+                  <h4 class="mb-1 fw-bold">
+                    <strong>Total Gain (₹):</strong>
+                    <span id="gain" class="text-success"></span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div id="tableContainer" class="table-responsive mt-3"></div>
+            <div id="chart-div" class="mt-4 d-none">
+              <canvas id="sipChart" height="160"></canvas>
+            </div>
+          </div>
+
+          <!-- SIP explanatory content: simple, paraphrased guidance for users -->
+          <div class="card mt-4 p-4">
+            <h2>About SIP (Systematic Investment Plan)</h2>
+            <p class="mb-2">
+              A SIP is a simple way to invest a fixed amount regularly into a
+              mutual fund. Instead of putting a large sum at once, you invest
+              small amounts (for example, every month). Over time this helps you
+              build savings while keeping your investments disciplined.
+            </p>
+
+            <h3>How a SIP works</h3>
+            <p class="mb-2">
+              Each time you invest, you buy units of the chosen fund at that
+              day's price (NAV). When prices are low you buy more units, and
+              when prices are high you buy fewer units — this evens out your
+              average cost over time. Your investment grows through compounding:
+              gains are reinvested, and they can earn returns too.
+            </p>
+
+            <h3>Why people use SIPs</h3>
+            <ul>
+              <li>Starts small: you can begin with modest monthly amounts.</li>
+              <li>Builds discipline: regular investing becomes a habit.</li>
+              <li>
+                Smooths market swings: buying at different prices lowers risk of
+                bad timing.
+              </li>
+              <li>
+                Benefits from compounding: reinvested returns help the value
+                grow over the long run.
+              </li>
+              <li>
+                Flexible: most funds let you pause, increase, decrease or stop
+                your SIP.
+              </li>
+            </ul>
+
+            <h3>Types of SIPs (short)</h3>
+            <ul>
+              <li>
+                <strong>Regular SIP:</strong> same amount at fixed intervals.
+              </li>
+              <li>
+                <strong>Step-up / Top-up SIP:</strong> amount increases
+                automatically at set times.
+              </li>
+              <li>
+                <strong>Flexible SIP:</strong> you can change the amount based
+                on your cash flow.
+              </li>
+              <li>
+                <strong>Trigger / Perpetual SIP:</strong> starts or continues
+                based on market or time triggers, or runs indefinitely until
+                stopped.
+              </li>
+            </ul>
+
+            <h3>Quick FAQs</h3>
+            <dl>
+              <dt>How much can I invest?</dt>
+              <dd>
+                There is usually no strict upper limit; minimums vary by fund
+                (many start around ₹500/month).
+              </dd>
+
+              <dt>How long should I stay invested?</dt>
+              <dd>
+                There is no fixed maximum. For equity funds, staying for several
+                years helps ride out short-term ups and downs.
+              </dd>
+
+              <dt>Can I change or pause my SIP?</dt>
+              <dd>
+                Yes — most funds let you increase, decrease, pause or stop your
+                SIP when needed.
+              </dd>
+            </dl>
+
+            <p class="text-muted small">
+              Note: The calculator above gives an estimate based on the inputs
+              you provide. Actual returns depend on market performance, fund
+              charges and taxes.
+            </p>
+          </div>
         </div>
+      </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script>
-        function formatINR(x) {
-            return Number(x).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+      function formatINR(x) {
+        return Number(x).toLocaleString("en-IN", { maximumFractionDigits: 2 });
+      }
+
+      let sipChart = null;
+
+      function buildYearlySeries(P, annualRate, years) {
+        const monthlyRate = annualRate / 12;
+        const series = [];
+        let balance = 0;
+        let totalInvested = 0;
+
+        for (let y = 1; y <= years; y++) {
+          // accumulate for 12 months
+          for (let m = 0; m < 12; m++) {
+            balance = balance * (1 + monthlyRate) + P;
+            totalInvested += P;
+          }
+          series.push({
+            year: y,
+            invested: totalInvested,
+            value: balance,
+          });
+        }
+        return series;
+      }
+
+      function calcSIP() {
+        document.getElementById("chart-div").classList.remove("d-none");
+        document.getElementById("results").classList.remove("d-none");
+
+        const P = parseFloat(document.getElementById("sipAmount").value);
+        const rPerc = parseFloat(document.getElementById("annualReturn").value);
+        const years = parseInt(document.getElementById("years").value, 10);
+
+        if (isNaN(P) || P <= 0) {
+          alert("Enter a valid monthly SIP amount");
+          return;
+        }
+        if (isNaN(rPerc) || rPerc < 0) {
+          alert("Enter a valid expected annual return");
+          return;
+        }
+        if (isNaN(years) || years <= 0) {
+          alert("Enter a valid investment duration in years");
+          return;
         }
 
-        let sipChart = null;
+        const annualRate = rPerc / 100;
+        const months = years * 12;
 
-        function buildYearlySeries(P, annualRate, years) {
-            const monthlyRate = annualRate / 12;
-            const series = [];
-            let balance = 0;
-            let totalInvested = 0;
-
-            for (let y = 1; y <= years; y++) {
-                // accumulate for 12 months
-                for (let m = 0; m < 12; m++) {
-                    balance = balance * (1 + monthlyRate) + P;
-                    totalInvested += P;
-                }
-                series.push({
-                    year: y,
-                    invested: totalInvested,
-                    value: balance
-                });
-            }
-            return series;
+        const series = buildYearlySeries(P, annualRate, years);
+        // build monthly progression for month-wise drilldown
+        function buildMonthlySeries(P, annualRate, years) {
+          const monthlyRate = annualRate / 12;
+          const months = years * 12;
+          const arr = [];
+          let balance = 0;
+          let invested = 0;
+          for (let m = 1; m <= months; m++) {
+            balance = balance * (1 + monthlyRate) + P;
+            invested += P;
+            arr.push({ monthIndex: m, invested: invested, value: balance });
+          }
+          return arr;
         }
 
-        function calcSIP() {
-            
-            document.getElementById('chart-div').classList.remove('d-none');
-            document.getElementById('results').classList.remove('d-none');
+        const monthlySeries = buildMonthlySeries(P, annualRate, years);
 
-            const P = parseFloat(document.getElementById('sipAmount').value);
-            const rPerc = parseFloat(document.getElementById('annualReturn').value);
-            const years = parseInt(document.getElementById('years').value, 10);
+        const final = series[series.length - 1];
 
-            if (isNaN(P) || P <= 0) { alert('Enter a valid monthly SIP amount'); return; }
-            if (isNaN(rPerc) || rPerc < 0) { alert('Enter a valid expected annual return'); return; }
-            if (isNaN(years) || years <= 0) { alert('Enter a valid investment duration in years'); return; }
+        document.getElementById("maturity").innerText = formatINR(final.value);
+        document.getElementById("invested").innerText = formatINR(
+          final.invested
+        );
+        document.getElementById("gain").innerText = formatINR(
+          final.value - final.invested
+        );
 
-            const annualRate = rPerc / 100;
-            const months = years * 12;
+        // build table with right-aligned rupee values and expandable month rows
+        const tableContainer = document.getElementById("tableContainer");
+        const table = document.createElement("table");
+        // table-hover helps indicate clickable rows
+        table.className = "table table-sm table-striped table-hover";
+        const thead = document.createElement("thead");
+        thead.innerHTML =
+          '<tr><th>Year</th><th class="text-end">Total Invested (₹)</th><th class="text-end">Value at Year End (₹)</th><th class="text-end">Gain (₹)</th></tr>';
+        table.appendChild(thead);
+        const tbody = document.createElement("tbody");
 
-            const series = buildYearlySeries(P, annualRate, years);
-            // build monthly progression for month-wise drilldown
-            function buildMonthlySeries(P, annualRate, years) {
-                const monthlyRate = annualRate / 12;
-                const months = years * 12;
-                const arr = [];
-                let balance = 0;
-                let invested = 0;
-                for (let m = 1; m <= months; m++) {
-                    balance = balance * (1 + monthlyRate) + P;
-                    invested += P;
-                    arr.push({ monthIndex: m, invested: invested, value: balance });
-                }
-                return arr;
-            }
+        series.forEach((row, yi) => {
+          const gain = row.value - row.invested;
 
-            const monthlySeries = buildMonthlySeries(P, annualRate, years);
-
-            const final = series[series.length - 1];
-
-            document.getElementById('maturity').innerText = formatINR(final.value);
-            document.getElementById('invested').innerText = formatINR(final.invested);
-            document.getElementById('gain').innerText = formatINR(final.value - final.invested);
-
-            // build table with right-aligned rupee values and expandable month rows
-            const tableContainer = document.getElementById('tableContainer');
-            const table = document.createElement('table');
-            // table-hover helps indicate clickable rows
-            table.className = 'table table-sm table-striped table-hover';
-            const thead = document.createElement('thead');
-            thead.innerHTML = '<tr><th>Year</th><th class="text-end">Total Invested (₹)</th><th class="text-end">Value at Year End (₹)</th><th class="text-end">Gain (₹)</th></tr>';
-            table.appendChild(thead);
-            const tbody = document.createElement('tbody');
-
-            series.forEach((row, yi) => {
-                const gain = row.value - row.invested;
-
-                // summary row for the year
-                const tr = document.createElement('tr');
-                tr.className = 'year-row';
-                tr.setAttribute('role', 'button');
-                tr.setAttribute('aria-expanded', 'false');
-                tr.style.cursor = 'pointer';
-                tr.innerHTML = `
+          // summary row for the year
+          const tr = document.createElement("tr");
+          tr.className = "year-row";
+          tr.setAttribute("role", "button");
+          tr.setAttribute("aria-expanded", "false");
+          tr.style.cursor = "pointer";
+          tr.innerHTML = `
                     <td>Year ${row.year}</td>
-                    <td class="text-end rupee-col">${formatINR(row.invested)}</td>
+                    <td class="text-end rupee-col">${formatINR(
+                      row.invested
+                    )}</td>
                     <td class="text-end rupee-col">${formatINR(row.value)}</td>
                     <td class="text-end rupee-col">${formatINR(gain)}</td>
                 `;
 
-                // detail row (hidden) with month-wise table
-                const detailTr = document.createElement('tr');
-                detailTr.className = 'month-row d-none';
-                const detailTd = document.createElement('td');
-                detailTd.setAttribute('colspan', '4');
-                detailTd.innerHTML = '<div class="p-2"><table class="table table-sm table-bordered mb-0"><thead><tr><th>Month</th><th class="text-end">Invested (₹)</th><th class="text-end">Value (₹)</th><th class="text-end">Gain (₹)</th></tr></thead><tbody></tbody></table></div>';
-                detailTr.appendChild(detailTd);
+          // detail row (hidden) with month-wise table
+          const detailTr = document.createElement("tr");
+          detailTr.className = "month-row d-none";
+          const detailTd = document.createElement("td");
+          detailTd.setAttribute("colspan", "4");
+          detailTd.innerHTML =
+            '<div class="p-2"><table class="table table-sm table-bordered mb-0"><thead><tr><th>Month</th><th class="text-end">Invested (₹)</th><th class="text-end">Value (₹)</th><th class="text-end">Gain (₹)</th></tr></thead><tbody></tbody></table></div>';
+          detailTr.appendChild(detailTd);
 
-                // populate month rows for this year
-                const monthTbody = detailTd.querySelector('tbody');
-                const startIdx = yi * 12;
-                const monthsForYear = monthlySeries.slice(startIdx, startIdx + 12);
-                monthsForYear.forEach((m) => {
-                    const mtr = document.createElement('tr');
-                    const mgain = m.value - m.invested;
-                    // use continuous monthIndex so numbering doesn't restart each year
-                    const monthLabel = `Month ${m.monthIndex}`;
-                    mtr.innerHTML = `
+          // populate month rows for this year
+          const monthTbody = detailTd.querySelector("tbody");
+          const startIdx = yi * 12;
+          const monthsForYear = monthlySeries.slice(startIdx, startIdx + 12);
+          monthsForYear.forEach((m) => {
+            const mtr = document.createElement("tr");
+            const mgain = m.value - m.invested;
+            // use continuous monthIndex so numbering doesn't restart each year
+            const monthLabel = `Month ${m.monthIndex}`;
+            mtr.innerHTML = `
                         <td>${monthLabel}</td>
-                        <td class="text-end rupee-col">${formatINR(m.invested)}</td>
-                        <td class="text-end rupee-col">${formatINR(m.value)}</td>
+                        <td class="text-end rupee-col">${formatINR(
+                          m.invested
+                        )}</td>
+                        <td class="text-end rupee-col">${formatINR(
+                          m.value
+                        )}</td>
                         <td class="text-end rupee-col">${formatINR(mgain)}</td>
                     `;
-                    monthTbody.appendChild(mtr);
-                });
+            monthTbody.appendChild(mtr);
+          });
 
-                // toggle handler
-                tr.addEventListener('click', () => {
-                    const expanded = tr.getAttribute('aria-expanded') === 'true';
-                    tr.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-                    detailTr.classList.toggle('d-none');
-                });
+          // toggle handler
+          tr.addEventListener("click", () => {
+            const expanded = tr.getAttribute("aria-expanded") === "true";
+            tr.setAttribute("aria-expanded", expanded ? "false" : "true");
+            detailTr.classList.toggle("d-none");
+          });
 
-                tbody.appendChild(tr);
-                tbody.appendChild(detailTr);
-            });
+          tbody.appendChild(tr);
+          tbody.appendChild(detailTr);
+        });
 
-            table.appendChild(tbody);
-            tableContainer.innerHTML = '';
-            tableContainer.appendChild(table);
+        table.appendChild(tbody);
+        tableContainer.innerHTML = "";
+        tableContainer.appendChild(table);
 
-            // build chart (invested vs value)
-            const labels = series.map(s => `Year ${s.year}`);
-            const investedData = series.map(s => s.invested);
-            const valueData = series.map(s => s.value);
+        // build chart (invested vs value)
+        const labels = series.map((s) => `Year ${s.year}`);
+        const investedData = series.map((s) => s.invested);
+        const valueData = series.map((s) => s.value);
 
-            const ctx = document.getElementById('sipChart');
-            if (sipChart) sipChart.destroy();
-            sipChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels,
-                    datasets: [
-                        {
-                            label: 'Total Invested (₹)',
-                            data: investedData,
-                            borderColor: '#0d6efd',
-                            backgroundColor: 'rgba(13,110,253,0.08)',
-                            tension: 0.25,
-                            fill: true
-                        },
-                        {
-                            label: 'Value (₹)',
-                            data: valueData,
-                            borderColor: '#198754',
-                            backgroundColor: 'rgba(25,135,84,0.08)',
-                            tension: 0.25,
-                            fill: true
-                        }
-                    ]
+        const ctx = document.getElementById("sipChart");
+        if (sipChart) sipChart.destroy();
+        sipChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "Total Invested (₹)",
+                data: investedData,
+                borderColor: "#0d6efd",
+                backgroundColor: "rgba(13,110,253,0.08)",
+                tension: 0.25,
+                fill: true,
+              },
+              {
+                label: "Value (₹)",
+                data: valueData,
+                borderColor: "#198754",
+                backgroundColor: "rgba(25,135,84,0.08)",
+                tension: 0.25,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "top" },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) =>
+                    ctx.dataset.label + ": ₹" + formatINR(ctx.parsed.y),
                 },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'top' },
-                        tooltip: {
-                            callbacks: {
-                                label: (ctx) => ctx.dataset.label + ': ₹' + formatINR(ctx.parsed.y)
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            ticks: { callback: (v) => '₹' + Number(v).toLocaleString('en-IN') }
-                        }
-                    }
-                }
-            });
-        }
+              },
+            },
+            scales: {
+              y: {
+                ticks: {
+                  callback: (v) => "₹" + Number(v).toLocaleString("en-IN"),
+                },
+              },
+            },
+          },
+        });
+      }
 
-        document.getElementById('calcBtn').addEventListener('click', calcSIP);
+      document.getElementById("calcBtn").addEventListener("click", calcSIP);
     </script>
     <footer class="bg-primary text-white text-center py-3 mt-5">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
+      <nav class="mb-2">
+        <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
+          >About</a
+        >
+        <a class="text-white mx-2" href="https://herozero.in/pages/contact.html"
+          >Contact</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/privacy-policy.html"
+          >Privacy Policy</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/terms-of-use.html"
+          >Terms of Use</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/disclaimer.html"
+          >Disclaimer</a
+        >
+      </nav>
+      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
