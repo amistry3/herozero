@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>SIP Top-up Planner</title>
+    <title>HeroZero – SIP Top-up Planner</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-adsense-account" content="ca-pub-2137440189333906">
@@ -16,6 +16,14 @@
     <link rel="manifest" href="https://herozero.in/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "HeroZero - SIP Top-up Planner",
+        "url": "https://herozero.in/pages/calculators/sip-topup-planner.html"
+        }
+    </script>
 </head>
 
 <body>
@@ -101,27 +109,95 @@
                             class="form-control" type="number" value="10"></div>
                     <button id="calcBtn" class="btn btn-primary">Calculate</button>
                     <hr />
-                    <p class="mb-1"><strong>Maturity Value (₹):</strong> <span id="maturity">-</span></p>
+                    <div id="resultArea" class="mt-3 d-none"></div>
+                    <div class="mt-3 d-none" id="chartContainer">
+                        <canvas id="topupChart" style="max-height:360px"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card mt-3 p-4">
+                    <h3>Why plan SIP top-ups?</h3>
+                    <p class="mb-2">Increasing your SIP periodically (top-up) helps your savings keep pace with inflation and income growth. Even modest annual top-ups compound significantly over long periods and can boost your final corpus.</p>
+
+                    <h4>How this planner works</h4>
+                    <ol>
+                        <li>We assume you invest the monthly SIP each month for the year and it grows at the annual rate you enter (compounded monthly for contributions).</li>
+                        <li>At the end of each year the SIP amount increases by the annual top-up percentage you specify.</li>
+                        <li>The calculator shows the final maturity with your top-up plan and compares it to keeping the SIP constant (no top-ups).</li>
+                    </ol>
+
+                    <h4>How to use</h4>
+                    <ul>
+                        <li>Enter your current monthly SIP and a realistic top-up percentage (for example 5–15%).</li>
+                        <li>Choose an expected annual return — this is an estimate, not a guarantee.</li>
+                        <li>Click Calculate to see final values and a year-by-year growth chart comparing with and without top-ups.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </main>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script>
+        let topupChart = null;
+        const inrFormatter = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+        function formatINR(n){
+            if (!isFinite(n)) return n;
+            return '₹' + inrFormatter.format(n);
+        }
+        function monthlySIPSeries(initialSip, annualReturn, years, topupRate) {
+            const monthlyRate = annualReturn / 12;
+            let sip = initialSip;
+            const series = [];
+            let balance = 0;
+            for (let y = 0; y <= years; y++) {
+                // accumulate 12 months for this year
+                for (let m = 0; m < 12; m++) {
+                    balance = balance * (1 + monthlyRate) + sip;
+                }
+                series.push(balance);
+                // top up at year end (if topupRate > 0)
+                sip = sip * (1 + topupRate);
+            }
+            return series;
+        }
+
         function calcTopup() {
-            let sip = parseFloat(document.getElementById('sip').value) || 0;
+            const initialSip = parseFloat(document.getElementById('sip').value) || 0;
             const topup = (parseFloat(document.getElementById('topup').value) || 0) / 100;
             const r = (parseFloat(document.getElementById('annual').value) || 0) / 100;
-            const years = parseFloat(document.getElementById('years').value) || 0;
-            let fv = 0;
-            for (let y = 0; y < years; y++) {
-                // each year apply monthly SIP for 12 months
-                const monthlyRate = r / 12;
-                const months = 12;
-                const yearFV = sip * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate * (1 + monthlyRate);
-                fv = fv * Math.pow(1 + r, 1) + yearFV; // previous grows, plus this year's contributions
-                sip = sip * (1 + topup);
-            }
-            document.getElementById('maturity').innerText = fv.toFixed(2);
+            const years = parseInt(parseFloat(document.getElementById('years').value) || 0, 10);
+
+            const seriesWith = monthlySIPSeries(initialSip, r, years, topup);
+            const seriesWithout = monthlySIPSeries(initialSip, r, years, 0);
+
+            const fvWith = seriesWith[seriesWith.length - 1];
+            const fvWithout = seriesWithout[seriesWithout.length - 1];
+
+            // render result card
+            const out = document.getElementById('resultArea'); out.innerHTML = '';
+            const card = document.createElement('div'); card.className = 'card p-3';
+            card.innerHTML = `<div class="text-center"><h3>Final maturity</h3><h4 class="mb-1">With top-ups: <strong class="text-success">${formatINR(fvWith)}</strong></h4><h4 class="mb-1">Without top-ups: <strong>${formatINR(fvWithout)}</strong></h4><h4 class="mb-0">Difference: <strong class="text-danger">${formatINR(Math.abs(fvWith - fvWithout))}</strong></h4></div>`;
+            out.appendChild(card);
+
+            // draw chart
+            const ctx = document.getElementById('topupChart').getContext('2d');
+            const labels = Array.from({length: years + 1}, (_, i) => i.toString());
+            if (topupChart) topupChart.destroy();
+            topupChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [
+                        { label: 'With top-ups', data: seriesWith, backgroundColor: '#0d6efd' },
+                        { label: 'Without top-ups', data: seriesWithout, backgroundColor: '#6c757d' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { callback: v => formatINR(v) } } }, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${formatINR(ctx.parsed.y)}` } } } }
+            });
+            document.getElementById('resultArea').classList.remove('d-none');
+            document.getElementById('chartContainer').classList.remove('d-none');
         }
         document.getElementById('calcBtn').addEventListener('click', calcTopup);
     </script>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Expense Ratio Impact</title>
+    <title>HeroZero – Expense Ratio Impact</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-adsense-account" content="ca-pub-2137440189333906">
@@ -22,7 +22,7 @@
         {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Calculators",
+        "name": "HeroZero - Expense Ratio Impact",
         "url": "https://herozero.in/pages/calculators/expense-ratio-impact.html"
         }
     </script>
@@ -113,22 +113,101 @@
                             class="form-control" type="number" value="10"></div>
                     <button id="calcBtn" class="btn btn-primary">Compare</button>
                     <hr />
-                    <pre id="result" class="small"></pre>
+                    <div id="resultArea" class="mt-3 d-none"></div>
+                    <div class="mt-3 d-none" id="chartArea">
+                        <canvas id="erChart" style="max-height:320px"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Simple explanation for beginners -->
+                <div class="card mt-3 p-4">
+                    <h3>Why expense ratio matters</h3>
+                    <p class="mb-2">Expense ratio is an annual fee charged by a mutual fund to cover operating costs. Even small differences compound over time and can materially change your final returns. This calculator shows two scenarios side-by-side: the same gross return but different expense ratios. The lower the expense ratio, the more of the return stays with you.</p>
+
+                    <h4>How this calculator works</h4>
+                    <ol>
+                        <li>We start with your initial investment.</li>
+                        <li>We apply the gross annual return you enter, then subtract the expense ratio to get the net annual return for each fund.</li>
+                        <li>We compound the net return each year for the duration to compute final values.</li>
+                    </ol>
+
+                    <h4>Why it impacts your investment</h4>
+                    <p class="mb-0">Even a 0.5% higher expense ratio can reduce your terminal value significantly over long periods. Use the chart to compare growth trajectories and the table to see absolute differences.</p>
                 </div>
             </div>
         </div>
     </main>
 
     <script>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        let erChart = null;
+        function buildSeries(P, gross, er, years) {
+            const net = gross - er;
+            const vals = [];
+            let v = P;
+            for (let y = 0; y <= years; y++) {
+                vals.push(v);
+                v = v * (1 + net);
+            }
+            return vals;
+        }
+
         function compare() {
             const P = parseFloat(document.getElementById('amount').value) || 0;
             const gross = (parseFloat(document.getElementById('gross').value) || 0) / 100;
             const e1 = (parseFloat(document.getElementById('e1').value) || 0) / 100;
             const e2 = (parseFloat(document.getElementById('e2').value) || 0) / 100;
-            const n = parseFloat(document.getElementById('years').value) || 0;
-            const fv1 = P * Math.pow(1 + gross - e1, n);
-            const fv2 = P * Math.pow(1 + gross - e2, n);
-            document.getElementById('result').innerText = `With ER ${(e1 * 100).toFixed(2)}%: ₹${fv1.toFixed(2)}\nWith ER ${(e2 * 100).toFixed(2)}%: ₹${fv2.toFixed(2)}\nDifference: ₹${Math.abs(fv1 - fv2).toFixed(2)}`;
+            const n = parseInt(parseFloat(document.getElementById('years').value) || 0, 10);
+
+            const series1 = buildSeries(P, gross, e1, n);
+            const series2 = buildSeries(P, gross, e2, n);
+            const fv1 = series1[series1.length - 1];
+            const fv2 = series2[series2.length - 1];
+
+            // render result card
+            const out = document.getElementById('resultArea');
+            out.innerHTML = '';
+            const card = document.createElement('div'); card.className = 'card p-3';
+            const body = document.createElement('div'); body.className = 'd-flex gap-3';
+            const left = document.createElement('div'); left.innerHTML = `<h5>Final values</h5><p class="mb-1">Expense Ratio ${(e1*100).toFixed(2)}%: <strong>₹${fv1.toFixed(2)}</strong></p><p class="mb-1">Expense Ratio ${(e2*100).toFixed(2)}%: <strong>₹${fv2.toFixed(2)}</strong></p><p class="mb-0">Difference: <strong>₹${Math.abs(fv1-fv2).toFixed(2)}</strong></p>`;
+            const right = document.createElement('div'); right.style.minWidth = '320px'; right.innerHTML = `<small class="text-muted">Values shown yearly (start to end)</small>`;
+            body.appendChild(left); body.appendChild(right); card.appendChild(body); out.appendChild(card);
+
+            // draw chart
+            const ctx = document.getElementById('erChart').getContext('2d');
+            const labels = Array.from({length: n+1}, (_,i) => i.toString());
+            if (erChart) erChart.destroy();
+            erChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [
+                        { label: `Expense Ratio ${(e1*100).toFixed(2)}%`, data: series1, backgroundColor: '#0d6efd', borderColor: '#0d6efd' },
+                        { label: `Expense Ratio ${(e2*100).toFixed(2)}%`, data: series2, backgroundColor: '#dc3545', borderColor: '#dc3545' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { stacked: false },
+                        y: { ticks: { callback: v => '₹' + Number(v).toLocaleString() } }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(ctx) { return ctx.dataset.label + ': ₹' + Number(ctx.parsed.y).toLocaleString(); }
+                            }
+                        }
+                    }
+                }
+            });
+            document.getElementById('resultArea').classList.remove('d-none');
+            document.getElementById('chartArea').classList.remove('d-none');
         }
         document.getElementById('calcBtn').addEventListener('click', compare);
     </script>

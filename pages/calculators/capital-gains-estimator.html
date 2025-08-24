@@ -1,164 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<head>
+  <head>
     <title>HeroZero – Capital Gains Estimator</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <meta name="description" content="Capital Gains Estimator — estimate gains, holding period and approximate tax for equity and mutual fund sells in India (simplified rules).">
-    <meta name="keywords" content="capital gains calculator, tax estimator, equity gains, mutual fund exit tax, long term capital gains, short term capital gains, India">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        crossorigin="anonymous">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+    <meta
+      name="description"
+      content="Capital Gains Estimator — estimate gains, holding period and approximate tax for equity and mutual fund sells in India (simplified rules)."
+    />
+    <meta
+      name="keywords"
+      content="capital gains calculator, tax estimator, equity gains, mutual fund exit tax, long term capital gains, short term capital gains, India"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://herozero.in/assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://herozero.in/assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://herozero.in/assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
+      crossorigin="anonymous"
+    ></script>
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Calculators",
-            "url": "https://herozero.in/pages/calculators/capital-gains-estimator.html"
-        }
-</script>    
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo">HeroZero
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                                    class="bi bi-car-front-fill"></i> Car Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html"><i
-                                    class="bi bi-house-door-fill"></i> House Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                                    class="bi bi-phone"></i> Mobile Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                                    class="bi bi-bar-chart-line-fill"></i> Stock Average Price</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "HeroZero - Capital Gains Estimator",
+        "url": "https://herozero.in/pages/calculators/capital-gains-estimator.html"
+      }
+    </script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-primary"
+      data-bs-theme="dark"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
+          <img
+            src="https://herozero.in/assets/img/favicon-32x32.png"
+            class="me-2"
+            alt="HeroZero Logo"
+          />HeroZero
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="https://herozero.in/"
+                ><i class="bi bi-house-fill me-2"></i>Home</a
+              >
+            </li>
+            <li class="nav-item dropdown" data-bs-theme="light">
+              <a
+                class="nav-link active dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Calculators</a
+              >
+              <div class="dropdown-menu">
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/car-affordability.html"
+                  ><i class="bi bi-car-front-fill"></i> Car Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/house-affordability.html"
+                  ><i class="bi bi-house-door-fill"></i> House Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
+                  ><i class="bi bi-phone"></i> Mobile Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/stock-average-price.html"
+                  ><i class="bi bi-bar-chart-line-fill"></i> Stock Average
+                  Price</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-calculator.html"
+                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-goal.html"
+                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
+                  ><i class="bi bi-coin"></i> Lumpsum Return</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
+                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
+                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
+                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
+                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
+                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
+                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
+                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
+                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
+                  Estimator</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/blog.html"
+                ><i class="bi bi-journal-text me-2"></i>Blog</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <main class="container" style="margin-top:5.5rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1>Capital Gains Estimator</h1>
-                <p class="text-muted">Estimate short-term vs long-term capital gains for equity mutual funds (India).
-                </p>
-                <div class="card p-3">
-                    <div class="mb-3"><label class="form-label">Buy date (DD-MM-YYYY)</label><input id="buyDate"
-                            class="form-control" type="date"></div>
-                    <div class="mb-3"><label class="form-label">Sell date (DD-MM-YYYY)</label><input id="sellDate"
-                            class="form-control" type="date"></div>
-                    <div class="mb-3"><label class="form-label">Buy amount (₹)</label><input id="buyAmt"
-                            class="form-control" type="number" value="100000"></div>
-                    <div class="mb-3"><label class="form-label">Sell amount (₹)</label><input id="sellAmt"
-                            class="form-control" type="number" value="150000"></div>
-                    <button id="calcBtn" class="btn btn-primary">Estimate</button>
-                    <hr />
-                    <p class="mb-1"><strong>Holding Days:</strong> <span id="days">-</span></p>
-                    <p class="mb-1"><strong>Gain (₹):</strong> <span id="gain">-</span></p>
-                    <p class="mb-1"><strong>Tax Type:</strong> <span id="type">-</span></p>
-                    <p class="mb-1"><strong>Estimated Tax (₹):</strong> <span id="tax">-</span></p>
-                    <p class="small text-muted mt-2">Note: This is a simple estimator. For equity funds: LTCG applies if
-                        held > 365 days (10% over ₹1L without indexation). STCG taxed at 15%.</p>
-                </div>
+    <main class="container" style="margin-top: 5.5rem">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h1>Capital Gains Estimator</h1>
+          <p class="text-muted">
+            Estimate short-term vs long-term capital gains for equity mutual
+            funds (India).
+          </p>
+          <div class="card p-3">
+            <div class="mb-3">
+              <label class="form-label">Buy date (DD-MM-YYYY)</label
+              ><input id="buyDate" class="form-control" type="date" />
             </div>
+            <div class="mb-3">
+              <label class="form-label">Sell date (DD-MM-YYYY)</label
+              ><input id="sellDate" class="form-control" type="date" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Buy amount (₹)</label
+              ><input
+                id="buyAmt"
+                class="form-control"
+                type="number"
+                value="100000"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Sell amount (₹)</label
+              ><input
+                id="sellAmt"
+                class="form-control"
+                type="number"
+                value="150000"
+              />
+            </div>
+            <button id="calcBtn" class="btn btn-primary">Estimate</button>
+            <hr />
+            <div id="result" class="d-none">
+              <p class="mb-1">
+                <strong>Holding Days:</strong> <span id="days">-</span>
+              </p>
+              <p class="mb-1">
+                <strong>Gain (₹):</strong> <span id="gain">-</span>
+              </p>
+              <p class="mb-1">
+                <strong>Tax Type:</strong> <span id="type">-</span>
+              </p>
+              <p class="mb-1">
+                <strong>Estimated Tax (₹):</strong> <span id="tax">-</span>
+              </p>
+              <p class="small text-muted mt-2">
+                Note: This is a simple estimator using simplified rules. For
+                equity mutual funds in India, long-term capital gains (LTCG)
+                generally apply if the holding period is more than 365 days;
+                short-term capital gains (STCG) apply for shorter holdings. This
+                tool uses an exemption of ₹1,00,000 for LTCG and applies LTCG at
+                20% and STCG at 12.5% (tax rates simplified for estimate).
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
+    <!-- Beginner-friendly explanation about Capital Gains -->
+    <div class="container" style="margin-top: 1rem">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="card mt-3 p-4">
+            <h2>About Capital Gains (simple)</h2>
+            <p class="mb-2">
+              When you sell an investment for more than you paid, the extra
+              amount is a capital gain. Taxes on that gain depend on how long
+              you held the asset.
+            </p>
+
+            <h3>Holding periods</h3>
+            <ul>
+              <li>
+                <strong>Short-term:</strong> Sold within 365 days — treated as
+                short-term and taxed at the STCG rate.
+              </li>
+              <li>
+                <strong>Long-term:</strong> Held more than 365 days — treated as
+                long-term and taxed at the LTCG rate (some exemptions may
+                apply).
+              </li>
+            </ul>
+
+            <h3>Important notes</h3>
+            <ul>
+              <li>
+                This calculator gives a simple estimate. Actual tax depends on
+                detailed rules, indexation, fund type, and personal tax
+                brackets.
+              </li>
+              <li>
+                As of 2025 this estimator uses STCG = 12.5% and LTCG = 20% with
+                a ₹1,00,000 LTCG exemption for equity mutual funds (simplified
+                rules).
+              </li>
+              <li>
+                For precise tax calculations, consult a tax professional or the
+                official tax guidance.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-        function estCap() {
-            const b = new Date(document.getElementById('buyDate').value);
-            const s = new Date(document.getElementById('sellDate').value);
-            if (isNaN(b) || isNaN(s)) { alert('Enter valid dates'); return; }
-            const days = Math.round((s - b) / (1000 * 60 * 60 * 24));
-            const buy = parseFloat(document.getElementById('buyAmt').value) || 0;
-            const sell = parseFloat(document.getElementById('sellAmt').value) || 0;
-            const gain = sell - buy;
-            document.getElementById('days').innerText = days;
-            document.getElementById('gain').innerText = gain.toFixed(2);
-            if (days > 365) {
-                document.getElementById('type').innerText = 'Long Term Capital Gain (LTCG)';
-                let tax = 0;
-                const exempt = 100000; // ₹1L exemption
-                if (gain > exempt) tax = (gain - exempt) * 0.10;
-                document.getElementById('tax').innerText = tax.toFixed(2);
-            } else {
-                document.getElementById('type').innerText = 'Short Term Capital Gain (STCG)';
-                const tax = gain * 0.15;
-                document.getElementById('tax').innerText = tax.toFixed(2);
-            }
+      function estCap() {
+        const b = new Date(document.getElementById("buyDate").value);
+        const s = new Date(document.getElementById("sellDate").value);
+        if (isNaN(b) || isNaN(s)) {
+          alert("Enter valid dates");
+          return;
         }
-        document.getElementById('calcBtn').addEventListener('click', estCap);
+        const days = Math.round((s - b) / (1000 * 60 * 60 * 24));
+        const buy = parseFloat(document.getElementById("buyAmt").value) || 0;
+        const sell = parseFloat(document.getElementById("sellAmt").value) || 0;
+        const gain = sell - buy;
+        document.getElementById("days").innerText = days;
+        document.getElementById("gain").innerText = gain.toFixed(2);
+        if (days > 365) {
+          document.getElementById("type").innerText =
+            "Long Term Capital Gain (LTCG)";
+          let tax = 0;
+          const exempt = 100000; // ₹1L exemption for LTCG
+          // LTCG taxed at 20% (simplified estimate) on amount above exemption
+          if (gain > exempt) tax = (gain - exempt) * 0.2;
+          document.getElementById("tax").innerText = tax.toFixed(2);
+        } else {
+          document.getElementById("type").innerText =
+            "Short Term Capital Gain (STCG)";
+          // STCG taxed at 12.5% (simplified estimate)
+          const tax = gain * 0.125;
+          document.getElementById("tax").innerText = tax.toFixed(2);
+        }
+        document.getElementById('result').classList.remove('d-none');
+      }
+      document.getElementById("calcBtn").addEventListener("click", estCap);
     </script>
     <footer class="bg-primary text-white text-center py-3 mt-5">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
+      <nav class="mb-2">
+        <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
+          >About</a
+        >
+        <a class="text-white mx-2" href="https://herozero.in/pages/contact.html"
+          >Contact</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/privacy-policy.html"
+          >Privacy Policy</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/terms-of-use.html"
+          >Terms of Use</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/disclaimer.html"
+          >Disclaimer</a
+        >
+      </nav>
+      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

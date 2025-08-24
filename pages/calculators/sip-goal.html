@@ -22,7 +22,7 @@
         {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Calculators",
+            "name": "HeroZero - SIP Goal Planner",
             "url": "https://herozero.in/pages/calculators/sip-goal.html"
         }
     </script>
@@ -103,12 +103,12 @@
                     <div class="mb-3"><label class="form-label">Goal amount (₹)</label><input id="goal"
                             class="form-control" type="number" value="1000000"></div>
                     <div class="mb-3"><label class="form-label">Expected annual return (in %)</label><input
-                            id="annualReturn" class="form-control" type="number" value="12"></div>
+                            id="annualReturn" class="form-control" type="number" value="12" min="1" step="0.1"></div>
                     <div class="mb-3"><label class="form-label">Investment duration (years)</label><input id="years"
-                            class="form-control" type="number" value="10"></div>
+                            class="form-control" type="number" value="10" min="1" step="1"></div>
                     <button id="calcBtn" class="btn btn-primary">Calculate</button>
                     <hr />
-                    <p class="mb-1 text-center"><strong>Required Monthly SIP (₹):</strong> <span id="required"></span></p>
+                    <h4 class="mb-1 text-center d-none" id="result"><strong>Required Monthly SIP (₹):</strong> <span id="required" class="text-success"></span></h4>
 
                     <div id="sipGoalResults" class="mt-3 d-none">
                         <div id="goalTableContainer" class="table-responsive mb-3"></div>
@@ -178,6 +178,7 @@
             if (i === 0) SIP = goal / months;
             else SIP = goal * i / ((Math.pow(1 + i, months) - 1) * (1 + i));
             document.getElementById('required').innerText = formatINR(SIP);
+            document.getElementById('result').classList.remove('d-none');
 
             // build yearly projection and show table + chart
             const series = buildYearlyForGoal(SIP, r, n);

@@ -1,144 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>HeroZero – Portfolio Rebalancer</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <meta name="description" content="Portfolio Rebalancer — enter current holdings and target percentages to see buy/sell amounts required to rebalance your portfolio.">
-    <meta name="keywords" content="portfolio rebalance, asset allocation, buy sell amounts, target allocation, portfolio rebalancer, India">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        crossorigin="anonymous">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+    <meta
+      name="description"
+      content="Portfolio Rebalancer — enter current holdings and target percentages to see buy/sell amounts required to rebalance your portfolio."
+    />
+    <meta
+      name="keywords"
+      content="portfolio rebalance, asset allocation, buy sell amounts, target allocation, portfolio rebalancer, India"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://herozero.in/assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://herozero.in/assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://herozero.in/assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
+      crossorigin="anonymous"
+    ></script>
     <script type="application/ld+json">
-        {
+      {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Calculators",
+        "name": "HeroZero - Portfolio Rebalancer",
         "url": "https://herozero.in/pages/calculators/portfolio-rebalance.html"
-        }
+      }
     </script>
-</head>
+  </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo">HeroZero
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                                    class="bi bi-car-front-fill"></i> Car Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html"><i
-                                    class="bi bi-house-door-fill"></i> House Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                                    class="bi bi-phone"></i> Mobile Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                                    class="bi bi-bar-chart-line-fill"></i> Stock Average Price</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top bg-primary"
+      data-bs-theme="dark"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
+          <img
+            src="https://herozero.in/assets/img/favicon-32x32.png"
+            class="me-2"
+            alt="HeroZero Logo"
+          />HeroZero
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="https://herozero.in/"
+                ><i class="bi bi-house-fill me-2"></i>Home</a
+              >
+            </li>
+            <li class="nav-item dropdown" data-bs-theme="light">
+              <a
+                class="nav-link active dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Calculators</a
+              >
+              <div class="dropdown-menu">
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/car-affordability.html"
+                  ><i class="bi bi-car-front-fill"></i> Car Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/house-affordability.html"
+                  ><i class="bi bi-house-door-fill"></i> House Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
+                  ><i class="bi bi-phone"></i> Mobile Affordability</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/stock-average-price.html"
+                  ><i class="bi bi-bar-chart-line-fill"></i> Stock Average
+                  Price</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-calculator.html"
+                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-goal.html"
+                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
+                  ><i class="bi bi-coin"></i> Lumpsum Return</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
+                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
+                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
+                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
+                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
+                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
+                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
+                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
+                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
+                  Estimator</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/blog.html"
+                ><i class="bi bi-journal-text me-2"></i>Blog</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <main class="container" style="margin-top:5.5rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1>Portfolio Rebalancer</h1>
-                <p class="text-muted">Enter current holdings and target allocation; calculator shows buy/sell amounts to
-                    rebalance.</p>
-                <div class="card p-3">
-                    <p class="small text-muted">Enter holdings as comma-separated: name:currentValue:targetPercent</p>
-                    <textarea id="holdings" class="form-control" rows="4">Equity:700000:60,Debt:300000:40</textarea>
-                    <div class="mt-3"><button id="calcBtn" class="btn btn-primary">Rebalance</button></div>
-                    <hr />
-                    <pre id="result" class="small"></pre>
-                </div>
+    <main class="container" style="margin-top: 5.5rem">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="card mt-3 p-4">
+            <h2>Portfolio Rebalancer</h2>
+            <div class="table-responsive">
+              <table class="table table-sm table-bordered" id="holdingsTable">
+                <thead>
+                  <tr>
+                    <th style="width: 32px"></th>
+                    <th>Asset name</th>
+                    <th style="width: 160px">Current value (₹)</th>
+                    <th style="width: 160px">Target %</th>
+                    <th style="width: 100px">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="h-row">
+                    <td class="text-center">
+                      <input type="checkbox" class="select-row" />
+                    </td>
+                    <td>
+                      <input class="form-control h-name" value="Equity" />
+                    </td>
+                    <td>
+                      <input
+                        class="form-control h-value"
+                        type="number"
+                        value="700000"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-control h-target"
+                        type="number"
+                        value="60"
+                      />
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-danger remove-row">
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="h-row">
+                    <td class="text-center">
+                      <input type="checkbox" class="select-row" />
+                    </td>
+                    <td><input class="form-control h-name" value="Debt" /></td>
+                    <td>
+                      <input
+                        class="form-control h-value"
+                        type="number"
+                        value="300000"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-control h-target"
+                        type="number"
+                        value="40"
+                      />
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-danger remove-row">
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <div class="d-flex gap-2 mt-2">
+              <button id="addRowBtn" class="btn btn-sm btn-secondary">
+                Add row
+              </button>
+              <button id="removeSelectedBtn" class="btn btn-sm btn-danger">
+                Remove selected
+              </button>
+              <div class="ms-auto">
+                <button id="calcBtn" class="btn btn-primary">Rebalance</button>
+              </div>
+            </div>
+            <hr />
+            <div id="resultArea" class="mt-2"></div>
+
+            <!-- Explanation about portfolio rebalancing (inside same column) -->
+            <div class="mt-2 p-4">
+              <h3>Why rebalance your portfolio?</h3>
+              <p class="mb-2">
+                Rebalancing means adjusting your holdings so they match your
+                chosen target percentages (for example, 60% equity, 40% debt).
+                Over time some assets may grow faster than others and change
+                your mix. Rebalancing brings your portfolio back to the risk
+                profile you intended.
+              </p>
+
+              <h4>When and why to rebalance</h4>
+              <ul>
+                <li>
+                  Periodically (for example yearly) or when allocations drift by
+                  a set amount.
+                </li>
+                <li>
+                  It helps control risk — keeping your allocation aligned with
+                  your goals.
+                </li>
+                <li>
+                  You can rebalance by buying underweight assets or selling
+                  overweight ones, or both.
+                </li>
+              </ul>
+
+              <h4>Quick tips</h4>
+              <ul>
+                <li>
+                  Consider transaction costs and tax consequences before
+                  rebalancing.
+                </li>
+                <li>
+                  Small drift is normal; aim for a practical threshold (e.g., 5%
+                  drift) or periodic schedule.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
+
     <script>
-        function rebalance() {
-            const raw = document.getElementById('holdings').value.trim();
-            const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
-            const items = parts.map(p => { const [n, v, t] = p.split(':'); return { name: n, value: parseFloat(v) || 0, target: parseFloat(t) || 0 }; });
-            const total = items.reduce((s, it) => s + it.value, 0);
-            let out = 'Total portfolio: ₹' + total.toFixed(2) + '\n\n';
-            for (const it of items) {
-                const desired = total * it.target / 100;
-                const diff = desired - it.value;
-                out += `${it.name}: Current ₹${it.value.toFixed(2)}, Target ₹${desired.toFixed(2)}, ${diff >= 0 ? 'Buy' : 'Sell'} ₹${Math.abs(diff).toFixed(2)}\n`;
-            }
-            document.getElementById('result').innerText = out;
+      // Core UI script for portfolio rebalancer
+      function gatherHoldings() {
+        const rows = Array.from(
+          document.querySelectorAll("#holdingsTable tbody .h-row")
+        );
+        return rows.map((r) => ({
+          name: r.querySelector(".h-name").value.trim() || "Unnamed",
+          value: parseFloat(r.querySelector(".h-value").value) || 0,
+          target: parseFloat(r.querySelector(".h-target").value) || 0,
+        }));
+      }
+
+      function renderResults(items) {
+        const total = items.reduce((s, it) => s + it.value, 0);
+        const table = document.createElement("table");
+        table.className = "table table-sm table-striped";
+        table.innerHTML =
+          '<thead><tr><th>Asset</th><th class="text-end">Current (₹)</th><th class="text-end">Target %</th><th class="text-end">Target (₹)</th><th class="text-end" title="Recommendation = Buy or Sell to reach target">Recommendation</th><th class="text-end">Amount (₹)</th></tr></thead>';
+        const tbody = document.createElement("tbody");
+        for (const it of items) {
+          const desired = (total * it.target) / 100;
+          const diff = desired - it.value;
+          const tr = document.createElement("tr");
+          const recommendation = diff >= 0 ? "Buy" : "Sell";
+          const amount = Math.abs(diff);
+          const recClass = diff >= 0 ? "text-success" : "text-danger";
+          tr.innerHTML = `
+            <td>${it.name}</td>
+            <td class="text-end">${it.value.toFixed(2)}</td>
+            <td class="text-end">${it.target.toFixed(2)}%</td>
+            <td class="text-end">${desired.toFixed(2)}</td>
+            <td class="text-end ${recClass} fw-bold">${recommendation}</td>
+            <td class="text-end ${recClass}">₹${amount.toFixed(2)}</td>`;
+          tbody.appendChild(tr);
         }
-        document.getElementById('calcBtn').addEventListener('click', rebalance);
+        table.appendChild(tbody);
+        const container = document.getElementById("resultArea");
+        container.innerHTML = "";
+        const hdr = document.createElement("h4");
+        hdr.className = "mb-1 text-center mb-3";
+        hdr.innerText = "Total portfolio: ₹" + total.toFixed(2);
+        container.appendChild(hdr);
+        container.appendChild(table);
+      }
+
+      function rebalance() {
+        const items = gatherHoldings();
+        if (items.length === 0) return alert("Add at least one holding");
+        const totalTarget = items.reduce((s, it) => s + it.target, 0);
+        if (Math.abs(totalTarget - 100) > 0.01) {
+          if (!confirm("Target percentages do not sum to 100%. Continue?"))
+            return;
+        }
+        renderResults(items);
+      }
+
+      document.getElementById("calcBtn").addEventListener("click", rebalance);
+
+      // add/remove row handlers
+      function addRow(name = "", value = "", target = "") {
+        const tbody = document.querySelector("#holdingsTable tbody");
+        const tr = document.createElement("tr");
+        tr.className = "h-row";
+        tr.innerHTML = `<td class="text-center"><input type="checkbox" class="select-row" /></td><td><input class="form-control h-name" value="${name}"></td><td><input class="form-control h-value" type="number" value="${value}"></td><td><input class="form-control h-target" type="number" value="${target}"></td><td><button class="btn btn-sm btn-outline-danger remove-row">Remove</button></td>`;
+        tbody.appendChild(tr);
+        tr.querySelector(".remove-row").addEventListener("click", () =>
+          tr.remove()
+        );
+      }
+
+      document
+        .getElementById("addRowBtn")
+        .addEventListener("click", () => addRow("", "", ""));
+      document
+        .getElementById("removeSelectedBtn")
+        .addEventListener("click", () => {
+          const checks = document.querySelectorAll(
+            "#holdingsTable .select-row:checked"
+          );
+          checks.forEach((cb) => {
+            const r = cb.closest("tr");
+            if (r) r.remove();
+          });
+        });
+      document.querySelectorAll(".remove-row").forEach((btn) =>
+        btn.addEventListener("click", (e) => {
+          const tr = e.target.closest("tr");
+          if (tr) tr.remove();
+        })
+      );
     </script>
+
+    <div class="container mt-3">
+      <div class="text-muted small text-center">
+        Note: This tool provides general recommendations only and does not
+        constitute financial, investment, or tax advice. It may not consider
+        your full financial situation. Please consult a licensed financial
+        advisor or tax professional before making investment decisions.
+      </div>
+    </div>
+
     <footer class="bg-primary text-white text-center py-3 mt-5">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
+      <nav class="mb-2">
+        <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
+          >About</a
+        >
+        <a class="text-white mx-2" href="https://herozero.in/pages/contact.html"
+          >Contact</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/privacy-policy.html"
+          >Privacy Policy</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/terms-of-use.html"
+          >Terms of Use</a
+        >
+        <a
+          class="text-white mx-2"
+          href="https://herozero.in/pages/disclaimer.html"
+          >Disclaimer</a
+        >
+      </nav>
+      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
