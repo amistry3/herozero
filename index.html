@@ -14,69 +14,19 @@
   <meta property="og:title" content="HeroZero – Your Ultimate Financial Decision-Making Toolkit" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {extend: {colors: {brand: '#0d6efd', brandDark: '#0b5ed7', brandRing:'#7fb6ff'}}}
-    };
-  </script>
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"HeroZero","url":"https://herozero.in/"}</script>
   <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "szq30hz6u5");</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
-  <style>
-    /* Trust‑oriented soft brand background (light weight for performance) */
-  body {background:linear-gradient(135deg,#f4f9ff 0%,#eef6ff 35%,#e8f2ff 55%,#f6fafe 100%);} /* fallback */
-  .dark body, body.dark {background:linear-gradient(140deg,#0b1524 0%,#101d30 40%,#14263c 70%,#13202f 100%);}    
-    body::before, body::after {content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;}
-    /* Layered radial confidence glows */
-    body::before {background:
-      radial-gradient(circle at 18% 22%,rgba(13,110,253,.18),transparent 55%),
-      radial-gradient(circle at 82% 70%,rgba(0,123,255,.12),transparent 60%),
-      radial-gradient(circle at 50% 100%,rgba(13,110,253,.10),transparent 70%);
-      mix-blend-mode:normal;}
-    /* Fine subtle grid for structure perception */
-    body::after {background:
-      repeating-linear-gradient(90deg,rgba(13,110,253,0.06) 0 1px,transparent 1px 22px),
-      repeating-linear-gradient(180deg,rgba(13,110,253,0.04) 0 1px,transparent 1px 22px);
-      opacity:.25;mask:radial-gradient(circle at 50% 40%,#000 0%,#000 55%,transparent 85%);} 
-    .bg-noise {background-image:linear-gradient(120deg,rgba(13,110,253,0.06),rgba(255,255,255,0) 60%),radial-gradient(circle at 20% 30%,rgba(13,110,253,0.18),rgba(13,110,253,0) 55%),radial-gradient(circle at 85% 70%,rgba(255,184,0,0.25),rgba(255,184,0,0) 60%);} 
-  .icon-base { width:44px; height:44px; }
-  .focus-ring:focus-visible { outline: 2px solid #0d6efd; outline-offset: 3px; border-radius: .5rem; }
-  .card-tile {position:relative;transition:background .35s, box-shadow .35s, transform .35s, border-color .35s;}
-  .card-tile:hover {box-shadow:0 6px 18px -6px rgba(13,110,253,.25);transform:translateY(-3px);}    
-  .dark .card-tile:hover {box-shadow:0 6px 18px -6px rgba(80,140,255,.35);}    
-  /* Ripple */
-  .ripple-container {position:relative;overflow:hidden;}
-  .ripple {position:absolute;border-radius:50%;transform:scale(0);animation:ripple .6s ease-out;pointer-events:none;background:rgba(255,255,255,0.45);} 
-  .dark .ripple {background:rgba(255,255,255,0.35);} 
-  @keyframes ripple {to {transform:scale(3.5);opacity:0;}}
-  .badge-pop {position:absolute;top:.5rem;right:.5rem;font-size:.65rem;font-weight:600;letter-spacing:.5px;background:linear-gradient(90deg,#ff8a05,#ffb347);color:#fff;padding:.2rem .45rem;border-radius:.45rem;box-shadow:0 2px 4px -1px rgba(0,0,0,.25);}
-  .dark .badge-pop {background:linear-gradient(90deg,#ff9d2f,#ffc764);}    
-  .filter-btn[aria-pressed="true"] {background:#0d6efd;color:#fff;}
-  .dark .filter-btn[aria-pressed="true"] {background:#3b82f6;}
-  .filter-btn {transition:background .25s,color .25s,border-color .25s;}
-  .dark .filter-btn {border-color:#334155;color:#cbd5e1;}
-  .dark .filter-btn:hover {background:#1e293b;color:#fff;}
-  .search-input {backdrop-filter:blur(4px);}    
-  .dark .search-input {background:rgba(30,41,59,.6);} 
-  .dark .bg-slate-50 {background:#1e293b;}
-  .dark .text-slate-600 {color:#94a3b8;}
-  .dark .text-slate-700 {color:#cbd5e1;}
-  .dark .text-slate-800 {color:#e2e8f0;}
-  .dark .text-slate-900 {color:#f1f5f9;}
-  .dark .border-slate-200 {border-color:#334155;}
-  .dark .border-slate-300 {border-color:#475569;}
-  .dark .card-tile {background:#0f1825;border-color:#203042;}
-  .dark .card-tile:hover {background:#142234;}
-  </style>
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body class="min-h-screen flex flex-col font-sans text-slate-800">
   <!-- Hero / Intro -->
-  <header class="relative overflow-hidden">
+  <header class="relative overflow-hidden hero-gradient">
     <div class="absolute inset-0 bg-noise"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
       <a href="/index.html" class="flex items-center gap-2 focus-ring">
@@ -87,7 +37,7 @@
         <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
         <a href="#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
         <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
-        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+  <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode" data-tooltip="Toggle dark mode">🌙</button>
       </nav>
     </div>
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
@@ -252,87 +202,7 @@
           <h3 class="font-semibold dark:text-slate-100">MF Direct vs Regular</h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Compare corpus impact of direct vs regular.</p>
         </a>
-      </div>
-
-      <!-- About Section (expanded) -->
-      <div class="mt-12 bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
-        <h2 class="text-xl font-semibold text-center">About these calculators</h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 text-center">Each tool gives a quick, realistic estimate using standard formulas and sensible defaults. They help you compare scenarios, understand which inputs matter and plan next steps. Use results for education and decision support — pair with professional advice for high‑stakes financial commitments.</p>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2">
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">Car Affordability</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Estimates EMI, indicative fuel & ownership cost from on‑road price, down payment, rate and usage (km/month) so you keep EMIs within a safe share of income.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">House Affordability</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Shows mortgage EMI and impact of altering tenure or down payment, helping you judge comfort vs. stretch on housing decisions.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">Mobile Affordability</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Quick EMI vs. lump‑sum check to avoid crowding other monthly priorities when upgrading devices.</p>
-          </div>
-            <div>
-            <h4 class="font-medium text-slate-800 text-sm">Stock Average Price</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Computes weighted average buy price across lots so you track breakeven while averaging in.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">SIP Calculator</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Projects future value of monthly Systematic Investment Plans under assumed annual returns.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">SIP Goal Planner</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Back‑solves required monthly SIP to reach a target corpus by a deadline.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">Lumpsum Return</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Illustrates growth of a one‑time investment with annual compounding for horizon planning.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">SIP vs Lumpsum</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Compares outcomes investing the same capital via periodic SIP or immediate lumpsum.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">XIRR (cashflows)</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Calculates internal rate of return for irregular dated contributions and withdrawals.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">Capital Gains Estimator</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Rough STCG / LTCG estimate (India) including basic equity LTCG exemption awareness.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">Portfolio Rebalancer</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Suggests buy / sell amounts to restore target asset allocation after market moves.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">Expense Ratio Impact</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Shows long‑run drag of higher fees so you quantify savings of lower expense ratio options.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">SIP Top-up Planner</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Models scheduled annual SIP increases (top‑ups) and their acceleration effect.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">SIP Step-up</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Applies a fixed annual percentage raise to your monthly SIP to visualise compounding of contributions.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">SWP / Withdrawal</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Estimates corpus durability under systematic withdrawals in retirement or drawdown.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">MF Switch / Exit</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Approximates tax impact when switching or exiting mutual fund holdings.</p>
-          </div>
-          <div>
-            <h4 class="font-medium text-slate-800 text-sm">MF Direct vs Regular</h4>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">Compares corpus difference from direct vs regular plan expense ratios for both SIP & lumpsum.</p>
-          </div>
-        </div>
-        <div class="mt-8 border-t border-slate-200 pt-4">
-          <h4 class="text-sm font-semibold text-slate-700 text-center">Assumptions & accuracy</h4>
-          <p class="mt-2 text-xs text-slate-500 text-center max-w-3xl mx-auto">Formulas use simplifying assumptions and ignore future tax / fee changes. Treat outputs as educational estimates — validate critical decisions with a qualified professional.</p>
-        </div>
-      </div>
+      </div>      
     </section>
   </main>
 

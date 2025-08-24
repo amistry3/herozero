@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom layer overrides */
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+}
+@layer utilities {
+  .focus-ring { @apply outline-none focus-visible:ring-2 focus-visible:ring-brandRing; }
+}
