@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>HeroZero – Capital Gains Estimator</title>
+    <title>HeroZero – MF Direct vs Regular (Compare)</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
     <meta
       name="description"
-      content="Capital Gains Estimator — estimate gains, holding period and approximate tax for equity and mutual fund sells in India (simplified rules)."
+      content="Compare mutual fund direct vs regular plans based on expense ratio differences. See how lower costs in direct plans can boost your investment returns over time."
     />
     <meta
       name="keywords"
-      content="capital gains calculator, tax estimator, equity gains, mutual fund exit tax, long term capital gains, short term capital gains, India"
+      content="mf direct vs regular, mutual fund comparison, expense ratio, investment returns, India"
     />
     <link
       rel="apple-touch-icon"
@@ -50,11 +50,22 @@
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "HeroZero - Capital Gains Estimator",
-        "url": "https://herozero.in/pages/calculators/capital-gains-estimator.html"
+        "name": "HeroZero - MF Direct vs Regular",
+        "url": "https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
       }
     </script>
+    <style>
+      .card-hover {
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+      }
+    </style>
   </head>
+
   <body>
     <nav
       class="navbar navbar-expand-lg fixed-top bg-primary"
@@ -191,159 +202,250 @@
         </div>
       </div>
     </nav>
+
     <main class="container" style="margin-top: 5.5rem">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          <h1>Capital Gains Estimator</h1>
+          <h1><i class="bi bi-layers"></i> Compare Mutual Fund: Direct vs Regular</h1>
           <p class="text-muted">
-            Estimate short-term vs long-term capital gains for equity mutual
-            funds (India).
+            Quickly estimate how a difference in expense ratio between Direct
+            and Regular plans affects your returns.
           </p>
+
           <div class="card p-3">
             <div class="mb-3">
-              <label class="form-label">Buy date (DD-MM-YYYY)</label
-              ><input id="buyDate" class="form-control" type="date" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Sell date (DD-MM-YYYY)</label
-              ><input id="sellDate" class="form-control" type="date" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Buy amount (₹)</label
-              ><input
-                id="buyAmt"
+              <label class="form-label">Initial lump-sum (₹)</label>
+              <input
+                id="lump"
                 class="form-control"
                 type="number"
                 value="100000"
               />
             </div>
             <div class="mb-3">
-              <label class="form-label">Sell amount (₹)</label
-              ><input
-                id="sellAmt"
-                class="form-control"
-                type="number"
-                value="150000"
-              />
+              <label class="form-label">Monthly SIP (₹) (optional)</label>
+              <input id="sip" class="form-control" type="number" value="0" />
             </div>
-            <button id="calcBtn" class="btn btn-primary">Estimate</button>
+            <div class="mb-3 row">
+              <div class="col-6">
+                <label class="form-label">Expected annual gross return %</label>
+                <input
+                  id="gross"
+                  class="form-control"
+                  type="number"
+                  value="12"
+                />
+              </div>
+              <div class="col-6">
+                <label class="form-label">Duration (years)</label>
+                <input
+                  id="years"
+                  class="form-control"
+                  type="number"
+                  value="10"
+                />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-6">
+                <label class="form-label">Direct plan expense ratio (%)</label>
+                <input
+                  id="erDirect"
+                  class="form-control"
+                  type="number"
+                  value="0.50"
+                />
+              </div>
+              <div class="col-6">
+                <label class="form-label">Regular plan expense ratio (%)</label>
+                <input
+                  id="erRegular"
+                  class="form-control"
+                  type="number"
+                  value="1.50"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button id="calcBtn" class="btn btn-primary">Compare</button>
+              <button id="resetBtn" class="btn btn-outline-secondary">
+                Reset
+              </button>
+            </div>
+
             <hr />
-            <div id="result" class="d-none">
-              <p class="mb-1">
-                <strong>Holding Days:</strong> <span id="days">-</span>
-              </p>
-              <p class="mb-1">
-                <strong>Gain (₹):</strong> <span id="gain">-</span>
-              </p>
-              <p class="mb-1">
-                <strong>Tax Type:</strong> <span id="type">-</span>
-              </p>
-              <p class="mb-1">
-                <strong>Estimated Tax (₹):</strong> <span id="tax">-</span>
-              </p>
-              <p class="small text-muted mt-2">
-                Note: This is a simple estimator using simplified rules. For
-                equity mutual funds in India, long-term capital gains (LTCG)
-                generally apply if the holding period is more than 365 days;
-                short-term capital gains (STCG) apply for shorter holdings. This
-                tool uses an exemption of ₹1,00,000 for LTCG and applies LTCG at
-                12.5% and STCG at 20% (tax rates simplified for estimate).
-              </p>
+            <div id="resultArea" class="mt-3 d-none"></div>
+            <div id="chartArea" class="mt-3 d-none">
+              <canvas id="mfChart" style="max-height: 340px"></canvas>
             </div>
+          </div>
+
+          <!-- Decision guide -->
+          <div class="card mt-3 p-4">
+            <h3>How to decide: Direct vs Regular</h3>
+            <p>
+              Direct plans generally have lower expense ratios because they
+              exclude distributor commissions; over long horizons, even small
+              differences compound into sizeable value. Regular plans may
+              include distribution/support services or allow investing through
+              certain platforms with bundled benefits.
+            </p>
+
+            <h4>Key points to consider</h4>
+            <ul>
+              <li>
+                <strong>Expense ratio:</strong> Primary driver of difference —
+                lower ER favors Direct over long horizons.
+              </li>
+              <li>
+                <strong>Transaction & platform fees:</strong> Some brokers
+                charge fees for Direct plan purchases; include those when
+                comparing.
+              </li>
+              <li>
+                <strong>Convenience & advice:</strong> If you value
+                relationship/advice, regular plans through advisors may be
+                preferred despite higher ER.
+              </li>
+              <li>
+                <strong>Investment size & horizon:</strong> For small,
+                short-term investments the difference may be negligible; for
+                long-term SIPs and large lumpsums, prefer lower ER (Direct)
+                where possible.
+              </li>
+              <li>
+                <strong>Exit & taxation:</strong> Tax treatment is the same for
+                Direct and Regular; treat them as the same fund for
+                holding-period rules.
+              </li>
+            </ul>
+
+            <h4>Practical checklist</h4>
+            <ol>
+              <li>
+                Compare the net expense (ER + any platform or transaction fees).
+              </li>
+              <li>
+                Run a small test investment and monitor service/support quality.
+              </li>
+              <li>
+                If you have tools and prefer lower costs, choose Direct; if you
+                need offline advisor services and accept the cost, Regular may
+                be okay.
+              </li>
+            </ol>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Beginner-friendly explanation about Capital Gains -->
-    <div class="container" style="margin-top: 1rem">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="card mt-3 p-4">
-            <h2>About Capital Gains (simple)</h2>
-            <p class="mb-2">
-              When you sell an investment for more than you paid, the extra
-              amount is a capital gain. Taxes on that gain depend on how long
-              you held the asset.
-            </p>
-
-            <h3>Holding periods</h3>
-            <ul>
-              <li>
-                <strong>Short-term:</strong> Sold within 365 days — treated as
-                short-term and taxed at the STCG rate.
-              </li>
-              <li>
-                <strong>Long-term:</strong> Held more than 365 days — treated as
-                long-term and taxed at the LTCG rate (some exemptions may
-                apply).
-              </li>
-            </ul>
-
-            <h3>Important notes</h3>
-            <ul>
-              <li>
-                This calculator gives a simple estimate. Actual tax depends on
-                detailed rules, indexation, fund type, and personal tax
-                brackets.
-              </li>
-              <li>
-                As of 2025 this estimator uses STCG = 20% and LTCG = 12.5% with
-                a ₹1,00,000 LTCG exemption for equity mutual funds (simplified
-                rules).
-              </li>
-              <li>
-                For precise tax calculations, consult a tax professional or the
-                official tax guidance.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
-      function estCap() {
+      (function () {
         const fmtINR = new Intl.NumberFormat("en-IN", {
           style: "currency",
           currency: "INR",
           maximumFractionDigits: 0,
         });
-        const b = new Date(document.getElementById("buyDate").value);
-        const s = new Date(document.getElementById("sellDate").value);
-        if (isNaN(b) || isNaN(s)) {
-          alert("Enter valid dates");
-          return;
+        let mfChart = null;
+
+        function buildSeries(P, SIP, gross, er, years) {
+          const netMonthly = (gross - er) / 100 / 12;
+          const vals = [];
+          let v = P;
+          for (let m = 0; m <= years * 12; m++) {
+            if (m > 0) v = v * (1 + netMonthly);
+            if (m % 12 === 0) vals.push(v);
+            if (m > 0) v += SIP; // add SIP at month end
+          }
+          return vals;
         }
-        const days = Math.round((s - b) / (1000 * 60 * 60 * 24));
-        const buy = parseFloat(document.getElementById("buyAmt").value) || 0;
-        const sell = parseFloat(document.getElementById("sellAmt").value) || 0;
-        const gain = sell - buy;
-        document.getElementById("days").innerText = days;
-        document.getElementById("gain").innerText = fmtINR.format(gain);
-        if (gain <= 0) {
-          document.getElementById("type").innerText = "No gain";
-          document.getElementById("tax").innerText = fmtINR.format(0);
-        } else if (days > 365) {
-          document.getElementById("type").innerText =
-            "Long Term Capital Gain (LTCG)";
-          let tax = 0;
-          const exempt = 100000; // ₹1L exemption for LTCG
-          // LTCG taxed at 12.5% (simplified estimate) on amount above exemption
-          const taxable = Math.max(0, gain - exempt);
-          tax = taxable * 0.125;
-          document.getElementById("tax").innerText = fmtINR.format(tax);
-        } else {
-          document.getElementById("type").innerText =
-            "Short Term Capital Gain (STCG)";
-          // STCG taxed at 20% (simplified estimate)
-          const tax = gain * 0.2;
-          document.getElementById("tax").innerText = fmtINR.format(tax);
+
+        function compare() {
+          const P = parseFloat(document.getElementById("lump").value) || 0;
+          const SIP = parseFloat(document.getElementById("sip").value) || 0;
+          const gross = parseFloat(document.getElementById("gross").value) || 0;
+          const years = parseInt(document.getElementById("years").value) || 0;
+          const erD =
+            parseFloat(document.getElementById("erDirect").value) || 0;
+          const erR =
+            parseFloat(document.getElementById("erRegular").value) || 0;
+
+          const sD = buildSeries(P, SIP, gross, erD, years);
+          const sR = buildSeries(P, SIP, gross, erR, years);
+          const fvD = sD[sD.length - 1] || 0;
+          const fvR = sR[sR.length - 1] || 0;
+
+          // Render results
+          const out = document.getElementById("resultArea");
+          out.innerHTML = "";
+          const card = document.createElement("div");
+          card.innerHTML = `<div class="text-center"><h3><b>Final Maturity</b></h3><h4 class="mb-1">Direct plan: <strong class="text-success">${fmtINR.format(
+            fvD
+          )}</strong></h4><h4 class="mb-1">Regular plan: <strong>${fmtINR.format(
+            fvR
+          )}</strong></h4><h4 class="mb-0">Difference: <strong class="text-danger">${fmtINR.format(
+            Math.abs(fvD - fvR)
+          )}</strong></h4></div>`;
+          out.appendChild(card);
+          out.classList.remove("d-none");
+
+          // Chart
+          const ctx = document.getElementById("mfChart").getContext("2d");
+          const labels = Array.from(
+            { length: years + 1 },
+            (_, i) => `Year ${i}`
+          );
+          if (mfChart) mfChart.destroy();
+          mfChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels,
+              datasets: [
+                { label: "Direct plan", data: sD, backgroundColor: "#0d6efd" },
+                { label: "Regular plan", data: sR, backgroundColor: "#dc3545" },
+              ],
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: { y: { ticks: { callback: (v) => fmtINR.format(v) } } },
+              plugins: {
+                tooltip: {
+                  callbacks: {
+                    label: (ctx) =>
+                      ctx.dataset.label + ": " + fmtINR.format(ctx.parsed.y),
+                  },
+                },
+              },
+            },
+          });
+          document.getElementById("chartArea").classList.remove("d-none");
         }
-        document.getElementById("result").classList.remove("d-none");
-      }
-      document.getElementById("calcBtn").addEventListener("click", estCap);
+
+        document.getElementById("calcBtn").addEventListener("click", compare);
+        document
+          .getElementById("resetBtn")
+          .addEventListener("click", function () {
+            document.getElementById("lump").value = 100000;
+            document.getElementById("sip").value = 0;
+            document.getElementById("gross").value = 12;
+            document.getElementById("years").value = 10;
+            document.getElementById("erDirect").value = 0.5;
+            document.getElementById("erRegular").value = 1.5;
+            document.getElementById("resultArea").classList.add("d-none");
+            document.getElementById("chartArea").classList.add("d-none");
+            if (mfChart) {
+              mfChart.destroy();
+              mfChart = null;
+            }
+          });
+      })();
     </script>
+
     <footer class="bg-primary text-white text-center py-3 mt-5">
       <nav class="mb-2">
         <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
