@@ -496,8 +496,11 @@
       // Inputs
       const annualIncome = +document.getElementById('annualIncome').value || 0;
       const incomeTaxEl = document.getElementById('incomeTax');
-      const calculatedTax = calculateTax(annualIncome);
-      incomeTaxEl.value = calculatedTax.toFixed(0);
+    const calculatedTax = calculateTax(annualIncome);
+    // keep numeric input but also display formatted tax in a nearby element if present
+    incomeTaxEl.value = Math.round(calculatedTax);
+    const incomeTaxDisplay = document.getElementById('incomeTaxDisplay');
+    if (incomeTaxDisplay) incomeTaxDisplay.textContent = fmtINR.format(calculatedTax);
       const incomeTax = calculatedTax;
       const price = +document.getElementById('price').value || 0;
       const roadTax = +document.getElementById('roadTax').value || 0;

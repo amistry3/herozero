@@ -241,7 +241,7 @@
                 generally apply if the holding period is more than 365 days;
                 short-term capital gains (STCG) apply for shorter holdings. This
                 tool uses an exemption of ₹1,00,000 for LTCG and applies LTCG at
-                20% and STCG at 12.5% (tax rates simplified for estimate).
+                12.5% and STCG at 20% (tax rates simplified for estimate).
               </p>
             </div>
           </div>
@@ -282,7 +282,7 @@
                 brackets.
               </li>
               <li>
-                As of 2025 this estimator uses STCG = 12.5% and LTCG = 20% with
+                As of 2025 this estimator uses STCG = 20% and LTCG = 12.5% with
                 a ₹1,00,000 LTCG exemption for equity mutual funds (simplified
                 rules).
               </li>
@@ -298,6 +298,7 @@
 
     <script>
       function estCap() {
+        const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
         const b = new Date(document.getElementById("buyDate").value);
         const s = new Date(document.getElementById("sellDate").value);
         if (isNaN(b) || isNaN(s)) {
@@ -308,22 +309,26 @@
         const buy = parseFloat(document.getElementById("buyAmt").value) || 0;
         const sell = parseFloat(document.getElementById("sellAmt").value) || 0;
         const gain = sell - buy;
-        document.getElementById("days").innerText = days;
-        document.getElementById("gain").innerText = gain.toFixed(2);
-        if (days > 365) {
+  document.getElementById("days").innerText = days;
+  document.getElementById("gain").innerText = fmtINR.format(gain);
+        if (gain <= 0) {
+          document.getElementById("type").innerText = "No gain";
+          document.getElementById("tax").innerText = fmtINR.format(0);
+        } else if (days > 365) {
           document.getElementById("type").innerText =
             "Long Term Capital Gain (LTCG)";
           let tax = 0;
           const exempt = 100000; // ₹1L exemption for LTCG
-          // LTCG taxed at 20% (simplified estimate) on amount above exemption
-          if (gain > exempt) tax = (gain - exempt) * 0.2;
-          document.getElementById("tax").innerText = tax.toFixed(2);
+          // LTCG taxed at 12.5% (simplified estimate) on amount above exemption
+          const taxable = Math.max(0, gain - exempt);
+          tax = taxable * 0.125;
+          document.getElementById("tax").innerText = fmtINR.format(tax);
         } else {
           document.getElementById("type").innerText =
             "Short Term Capital Gain (STCG)";
-          // STCG taxed at 12.5% (simplified estimate)
-          const tax = gain * 0.125;
-          document.getElementById("tax").innerText = tax.toFixed(2);
+          // STCG taxed at 20% (simplified estimate)
+          const tax = gain * 0.20;
+          document.getElementById("tax").innerText = fmtINR.format(tax);
         }
         document.getElementById('result').classList.remove('d-none');
       }

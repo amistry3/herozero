@@ -330,7 +330,8 @@
       }
 
       function renderResults(items) {
-        const total = items.reduce((s, it) => s + it.value, 0);
+  const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+  const total = items.reduce((s, it) => s + it.value, 0);
         const table = document.createElement("table");
         table.className = "table table-sm table-striped";
         table.innerHTML =
@@ -345,11 +346,11 @@
           const recClass = diff >= 0 ? "text-success" : "text-danger";
           tr.innerHTML = `
             <td>${it.name}</td>
-            <td class="text-end">${it.value.toFixed(2)}</td>
+            <td class="text-end">${fmtINR.format(it.value)}</td>
             <td class="text-end">${it.target.toFixed(2)}%</td>
-            <td class="text-end">${desired.toFixed(2)}</td>
+            <td class="text-end">${fmtINR.format(desired)}</td>
             <td class="text-end ${recClass} fw-bold">${recommendation}</td>
-            <td class="text-end ${recClass}">₹${amount.toFixed(2)}</td>`;
+            <td class="text-end ${recClass}">${fmtINR.format(amount)}</td>`;
           tbody.appendChild(tr);
         }
         table.appendChild(tbody);
@@ -357,7 +358,7 @@
         container.innerHTML = "";
         const hdr = document.createElement("h4");
         hdr.className = "mb-1 text-center mb-3";
-        hdr.innerText = "Total portfolio: ₹" + total.toFixed(2);
+  hdr.innerText = "Total portfolio: " + fmtINR.format(total);
         container.appendChild(hdr);
         container.appendChild(table);
       }

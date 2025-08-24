@@ -168,11 +168,12 @@
             const fv2 = series2[series2.length - 1];
 
             // render result card
-            const out = document.getElementById('resultArea');
+        const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+        const out = document.getElementById('resultArea');
             out.innerHTML = '';
             const card = document.createElement('div'); card.className = 'card p-3';
             const body = document.createElement('div'); body.className = 'd-flex gap-3';
-            const left = document.createElement('div'); left.innerHTML = `<h5>Final values</h5><p class="mb-1">Expense Ratio ${(e1*100).toFixed(2)}%: <strong>₹${fv1.toFixed(2)}</strong></p><p class="mb-1">Expense Ratio ${(e2*100).toFixed(2)}%: <strong>₹${fv2.toFixed(2)}</strong></p><p class="mb-0">Difference: <strong>₹${Math.abs(fv1-fv2).toFixed(2)}</strong></p>`;
+            const left = document.createElement('div'); left.innerHTML = `<h5>Final values</h5><p class="mb-1">Expense Ratio ${(e1*100).toFixed(2)}%: <strong>${fmtINR.format(fv1)}</strong></p><p class="mb-1">Expense Ratio ${(e2*100).toFixed(2)}%: <strong>${fmtINR.format(fv2)}</strong></p><p class="mb-0">Difference: <strong>${fmtINR.format(Math.abs(fv1-fv2))}</strong></p>`;
             const right = document.createElement('div'); right.style.minWidth = '320px'; right.innerHTML = `<small class="text-muted">Values shown yearly (start to end)</small>`;
             body.appendChild(left); body.appendChild(right); card.appendChild(body); out.appendChild(card);
 
@@ -194,13 +195,13 @@
                     maintainAspectRatio: false,
                     scales: {
                         x: { stacked: false },
-                        y: { ticks: { callback: v => '₹' + Number(v).toLocaleString() } }
+                        y: { ticks: { callback: v => fmtINR.format(Number(v)) } }
                     },
                     plugins: {
                         legend: { position: 'bottom' },
                         tooltip: {
                             callbacks: {
-                                label: function(ctx) { return ctx.dataset.label + ': ₹' + Number(ctx.parsed.y).toLocaleString(); }
+                                label: function(ctx) { return ctx.dataset.label + ': ' + fmtINR.format(Number(ctx.parsed.y)); }
                             }
                         }
                     }
