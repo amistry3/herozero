@@ -1,218 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
     <title>HeroZero – Stock Average Price Calculator</title>
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <meta name="description" content="Stock Average Price Calculator — compute weighted average cost per share across multiple purchases to track breakeven and position cost.">
-    <meta name="keywords" content="average buy price, stock average price, weighted average price, breakeven price, share cost calculator">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "HeroZero - Stock Average Price Calculator",
-      "url": "https://herozero.in/pages/calculators/stock-average-price.html"
-    }
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-        crossorigin="anonymous"></script>
-    <style>
-        body {
-            animation: fadeIn .6s ease-in-out;
-        }
-
-        .purchase-card {
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            background-color: #fff;
-        }
-    </style>
+    <meta name="description" content="Stock Average Price Calculator — compute weighted average cost per share across multiple purchases to track breakeven and position cost." />
+    <meta name="keywords" content="average buy price, stock average price, weighted average price, breakeven price, share cost calculator" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+    <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - Stock Average Price Calculator","url":"https://herozero.in/pages/calculators/stock-average-price.html"}</script>
 </head>
-
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2">HeroZero
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+    <header class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+            <a href="/index.html" class="flex items-center gap-2 focus-ring">
+                <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+                <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html">
-                                <i class="bi bi-car-front-fill"></i> Car Affordability
-                            </a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html">
-                                <i class="bi bi-house-door-fill"></i> House Affordability
-                            </a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html">
-                                <i class="bi bi-phone"></i> Mobile Affordability
-                            </a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html">
-                                <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
-                            </a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                                    class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+                <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+                <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+                <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+                <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+            </nav>
         </div>
-    </nav>
-    <section class="container py-5" style="margin-top: 5rem;">
-        <div class="card shadow-sm p-4">
-            <h1 class="mb-4 text-center" id="overview-heading"><i class="bi bi-bar-chart-line-fill"></i> Stock Average
-                Price Calculator</h1>
-            <p class="text-muted small mb-4">
-                This calculator helps you determine your new average price per share after making an additional
-                purchase.
-                Simply enter the number of shares and average price for your initial purchase, then do the same for your
-                new purchase.
-                The result will show your adjusted average cost per share, which can be useful for tracking
-                profitability and making informed decisions.
-            </p>
-            <form id="stockForm" onsubmit="event.preventDefault()">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="purchase-card">
-                            <h4 class="text-center"><strong>Initial Purchase</strong></h4>
-                            <div class="mb-3">
-                                <label class="form-label">No. of Share(s)</label>
-                                <input type="number" id="shares1" class="form-control" value="0" min="0" step="1">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Average Price Per Share</label>
-                                <input type="number" id="price1" class="form-control" value="0" min="0" step="0.01">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="purchase-card">
-                            <h4 class="text-center"><strong>New Purchase</strong></h4>
-                            <div class="mb-3">
-                                <label class="form-label">No. of Share(s)</label>
-                                <input type="number" id="shares2" class="form-control" value="0" min="0" step="1">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Average Price Per Share</label>
-                                <input type="number" id="price2" class="form-control" value="0" min="0" step="0.01">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+                <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M8 34l10-12 8 8 14-18" />
+              <path d="M8 10h4M8 18h6M8 26h4" />
+            </svg>
+                </span>
+                <span>Stock Average Price Calculator</span>
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Compute your new weighted average cost per share after adding a purchase. Track breakeven & position cost with clarity.</p>
+        </div>
+    </header>
+    <main class="flex-1">
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid gap-10 lg:grid-cols-2 items-start">
+                <!-- Input Card -->
+                <div class="card-tw p-7 space-y-7" id="inputsCard">
+                    <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Trade Lots</h2>
+                    <br/>
+                    <form id="stockForm" onsubmit="event.preventDefault()" class="space-y-6">
+                        <div>
+                            <div class="group-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-6"/></svg> Initial Purchase</div>
+                            <div class="group-box grid gap-5 sm:grid-cols-2 mt-2">
+                                <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">#</span><span>Shares (Qty)</span></span>
+                                    <input id="shares1" type="number" min="0" step="1" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                                </label>
+                                <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">₹</span><span>Avg Price (₹)</span></span>
+                                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price1" type="number" min="0" step="0.01" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                                </label>
                             </div>
                         </div>
+                        <div>
+                            <div class="group-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg> New Purchase</div>
+                            <div class="group-box grid gap-5 sm:grid-cols-2 mt-2">
+                                <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">#</span><span>Shares (Qty)</span></span>
+                                    <input id="shares2" type="number" min="0" step="1" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                                </label>
+                                <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">₹</span><span>Avg Price (₹)</span></span>
+                                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price2" type="number" min="0" step="0.01" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex justify-end">
+                            <button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Calculate</span><span aria-hidden="true">➡</span></span></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Results Card -->
+                <div id="resultsCard" class="card-tw p-8 space-y-8" aria-live="polite">
+                   <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Position Summary</h2>
+                    <div class="grid sm:grid-cols-3 gap-5">
+                        <div class="metric-card">
+                            <div class="metric-label">Total Shares</div>
+                            <div id="totalShares" class="metric-value font-mono">0</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Weighted Avg Price</div>
+                            <div id="avgPrice" class="metric-value font-mono">₹0</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Total Invested</div>
+                            <div id="totalInvested" class="metric-value font-mono">₹0</div>
+                        </div>
                     </div>
-                </div>
-                <div class="text-center mt-4">
-                    <button type="button" class="btn btn-primary" id="calcBtn">Calculate Average Price</button>
-                </div>
-            </form>
-            <!-- Result -->
-            <div class="row">
-                <div class="col-4">
-                    <div id="shares" class="text-center mt-4">
-                        <h5 class="mb-3">Total Share(s)</h5>
-                        <div class="fs-4 fw-bold" id="totalshares">0</div>
+                    <div class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p id="summaryLine">Enter lots to see weighted cost.</p>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div id="results" class="text-center mt-4">
-                        <h5 class="mb-3">Average Price</h5>
-                        <div class="fs-4 fw-bold" id="avgPrice">₹0.00</div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div id="investments" class="text-center mt-4">
-                        <h5 class="mb-3">Total Investments</h5>
-                        <div class="fs-4 fw-bold" id="invetments">₹0.00</div>
+                    <div class="space-y-4 pt-2">
+                        <details class="card-tw p-5" open>
+                            <summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-sm">How Weighted Average Works</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+                            <p class="mt-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">(Shares₁×Price₁ + Shares₂×Price₂) ÷ (Shares₁ + Shares₂). Extend to more lots similarly – sum all costs divided by total shares.</p>
+                        </details>
+                        <details class="card-tw p-5">
+                            <summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-sm">When Averaging Down Helps</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+                            <ul class="mt-4 list-disc pl-5 text-xs text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed">
+                                <li>Conviction unchanged & long‑term thesis intact.</li>
+                                <li>Company fundamentals improving vs price action.</li>
+                                <li>Position size remains within risk limits.</li>
+                            </ul>
+                        </details>
+                        <details class="card-tw p-5">
+                            <summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-sm">Common Pitfalls</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+                            <ul class="mt-4 list-disc pl-5 text-xs text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed">
+                                <li>Averaging into declining fundamentals.</li>
+                                <li>Ignoring portfolio concentration risk.</li>
+                                <li>Chasing breakeven emotionally vs re‑evaluating thesis.</li>
+                            </ul>
+                        </details>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+            <nav class="flex gap-5 flex-wrap">
+                <a href="/pages/about.html" class="hover:text-white">About</a>
+                <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+                <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+                <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+            </nav>
+            <div class="text-slate-500">&copy; <span id="year"></span> HeroZero. All Rights Reserved.</div>
         </div>
-    </section>
-
-    <footer class="bg-primary text-white text-center py-3 mt-4">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        function calculateAveragePrice() {
-            const shares1 = parseFloat(document.getElementById('shares1').value) || 0;
-            const price1 = parseFloat(document.getElementById('price1').value) || 0;
-            const shares2 = parseFloat(document.getElementById('shares2').value) || 0;
-            const price2 = parseFloat(document.getElementById('price2').value) || 0;
-
-            const totalShares = shares1 + shares2;
-            const totalCost = (shares1 * price1) + (shares2 * price2);
-
-                const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
-                const avg = totalShares > 0 ? totalCost / totalShares : 0;
-                document.getElementById('avgPrice').textContent = fmtINR.format(avg);
-                document.getElementById('totalshares').textContent = totalShares;
-                document.getElementById('invetments').textContent = fmtINR.format(totalCost);
-        }
-
-        document.getElementById('calcBtn').addEventListener('click', calculateAveragePrice);
+        // Theme toggle
+        (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'||(!stored&&window.matchMedia('(prefers-color-scheme: dark)').matches)){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const isDark=root.classList.toggle('dark');btn.setAttribute('aria-pressed',isDark?'true':'false');btn.textContent=isDark?'☀️':'🌙';localStorage.setItem('hz-theme',isDark?'dark':'light');});})();
+        const clamp=(v,a,b)=>Math.min(Math.max(v,a),b);
+        const INR=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2});
+        function countUp(el,to,dur=600,fmt){const from=parseFloat(el.dataset.value||'0');const start=performance.now();function frame(t){const p=clamp((t-start)/dur,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=fmt?fmt(val):val.toFixed(2);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);} 
+        function calculate(){const s1=+document.getElementById('shares1').value||0;const p1=+document.getElementById('price1').value||0;const s2=+document.getElementById('shares2').value||0;const p2=+document.getElementById('price2').value||0;const totalShares=s1+s2;const totalCost=s1*p1+s2*p2;const avg= totalShares>0? totalCost/totalShares:0;const results=document.getElementById('resultsCard');results.classList.remove('hidden');countUp(document.getElementById('totalShares'),totalShares,500,v=>Math.round(v).toString());countUp(document.getElementById('avgPrice'),avg,600,v=>INR.format(v));countUp(document.getElementById('totalInvested'),totalCost,600,v=>INR.format(v));document.getElementById('summaryLine').textContent= totalShares?`Breakeven now at ${INR.format(avg)} for ${totalShares} share(s).`:'Enter values above to compute weighted cost.';}
+        function schedule(){clearTimeout(schedule.t);schedule.t=setTimeout(calculate,180);}['shares1','price1','shares2','price2'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('input',schedule);el.addEventListener('change',schedule);});document.getElementById('calcBtn').addEventListener('click',calculate);document.getElementById('year').textContent=new Date().getFullYear();
+        // Ripple
+        document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
     </script>
 </body>
-
 </html>

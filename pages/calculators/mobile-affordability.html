@@ -1,430 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>HeroZero – Mobile Affordability Calculator</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-  <meta name="description" content="Mobile Affordability Calculator, estimate whether a phone purchase (EMI or lump-sum) fits your monthly cashflow using simple rules and EMI calculations.">
-  <meta name="keywords" content="mobile affordability calculator, phone EMI calculator, phone budget, mobile budget India">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-  <link rel="manifest" href="https://herozero.in/site.webmanifest">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "HeroZero - Mobile Affordability Calculator",
-      "url": "https://herozero.in/pages/calculators/mobile-affordability.html"
-    }
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-    crossorigin="anonymous"></script>
-  <style>
-    body {
-      animation: fadeIn .6s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card {
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
-    }
-
-    .rule {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .5rem;
-      border-radius: .5rem;
-    }
-
-    .rule.pass {
-      background: #d1e7dd;
-      color: #0f5132;
-    }
-
-    .rule.fail {
-      background: #f8d7da;
-      color: #842029;
-    }
-
-    .metric {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-    }
-
-    .metric .icon {
-      font-size: 1.75rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <meta name="description" content="Mobile Affordability Calculator – evaluate a phone purchase with the 10-2-6-20 rule (price %, usage horizon, EMI tenure, upfront payment)." />
+  <meta name="keywords" content="mobile affordability calculator, phone emi rule, 10-2-6-20" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero – Mobile Affordability Calculator","url":"https://herozero.in/pages/calculators/mobile-affordability.html"}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
 </head>
-
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-        <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2">HeroZero
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                class="bi bi-house-fill me-2"></i>Home</a></li>
-          <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-              data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Calculators</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/car-affordability.html">
-                <i class="bi bi-car-front-fill"></i> Car Affordability
-              </a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/house-affordability.html">
-                <i class="bi bi-house-door-fill"></i> House Affordability
-              </a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/mobile-affordability.html">
-                <i class="bi bi-phone"></i> Mobile Affordability
-              </a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/stock-average-price.html">
-                <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
-              </a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                  class="bi bi-cash-stack"></i> SIP Calculator</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                  class="bi bi-bullseye"></i> SIP Goal Planner</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                  class="bi bi-coin"></i> Lumpsum Return</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                  class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                  class="bi bi-calculator"></i> XIRR (cashflows)</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                  class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                  class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                  class="bi bi-percent"></i> Expense Ratio Impact</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                  class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                  class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                  class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                  class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-            </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                class="bi bi-journal-text me-2"></i>Blog</a></li>
-        </ul>
-      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode" data-tooltip="Toggle dark mode">🌙</button>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="bg-light text-center py-5 mt-5" id="overview">
-    <div class="container">
-      <h1 class="fw-bold mb-2" id="overview-heading"><i class="bi bi-phone"></i> Mobile Affordability Calculator</h1>
-      <p class="lead mb-0">
-        Evaluate your purchase using the <strong>10-2-6-20 Rule</strong>.
-        Hover <i class="bi bi-info-circle text-primary"></i> for details.
-      </p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <rect x="15" y="6" width="18" height="36" rx="4" />
+              <circle cx="24" cy="34" r="1.8" fill="currentColor" />
+            </svg>
+        </span>
+        <span>Mobile Affordability Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Evaluate a phone purchase with the <strong>10-2-6-20 rule</strong>: Price %, Usage ≥2y, EMI ≤6m, Upfront ≥20%.</p>
     </div>
-  </section>
-
-  <!-- How it Works -->
-  <section class="container py-5">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <h2 class="text-center mb-4">How This Calculator Works on 10-2-6-20 Rule</h2>
-        <!-- Tab navigation -->
-        <!-- Tab navigation -->
-        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button"
-              role="tab" aria-controls="first" aria-selected="true">
-              10% Rule
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#second" type="button"
-              role="tab" aria-controls="second" aria-selected="false">
-              2-Year Usage Rule
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third" type="button"
-              role="tab" aria-controls="third" aria-selected="false">
-              6-Month EMI Rule
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="fourth-tab" data-bs-toggle="tab" data-bs-target="#fourth" type="button"
-              role="tab" aria-controls="fourth" aria-selected="false">
-              20% Upfront Rule
-            </button>
-          </li>
-        </ul>
-
-        <!-- Tab content -->
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
-            <h4 class="mt-4 text-center">The 10% Rule</h4>
-            <p class="text-center">The price of the phone should not exceed 10% of your annual salary. This ensures that
-              the purchase doesn't strain your finances.</p>
-          </div>
-
-          <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
-            <h4 class="mt-4 text-center">The 2-Year Usage Rule</h4>
-            <p class="text-center">You should plan to use the phone for at least two years. This helps in maximizing the
-              value of the device and reduces the frequency of upgrades.</p>
-          </div>
-
-          <div class="tab-pane fade" id="third" role="tabpanel" aria-labelledby="third-tab">
-            <h4 class="mt-4 text-center">The 6-Month EMI Rule</h4>
-            <p class="text-center">If you are planning to buy the phone on EMI, the tenure should not be more than 6
-              months. This prevents you from being locked into a long-term financial commitment for a depreciating
-              asset.</p>
-          </div>
-
-          <div class="tab-pane fade" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
-            <h4 class="mt-4 text-center">The 20% Upfront Rule</h4>
-            <p class="text-center">You should be able to pay at least 20% of the phone's price upfront. This reduces the
-              loan amount and the interest burden.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calculator -->
-  <section class="container py-5">
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-6">
-        <div class="card shadow-sm p-4">
-          <form id="calcForm" onsubmit="event.preventDefault()">
-            <div class="mb-3">
-              <label class="form-label">Annual Salary (₹)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
-                  title="Your total yearly income before tax."></i>
+  </header>
+  <main class="flex-1">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 lg:grid-cols-2 items-start">
+        <!-- Form -->
+        <div class="card-tw p-7">
+          <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 mb-2">Phone Purchase Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Enter values below; results & rules update automatically.</p>
+          <form id="calcForm" onsubmit="event.preventDefault()" class="space-y-6">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">₹</span><span>Annual Salary (₹)</span></span>
+                <span class="input-wrap"><span class="input-affix">₹</span><input id="salary" type="number" value="600000" min="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
               </label>
-              <input type="number" id="salary" class="form-control" value="600000" min="0">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Mobile Price (₹)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
-                  title="Total cost of the mobile phone."></i>
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">📱</span><span>Mobile Price (₹)</span></span>
+                <span class="input-wrap"><span class="input-affix">₹</span><input id="price" type="number" value="50000" min="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
               </label>
-              <input type="number" id="price" class="form-control" value="50000" min="0">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Upfront Payment (₹)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
-                  title="Amount you will pay upfront, before EMI."></i>
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">₹</span><span>Upfront Payment (₹)</span></span>
+                <span class="input-wrap"><span class="input-affix">₹</span><input id="upfront" type="number" value="15000" min="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
               </label>
-              <input type="number" id="upfront" class="form-control" value="15000" min="0">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">EMI Tenure (months)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
-                  title="Number of months over which you will pay EMIs. Should be ≤ 6."></i>
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2"><span class="inline-flex items-center gap-1"><span aria-hidden="true">⏳</span><span>EMI Tenure (Months)</span></span>
+                <div class="flex items-center gap-4">
+                  <div class="range-wrap flex-1"><input id="tenureRange" type="range" min="3" max="24" value="6" class="range-adv" /><span id="tenureBubble" class="range-bubble">6 m</span></div>
+                  <input id="tenure" type="number" value="6" min="3" max="24" class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                </div>
+                <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 3–24 months (rule expects ≤6)</span>
               </label>
-              <input type="number" id="tenure" class="form-control" value="6" min="1">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Planned Usage Duration (years)
-                <i class="bi bi-info-circle text-primary" data-bs-toggle="tooltip"
-                  title="You should ideally keep your phone for at least 2 years."></i>
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2"><span class="inline-flex items-center gap-1"><span aria-hidden="true">🔋</span><span>Planned Usage (Years)</span></span>
+                <div class="flex items-center gap-4">
+                  <div class="range-wrap flex-1"><input id="usageRange" type="range" min="2" max="5" value="2" class="range-adv" /><span id="usageBubble" class="range-bubble">2 y</span></div>
+                  <input id="usage" type="number" value="2" min="2" max="5" class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                </div>
+                <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 2–5 years (rule expects ≥2)</span>
               </label>
-              <input type="number" id="usage" class="form-control" value="2" min="1">
             </div>
-            <button type="button" class="btn btn-primary w-100" id="calcBtn">Check Affordability</button>
+            <div class="flex justify-end">
+              <button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Check Affordability</span><span aria-hidden="true">➡</span></span></button>
+            </div>
           </form>
         </div>
-      </div>
-
-      <!-- Results -->
-      <div class="col-lg-6">
-        <div id="results" class="card shadow-sm p-4">
-          <canvas id="affordChart" height="150" width="150" class="mb-3"></canvas>
-
-          <div class="row g-3 mb-3">
-            <div class="col-6">
-              <div class="metric">
-                <i class="bi bi-percent icon text-primary"></i>
-                <div>
-                  <div class="small text-muted">Price as % of Salary</div>
-                  <div class="fs-5 fw-semibold" id="pricePercent">0%</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="metric">
-                <i class="bi bi-cash-stack icon text-primary"></i>
-                <div>
-                  <div class="small text-muted">Upfront Payment %</div>
-                  <div class="fs-5 fw-semibold" id="upfrontPercent">0%</div>
-                </div>
-              </div>
-            </div>
+        <!-- Results -->
+        <div id="results" class="card-tw p-8 space-y-8">
+          <div class="relative" style="height:230px">
+            <div id="affordChart" class="h-full" aria-label="Mobile price share chart"></div>
+            <div id="chartCenter" class="chart-center-label">0%</div>
           </div>
-
-          <hr>
-          <div id="rule10" class="rule">10% Rule</div>
-          <div id="rule20" class="rule">20% Upfront Rule</div>
-          <div id="rule6" class="rule">6-Month EMI Rule</div>
-          <div id="rule2" class="rule">2-Year Usage Rule</div>
-          <hr>
-          <h5 id="finalVerdict" class="fw-bold"></h5>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="metric-card"><div class="metric-label">Price % Salary</div><div id="pricePercent" class="metric-value font-mono">0%</div></div>
+            <div class="metric-card"><div class="metric-label">Upfront % of Price</div><div id="upfrontPercent" class="metric-value font-mono">0%</div></div>
+          </div>
+          <!-- Rule checklist removed as requested -->
+          <div class="space-y-2">
+            <div id="verdictWrap"><span id="verdictBadge" class="verdict-badge badge-good hidden">All Good</span> <span id="finalVerdict" class="text-sm font-medium align-middle">—</span></div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Method inspired by Ankur Warikoo's 10‑2‑6‑20 framework.</p>
+          </div>
+          <!-- Educational accordions -->
+          <div class="space-y-4 pt-2">
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-sm">What is the 10‑2‑6‑20 Rule?</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Guidelines: Price ≤10% annual salary; Usage ≥2 years; EMI tenure ≤6 months; Upfront ≥20% of price.</p></details>
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-sm">Why these thresholds?</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="mt-4 list-disc pl-5 text-xs text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed"><li>Phones depreciate fast; a short EMI avoids paying for it after value drop.</li><li>Higher upfront lowers financing risk.</li><li>Usage horizon spreads cost across time.</li><li>10% cap protects savings & other goals.</li></ul></details>
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-sm">Optimisation Tips</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="mt-4 list-disc pl-5 text-xs text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed"><li>Consider previous‑gen flagship vs new mid‑tier.</li><li>Refurbished certified devices can shave 20–30%.</li><li>Negotiate bundled accessories instead of inflated EMI offers.</li><li>Avoid extending EMI for cashback illusions.</li></ul></details>
+          </div>
         </div>
       </div>
+    </section>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
     </div>
-  </section>
-  <p class="small text-center text-muted mt-3"><em>This calculation methodology is inspired by Ankur Warikoo's <a
-        target="_blank" href="https://www.youtube.com/shorts/-W1-9BFE4PA">YouTube short.</a></em></p>
-  <footer class="bg-primary text-white text-center py-3 mt-5">
-    <nav class="mb-2">
-      <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-    </nav>
-    <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
   <script>
-    // --- Helpers ---
-    const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
-    const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
-
-    // Animated counter
-    function countUp(el, to, duration = 700, isPercent = false) {
-      const from = Number((el.dataset.value || "0").replace(/[^0-9.-]/g, '')) || 0;
-      const start = performance.now();
-      function frame(t) {
-        const p = clamp((t - start) / duration, 0, 1);
-        const ease = 1 - Math.pow(1 - p, 3); // easeOutCubic
-        const val = from + (to - from) * ease;
-        if (isPercent) {
-          el.textContent = `${val.toFixed(1)}%`;
-        } else {
-          el.textContent = fmtINR.format(val);
-        }
-        if (p < 1) requestAnimationFrame(frame);
-        else el.dataset.value = String(to);
-      }
-      requestAnimationFrame(frame);
-    }
-
-    // Bootstrap tooltips & popovers
-    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
-
-    // Chart
-    let chart;
-    function renderChart(ratio, color) {
-      const ctx = document.getElementById('affordChart').getContext('2d');
-      if (chart) chart.destroy();
-      chart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          labels: ['Mobile Cost % of Salary', 'Remaining'],
-          datasets: [{
-            data: [clamp(ratio, 0, 100), clamp(100 - ratio, 0, 100)],
-            backgroundColor: [color, '#e9ecef'],
-            borderWidth: 0
-          }]
-        },
-        options: {
-          cutout: '70%',
-          plugins: { legend: { display: false }, tooltip: { enabled: false } },
-          animation: { duration: 600 },
-          responsive: true
-        }
-      });
-    }
-
-    function calculate() {
-      const salary = +document.getElementById('salary').value || 0;
-      const price = +document.getElementById('price').value || 0;
-      const upfront = +document.getElementById('upfront').value || 0;
-      const tenure = +document.getElementById('tenure').value || 0;
-      const usage = +document.getElementById('usage').value || 0;
-
-      const ratio = salary > 0 ? (price / salary) * 100 : 100;
-      const upfrontRatio = price > 0 ? (upfront / price) * 100 : 0;
-
-      // Rule checks
-      const rule10Pass = price <= salary * 0.10;
-      const rule20Pass = upfront >= price * 0.20;
-      const rule6Pass = tenure <= 6;
-      const rule2Pass = usage >= 2;
-
-      // Rule UI
-      document.getElementById('rule10').className = `rule ${rule10Pass ? 'pass' : 'fail'}`;
-      document.getElementById('rule10').innerHTML = `${rule10Pass ? '✅' : '❌'} 10% Rule – Price ≤ 10% of salary`;
-
-      document.getElementById('rule20').className = `rule ${rule20Pass ? 'pass' : 'fail'}`;
-      document.getElementById('rule20').innerHTML = `${rule20Pass ? '✅' : '❌'} 20% Upfront – Paid ≥ 20% upfront`;
-
-      document.getElementById('rule6').className = `rule ${rule6Pass ? 'pass' : 'fail'}`;
-      document.getElementById('rule6').innerHTML = `${rule6Pass ? '✅' : '❌'} 6-Month EMI – Tenure ≤ 6 months`;
-
-      document.getElementById('rule2').className = `rule ${rule2Pass ? 'pass' : 'fail'}`;
-      document.getElementById('rule2').innerHTML = `${rule2Pass ? '✅' : '❌'} 2-Year Usage – Use ≥ 2 years`;
-
-      // Verdict
-      const allPass = rule10Pass && rule20Pass && rule6Pass && rule2Pass;
-      document.getElementById('finalVerdict').textContent = allPass
-        ? "✅ This purchase follows the 10-2-6-20 rule. Smart choice!"
-        : "⚠️ This purchase violates one or more rules. Consider adjusting.";
-
-      // Animated counters
-      countUp(document.getElementById('pricePercent'), ratio, 700, true);
-      countUp(document.getElementById('upfrontPercent'), upfrontRatio, 700, true);
-
-      // Gauge
-      const color = rule10Pass ? '#28a745' : '#dc3545';
-      renderChart(ratio, color);
-    }
-
-    // Real-time updates (debounced)
-    let debounce;
-    function triggerCalc() { clearTimeout(debounce); debounce = setTimeout(calculate, 200); }
-    document.querySelectorAll('#calcForm input').forEach(i => {
-      i.addEventListener('input', triggerCalc);
-      i.addEventListener('change', triggerCalc);
-    });
-    document.getElementById('calcBtn').addEventListener('click', calculate);
-
-    // Initial calc
-    window.addEventListener('DOMContentLoaded', calculate);
+    // Theme toggle
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const isDark=root.classList.toggle('dark');btn.setAttribute('aria-pressed',isDark?'true':'false');btn.textContent=isDark?'☀️':'🌙';localStorage.setItem('hz-theme',isDark?'dark':'light');setTimeout(()=>calculate(true),20);});})();
+    const fmtINR=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0});
+    const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+    function countUp(el,to,duration=600,isPercent=false){const from=Number((el.dataset.value||'0').replace(/[^0-9.-]/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=isPercent?`${val.toFixed(1)}%`:fmtINR.format(val);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
+    let chart;function renderChart(ratio,color,fromTheme){const pct=clamp(ratio,0,100);if(chart&&chart.destroy)chart.destroy();const isDark=document.documentElement.classList.contains('dark');const remainingColor=isDark?'#334155':'#e2e8f0';chart=Highcharts.chart('affordChart',{chart:{type:'pie',backgroundColor:'transparent',animation:true,spacing:[0,0,0,0]},title:null,tooltip:{enabled:false},plotOptions:{pie:{innerSize:'68%',borderWidth:0,shadow:false,animation:!fromTheme,dataLabels:{enabled:false},states:{hover:{enabled:false}}}},series:[{data:[{name:'Price %',y:pct,color:color},{name:'Remaining',y:100-pct,color:remainingColor}]}],credits:{enabled:false},legend:{enabled:false}});document.getElementById('chartCenter').textContent=`${pct.toFixed(1)}%`;}
+    function calculate(fromTheme){const salary=+document.getElementById('salary').value||0;const price=+document.getElementById('price').value||0;const upfront=+document.getElementById('upfront').value||0;const tenure=+document.getElementById('tenure').value||0;const usage=+document.getElementById('usage').value||0;const ratio=salary>0?(price/salary)*100:100;const upfrontRatio=price>0?(upfront/price)*100:0;const rule10Pass=price<=salary*0.10;const rule20Pass=upfront>=price*0.20;const rule6Pass=tenure<=6;const rule2Pass=usage>=2;updateRule('rule10',rule10Pass,'10% Rule – Price ≤ 10% of salary');updateRule('rule20',rule20Pass,'20% Upfront – Paid ≥ 20% upfront');updateRule('rule6',rule6Pass,'6-Month EMI – Tenure ≤ 6 months');updateRule('rule2',rule2Pass,'2-Year Usage – Use ≥ 2 years');const allPass=rule10Pass&&rule20Pass&&rule6Pass&&rule2Pass;const color=rule10Pass?'#16a34a':'#dc2626';const verdict=document.getElementById('finalVerdict');const badge=document.getElementById('verdictBadge');badge.classList.remove('badge-good','badge-warn','badge-bad','hidden','pop');void badge.offsetWidth; // reset animation
+      if(allPass){verdict.textContent='Purchase fits the 10‑2‑6‑20 rule';badge.classList.add('badge-good');badge.textContent='Good';}else{verdict.textContent='Violates one or more rules – reconsider inputs';badge.classList.add('badge-bad');badge.textContent='Check';}
+      badge.classList.add('pop');
+      const center=document.getElementById('chartCenter');center.classList.remove('bump');void center.offsetWidth;center.classList.add('bump');
+      countUp(document.getElementById('pricePercent'),ratio,600,true);countUp(document.getElementById('upfrontPercent'),upfrontRatio,600,true);renderChart(ratio,color,fromTheme);}    
+  function updateRule(id,pass,label){const el=document.getElementById(id);if(!el)return;el.innerHTML=`${pass?'✅':'❌'} ${label}`;el.className=`flex items-start gap-2 rounded-md px-3 py-2 border text-xs sm:text-sm ${pass?'bg-green-50 border-green-200 text-green-700 dark:bg-green-900/30 dark:border-green-800 dark:text-green-300':'bg-red-50 border-red-200 text-red-700 dark:bg-red-900/30 dark:border-red-800 dark:text-red-300'}`;}
+  let debounce;function triggerCalc(){clearTimeout(debounce);debounce=setTimeout(calculate,200);}document.querySelectorAll('#calcForm input').forEach(i=>{i.addEventListener('input',triggerCalc);i.addEventListener('change',triggerCalc);});document.getElementById('calcBtn').addEventListener('click',()=>calculate());
+  // Slider + number sync
+  const sliderPairs=[['tenureRange','tenure','tenureBubble',3,24,v=>`${v} m`],['usageRange','usage','usageBubble',2,5,v=>`${v} y`]];function styleSlider(r){const min=r.min||0,max=r.max||100,val=r.value;const pct=( (val-min)/(max-min) )*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';r.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`;}sliderPairs.forEach(([rId,nId,bId,min,max,fmt])=>{const r=document.getElementById(rId);const n=document.getElementById(nId);const b=document.getElementById(bId);if(!r||!n)return;const syncFromRange=()=>{n.value=r.value;if(b){const rect=r.getBoundingClientRect();const pct=( (r.value-min)/(max-min) );b.textContent=fmt(r.value);b.style.left=`calc(${pct*100}% )`; } styleSlider(r);triggerCalc();};const syncFromNumber=()=>{let v=parseInt(n.value||0,10);if(isNaN(v))v=min;v=Math.min(Math.max(v,min),max);n.value=v;r.value=v;syncFromRange();};r.addEventListener('input',syncFromRange);n.addEventListener('input',syncFromNumber);styleSlider(r);syncFromRange();});
+  window.addEventListener('DOMContentLoaded',()=>{calculate();});
+    // Ripple effect
+    document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
   </script>
 </body>
-
 </html>

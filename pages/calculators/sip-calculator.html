@@ -1,599 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
-    <meta
-      name="description"
-      content="HeroZero SIP Calculator – estimate future value of monthly SIP investments quickly and easily."
-    />
-    <meta
-      name="keywords"
-      content="SIP calculator, mutual fund SIP, monthly investment calculator, HeroZero"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-      crossorigin="anonymous"
-    ></script>
-    <title>HeroZero – SIP Calculator</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://herozero.in/assets/img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://herozero.in/assets/img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://herozero.in/assets/img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "HeroZero - SIP Calculator",
-        "url": "https://herozero.in/pages/calculators/sip-calculator.html"
-      }
-    </script>
-  </head>
-
-  <body>
-    <nav
-      class="navbar navbar-expand-lg fixed-top bg-primary"
-      data-bs-theme="dark"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-          <img
-            src="https://herozero.in/assets/img/favicon-32x32.png"
-            class="me-2"
-            alt="HeroZero Logo"
-          />HeroZero
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="https://herozero.in/"
-                ><i class="bi bi-house-fill me-2"></i>Home</a
-              >
-            </li>
-            <li class="nav-item dropdown" data-bs-theme="light">
-              <a
-                class="nav-link active dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Calculators</a
-              >
-              <div class="dropdown-menu">
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/car-affordability.html"
-                  ><i class="bi bi-car-front-fill"></i> Car Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/house-affordability.html"
-                  ><i class="bi bi-house-door-fill"></i> House Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
-                  ><i class="bi bi-phone"></i> Mobile Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/stock-average-price.html"
-                  ><i class="bi bi-bar-chart-line-fill"></i> Stock Average
-                  Price</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-calculator.html"
-                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-goal.html"
-                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
-                  ><i class="bi bi-coin"></i> Lumpsum Return</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
-                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
-                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
-                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
-                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
-                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
-                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
-                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
-                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
-                  Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
-                  ><i class="bi bi-layers"></i> MF Direct vs Regular
-                  Estimator</a
-                >
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/blog.html"
-                ><i class="bi bi-journal-text me-2"></i>Blog</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main class="container" style="margin-top: 5.5rem">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <h1><i class="bi bi-cash-stack"></i> SIP Calculator</h1>
-          <p class="text-muted">
-            Estimate future value of a monthly SIP (Systematic Investment Plan).
-          </p>
-
-          <div class="card p-3">
-            <div class="mb-3">
-              <label class="form-label">Monthly SIP amount (₹)</label>
-              <input
-                id="sipAmount"
-                class="form-control"
-                type="number"
-                value="5000"
-                min="500"
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Expected annual return (in %)</label>
-              <input
-                id="annualReturn"
-                class="form-control"
-                type="number"
-                value="12"
-                min="0"
-                step="0.1"
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Investment duration (years)</label>
-              <input
-                id="years"
-                class="form-control"
-                type="number"
-                value="10"
-                min="1"
-                step="1"
-              />
-            </div>
-
-            <button id="calcBtn" class="btn btn-primary">Calculate</button>
-
-            <hr />
-            <div id="results" class="d-none">
-              <div id="resultSummary" class="mb-2"></div>
-              <div class="row">
-                <div class="col-6 text-start">
-                  <h4 class="mb-1">
-                    <strong>Maturity Value (₹):</strong>
-                    <span id="maturity" class="text-success"></span>
-                  </h4>
-                </div>
-                <div class="col-6 text-end">
-                  <h4 class="mb-1">
-                    <strong>Total Invested (₹):</strong>
-                    <span id="invested" class="text-success"></span>
-                  </h4>
-                </div>
-                <br />
-                <hr />
-                <div class="col-12 text-center">
-                  <h4 class="mb-1 fw-bold">
-                    <strong>Total Gain (₹):</strong>
-                    <span id="gain" class="text-success"></span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div id="tableContainer" class="table-responsive mt-3"></div>
-            <div id="chart-div" class="mt-4 d-none">
-              <canvas id="sipChart" height="160"></canvas>
-            </div>
-          </div>
-
-          <!-- SIP explanatory content: simple, paraphrased guidance for users -->
-          <div class="card mt-4 p-4">
-            <h2>About SIP (Systematic Investment Plan)</h2>
-            <p class="mb-2">
-              A SIP is a simple way to invest a fixed amount regularly into a
-              mutual fund. Instead of putting a large sum at once, you invest
-              small amounts (for example, every month). Over time this helps you
-              build savings while keeping your investments disciplined.
-            </p>
-
-            <h3>How a SIP works</h3>
-            <p class="mb-2">
-              Each time you invest, you buy units of the chosen fund at that
-              day's price (NAV). When prices are low you buy more units, and
-              when prices are high you buy fewer units — this evens out your
-              average cost over time. Your investment grows through compounding:
-              gains are reinvested, and they can earn returns too.
-            </p>
-
-            <h3>Why people use SIPs</h3>
-            <ul>
-              <li>Starts small: you can begin with modest monthly amounts.</li>
-              <li>Builds discipline: regular investing becomes a habit.</li>
-              <li>
-                Smooths market swings: buying at different prices lowers risk of
-                bad timing.
-              </li>
-              <li>
-                Benefits from compounding: reinvested returns help the value
-                grow over the long run.
-              </li>
-              <li>
-                Flexible: most funds let you pause, increase, decrease or stop
-                your SIP.
-              </li>
-            </ul>
-
-            <h3>Types of SIPs (short)</h3>
-            <ul>
-              <li>
-                <strong>Regular SIP:</strong> same amount at fixed intervals.
-              </li>
-              <li>
-                <strong>Step-up / Top-up SIP:</strong> amount increases
-                automatically at set times.
-              </li>
-              <li>
-                <strong>Flexible SIP:</strong> you can change the amount based
-                on your cash flow.
-              </li>
-              <li>
-                <strong>Trigger / Perpetual SIP:</strong> starts or continues
-                based on market or time triggers, or runs indefinitely until
-                stopped.
-              </li>
-            </ul>
-
-            <h3>Quick FAQs</h3>
-            <dl>
-              <dt>How much can I invest?</dt>
-              <dd>
-                There is usually no strict upper limit; minimums vary by fund
-                (many start around ₹500/month).
-              </dd>
-
-              <dt>How long should I stay invested?</dt>
-              <dd>
-                There is no fixed maximum. For equity funds, staying for several
-                years helps ride out short-term ups and downs.
-              </dd>
-
-              <dt>Can I change or pause my SIP?</dt>
-              <dd>
-                Yes — most funds let you increase, decrease, pause or stop your
-                SIP when needed.
-              </dd>
-            </dl>
-
-            <p class="text-muted small">
-              Note: The calculator above gives an estimate based on the inputs
-              you provide. Actual returns depend on market performance, fund
-              charges and taxes.
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script>
-      function formatINR(x) {
-        return Number(x).toLocaleString("en-IN", { maximumFractionDigits: 2 });
-      }
-
-      let sipChart = null;
-
-      function buildYearlySeries(P, annualRate, years) {
-        const monthlyRate = annualRate / 12;
-        const series = [];
-        let balance = 0;
-        let totalInvested = 0;
-
-        for (let y = 1; y <= years; y++) {
-          // accumulate for 12 months
-          for (let m = 0; m < 12; m++) {
-            balance = balance * (1 + monthlyRate) + P;
-            totalInvested += P;
-          }
-          series.push({
-            year: y,
-            invested: totalInvested,
-            value: balance,
-          });
-        }
-        return series;
-      }
-
-      function calcSIP() {
-        document.getElementById("chart-div").classList.remove("d-none");
-        document.getElementById("results").classList.remove("d-none");
-
-        const P = parseFloat(document.getElementById("sipAmount").value);
-        const rPerc = parseFloat(document.getElementById("annualReturn").value);
-        const years = parseInt(document.getElementById("years").value, 10);
-
-        if (isNaN(P) || P <= 0) {
-          alert("Enter a valid monthly SIP amount");
-          return;
-        }
-        if (isNaN(rPerc) || rPerc < 0) {
-          alert("Enter a valid expected annual return");
-          return;
-        }
-        if (isNaN(years) || years <= 0) {
-          alert("Enter a valid investment duration in years");
-          return;
-        }
-
-        const annualRate = rPerc / 100;
-        const months = years * 12;
-
-        const series = buildYearlySeries(P, annualRate, years);
-        // build monthly progression for month-wise drilldown
-        function buildMonthlySeries(P, annualRate, years) {
-          const monthlyRate = annualRate / 12;
-          const months = years * 12;
-          const arr = [];
-          let balance = 0;
-          let invested = 0;
-          for (let m = 1; m <= months; m++) {
-            balance = balance * (1 + monthlyRate) + P;
-            invested += P;
-            arr.push({ monthIndex: m, invested: invested, value: balance });
-          }
-          return arr;
-        }
-
-        const monthlySeries = buildMonthlySeries(P, annualRate, years);
-
-        const final = series[series.length - 1];
-
-        document.getElementById("maturity").innerText = formatINR(final.value);
-        document.getElementById("invested").innerText = formatINR(
-          final.invested
-        );
-        document.getElementById("gain").innerText = formatINR(
-          final.value - final.invested
-        );
-
-        // build table with right-aligned rupee values and expandable month rows
-        const tableContainer = document.getElementById("tableContainer");
-        const table = document.createElement("table");
-        // table-hover helps indicate clickable rows
-        table.className = "table table-sm table-striped table-hover";
-        const thead = document.createElement("thead");
-        thead.innerHTML =
-          '<tr><th>Year</th><th class="text-end">Total Invested (₹)</th><th class="text-end">Value at Year End (₹)</th><th class="text-end">Gain (₹)</th></tr>';
-        table.appendChild(thead);
-        const tbody = document.createElement("tbody");
-
-        series.forEach((row, yi) => {
-          const gain = row.value - row.invested;
-
-          // summary row for the year
-          const tr = document.createElement("tr");
-          tr.className = "year-row";
-          tr.setAttribute("role", "button");
-          tr.setAttribute("aria-expanded", "false");
-          tr.style.cursor = "pointer";
-          tr.innerHTML = `
-                    <td>Year ${row.year}</td>
-                    <td class="text-end rupee-col">${formatINR(
-                      row.invested
-                    )}</td>
-                    <td class="text-end rupee-col">${formatINR(row.value)}</td>
-                    <td class="text-end rupee-col">${formatINR(gain)}</td>
-                `;
-
-          // detail row (hidden) with month-wise table
-          const detailTr = document.createElement("tr");
-          detailTr.className = "month-row d-none";
-          const detailTd = document.createElement("td");
-          detailTd.setAttribute("colspan", "4");
-          detailTd.innerHTML =
-            '<div class="p-2"><table class="table table-sm table-bordered mb-0"><thead><tr><th>Month</th><th class="text-end">Invested (₹)</th><th class="text-end">Value (₹)</th><th class="text-end">Gain (₹)</th></tr></thead><tbody></tbody></table></div>';
-          detailTr.appendChild(detailTd);
-
-          // populate month rows for this year
-          const monthTbody = detailTd.querySelector("tbody");
-          const startIdx = yi * 12;
-          const monthsForYear = monthlySeries.slice(startIdx, startIdx + 12);
-          monthsForYear.forEach((m) => {
-            const mtr = document.createElement("tr");
-            const mgain = m.value - m.invested;
-            // use continuous monthIndex so numbering doesn't restart each year
-            const monthLabel = `Month ${m.monthIndex}`;
-            mtr.innerHTML = `
-                        <td>${monthLabel}</td>
-                        <td class="text-end rupee-col">${formatINR(
-                          m.invested
-                        )}</td>
-                        <td class="text-end rupee-col">${formatINR(
-                          m.value
-                        )}</td>
-                        <td class="text-end rupee-col">${formatINR(mgain)}</td>
-                    `;
-            monthTbody.appendChild(mtr);
-          });
-
-          // toggle handler
-          tr.addEventListener("click", () => {
-            const expanded = tr.getAttribute("aria-expanded") === "true";
-            tr.setAttribute("aria-expanded", expanded ? "false" : "true");
-            detailTr.classList.toggle("d-none");
-          });
-
-          tbody.appendChild(tr);
-          tbody.appendChild(detailTr);
-        });
-
-        table.appendChild(tbody);
-        tableContainer.innerHTML = "";
-        tableContainer.appendChild(table);
-
-        // build chart (invested vs value)
-        const labels = series.map((s) => `Year ${s.year}`);
-        const investedData = series.map((s) => s.invested);
-        const valueData = series.map((s) => s.value);
-
-        const ctx = document.getElementById("sipChart");
-        if (sipChart) sipChart.destroy();
-        sipChart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels,
-            datasets: [
-              {
-                label: "Total Invested (₹)",
-                data: investedData,
-                borderColor: "#0d6efd",
-                backgroundColor: "rgba(13,110,253,0.08)",
-                tension: 0.25,
-                fill: true,
-              },
-              {
-                label: "Value (₹)",
-                data: valueData,
-                borderColor: "#198754",
-                backgroundColor: "rgba(25,135,84,0.08)",
-                tension: 0.25,
-                fill: true,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { position: "top" },
-              tooltip: {
-                callbacks: {
-                  label: (ctx) =>
-                    ctx.dataset.label + ": ₹" + formatINR(ctx.parsed.y),
-                },
-              },
-            },
-            scales: {
-              y: {
-                ticks: {
-                  callback: (v) => "₹" + Number(v).toLocaleString("en-IN"),
-                },
-              },
-            },
-          },
-        });
-      }
-
-      document.getElementById("calcBtn").addEventListener("click", calcSIP);
-    </script>
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-      <nav class="mb-2">
-        <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
-          >About</a
-        >
-        <a class="text-white mx-2" href="https://herozero.in/pages/contact.html"
-          >Contact</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/privacy-policy.html"
-          >Privacy Policy</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/terms-of-use.html"
-          >Terms of Use</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/disclaimer.html"
-          >Disclaimer</a
-        >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <title>HeroZero – SIP Calculator</title>
+  <meta name="description" content="HeroZero SIP Calculator – estimate the future value of monthly SIP investments, showing invested vs value and gains year by year." />
+  <meta name="keywords" content="SIP calculator, mutual fund sip, investment growth" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - SIP Calculator","url":"https://herozero.in/pages/calculators/sip-calculator.html"}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
       </nav>
-      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
-    </footer>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M10 34c6-1 10-5 14-14 3 6 6 9 14 10" />
+              <path d="M8 40h32" />
+              <path d="M14 16v-4a2 2 0 012-2h16a2 2 0 012 2v4" />
+            </svg>
+        </span>
+        <span>SIP Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Estimate wealth creation via a monthly Systematic Investment Plan. Adjust inputs—see invested vs value growth and yearly breakdown.</p>
+    </div>
+  </header>
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+    <!-- Inputs Card -->
+    <div class="card-tw p-8 space-y-8" id="inputsCard">
+      <div>
+        <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-2">Inputs</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Provide SIP amount, expected return and duration.</p>
+      </div>
+      <form id="sipForm" onsubmit="event.preventDefault()" class="grid gap-6">
+        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Monthly SIP (₹)
+          <span class="input-wrap"><span class="input-affix">₹</span><input id="sipAmount" type="number" min="500" value="5000" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" /></span>
+          <span class="text-[10px] text-slate-500 dark:text-slate-400">Minimum 500</span>
+        </label>
+        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Expected Annual Return (%)
+          <input id="annualReturn" type="number" step="0.1" min="0" value="12" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+        </label>
+        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Investment Duration (Years)
+          <div class="flex items-center gap-4">
+            <div class="range-wrap flex-1"><input id="yearsRange" type="range" min="1" max="40" value="10" class="range-adv" /><span id="yearsBubble" class="range-bubble">10 years</span></div>
+            <input id="years" type="number" min="1" max="40" value="10" class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+          </div>
+          <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 1–40 years</span>
+        </label>
+        <div class="flex justify-end"><button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Calculate</span><span aria-hidden="true">➡</span></span></button></div>
+      </form>
+      <div class="grid sm:grid-cols-3 gap-4 pt-2">
+        <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">How SIP Compounds</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Each month balance grows, then new SIP adds. Gains also compound.</p></details>
+        <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Why Use SIP?</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="mt-3 list-disc pl-4 text-[11px] text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed"><li>Rupee‑cost averaging</li><li>Start small</li><li>Compounding</li><li>Flexible</li></ul></details>
+        <details class="card-tw p-5 sm:col-span-1"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">FAQ</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><dl class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 space-y-2"><div><dt class="font-semibold">Min?</dt><dd>₹500+.</dd></div><div><dt class="font-semibold">Duration?</dt><dd>5y+ ideal.</dd></div><div><dt class="font-semibold">Change?</dt><dd>Usually flexible.</dd></div></dl></details>
+      </div>
+    </div>
+    <!-- Results Card -->
+    <div class="card-tw p-8 space-y-8" id="resultsCard">
+      <div class="space-y-6" id="resultsSection">
+        <div class="metric-card relative overflow-hidden bg-emerald-50 dark:bg-emerald-900/25 border-emerald-300/60 dark:border-emerald-600/40 p-6 sm:p-7">
+          <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-20" style="background:radial-gradient(circle at 25% 20%,rgba(16,185,129,.35),transparent 65%)"></div>
+          <div class="flex items-start justify-between relative z-10">
+            <div>
+              <div class="text-[11px] tracking-wide font-semibold uppercase text-emerald-700 dark:text-emerald-300">Maturity Value</div>
+              <div id="maturity" class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-emerald-700 dark:text-emerald-300 mt-1">₹0</div>
+            </div>
+            <div class="hidden sm:block text-emerald-500 dark:text-emerald-400" aria-hidden="true">
+              <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+            </div>
+          </div>
+          <p class="mt-3 text-[10px] sm:text-xs text-emerald-700/80 dark:text-emerald-300/70 relative z-10">Projected corpus given current inputs (tax & fees ignored).</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+            <div class="metric-label">Total Invested</div>
+            <div id="invested" class="metric-value font-mono">₹0</div>
+          </div>
+          <div class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+            <div class="metric-label">Total Gain</div>
+            <div id="gain" class="metric-value font-mono">₹0</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative h-[320px]" id="chartWrap">
+        <div id="sipChartContainer" class="h-full" aria-label="SIP invested vs value chart"></div>
+      </div>
+      <div id="futureHighlight" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+    </div>
+  </div>
+  <br/>
+      <!-- Full-width informational accordion -->
+      <div class="mt-20 lg:mt-16 grid gap-4 lg:grid-cols-4">
+        <div class="lg:col-span-2 card-tw p-4">
+          <h2 class="text-lg font-bold mb-2 flex items-center gap-2 text-slate-900 dark:text-slate-100">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-brand text-white text-sm">i</span>
+            SIP Guide & Information
+          </h2>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-4">Expand sections to dive deeper. Educational only – not investment advice. Numbers ignore tax, fees & market volatility.</p>
+          <div class="space-y-3" id="sipInfoAccordion">
+            <!-- Overview -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>SIP Calculator Overview</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-3 text-slate-600 dark:text-slate-400">
+                <p>A Systematic Investment Plan (SIP) automates disciplined investing by pulling a fixed rupee amount at a fixed frequency (monthly here) into a mutual fund. This calculator turns those cash flows plus an assumed annual return into a projected future value.</p>
+                <p>Think of it as reverse‑engineering a compound interest curve made of many small deposits instead of one lump sum.</p>
+              </div>
+            </details>
+            <!-- What is -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>What is a SIP Calculator?</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-3 text-slate-600 dark:text-slate-400">
+                <p>The engine loops through each month (<code class="font-mono">n = years × 12</code>): grow existing balance by monthly rate, then add the new SIP amount. We summarise the timeline yearly for clarity while preserving math accuracy.</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Input:</strong> Monthly contribution (₹)</li>
+                  <li><strong>Input:</strong> Expected annual return (%)</li>
+                  <li><strong>Input:</strong> Duration (years)</li>
+                  <li><strong>Outputs:</strong> Total invested, total gain, final (maturity) value</li>
+                </ul>
+              </div>
+            </details>
+            <!-- How this helps -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>Benefits & Use Cases</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ol class="mt-4 list-decimal pl-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+                <li><strong>Goal mapping:</strong> Approximate how far your current SIP takes you toward a corpus target.</li>
+                <li><strong>Adjustment lever:</strong> See impact of +₹500 or +1 year immediately.</li>
+                <li><strong>Discipline cue:</strong> Visual curve reinforces staying invested during volatility.</li>
+                <li><strong>Expectation framing:</strong> Distinguish principal vs market‑generated gains.</li>
+                <li><strong>Conversation aid:</strong> Useful when explaining compounding to new investors.</li>
+              </ol>
+            </details>
+            <!-- Compounding mechanics -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>How Compounding Works</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-3 text-slate-600 dark:text-slate-400">
+                <p><strong>Monthly rate (approx):</strong> <code class="font-mono">r_m = annual % / 12</code>. (For higher precision one could use <code class="font-mono">(1+r)^(1/12)-1</code>.)</p>
+                <p><strong>Loop:</strong> <code class="font-mono">balance = balance × (1 + r_m) + contribution</code>. Repeated for each month. Gains themselves earn further gains creating an accelerating curve.</p>
+                <p><strong>Key drivers:</strong> start early, stay consistent, step-up amount with income growth, avoid interrupting compounding unnecessarily.</p>
+                <p class="text-[11px]">Market returns are lumpy – the real path will zig‑zag around the smoothed projection.</p>
+                <figure class="mt-1 bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 rounded-md p-3">
+                  <figcaption class="text-[10px] uppercase tracking-wide font-semibold text-slate-500 dark:text-slate-400 mb-1">Linear vs Exponential</figcaption>
+                  <svg viewBox="0 0 140 80" class="w-full h-28" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="expFill" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#16a34a" stop-opacity="0.55" />
+                        <stop offset="100%" stop-color="#16a34a" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="140" height="80" fill="none" stroke="currentColor" stroke-opacity="0.08" />
+                    <path d="M10 70 L130 10" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+                    <path d="M10 70 Q 70 68 90 55 T130 15" stroke="#16a34a" stroke-width="1.5" fill="none" />
+                    <path d="M10 70 Q 70 68 90 55 T130 15 L130 70 Z" fill="url(#expFill)" opacity="0.35" />
+                    <circle cx="10" cy="70" r="2" fill="#2563eb" />
+                    <circle cx="130" cy="10" r="2" fill="#2563eb" />
+                    <circle cx="130" cy="15" r="2" fill="#16a34a" />
+                    <text x="134" y="14" font-size="6" fill="#16a34a">Compounding</text>
+                    <text x="134" y="9" font-size="6" fill="#2563eb">Linear</text>
+                  </svg>
+                  <div class="flex items-center gap-4 mt-2">
+                    <div class="flex items-center gap-1 text-[10px]"><span class="inline-block w-3 h-1 bg-[#16a34a] rounded"></span>Compounding path</div>
+                    <div class="flex items-center gap-1 text-[10px]"><span class="inline-block w-3 h-1 bg-[#2563eb] rounded"></span>Linear growth</div>
+                  </div>
+                </figure>
+              </div>
+            </details>
+            <!-- Choosing return -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>Picking a Return Assumption</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-3 text-slate-600 dark:text-slate-400">
+                <ol class="mt-4 list-decimal pl-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+                  <li>Equity diversified funds (long-term India): often 10–12% conservative assumption.</li>
+                  <li>Debt funds: 6–8% depending on duration & credit risk.</li>
+                  <li>Aggressive thematic/small-cap: Resist using recent cycle highs (can mislead planning).</li>
+                  <li>Always model a lower scenario to stress test plans.</li>
+                </ol>
+              </div>
+            </details>
+            <!-- Risks -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>Risks & Caveats</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ol class="mt-4 list-decimal pl-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+                <li><strong>Sequence risk:</strong> Poor early years slow compounding pace.</li>
+                <li><strong>Inflation drag:</strong> Nominal growth overstates real purchasing power.</li>
+                <li><strong>Behavioral risk:</strong> Stopping SIPs during downturns locks in underperformance.</li>
+                <li><strong>Cost impact:</strong> Expense ratios reduce net returns (not modelled).</li>
+                <li><strong>Tax impact:</strong> Capital gains tax can lower realised value.</li>
+              </ol>
+            </details>
+            <!-- Taxation -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>Tax & Cost Considerations</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                <p>Model ignores taxation. For equity mutual funds in India: units held >12 months usually qualify for long‑term capital gains (LTCG) tax after exemption limit; short‑term gains are taxed at higher rate. Debt fund taxation rules differ (indexation no longer available for many categories).</p>
+                <p>Expense ratio and possible exit load subtly reduce effective return – incorporate by lowering assumed % a little.</p>
+              </div>
+            </details>
+            <!-- Example -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>Worked Example</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                <p>₹5,000 / month for 15 years @ 11% annual (≈0.916% monthly): final corpus ≈ ₹20.8L; invested ₹9.0L; gain ≈ ₹11.8L (≈57% of final value). Extending to 20 years roughly doubles the gain share due to later‑stage compounding acceleration.</p>
+              </div>
+            </details>
+            <!-- Tips -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>Practical Improvement Tips</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ol class="mt-4 list-decimal pl-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+                <li>Upgrade SIP yearly with salary hikes (step‑up strategy).</li>
+                <li>Avoid timing – keep automated; evaluate annually.</li>
+                <li>Diversify across styles/market‑caps to smooth variance.</li>
+                <li>Use conservative return assumptions for planning; celebrate upside.</li>
+                <li>Track expense ratios; switch persistently underperforming funds prudently.</li>
+              </ol>
+            </details>
+            <!-- FAQs -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                <span>FAQs</span>
+                <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <dl class="px-4 pb-4 pt-2 space-y-3 text-xs sm:text-sm">
+                <div><dt class="font-semibold">Is monthly rate precise?</dt><dd>We approximate with annual/12; precision tweak is possible but changes output marginally.</dd></div>
+                <div><dt class="font-semibold">Can I target a corpus?</dt><dd>Iteratively adjust contribution or years until maturity ≈ target. (Future feature: goal solver.)</dd></div>
+                <div><dt class="font-semibold">Pause allowed?</dt><dd>Most platforms allow temporary pause; longer breaks reduce final gain disproportionately.</dd></div>
+                <div><dt class="font-semibold">When to increase SIP?</dt><dd>Consider annual step-up aligned with salary increments or inflation.</dd></div>
+                <div><dt class="font-semibold">Multiple SIPs?</dt><dd>Yes; conceptually aggregate all contributions to model a blended plan.</dd></div>
+              </dl>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    // Theme toggle
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculate(true),30);});})();
+    const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+    function formatINR(x,fd=0){return Number(x).toLocaleString('en-IN',{maximumFractionDigits:fd});}
+    function countUp(el,to,duration=700){const from=Number((el.dataset.value||'0').replace(/,/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent='₹'+formatINR(val,0);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
+    // Slider sync (years)
+  (function(){const r=document.getElementById('yearsRange');const n=document.getElementById('years');const b=document.getElementById('yearsBubble');function style(){const min=r.min,max=r.max,val=r.value;const pct=((val-min)/(max-min))*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';r.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`;b.textContent=val+' year'+(val==='1'?'':'s');b.style.left=`${pct}%`;} 
+  r.addEventListener('input',()=>{n.value=r.value;style();triggerCalc();});n.addEventListener('input',()=>{let v=parseInt(n.value||1,10);v=Math.min(Math.max(v,1),40);n.value=v;r.value=v;style();triggerCalc();});style();})();
+    let chart;function buildYearlySeries(P, annualRate, years){const monthlyRate=annualRate/12;const series=[];let balance=0,totalInvested=0;for(let y=1;y<=years;y++){for(let m=0;m<12;m++){balance=balance*(1+monthlyRate)+P;totalInvested+=P;}series.push({year:y,invested:totalInvested,value:balance});}return series;}
+  function renderChart(series){const investedData=series.map(s=>s.invested);const totalValue=series.map(s=>s.value);const isDark=document.documentElement.classList.contains('dark');const gridColor=isDark?'#334155':'#e2e8f0';if(chart&&chart.destroy)chart.destroy();chart=Highcharts.chart('sipChartContainer',{chart:{backgroundColor:'transparent'},title:null,credits:{enabled:false},xAxis:{categories:series.map(s=>'Year '+s.year),lineColor:gridColor,tickColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'}}},yAxis:{title:null,gridLineColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'},formatter(){return '₹'+formatINR(this.value);}}},legend:{align:'center',verticalAlign:'top',itemStyle:{color:isDark?'#e2e8f0':'#334155'}},tooltip:{shared:true,useHTML:true,formatter:function(){const invested=this.points.find(p=>p.series.name==='Invested')?.y||0;const total=this.points.find(p=>p.series.name==='Total Value')?.y||0;const gain=total-invested;return `<b>${this.x}</b><br/>Invested: <span style=\"color:#2563eb\">₹${formatINR(invested)}</span><br/>Total Value: <span style=\"color:#16a34a;font-weight:600\">₹${formatINR(total)}</span><br/>Gain: <span style=\"color:#16a34a\">₹${formatINR(gain)}</span>`;}},plotOptions:{areaspline:{fillOpacity:.28,marker:{enabled:false}},series:{animation:{duration:700,easing:'easeOutQuad'}}},series:[{name:'Total Value',type:'areaspline',data:totalValue,color:'#16a34a',lineWidth:2,fillColor:{linearGradient:[0,0,0,260],stops:[[0,'rgba(16,163,74,.45)'],[1,'rgba(16,163,74,0)']]}},{name:'Invested',type:'line',data:investedData,color:'#2563eb',dashStyle:'ShortDot',lineWidth:2}]});}
+  function calculate(fromTheme){const P=parseFloat(document.getElementById('sipAmount').value);const rPerc=parseFloat(document.getElementById('annualReturn').value);const years=parseInt(document.getElementById('years').value,10);if(isNaN(P)||P<=0)return;if(isNaN(rPerc)||rPerc<0)return;if(isNaN(years)||years<=0)return;const annualRate=rPerc/100;const yearly=buildYearlySeries(P,annualRate,years);const final=yearly[yearly.length-1];countUp(document.getElementById('maturity'),final.value,800);countUp(document.getElementById('invested'),final.invested,800);countUp(document.getElementById('gain'),final.value-final.invested,800);renderChart(yearly);updateHighlight(P,annualRate,years);}    
+  function updateHighlight(P,annualRate,years){const el=document.getElementById('futureHighlight');if(!el)return;const invested=P*12*years;const mRate=annualRate/12;let bal=0;for(let y=1;y<=years;y++){for(let m=0;m<12;m++){bal=bal*(1+mRate)+P;}}const line=`In ${years} year${years===1?'':'s'}, ₹${formatINR(invested)} invested could grow to about ₹${formatINR(bal)}.`;el.textContent=line;}
+    let debounce;function triggerCalc(){clearTimeout(debounce);debounce=setTimeout(()=>calculate(),180);}['sipAmount','annualReturn','years'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('input',triggerCalc);el.addEventListener('change',triggerCalc);});document.getElementById('calcBtn').addEventListener('click',()=>calculate());
+    window.addEventListener('DOMContentLoaded',()=>{calculate();});
+    // Ripple effect reuse
+    document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
+  </script>
+</body>
 </html>

@@ -1,460 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>HeroZero – Portfolio Rebalancer</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
-    <meta
-      name="description"
-      content="Portfolio Rebalancer — enter current holdings and target percentages to see buy/sell amounts required to rebalance your portfolio."
-    />
-    <meta
-      name="keywords"
-      content="portfolio rebalance, asset allocation, buy sell amounts, target allocation, portfolio rebalancer, India"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://herozero.in/assets/img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://herozero.in/assets/img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://herozero.in/assets/img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      crossorigin="anonymous"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-      crossorigin="anonymous"
-    ></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "HeroZero - Portfolio Rebalancer",
-        "url": "https://herozero.in/pages/calculators/portfolio-rebalance.html"
-      }
-    </script>
-  </head>
-
-  <body>
-    <nav
-      class="navbar navbar-expand-lg fixed-top bg-primary"
-      data-bs-theme="dark"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-          <img
-            src="https://herozero.in/assets/img/favicon-32x32.png"
-            class="me-2"
-            alt="HeroZero Logo"
-          />HeroZero
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="https://herozero.in/"
-                ><i class="bi bi-house-fill me-2"></i>Home</a
-              >
-            </li>
-            <li class="nav-item dropdown" data-bs-theme="light">
-              <a
-                class="nav-link active dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Calculators</a
-              >
-              <div class="dropdown-menu">
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/car-affordability.html"
-                  ><i class="bi bi-car-front-fill"></i> Car Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/house-affordability.html"
-                  ><i class="bi bi-house-door-fill"></i> House Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
-                  ><i class="bi bi-phone"></i> Mobile Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/stock-average-price.html"
-                  ><i class="bi bi-bar-chart-line-fill"></i> Stock Average
-                  Price</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-calculator.html"
-                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-goal.html"
-                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
-                  ><i class="bi bi-coin"></i> Lumpsum Return</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
-                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
-                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
-                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
-                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
-                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
-                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
-                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
-                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
-                  Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
-                  ><i class="bi bi-layers"></i> MF Direct vs Regular
-                  Estimator</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <title>HeroZero – Portfolio Rebalancer</title>
+  <meta name="description" content="Enter current values & targets to compute buy/sell actions needed to restore your portfolio allocation." />
+  <meta name="keywords" content="portfolio rebalance, asset allocation calculator, buy sell amounts" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - Portfolio Rebalancer","url":"https://herozero.in/pages/calculators/portfolio-rebalance.html"}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" class="w-8 h-8" alt="HeroZero" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <circle cx="24" cy="24" r="14" />
+              <path d="M24 10v14l8 4" />
+            </svg>
+        </span>
+        <span>Portfolio Rebalancer</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Compute recommended Buy / Sell adjustments to realign holdings with target allocation. Add rows, set current values & target %.</p>
+    </div>
+  </header>
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+        <!-- Card 1: Holdings + Results -->
+        <div class="card-tw p-8 space-y-10" id="rebalanceCard">
+          <div class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div class="text-left">
+                <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Holdings</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Enter asset name, current value & target % (sum ≈ 100%).</p>
               </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/blog.html"
-                ><i class="bi bi-journal-text me-2"></i>Blog</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main class="container" style="margin-top: 5.5rem">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <h1><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</h1>
-          <p class="text-muted">Quickly calculate how much to buy or sell to restore your target asset allocation — enter each holding's current value and target percentage, then click <strong>Rebalance</strong>. Results show recommended Buy/Sell amounts and the total portfolio value.</p>
-          <div class="card mt-3 p-4">
-            <div class="table-responsive">
-              <table class="table table-sm table-bordered" id="holdingsTable">
-                <thead>
-                  <tr>
-                    <th style="width: 32px"></th>
-                    <th>Asset name</th>
-                    <th style="width: 160px">Current value (₹)</th>
-                    <th style="width: 160px">Target %</th>
-                    <th style="width: 100px">Action</th>
+              <div class="flex flex-wrap gap-2">
+                <button id="addRowBtn" type="button" class="btn-primary btn-ripple text-xs px-4 py-2">Add Row</button>
+                <button id="removeSelectedBtn" type="button" class="btn-ripple text-xs px-4 py-2 rounded-xl border border-red-300 dark:border-red-700 text-red-600 dark:text-red-400 font-semibold hover:bg-red-50 dark:hover:bg-red-900/30">Remove Selected</button>
+                <button id="calcBtn" type="button" class="btn-primary btn-ripple text-xs px-4 py-2">Rebalance</button>
+              </div>
+            </div>
+            <div class="overflow-x-auto border border-slate-200 dark:border-slate-700 rounded-xl">
+              <table id="holdingsTable" class="min-w-full text-sm">
+                <thead class="bg-slate-50 dark:bg-slate-800/60">
+                  <tr class="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    <th class="px-3 py-2 text-left w-8"><input type="checkbox" id="selectAll" class="accent-brand"/></th>
+                    <th class="px-3 py-2 text-left">Asset</th>
+                    <th class="px-3 py-2 text-right">Current (₹)</th>
+                    <th class="px-3 py-2 text-right">Target %</th>
+                    <th class="px-3 py-2 text-center w-16">Remove</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="holdingsBody" class="divide-y divide-slate-100 dark:divide-slate-700">
                   <tr class="h-row">
-                    <td class="text-center">
-                      <input type="checkbox" class="select-row" />
-                    </td>
-                    <td>
-                      <input class="form-control h-name" value="Equity" />
-                    </td>
-                    <td>
-                      <input
-                        class="form-control h-value"
-                        type="number"
-                        value="700000"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        class="form-control h-target"
-                        type="number"
-                        value="60"
-                      />
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-outline-danger remove-row">
-                        Remove
-                      </button>
-                    </td>
+                    <td class="px-3 py-2"><input type="checkbox" class="row-check accent-brand"/></td>
+                    <td class="px-3 py-2"><input value="Equity" class="h-name calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium"/></td>
+                    <td class="px-3 py-2 text-right"><span class="input-wrap"><span class="input-affix">₹</span><input type="number" value="700000" class="h-value calc-input w-full text-right rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-mono"/></span></td>
+                    <td class="px-3 py-2 text-right"><input type="number" value="60" class="h-target calc-input w-full text-right rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-mono"/></td>
+                    <td class="px-3 py-2 text-center"><button type="button" class="remove-row inline-flex items-center justify-center w-7 h-7 rounded-md hover:bg-red-50 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" aria-label="Remove row">✕</button></td>
                   </tr>
                   <tr class="h-row">
-                    <td class="text-center">
-                      <input type="checkbox" class="select-row" />
-                    </td>
-                    <td><input class="form-control h-name" value="Debt" /></td>
-                    <td>
-                      <input
-                        class="form-control h-value"
-                        type="number"
-                        value="300000"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        class="form-control h-target"
-                        type="number"
-                        value="40"
-                      />
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-outline-danger remove-row">
-                        Remove
-                      </button>
-                    </td>
+                    <td class="px-3 py-2"><input type="checkbox" class="row-check accent-brand"/></td>
+                    <td class="px-3 py-2"><input value="Debt" class="h-name calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium"/></td>
+                    <td class="px-3 py-2 text-right"><span class="input-wrap"><span class="input-affix">₹</span><input type="number" value="300000" class="h-value calc-input w-full text-right rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-mono"/></span></td>
+                    <td class="px-3 py-2 text-right"><input type="number" value="40" class="h-target calc-input w-full text-right rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-mono"/></td>
+                    <td class="px-3 py-2 text-center"><button type="button" class="remove-row inline-flex items-center justify-center w-7 h-7 rounded-md hover:bg-red-50 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" aria-label="Remove row">✕</button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div class="d-flex gap-2 mt-2">
-              <button id="addRowBtn" class="btn btn-sm btn-secondary">
-                Add row
-              </button>
-              <button id="removeSelectedBtn" class="btn btn-sm btn-danger">
-                Remove selected
-              </button>
-              <div class="ms-auto">
-                <button id="calcBtn" class="btn btn-primary">Rebalance</button>
-              </div>
+            <div id="targetWarn" class="hidden mt-3 text-xs font-medium rounded-md px-3 py-2 bg-amber-100 text-amber-800 border border-amber-300 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-700"></div>
+          </div>
+          <br/>
+          <div class="space-y-6 border-t border-slate-200 dark:border-slate-700 pt-8" id="resultsCard">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+              <h2 class="text-xl font-extrabold text-slate-900 dark:text-slate-100">Results</h2>
+              <div id="resultSummary" class="text-xs text-slate-500 dark:text-slate-400"></div>
             </div>
-            <hr />
-            <div id="resultArea" class="mt-2"></div>
-
-            <!-- Explanation about portfolio rebalancing (inside same column) -->
-            <div class="mt-2 p-4">
-              <h3>Why rebalance your portfolio?</h3>
-              <p class="mb-2">
-                Rebalancing means adjusting your holdings so they match your
-                chosen target percentages (for example, 60% equity, 40% debt).
-                Over time some assets may grow faster than others and change
-                your mix. Rebalancing brings your portfolio back to the risk
-                profile you intended.
-              </p>
-
-              <h4>When and why to rebalance</h4>
-              <ul>
-                <li>
-                  Periodically (for example yearly) or when allocations drift by
-                  a set amount.
-                </li>
-                <li>
-                  It helps control risk — keeping your allocation aligned with
-                  your goals.
-                </li>
-                <li>
-                  You can rebalance by buying underweight assets or selling
-                  overweight ones, or both.
-                </li>
-              </ul>
-
-              <h4>Quick tips</h4>
-              <ul>
-                <li>
-                  Consider transaction costs and tax consequences before
-                  rebalancing.
-                </li>
-                <li>
-                  Small drift is normal; aim for a practical threshold (e.g., 5%
-                  drift) or periodic schedule.
-                </li>
-              </ul>
+            <div class="grid sm:grid-cols-4 gap-5" id="metricGrid">
+              <div class="metric-card bg-indigo-50/80 dark:bg-indigo-900/20 border-indigo-200/70 dark:border-indigo-600/40"><div class="metric-label">Portfolio</div><div id="totalValue" class="metric-value font-mono">₹0</div></div>
+              <div class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40"><div class="metric-label">Total Buy</div><div id="totalBuy" class="metric-value font-mono">₹0</div></div>
+              <div class="metric-card bg-red-50/80 dark:bg-red-900/20 border-red-200/70 dark:border-red-600/40"><div class="metric-label">Total Sell</div><div id="totalSell" class="metric-value font-mono">₹0</div></div>
+              <div class="metric-card bg-slate-50/80 dark:bg-slate-800/30 border-slate-200/70 dark:border-slate-600/40"><div class="metric-label">Target Sum</div><div id="targetSum" class="metric-value font-mono">0%</div></div>
             </div>
+            <div class="overflow-x-auto border border-slate-200 dark:border-slate-700 rounded-xl" id="resultTableWrap">
+              <table class="min-w-full text-xs sm:text-sm" id="resultTable" aria-label="Rebalance recommendations"></table>
+            </div>
+            <div id="rebalanceNote" class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed"></div>
+          </div>
+        </div>
+        <!-- Card 2: Chart + Guide -->
+        <div class="card-tw p-8 space-y-8" id="infoCard" style="margin-left: 1rem;">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-semibold tracking-wide text-slate-700 dark:text-slate-300 uppercase">Allocation Chart</h3>
+            <div class="h-[360px]" id="allocChart" aria-label="Current vs target allocation chart"></div>
+          </div>
+          <div class="space-y-4 border-t border-slate-200 dark:border-slate-700 pt-6">
+            <h3 class="text-sm font-semibold tracking-wide text-slate-700 dark:text-slate-300 uppercase">Why Rebalance?</h3>
+            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">Rebalancing restores intended risk & return mix. As winners grow overweight and laggards shrink, portfolio drift changes risk. Periodic or threshold-based rebalancing realigns allocation.</p>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-2 text-xs font-semibold bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">When to Rebalance <svg class="chevron w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+              <div class="px-4 pb-4 pt-2 text-[11px] leading-relaxed text-slate-600 dark:text-slate-400">Time (e.g. yearly/quarterly) or drift rule (e.g. any asset off target by >5%).</div>
+            </details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-2 text-xs font-semibold bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">How to Execute <svg class="chevron w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+              <div class="px-4 pb-4 pt-2 text-[11px] leading-relaxed text-slate-600 dark:text-slate-400">Add new money to underweights, redirect dividends, or sell overweight assets (consider taxes & costs).</div>
+            </details>
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-4 py-2 text-xs font-semibold bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">Limitations <svg class="chevron w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+              <ul class="list-disc pl-5 mt-3 text-[11px] leading-relaxed space-y-1 text-slate-600 dark:text-slate-400"><li>Ignores taxes, fees, slippage.</li><li>Uses point-in-time values only.</li><li>No asset constraints.</li></ul>
+            </details>
+            <div class="text-[10px] text-slate-500 dark:text-slate-500 pt-1">Not advice. Validate before trading.</div>
           </div>
         </div>
       </div>
-    </main>
-
-    <script>
-      // Core UI script for portfolio rebalancer
-      function gatherHoldings() {
-        const rows = Array.from(
-          document.querySelectorAll("#holdingsTable tbody .h-row")
-        );
-        return rows.map((r) => ({
-          name: r.querySelector(".h-name").value.trim() || "Unnamed",
-          value: parseFloat(r.querySelector(".h-value").value) || 0,
-          target: parseFloat(r.querySelector(".h-target").value) || 0,
-        }));
-      }
-
-      function renderResults(items) {
-  const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
-  const total = items.reduce((s, it) => s + it.value, 0);
-        const table = document.createElement("table");
-        table.className = "table table-sm table-striped";
-        table.innerHTML =
-          '<thead><tr><th>Asset</th><th class="text-end">Current (₹)</th><th class="text-end">Target %</th><th class="text-end">Target (₹)</th><th class="text-end" title="Recommendation = Buy or Sell to reach target">Recommendation</th><th class="text-end">Amount (₹)</th></tr></thead>';
-        const tbody = document.createElement("tbody");
-        for (const it of items) {
-          const desired = (total * it.target) / 100;
-          const diff = desired - it.value;
-          const tr = document.createElement("tr");
-          const recommendation = diff >= 0 ? "Buy" : "Sell";
-          const amount = Math.abs(diff);
-          const recClass = diff >= 0 ? "text-success" : "text-danger";
-          tr.innerHTML = `
-            <td>${it.name}</td>
-            <td class="text-end">${fmtINR.format(it.value)}</td>
-            <td class="text-end">${it.target.toFixed(2)}%</td>
-            <td class="text-end">${fmtINR.format(desired)}</td>
-            <td class="text-end ${recClass} fw-bold">${recommendation}</td>
-            <td class="text-end ${recClass}">${fmtINR.format(amount)}</td>`;
-          tbody.appendChild(tr);
-        }
-        table.appendChild(tbody);
-        const container = document.getElementById("resultArea");
-        container.innerHTML = "";
-        const hdr = document.createElement("h4");
-        hdr.className = "mb-1 text-center mb-3";
-  hdr.innerText = "Total portfolio: " + fmtINR.format(total);
-        container.appendChild(hdr);
-        container.appendChild(table);
-      }
-
-      function rebalance() {
-        const items = gatherHoldings();
-        if (items.length === 0) return alert("Add at least one holding");
-        const totalTarget = items.reduce((s, it) => s + it.target, 0);
-        if (Math.abs(totalTarget - 100) > 0.01) {
-          if (!confirm("Target percentages do not sum to 100%. Continue?"))
-            return;
-        }
-        renderResults(items);
-      }
-
-      document.getElementById("calcBtn").addEventListener("click", rebalance);
-
-      // add/remove row handlers
-      function addRow(name = "", value = "", target = "") {
-        const tbody = document.querySelector("#holdingsTable tbody");
-        const tr = document.createElement("tr");
-        tr.className = "h-row";
-        tr.innerHTML = `<td class="text-center"><input type="checkbox" class="select-row" /></td><td><input class="form-control h-name" value="${name}"></td><td><input class="form-control h-value" type="number" value="${value}"></td><td><input class="form-control h-target" type="number" value="${target}"></td><td><button class="btn btn-sm btn-outline-danger remove-row">Remove</button></td>`;
-        tbody.appendChild(tr);
-        tr.querySelector(".remove-row").addEventListener("click", () =>
-          tr.remove()
-        );
-      }
-
-      document
-        .getElementById("addRowBtn")
-        .addEventListener("click", () => addRow("", "", ""));
-      document
-        .getElementById("removeSelectedBtn")
-        .addEventListener("click", () => {
-          const checks = document.querySelectorAll(
-            "#holdingsTable .select-row:checked"
-          );
-          checks.forEach((cb) => {
-            const r = cb.closest("tr");
-            if (r) r.remove();
-          });
-        });
-      document.querySelectorAll(".remove-row").forEach((btn) =>
-        btn.addEventListener("click", (e) => {
-          const tr = e.target.closest("tr");
-          if (tr) tr.remove();
-        })
-      );
-    </script>
-
-    <div class="container mt-3">
-      <div class="text-muted small text-center">
-        Note: This tool provides general recommendations only and does not
-        constitute financial, investment, or tax advice. It may not consider
-        your full financial situation. Please consult a licensed financial
-        advisor or tax professional before making investment decisions.
-      </div>
-    </div>
-
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-      <nav class="mb-2">
-        <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
-          >About</a
-        >
-        <a class="text-white mx-2" href="https://herozero.in/pages/contact.html"
-          >Contact</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/privacy-policy.html"
-          >Privacy Policy</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/terms-of-use.html"
-          >Terms of Use</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/disclaimer.html"
-          >Disclaimer</a
-        >
+    </section>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
       </nav>
-      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
-    </footer>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    // Theme toggle
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>rebalance(true),30);});})();
+    const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+    function formatINR(x){return Number(x).toLocaleString('en-IN',{maximumFractionDigits:0});}
+    function countUp(el,to,duration=650,prefix='₹',isPct=false){const from=Number((el.dataset.value||'0').replace(/,/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=isPct?val.toFixed(2)+'%':(prefix?prefix:'')+formatINR(val);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
+    function gatherHoldings(){return [...document.querySelectorAll('#holdingsBody tr.h-row')].map(r=>({name:r.querySelector('.h-name').value.trim()||'Unnamed',value:parseFloat(r.querySelector('.h-value').value)||0,target:parseFloat(r.querySelector('.h-target').value)||0,row:r}));}
+    function addRow(name='',value='',target=''){const tbody=document.getElementById('holdingsBody');const tr=document.createElement('tr');tr.className='h-row';tr.innerHTML=`<td class="px-3 py-2"><input type="checkbox" class="row-check accent-brand"/></td><td class="px-3 py-2"><input value="${name}" class="h-name calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium"/></td><td class="px-3 py-2 text-right"><span class="input-wrap"><span class="input-affix">₹</span><input type="number" value="${value}" class="h-value calc-input w-full text-right rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-mono"/></span></td><td class="px-3 py-2 text-right"><input type="number" value="${target}" class="h-target calc-input w-full text-right rounded-md border bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-mono"/></td><td class="px-3 py-2 text-center"><button type="button" class="remove-row inline-flex items-center justify-center w-7 h-7 rounded-md hover:bg-red-50 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" aria-label="Remove row">✕</button></td>`;tbody.appendChild(tr);tr.querySelector('.remove-row').addEventListener('click',()=>{tr.remove();rebalance();});['input','change'].forEach(ev=>tr.addEventListener(ev,e=>{if(e.target.matches('.h-name,.h-value,.h-target')) rebalance();}));}
+    document.getElementById('addRowBtn').addEventListener('click',()=>addRow());
+    document.getElementById('removeSelectedBtn').addEventListener('click',()=>{document.querySelectorAll('#holdingsBody .row-check:checked').forEach(cb=>cb.closest('tr').remove());rebalance();});
+    document.getElementById('selectAll').addEventListener('change',e=>{document.querySelectorAll('#holdingsBody .row-check').forEach(c=>c.checked=e.target.checked);});
+    document.getElementById('calcBtn').addEventListener('click',()=>rebalance());
+    let allocChart;function renderChart(names,currentData,targetData){const isDark=document.documentElement.classList.contains('dark');const grid=isDark?'#334155':'#e2e8f0';if(allocChart&&allocChart.destroy)allocChart.destroy();allocChart=Highcharts.chart('allocChart',{chart:{type:'pie',backgroundColor:'transparent'},title:null,credits:{enabled:false},tooltip:{pointFormatter:function(){return `<span style="color:${this.color}">●</span> ${this.name}: <b>${this.y.toFixed(2)}%</b>`;}},legend:{itemStyle:{color:isDark?'#e2e8f0':'#334155'}},plotOptions:{pie:{shadow:false,center:['50%','50%'],dataLabels:{enabled:false}}},series:[{name:'Current',size:'75%',innerSize:'55%',data:names.map((n,i)=>({name:n,y:currentData[i]}))},{name:'Target',size:'95%',innerSize:'80%',data:names.map((n,i)=>({name:n,y:targetData[i]}))}]});}
+    function rebalance(fromTheme){const items=gatherHoldings();if(!items.length){document.getElementById('resultTable').innerHTML='';return;}const total=items.reduce((s,it)=>s+it.value,0);const targetSum=items.reduce((s,it)=>s+it.target,0);const warn=document.getElementById('targetWarn');if(Math.abs(targetSum-100)>0.01){warn.textContent=`Target total ${targetSum.toFixed(2)}% ≠ 100%`;warn.classList.remove('hidden');}else warn.classList.add('hidden');const rows=[];let totalBuy=0,totalSell=0;for(const it of items){const desired=total*(it.target/100);const diff=desired-it.value;const rec=diff>0?'Buy':(diff<0?'Sell':'Hold');const amount=Math.abs(diff);if(rec==='Buy') totalBuy+=amount; if(rec==='Sell') totalSell+=amount;rows.push({name:it.name,current:it.value,targetPct:it.target,desired,rec,amount,diff});}
+      // Metrics
+      countUp(document.getElementById('totalValue'),total);countUp(document.getElementById('totalBuy'),totalBuy);countUp(document.getElementById('totalSell'),totalSell);const targetSumEl=document.getElementById('targetSum');targetSumEl.textContent=targetSum.toFixed(2)+'%';targetSumEl.dataset.value=targetSum.toFixed(2);
+      // Table build
+      const tbl=document.getElementById('resultTable');tbl.innerHTML=`<thead><tr class='text-[10px] sm:text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400'><th class='px-3 py-2 text-left'>Asset</th><th class='px-3 py-2 text-right'>Current</th><th class='px-3 py-2 text-right'>Target %</th><th class='px-3 py-2 text-right'>Target Value</th><th class='px-3 py-2 text-right'>Rec.</th><th class='px-3 py-2 text-right'>Amount</th><th class='px-3 py-2 text-right'>Drift %</th></tr></thead><tbody class='divide-y divide-slate-100 dark:divide-slate-700'></tbody>`;const tbody=tbl.querySelector('tbody');rows.forEach(r=>{const driftPct= total>0 ? ((r.current/total)*100 - r.targetPct) : 0;const driftAbs=Math.abs(driftPct);const driftColor=driftAbs>5?'text-red-600 dark:text-red-400':(driftAbs>2?'text-amber-600 dark:text-amber-400':'text-slate-500 dark:text-slate-400');const recColor=r.rec==='Buy'?'text-emerald-600 dark:text-emerald-400':(r.rec==='Sell'?'text-red-600 dark:text-red-400':'text-slate-500 dark:text-slate-400');const tr=document.createElement('tr');tr.innerHTML=`<td class='px-3 py-2'>${r.name}</td><td class='px-3 py-2 text-right font-mono'>₹${formatINR(r.current)}</td><td class='px-3 py-2 text-right font-mono'>${r.targetPct.toFixed(2)}%</td><td class='px-3 py-2 text-right font-mono'>₹${formatINR(r.desired)}</td><td class='px-3 py-2 text-right font-semibold ${recColor}'>${r.rec}</td><td class='px-3 py-2 text-right font-mono ${recColor}'>₹${formatINR(r.amount)}</td><td class='px-3 py-2 text-right font-mono ${driftColor}'>${driftPct>0?'+':''}${driftPct.toFixed(2)}%</td>`;tbody.appendChild(tr);});
+      document.getElementById('resultSummary').textContent=`Rows ${rows.length} • Drift threshold highlight at 2% / 5%`;
+      document.getElementById('rebalanceNote').textContent='Recommendation = Buy (underweight) / Sell (overweight). Drift % = Current% - Target%.';
+      // Chart
+      const names=rows.map(r=>r.name);const currentPerc=rows.map(r=> total>0? (r.current/total*100):0);const targetPerc=rows.map(r=> r.targetPct);renderChart(names,currentPerc,targetPerc);
+    }
+    // Seed listeners for existing rows
+    document.querySelectorAll('#holdingsBody tr.h-row').forEach(tr=>{['input','change'].forEach(ev=>tr.addEventListener(ev,e=>{if(e.target.matches('.h-name,.h-value,.h-target')) rebalance();}));tr.querySelector('.remove-row').addEventListener('click',()=>{tr.remove();rebalance();});});
+    // Ripple effect
+    document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
+    // Initial calc
+    rebalance();
+  </script>
+</body>
 </html>

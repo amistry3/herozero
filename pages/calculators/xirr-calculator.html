@@ -2,373 +2,232 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
     <title>HeroZero – XIRR Calculator</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <meta name="description" content="XIRR calculator for irregular cash flows — estimate the annualized return for a series of dated investments and withdrawals.">
-    <meta name="keywords" content="xirr calculator, irregular cashflows, internal rate of return, investment return calculator, India">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        crossorigin="anonymous">
+    <meta name="description"
+        content="Compute XIRR (annualized internal rate of return) for irregular dated cash flows and visualise cumulative value." />
+    <meta name="keywords" content="xirr calculator, internal rate of return, cash flow irr" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+    <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - XIRR Calculator","url":"https://herozero.in/pages/calculators/xirr-calculator.html"}</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
         crossorigin="anonymous"></script>
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "HeroZero - XIRR Calculator",
-        "url": "https://herozero.in/pages/calculators/xirr-calculator.html"
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo">HeroZero
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+    <header class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+            <a href="/index.html" class="flex items-center gap-2 focus-ring">
+                <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+                <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                                    class="bi bi-car-front-fill"></i> Car Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html"><i
-                                    class="bi bi-house-door-fill"></i> House Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                                    class="bi bi-phone"></i> Mobile Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                                    class="bi bi-bar-chart-line-fill"></i> Stock Average Price</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                                    class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+                <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+                <a href="/index.html#calculators"
+                    class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+                <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+                <button id="themeToggle" type="button"
+                    class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+                    aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+            </nav>
         </div>
-    </nav>
-    <main class="container" style="margin-top:5.5rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1><i class="bi bi-calculator"></i> XIRR (internal rate of return)</h1>
-                <p class="text-muted">Estimate XIRR for a series of cash flows. Enter negative for investments and
-                    positive for returns.</p>
-                <div class="card p-3">
-                    <div class="mb-2"><small class="text-muted">Enter cash flows in the rows below. Use date format <strong>dd-mm-yyyy</strong>. Use negative amounts for money you put in and positive for money you get back.</small></div>
-
-                    <div class="table-responsive mt-2">
-                        <table class="table table-sm table-bordered" id="cashflowTable">
-                            <thead>
-                                <tr>
-                                    <th style="width:32px;"></th>
-                                    <th style="width:140px">Date (dd-mm-yyyy)</th>
-                                    <th>Amount (₹)</th>
-                                    <th style="width:100px">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="cf-row">
-                                    <td class="text-center"><input type="checkbox" class="select-row" /></td>
-                                    <td><input type="date" class="form-control cf-date" value="2020-01-01" placeholder="dd-mm-yyyy"></td>
-                                    <td><input type="number" class="form-control cf-amount" value="-10000"></td>
-                                    <td><button class="btn btn-sm btn-outline-danger remove-row">Remove</button></td>
-                                </tr>
-                                <tr class="cf-row">
-                                    <td class="text-center"><input type="checkbox" class="select-row" /></td>
-                                    <td><input type="date" class="form-control cf-date" value="2020-04-01" placeholder="dd-mm-yyyy"></td>
-                                    <td><input type="number" class="form-control cf-amount" value="-10000"></td>
-                                    <td><button class="btn btn-sm btn-outline-danger remove-row">Remove</button></td>
-                                </tr>
-                                <tr class="cf-row">
-                                    <td class="text-center"><input type="checkbox" class="select-row" /></td>
-                                    <td><input type="date" class="form-control cf-date" value="2023-01-01" placeholder="dd-mm-yyyy"></td>
-                                    <td><input type="number" class="form-control cf-amount" value="50000"></td>
-                                    <td><button class="btn btn-sm btn-outline-danger remove-row">Remove</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+            <h1
+                class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+                <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M10 38h28" />
+              <path d="M14 32l8-18 8 10 4-6" />
+              <path d="M30 12h8v8" />
+            </svg>
+                </span>
+                <span>XIRR Calculator</span>
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Add dated cash
+                flows (investments negative, returns positive). Compute annualised IRR and view the cumulative path.</p>
+        </div>
+    </header>
+    <main class="flex-1">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+                <div class="card-tw p-8 space-y-8" id="inputsCard">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                            Cash Flows</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Enter at least one negative and one
+                            positive amount.</p>
                     </div>
-
-                    <div class="d-flex gap-2 mt-2">
-                        <button id="addRowBtn" class="btn btn-sm btn-secondary">Add row</button>
-                        <button id="removeSelectedBtn" class="btn btn-sm btn-danger">Remove selected</button>
-                        <div class="ms-auto">
-                            <button id="calcBtn" class="btn btn-primary">Calculate XIRR</button>
+                    <div class="space-y-5">
+                        <div class="flex flex-wrap gap-3">
+                            <button id="addInvestBtn" type="button" class="btn-primary btn-ripple text-xs px-4 py-2">Investment (–)</button>
+                            <button id="addReturnBtn" type="button" class="btn-primary btn-ripple text-xs px-4 py-2">Return (+)</button>
+                            <button id="removeSelectedBtn" type="button" class="btn-primary btn-ripple bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 text-xs px-4 py-2">Remove Selected</button>
+                            <button id="calcBtn" type="button" class="btn-primary btn-ripple text-xs px-5 py-2">Calculate XIRR</button>
+                        </div>
+                        <br/>
+                        <div class="overflow-auto border border-slate-200 dark:border-slate-700 rounded-lg">
+                            <table class="min-w-full text-xs" id="cashflowTable" style="width: 100%;">
+                                <thead
+                                    class="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-700 sticky top-0">
+                                    <tr class="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                                        <th class="px-2 py-2 text-left w-8"><input type="checkbox" id="selectAll"
+                                                class="accent-brand" /></th>
+                                        <th class="px-2 py-2 text-left">Date</th>
+                                        <th class="px-2 py-2 text-right">Amount (₹)</th>
+                                        <th class="px-2 py-2 text-center">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 dark:divide-slate-700"></tbody>
+                            </table>
+                        </div>
+                        <p id="xirrError" class="text-[11px] text-red-600 dark:text-red-400 hidden"></p>
+                        <p class="text-[10px] text-sm text-slate-500 dark:text-slate-500 leading-relaxed">Hint: Negative amounts
+                            are outflows (investments). Positive are inflows (redemptions, dividends). Dates must be
+                            valid & ordering auto handled.</p>
+                    </div>
+                </div>
+                <div class="card-tw p-8 space-y-8" id="resultsCard">
+                    <div class="space-y-6" id="resultsSection">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div
+                                class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                                <div class="metric-label flex items-center gap-1">XIRR (Annual %)
+                                    <button type="button" class="ml-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 focus-ring" aria-label="What is XIRR?" title="Annualised return rate solving NPV=0 for irregular cash flows.">
+                                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                    </button>
+                                </div>
+                                <div id="xirrValue" class="metric-value font-mono">0.00%</div>
+                            </div>
+                            <div id="netCard"
+                                class="metric-card bg-slate-50/80 dark:bg-slate-800/30 border-slate-200/70 dark:border-slate-600/40 transition-colors">
+                                <div class="metric-label flex items-center gap-1">Net Cashflow <span id="netArrow" class="text-[10px]"></span></div>
+                                <div class="metric-value font-mono flex items-baseline gap-1"><span id="netValue">₹0</span></div>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div
+                                class="metric-card bg-indigo-50/80 dark:bg-indigo-900/20 border-indigo-200/70 dark:border-indigo-600/40">
+                                <div class="metric-label">Total Invested</div>
+                                <div id="investedValue" class="metric-value font-mono">₹0</div>
+                            </div>
+                            <div
+                                class="metric-card bg-fuchsia-50/80 dark:bg-fuchsia-900/20 border-fuchsia-200/70 dark:border-fuchsia-600/40">
+                                <div class="metric-label">Total Returned</div>
+                                <div id="returnedValue" class="metric-value font-mono">₹0</div>
+                            </div>
                         </div>
                     </div>
-
-                    <hr />
-                    <h4 class="mb-1 d-none text-center" id="xirr-p"><strong>XIRR (annual %):</strong> <span id="xirr"></span></h4>
-                    <p id="xirrError" class="text-danger small d-none"></p>
-                    <div class="mt-3 d-flex align-items-center d-none">
-                        <label class="me-2 mb-0">Chart type:</label>
-                        <select id="chartType" class="form-select form-select-sm" style="width:160px;">
-                            <option value="line">Line (value over time)</option>
-                            <option value="bar">Bar (value per date)</option>
-                            <option value="area">Area (filled line)</option>
-                        </select>
-                        <div class="ms-auto">
-                            <button id="downloadChart" class="btn btn-sm btn-outline-secondary">Download Chart</button>
-                        </div>
+                    <div class="relative h-[320px]" id="chartWrap">
+                        <div id="xirrChartContainer" class="h-full"
+                            aria-label="Cumulative cash flow and estimated value chart"></div>
                     </div>
-                    <div class="mt-3">
-                        <canvas id="xirrChart" class="d-none" height="140"></canvas>
+                    <div id="xirrHighlight"
+                        class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+                </div>
+            </div>
+            <br />
+            <div class="mt-20 lg:mt-16 grid gap-4 lg:grid-cols-4">
+                <div class="lg:col-span-2 card-tw p-4">
+                    <h2 class="text-lg font-bold mb-2 flex items-center gap-2 text-slate-900 dark:text-slate-100"><span
+                            class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-brand text-white text-sm">i</span>XIRR
+                        Guide</h2>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-4">Educational only – ignores
+                        tax, fees & interim volatility. XIRR is sensitive to early cash flows (sequence risk).</p>
+                    <div class="space-y-3">
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                                <span>Formula Basis</span><svg
+                                    class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <div
+                                class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                                <p>IRR solves Σ(CF<sub>i</sub>/(1+r)^{t_i}) = 0 for r. We approximate via Newton
+                                    iterations on XNPV.</p>
+                            </div>
+                        </details>
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                                <span>When Useful</span><svg class="w-4 h-4 transition-transform group-open:rotate-180"
+                                    viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <div
+                                class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                                <p>Comparing uneven investment schedules, SIPs with redemptions, or alternative assets
+                                    with irregular cash flows.</p>
+                            </div>
+                        </details>
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                                <span>Limitations</span><svg class="w-4 h-4 transition-transform group-open:rotate-180"
+                                    viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <ol
+                                class="mt-4 list-decimal pl-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+                                <li>Multiple IRRs possible with sign changes.</li>
+                                <li>Assumes interim reinvestment at IRR.</li>
+                                <li>Past pattern may not persist.</li>
+                            </ol>
+                        </details>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
-    <script>
-        // parse date in dd-mm-yyyy -> Date object
-        function parseDMY(s) {
-            if (!s) return null;
-            // if format is yyyy-mm-dd (from input[type=date])
-            if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-                const parts = s.split('-');
-                const y = parseInt(parts[0], 10);
-                const m = parseInt(parts[1], 10) - 1;
-                const d = parseInt(parts[2], 10);
-                const dt = new Date(y, m, d);
-                if (dt.getFullYear() !== y || dt.getMonth() !== m || dt.getDate() !== d) return null;
-                return dt;
-            }
-            // accept dd-mm-yyyy as fallback
-            const parts = s.split('-').map(p => p.trim());
-            if (parts.length !== 3) return null;
-            const d = parseInt(parts[0], 10);
-            const m = parseInt(parts[1], 10) - 1;
-            const y = parseInt(parts[2], 10);
-            if (!Number.isFinite(d) || !Number.isFinite(m) || !Number.isFinite(y)) return null;
-            const dt = new Date(y, m, d);
-            if (dt.getFullYear() !== y || dt.getMonth() !== m || dt.getDate() !== d) return null;
-            return dt;
-        }
-
-        function collectCashflows() {
-            const rows = Array.from(document.querySelectorAll('#cashflowTable tbody .cf-row'));
-            const cfs = [];
-            for (const r of rows) {
-                const dateStr = r.querySelector('.cf-date').value.trim();
-                const amtStr = r.querySelector('.cf-amount').value;
-                if (!dateStr) continue;
-                const dt = parseDMY(dateStr);
-                const amt = parseFloat(amtStr);
-                if (!dt || !Number.isFinite(amt)) continue;
-                cfs.push({ date: dt, amount: amt });
-            }
-            cfs.sort((a, b) => a.date - b.date);
-            return cfs;
-        }
-
-        // build cumulative value series for charting
-        function buildValueSeries(cashflows, annualRateEstimate) {
-            // create unique sorted dates and cumulative invested/value
-            const msPerDay = 24 * 60 * 60 * 1000;
-            const out = [];
-            if (cashflows.length === 0) return out;
-            // approximate growth between cashflows using estimated rate
-            let balance = 0;
-            let lastDate = cashflows[0].date;
-            for (const cf of cashflows) {
-                // grow balance from lastDate to cf.date
-                const years = (cf.date - lastDate) / msPerDay / 365.0;
-                if (years > 0 && balance !== 0) {
-                    balance = balance * Math.pow(1 + annualRateEstimate, years);
-                }
-                balance += cf.amount;
-                out.push({ date: new Date(cf.date), value: balance });
-                lastDate = cf.date;
-            }
-            return out;
-        }
-
-        function xnpv(rate, cashflows) {
-            let pv = 0;
-            const msPerDay = 24 * 60 * 60 * 1000;
-            const firstDate = cashflows[0].date;
-            for (const cf of cashflows) {
-                const t = (cf.date - firstDate) / msPerDay / 365.0;
-                pv += cf.amount / Math.pow(1 + rate, t);
-            }
-            return pv;
-        }
-
-        function xirr(cashflows) {
-            if (cashflows.length === 0) throw new Error('no cashflows');
-            let guess = 0.1;
-            for (let i = 0; i < 200; i++) {
-                const f = xnpv(guess, cashflows);
-                const eps = 1e-7;
-                const f1 = xnpv(guess + eps, cashflows);
-                const deriv = (f1 - f) / eps;
-                if (Math.abs(deriv) < 1e-12) break;
-                const newGuess = guess - f / deriv;
-                if (!isFinite(newGuess)) break;
-                if (Math.abs(newGuess - guess) < 1e-9) { guess = newGuess; break; }
-                guess = newGuess;
-            }
-            return guess;
-        }
-
-        function addRow(date = '', amount = '') {
-            const tbody = document.querySelector('#cashflowTable tbody');
-            const tr = document.createElement('tr');
-            tr.className = 'cf-row';
-            tr.innerHTML = `
-                <td class="text-center"><input type="checkbox" class="select-row" /></td>
-                <td><input type="date" class="form-control cf-date" value="${date}" placeholder="dd-mm-yyyy"></td>
-                <td><input type="number" class="form-control cf-amount" value="${amount}"></td>
-                <td><button class="btn btn-sm btn-outline-danger remove-row">Remove</button></td>
-            `;
-            tbody.appendChild(tr);
-            tr.querySelector('.remove-row').addEventListener('click', () => tr.remove());
-        }
-
-        document.getElementById('addRowBtn').addEventListener('click', () => addRow('', ''));
-        document.getElementById('removeSelectedBtn').addEventListener('click', () => {
-            const checks = document.querySelectorAll('#cashflowTable .select-row:checked');
-            checks.forEach(cb => { const row = cb.closest('tr'); if (row) row.remove(); });
-        });
-
-        document.querySelectorAll('.remove-row').forEach(btn => btn.addEventListener('click', (e) => {
-            const tr = e.target.closest('tr'); if (tr) tr.remove();
-        }));
-
-        document.getElementById('calcBtn').addEventListener('click', () => {
-            const errEl = document.getElementById('xirrError');
-            errEl.classList.add('d-none');
-            errEl.innerText = '';
-            const rawCF = collectCashflows();
-            if (rawCF.length < 2) { errEl.innerText = 'Enter at least two valid cash flows.'; errEl.classList.remove('d-none'); return; }
-            const cfs = rawCF.map(cf => ({ date: cf.date, amount: cf.amount }));
-            try {
-                const r = xirr(cfs);
-                if (!isFinite(r)) throw new Error('no convergence');
-                document.getElementById('xirr').innerText = (r * 100).toFixed(2);
-                // draw chart using series built from cashflows and xirr as estimate
-                try { drawChart(cfs, r); } catch (e) { console.log('chart error', e); }
-            } catch (e) {
-                document.getElementById('xirr').innerText = 'Error';
-                errEl.innerText = 'Could not compute XIRR. Check dates are valid and amounts are numbers.';
-                errEl.classList.remove('d-none');
-            }
-        });
-
-        // Chart.js drawing
-        let xirrChart = null;
-        function drawChart(cashflows, annualRate) {
-            document.getElementById('xirrChart').classList.remove('d-none');
-            document.getElementById('xirr-p').classList.remove('d-none');
-            const chartType = document.getElementById('chartType').value;
-            // build series using annualRate as estimate
-            const series = buildValueSeries(cashflows, annualRate);
-            const labels = series.map(s => s.date.toISOString().slice(0, 10));
-            const data = series.map(s => s.value);
-            const ctx = document.getElementById('xirrChart');
-            if (xirrChart) xirrChart.destroy();
-            const config = {
-                type: chartType === 'bar' ? 'bar' : 'line',
-                data: {
-                    labels,
-                    datasets: [{ label: 'Estimated value (₹)', data, borderColor: '#198754', backgroundColor: chartType === 'bar' ? '#198754' : 'rgba(25,135,84,0.08)', fill: chartType !== 'bar' }]
-                },
-                options: { responsive: true, plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (ctx) => '₹' + Number(ctx.parsed.y).toLocaleString('en-IN') } } }, scales: { y: { ticks: { callback: (v) => '₹' + Number(v).toLocaleString('en-IN') } } } }
-            };
-            xirrChart = new Chart(ctx, config);
-        }
-
-        document.getElementById('downloadChart').addEventListener('click', () => {
-            if (!xirrChart) return;
-            const a = document.createElement('a');
-            a.href = xirrChart.toBase64Image();
-            a.download = 'xirr-chart.png';
-            a.click();
-        });
-    </script>
-
-    <!-- Simple explanation for novices about XIRR -->
-    <div class="container" style="margin-top:1rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="card mt-3 p-4">
-                    <h2>What is XIRR? (in simple words)</h2>
-                    <p class="mb-2">XIRR is a way to show the yearly return you earned when you have many investments and withdrawals at different times. It gives one annual percentage that sums up the whole story.</p>
-
-                    <h3>How it helps</h3>
-                    <p class="mb-2">If you invested several times and later took money out, XIRR tells you the effective yearly return across those dates. Use negative numbers for money you invest and positive for money you receive back.</p>
-
-                    <h3>Simple example</h3>
-                    <p class="mb-2">If you put in ₹10,000 on 01-01-2020, another ₹10,000 on 01-04-2020 and got ₹50,000 on 01-01-2023, the calculator will give a single yearly return number for that series.</p>
-
-                    <p class="text-muted small mb-0">This is an estimate and depends on the dates and amounts you enter. It helps compare returns when cash flows are irregular.</p>
-                </div>
-            </div>
+    <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+            <nav class="flex gap-5 flex-wrap">
+                <a href="/pages/about.html" class="hover:text-white">About</a>
+                <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+                <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+                <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+            </nav>
+            <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
         </div>
-    </div>
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        (function () { const root = document.documentElement; const btn = document.getElementById('themeToggle'); const stored = localStorage.getItem('hz-theme'); if (stored === 'dark') { root.classList.add('dark'); btn && btn.setAttribute('aria-pressed', 'true'); btn && (btn.textContent = '☀️'); } btn && btn.addEventListener('click', () => { const d = root.classList.toggle('dark'); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); btn.textContent = d ? '☀️' : '🌙'; localStorage.setItem('hz-theme', d ? 'dark' : 'light'); setTimeout(() => recalc(true), 30); }); })();
+        const clamp = (v, min, max) => Math.min(Math.max(v, min), max); function formatINR(x, fd = 0) { return Number(x).toLocaleString('en-IN', { maximumFractionDigits: fd }); }
+        function countUp(el, to, duration = 650, suffix = '') { const from = Number((el.dataset.value || '0').replace(/,/g, '')) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = (el.id === 'xirrValue' ? val.toFixed(2) + '%' : '₹' + formatINR(val, 0)) + suffix; if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to); } requestAnimationFrame(frame); }
+        function parseInputDate(s) { if (!s) return null; const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s); if (!m) return null; const y = +m[1], mo = +m[2] - 1, d = +m[3]; const dt = new Date(y, mo, d); if (dt.getFullYear() !== y || dt.getMonth() !== mo || dt.getDate() !== d) return null; return dt; }
+        function collectCashflows() { const rows = [...document.querySelectorAll('#cashflowTable tbody tr.cf-row')]; const list = []; for (const r of rows) { const dateStr = r.querySelector('.cf-date').value.trim(); const amtStr = r.querySelector('.cf-amount').value.trim(); if (!dateStr || amtStr === '') continue; const dt = parseInputDate(dateStr); const amt = parseFloat(amtStr); if (!dt || !isFinite(amt)) continue; list.push({ date: dt, amount: amt }); } list.sort((a, b) => a.date - b.date); return list; }
+        function xnpv(rate, cfs) { let pv = 0; const first = cfs[0].date; const msDay = 86400000; for (const cf of cfs) { const t = (cf.date - first) / msDay / 365; pv += cf.amount / Math.pow(1 + rate, t); } return pv; }
+        function xirr(cfs) { let guess = 0.1; for (let i = 0; i < 150; i++) { const f = xnpv(guess, cfs); const eps = 1e-7; const f1 = xnpv(guess + eps, cfs); const der = (f1 - f) / eps; if (Math.abs(der) < 1e-14) break; const ng = guess - f / der; if (!isFinite(ng)) break; if (Math.abs(ng - guess) < 1e-8) { guess = ng; break; } guess = ng; } return guess; }
+        function buildValueSeries(cfs, rate) { if (!cfs.length) return []; const msDay = 86400000; let bal = 0; let last = cfs[0].date; const out = []; for (const cf of cfs) { const yrs = (cf.date - last) / msDay / 365; if (yrs > 0 && bal !== 0) bal = bal * Math.pow(1 + rate, yrs); bal += cf.amount; out.push({ date: new Date(cf.date), value: bal }); last = cf.date; } return out; }
+        let xirrChart; function renderChart(series) { const isDark = document.documentElement.classList.contains('dark'); const grid = isDark ? '#334155' : '#e2e8f0'; if (xirrChart && xirrChart.destroy) xirrChart.destroy(); xirrChart = Highcharts.chart('xirrChartContainer', { chart: { backgroundColor: 'transparent' }, title: null, credits: { enabled: false }, xAxis: { categories: series.map(s => s.date.toISOString().slice(0, 10)), lineColor: grid, tickColor: grid, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' } } }, yAxis: { title: null, gridLineColor: grid, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' }, formatter() { return '₹' + formatINR(this.value); } } }, legend: { align: 'center', verticalAlign: 'top', itemStyle: { color: isDark ? '#e2e8f0' : '#334155' } }, tooltip: { shared: false, useHTML: true, formatter: function () { return `<b>${this.x}</b><br/>Value: <span style="color:#16a34a;font-weight:600">₹${formatINR(this.y)}</span>`; } }, plotOptions: { series: { animation: { duration: 650, easing: 'easeOutQuad' } }, areaspline: { fillOpacity: .25 } }, series: [{ name: 'Cumulative Value', type: 'areaspline', data: series.map(s => s.value), color: '#16a34a', lineWidth: 2, fillColor: { linearGradient: [0, 0, 0, 260], stops: [[0, 'rgba(16,163,74,.45)'], [1, 'rgba(16,163,74,0)']] } }] }); }
+        function updateHighlight(cfs, rate) { const el = document.getElementById('xirrHighlight'); if (!el) return; if (!cfs.length) { el.textContent = 'Add cash flows to compute XIRR.'; return; } const invested = cfs.filter(c => c.amount < 0).reduce((a, b) => a + b.amount, 0); const returned = cfs.filter(c => c.amount > 0).reduce((a, b) => a + b.amount, 0); const spanYears = (cfs[cfs.length - 1].date - cfs[0].date) / 86400000 / 365; el.textContent = `IRR over ~${spanYears.toFixed(2)} years: ${(rate * 100).toFixed(2)}%. Invested ₹${formatINR(Math.abs(invested))}, Returned ₹${formatINR(returned)}.`; }
+        function recalc(fromTheme) { const cfs = collectCashflows(); const err = document.getElementById('xirrError'); err.classList.add('hidden'); if (cfs.length < 2) { updateMetrics(null, cfs); updateHighlight(cfs, 0); if (!fromTheme) renderChart([]); return; } if (!cfs.some(c => c.amount < 0) || !cfs.some(c => c.amount > 0)) { err.textContent = 'Need at least one negative and one positive cash flow.'; err.classList.remove('hidden'); updateMetrics(null, cfs); renderChart([]); return; } try { const r = xirr(cfs); if (!isFinite(r)) throw new Error('no convergence'); updateMetrics(r, cfs); const series = buildValueSeries(cfs, r); renderChart(series); updateHighlight(cfs, r); } catch (e) { err.textContent = 'Could not converge on an IRR.'; err.classList.remove('hidden'); updateMetrics(null, cfs); renderChart([]); updateHighlight([], 0); } }
+        function updateMetrics(rate, cfs) { const invested = Math.abs(cfs.filter(c => c.amount < 0).reduce((a, b) => a + b.amount, 0)); const returned = cfs.filter(c => c.amount > 0).reduce((a, b) => a + b.amount, 0); const net = returned - invested; const xirrEl = document.getElementById('xirrValue'); if (rate == null) { xirrEl.textContent = '—'; } else { countUp(xirrEl, rate * 100, 700, '%'); } countUp(document.getElementById('investedValue'), invested, 750); countUp(document.getElementById('returnedValue'), returned, 750); countUp(document.getElementById('netValue'), net, 750); }
+        function addRow(date = '', amount = '', type='neutral') { const tbody = document.querySelector('#cashflowTable tbody'); const tr = document.createElement('tr'); tr.className = 'cf-row'; tr.dataset.type=type; const amtVal = amount || (type==='invest' ? '-10000' : (type==='return' ? '10000' : '')); tr.innerHTML = `<td class="px-2 py-2" style="padding-left:.55rem"><input type="checkbox" class="row-check accent-brand"/></td><td class="px-2 py-2 relative" style="padding-left:.55rem"><input type="date" class="cf-date calc-input w-full rounded-md border bg-white dark:bg-slate-800 pr-8 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" value="${date}"/><span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" aria-hidden="true">📅</span></td><td class="px-2 py-2 text-right" style="padding-left:.55rem"><span class="input-wrap"><span class="input-affix">₹</span><input type="number" step="0.01" class="cf-amount text-right calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" value="${amtVal}"/></span></td><td class="px-2 py-2 text-center"><button type="button" class="remove-row inline-flex items-center justify-center w-7 h-7 rounded-md hover:bg-red-50 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 focus-ring" aria-label="Remove row"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M5 6l1 14a2 2 0 002 2h8a2 2 0 002-2l1-14"/></svg></button></td>`; tbody.appendChild(tr); const amountInput = tr.querySelector('.cf-amount'); tr.querySelector('.remove-row').addEventListener('click', () => { tr.remove(); recalc(); }); ['input','change'].forEach(ev=>tr.querySelector('.cf-date').addEventListener(ev,()=>recalc())); ['input','change'].forEach(ev=>amountInput.addEventListener(ev,()=>{ if(tr.dataset.type==='invest' && +amountInput.value>0) amountInput.value='-'+amountInput.value.replace(/^-/,''); if(tr.dataset.type==='return' && +amountInput.value<0) amountInput.value=amountInput.value.replace(/^-/, ''); recalc(); })); }
+        document.getElementById('addInvestBtn').addEventListener('click', () => addRow('', '', 'invest'));
+        document.getElementById('addReturnBtn').addEventListener('click', () => addRow('', '', 'return'));
+        document.getElementById('removeSelectedBtn').addEventListener('click', () => { document.querySelectorAll('#cashflowTable tbody .row-check:checked').forEach(cb => cb.closest('tr')?.remove()); recalc(); });
+        document.getElementById('selectAll').addEventListener('change', e => { document.querySelectorAll('#cashflowTable tbody .row-check').forEach(cb => cb.checked = e.target.checked); });
+        document.getElementById('calcBtn').addEventListener('click', () => recalc());
+    (function seed() { const today = new Date(); const y = today.getFullYear(); const pad = n => String(n).padStart(2, '0'); addRow(`${y - 2}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`, '-50000','invest'); addRow(`${y - 1}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`, '-25000','invest'); addRow(`${y}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`, '90000','return'); recalc(); })();
+    // Enhance net cashflow card coloring
+    const netCard=document.getElementById('netCard'); const netArrow=document.getElementById('netArrow');
+    const origUpdateMetrics = updateMetrics; updateMetrics = function(rate,cfs){ origUpdateMetrics(rate,cfs); const invested = Math.abs(cfs.filter(c=>c.amount<0).reduce((a,b)=>a+b.amount,0)); const returned = cfs.filter(c=>c.amount>0).reduce((a,b)=>a+b.amount,0); const net = returned - invested; if(!netCard)return; if(net>0){ netCard.classList.remove('bg-slate-50/80','dark:bg-slate-800/30'); netCard.classList.add('bg-emerald-50/80','dark:bg-emerald-900/20','border-emerald-200/70','dark:border-emerald-600/40'); netCard.classList.remove('bg-red-50/80','dark:bg-red-900/20','border-red-200/70','dark:border-red-600/40'); netArrow.textContent='↑'; netArrow.className='text-[10px] text-emerald-600 dark:text-emerald-300'; } else if(net<0){ netCard.classList.remove('bg-slate-50/80','dark:bg-slate-800/30'); netCard.classList.add('bg-red-50/80','dark:bg-red-900/20','border-red-200/70','dark:border-red-600/40'); netCard.classList.remove('bg-emerald-50/80','dark:bg-emerald-900/20','border-emerald-200/70','dark:border-emerald-600/40'); netArrow.textContent='↓'; netArrow.className='text-[10px] text-red-600 dark:text-red-400'; } else { netCard.classList.remove('bg-emerald-50/80','dark:bg-emerald-900/20','border-emerald-200/70','dark:border-emerald-600/40','bg-red-50/80','dark:bg-red-900/20','border-red-200/70','dark:border-red-600/40'); netCard.classList.add('bg-slate-50/80','dark:bg-slate-800/30','border-slate-200/70','dark:border-slate-600/40'); netArrow.textContent=''; netArrow.className='text-[10px]'; } };
+        document.addEventListener('click', e => { const t = e.target.closest('.btn-ripple'); if (!t) return; const r = document.createElement('span'); r.className = 'ripple-anim'; const rect = t.getBoundingClientRect(); const size = Math.max(rect.width, rect.height); r.style.width = r.style.height = size + 'px'; r.style.left = (e.clientX - rect.left - size / 2) + 'px'; r.style.top = (e.clientY - rect.top - size / 2) + 'px'; t.appendChild(r); setTimeout(() => r.remove(), 600); });
+    </script>
 </body>
 
 </html>

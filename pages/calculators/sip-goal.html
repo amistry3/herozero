@@ -1,249 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
     <title>HeroZero – SIP Goal Planner</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
-    <meta name="description" content="SIP Goal Planner — calculate the monthly SIP required to reach a future corpus given expected returns and time horizon.">
-    <meta name="keywords" content="sip goal planner, required sip, investment goal calculator, mutual fund planning, India">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        crossorigin="anonymous">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-        crossorigin="anonymous"></script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "HeroZero - SIP Goal Planner",
-            "url": "https://herozero.in/pages/calculators/sip-goal.html"
-        }
-    </script>
+    <meta name="description" content="SIP Goal Planner – solve the monthly SIP needed to reach a target corpus for a given timeframe and expected return." />
+    <meta name="keywords" content="sip goal planner, required sip, mutual fund goal, investment planning" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - SIP Goal Planner","url":"https://herozero.in/pages/calculators/sip-goal.html"}</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
 </head>
-
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo">HeroZero
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+    <header class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+            <a href="/index.html" class="flex items-center gap-2 focus-ring">
+                <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+                <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                                    class="bi bi-car-front-fill"></i> Car Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html"><i
-                                    class="bi bi-house-door-fill"></i> House Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                                    class="bi bi-phone"></i> Mobile Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                                    class="bi bi-bar-chart-line-fill"></i> Stock Average Price</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                                    class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+                <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+                <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+                <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+                <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+            </nav>
         </div>
-    </nav>
-    <main class="container" style="margin-top:5.5rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1><i class="bi bi-bullseye"></i> SIP Goal Planner</h1>
-                <p class="text-muted">Find required monthly SIP to reach a future goal.</p>
-                <div class="card p-3">
-                    <div class="mb-3"><label class="form-label">Goal amount (₹)</label><input id="goal"
-                            class="form-control" type="number" value="1000000"></div>
-                    <div class="mb-3"><label class="form-label">Expected annual return (in %)</label><input
-                            id="annualReturn" class="form-control" type="number" value="12" min="1" step="0.1"></div>
-                    <div class="mb-3"><label class="form-label">Investment duration (years)</label><input id="years"
-                            class="form-control" type="number" value="10" min="1" step="1"></div>
-                    <button id="calcBtn" class="btn btn-primary">Calculate</button>
-                    <hr />
-                    <h4 class="mb-1 text-center d-none" id="result"><strong>Required Monthly SIP (₹):</strong> <span id="required" class="text-success"></span></h4>
-
-                    <div id="sipGoalResults" class="mt-3 d-none">
-                        <div id="goalTableContainer" class="table-responsive mb-3"></div>
-                        <div>
-                            <canvas id="goalChart" height="140"></canvas>
-                        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+                <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="w-full h-full">
+                        <circle cx="24" cy="24" r="14" />
+                        <path d="M24 16v8l6 4" />
+                    </svg>
+                </span>
+                <span>SIP Goal Planner</span>
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Reverse the SIP calculation: enter a future goal and see the monthly contribution needed. Adjust assumptions instantly.</p>
+        </div>
+    </header>
+    <main class="flex-1">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+                <!-- Inputs Card -->
+                <div class="card-tw p-8 space-y-8" id="inputsCard">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-2">Goal Inputs</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Provide target corpus, return assumption & duration.</p>
+                    </div>
+                    <form id="goalForm" onsubmit="event.preventDefault()" class="grid gap-6">
+                        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Goal Amount (₹)
+                            <span class="input-wrap"><span class="input-affix">₹</span><input id="goal" type="number" min="1000" value="1000000" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" /></span>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400">Target future corpus</span>
+                        </label>
+                        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Expected Annual Return (%)
+                            <input id="annualReturn" type="number" step="0.1" min="1" value="12" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                        </label>
+                        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Investment Duration (Years)
+                            <div class="flex items-center gap-4">
+                                <div class="range-wrap flex-1"><input id="yearsRange" type="range" min="1" max="40" value="10" class="range-adv" /><span id="yearsBubble" class="range-bubble">10 years</span></div>
+                                <input id="years" type="number" min="1" max="40" value="10" class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                            </div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 1–40 years</span>
+                        </label>
+                        <div class="flex justify-end"><button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Calculate</span><span aria-hidden="true">🎯</span></span></button></div>
+                    </form>
+                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                        <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">How Goal Solver Works</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">We invert the SIP future value formula to fetch required monthly contribution.</p></details>
+                        <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Return Assumption</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Use conservative % (e.g. 10–12% equities, 6–8% debt). Real outcomes vary.</p></details>
+                        <details class="card-tw p-5 sm:col-span-1"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Tips</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="mt-3 list-disc pl-4 text-[11px] text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed"><li>Increase SIP with income</li><li>Plan for inflation</li><li>Stay disciplined</li></ul></details>
                     </div>
                 </div>
-                <!-- Beginner-friendly explanation for SIP Goal Planner -->
-                <div class="card mt-4 p-4">
-                    <h2>About this SIP Goal Planner</h2>
-                    <p class="mb-2">This tool estimates the monthly SIP you need to reach a future amount. Enter your target amount, the number of years you can invest, and an expected annual return. The planner shows the monthly amount to save and a year-by-year projection.</p>
-
-                    <h3>Simple steps</h3>
-                    <ol>
-                        <li>Decide how much money you want in the future (your goal).</li>
-                        <li>Choose how many years you can keep investing.</li>
-                        <li>Pick a reasonable expected annual return (this is only an estimate).</li>
-                        <li>Click Calculate — the planner shows the monthly SIP required and a projection.</li>
-                    </ol>
-
-                    <h3>Things to remember</h3>
-                    <ul>
-                        <li>The result is an estimate. Actual returns depend on market moves and fund costs.</li>
-                        <li>Higher expected returns lower the required monthly SIP, but higher returns usually mean higher risk.</li>
-                        <li>You can adjust the SIP later — many funds let you increase, decrease, pause, or stop contributions.</li>
-                    </ul>
-
-                    <h3>Quick FAQ</h3>
-                    <p class="mb-0"><strong>Minimum monthly amount:</strong> Depends on the fund; many funds accept small SIPs (e.g., ₹500/month).</p>
-                    <p class="mb-0"><strong>How long should I invest?</strong> For goals affected by market ups and downs (like retirement or wealth creation), longer periods (several years) help smooth returns.</p>
-                    <p class="text-muted small mt-2">Use this planner to form a starting plan. For personalised advice, consider talking to a certified financial advisor.</p>
+                <!-- Results Card -->
+                <div class="card-tw p-8 space-y-8" id="resultsCard">
+                    <div class="space-y-6" id="resultsSection">
+                        <div class="metric-card relative overflow-hidden bg-blue-50 dark:bg-blue-900/25 border-blue-300/60 dark:border-blue-600/40 p-6 sm:p-7">
+                            <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-20" style="background:radial-gradient(circle at 25% 20%,rgba(37,99,235,.35),transparent 65%)"></div>
+                            <div class="flex items-start justify-between relative z-10">
+                                <div>
+                                    <div class="text-[11px] tracking-wide font-semibold uppercase text-blue-700 dark:text-blue-300">Required Monthly SIP</div>
+                                    <div id="requiredSip" class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-blue-700 dark:text-blue-300 mt-1">₹0</div>
+                                </div>
+                                <div class="hidden sm:block text-blue-500 dark:text-blue-400" aria-hidden="true">
+                                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-[10px] sm:text-xs text-blue-700/80 dark:text-blue-300/70 relative z-10">Approximate monthly contribution (fees & taxes ignored).</p>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                                <div class="metric-label">Total Invested</div>
+                                <div id="totalInvested" class="metric-value font-mono">₹0</div>
+                            </div>
+                            <div class="metric-card bg-indigo-50/80 dark:bg-indigo-900/20 border-indigo-200/70 dark:border-indigo-600/40">
+                                <div class="metric-label">Gain Over Invested</div>
+                                <div id="gainValue" class="metric-value font-mono">₹0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-[320px]" id="chartWrap">
+                        <div id="sipGoalChartContainer" class="h-full" aria-label="Invested vs projected value chart"></div>
+                    </div>
+                    <div id="goalHighlight" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>                    
                 </div>
             </div>
-        </div>
+            <br/>
+            <!-- Informational accordion -->
+            <div class="mt-20 lg:mt-16 grid gap-4 lg:grid-cols-4">
+                <div class="lg:col-span-2 card-tw p-4">
+                    <h2 class="text-lg font-bold mb-2 flex items-center gap-2 text-slate-900 dark:text-slate-100">
+                        <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-brand text-white text-sm">i</span>
+                        Understanding Goal Planning
+                    </h2>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-4">Educational only – goal projections ignore volatility, taxes, fees & behavioural factors.</p>
+                    <div class="space-y-3">
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60"><span>Formula Inversion</span><svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+                            <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-3 text-slate-600 dark:text-slate-400">
+                                <p>Monthly SIP ≈ Goal × r_m / (((1+r_m)^n - 1) × (1+r_m)) where r_m = annual% / 12 and n = months.</p>
+                            </div>
+                        </details>
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60"><span>Inflation Angle</span><svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+                            <div class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400"><p>Adjust nominal target upward if goal is far out (e.g. 10y+). Real purchasing power declined otherwise.</p></div>
+                        </details>
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60"><span>Behavioural Tips</span><svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+                            <ol class="mt-4 list-decimal pl-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed"><li>Automate increases yearly (step‑up).</li><li>Model conservative and optimistic cases.</li><li>Revisit return assumption every few years.</li></ol>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script>
-        function formatINR(x) {
-            return Number(x).toLocaleString('en-IN', { maximumFractionDigits: 2 });
-        }
-
-        let goalChart = null;
-
-        function buildYearlyForGoal(monthlySIP, annualRate, years) {
-            const monthlyRate = annualRate / 12;
-            const series = [];
-            let balance = 0;
-            let invested = 0;
-            for (let y = 1; y <= years; y++) {
-                for (let m = 0; m < 12; m++) {
-                    balance = balance * (1 + monthlyRate) + monthlySIP;
-                    invested += monthlySIP;
-                }
-                series.push({ year: y, invested: invested, value: balance });
-            }
-            return series;
-        }
-
-        function calcSIPGoal() {
-            const goal = parseFloat(document.getElementById('goal').value) || 0;
-            const r = (parseFloat(document.getElementById('annualReturn').value) || 0) / 100;
-            const n = parseFloat(document.getElementById('years').value) || 0;
-            const months = n * 12;
-            const i = r / 12;
-            let SIP = 0;
-            if (i === 0) SIP = goal / months;
-            else SIP = goal * i / ((Math.pow(1 + i, months) - 1) * (1 + i));
-            document.getElementById('required').innerText = formatINR(SIP);
-            document.getElementById('result').classList.remove('d-none');
-
-            // build yearly projection and show table + chart
-            const series = buildYearlyForGoal(SIP, r, n);
-            const tableContainer = document.getElementById('goalTableContainer');
-            const table = document.createElement('table');
-            table.className = 'table table-sm table-striped';
-            const thead = document.createElement('thead');
-            thead.innerHTML = '<tr><th>Year</th><th class="text-end">Total Invested (₹)</th><th class="text-end">Value at Year End (₹)</th><th class="text-end">Gain (₹)</th></tr>';
-            table.appendChild(thead);
-            const tbody = document.createElement('tbody');
-            series.forEach(row => {
-                const tr = document.createElement('tr');
-                const gain = row.value - row.invested;
-                tr.innerHTML = `<td>Year ${row.year}</td><td class="text-end">${formatINR(row.invested)}</td><td class="text-end">${formatINR(row.value)}</td><td class="text-end">${formatINR(gain)}</td>`;
-                tbody.appendChild(tr);
-            });
-            table.appendChild(tbody);
-            tableContainer.innerHTML = '';
-            tableContainer.appendChild(table);
-
-            // chart
-            const labels = series.map(s => `Year ${s.year}`);
-            const investedData = series.map(s => s.invested);
-            const valueData = series.map(s => s.value);
-            const ctx = document.getElementById('goalChart');
-            if (goalChart) goalChart.destroy();
-            goalChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels,
-                    datasets: [
-                        { label: 'Total Invested (₹)', data: investedData, borderColor: '#0d6efd', backgroundColor: 'rgba(13,110,253,0.08)', tension: 0.25, fill: true },
-                        { label: 'Value (₹)', data: valueData, borderColor: '#198754', backgroundColor: 'rgba(25,135,84,0.08)', tension: 0.25, fill: true }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (ctx) => ctx.dataset.label + ': ₹' + formatINR(ctx.parsed.y) } } },
-                    scales: { y: { ticks: { callback: (v) => '₹' + Number(v).toLocaleString('en-IN') } } }
-                }
-            });
-
-            // reveal results
-            const res = document.getElementById('sipGoalResults');
-            if (res) res.classList.remove('d-none');
-        }
-
-        document.getElementById('calcBtn').addEventListener('click', calcSIPGoal);
-    </script>
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
+    <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+            <nav class="flex gap-5 flex-wrap">
+                <a href="/pages/about.html" class="hover:text-white">About</a>
+                <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+                <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+                <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+            </nav>
+            <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+        </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        // Theme toggle reuse
+        (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculateGoal(true),30);});})();
+        const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+        function formatINR(x,fd=0){return Number(x).toLocaleString('en-IN',{maximumFractionDigits:fd});}
+        function countUp(el,to,duration=700,prefix='₹'){const from=Number((el.dataset.value||'0').replace(/,/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=prefix+formatINR(val,0);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
+        // Slider sync (years)
+        (function(){const r=document.getElementById('yearsRange');const n=document.getElementById('years');const b=document.getElementById('yearsBubble');function style(){const min=r.min,max=r.max,val=r.value;const pct=((val-min)/(max-min))*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';r.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`;b.textContent=val+' year'+(val==='1'?'':'s');b.style.left=`${pct}%`;} 
+            r.addEventListener('input',()=>{n.value=r.value;style();triggerGoalCalc();});n.addEventListener('input',()=>{let v=parseInt(n.value||1,10);v=Math.min(Math.max(v,1),40);n.value=v;r.value=v;style();triggerGoalCalc();});style();})();
+        let goalChart;function buildYearlySeries(monthlySIP, annualRate, years){const monthlyRate=annualRate/12;const series=[];let balance=0,totalInvested=0;for(let y=1;y<=years;y++){for(let m=0;m<12;m++){balance=balance*(1+monthlyRate)+monthlySIP;totalInvested+=monthlySIP;}series.push({year:y,invested:totalInvested,value:balance});}return series;}
+        function renderGoalChart(series){const investedData=series.map(s=>s.invested);const totalValue=series.map(s=>s.value);const isDark=document.documentElement.classList.contains('dark');const gridColor=isDark?'#334155':'#e2e8f0';if(goalChart&&goalChart.destroy)goalChart.destroy();goalChart=Highcharts.chart('sipGoalChartContainer',{chart:{backgroundColor:'transparent'},title:null,credits:{enabled:false},xAxis:{categories:series.map(s=>'Year '+s.year),lineColor:gridColor,tickColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'}}},yAxis:{title:null,gridLineColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'},formatter(){return '₹'+formatINR(this.value);}}},legend:{align:'center',verticalAlign:'top',itemStyle:{color:isDark?'#e2e8f0':'#334155'}},tooltip:{shared:true,useHTML:true,formatter:function(){const invested=this.points.find(p=>p.series.name==='Invested')?.y||0;const total=this.points.find(p=>p.series.name==='Projected Value')?.y||0;const gain=total-invested;return `<b>${this.x}</b><br/>Invested: <span style="color:#2563eb">₹${formatINR(invested)}</span><br/>Projected Value: <span style="color:#16a34a;font-weight:600">₹${formatINR(total)}</span><br/>Gain: <span style="color:#16a34a">₹${formatINR(gain)}</span>`;}},plotOptions:{areaspline:{fillOpacity:.28,marker:{enabled:false}},series:{animation:{duration:700,easing:'easeOutQuad'}}},series:[{name:'Projected Value',type:'areaspline',data:totalValue,color:'#16a34a',lineWidth:2,fillColor:{linearGradient:[0,0,0,260],stops:[[0,'rgba(16,163,74,.45)'],[1,'rgba(16,163,74,0)']]}},{name:'Invested',type:'line',data:investedData,color:'#2563eb',dashStyle:'ShortDot',lineWidth:2}]});}
+        function calculateGoal(fromTheme){const goal=parseFloat(document.getElementById('goal').value);const rPerc=parseFloat(document.getElementById('annualReturn').value);const years=parseInt(document.getElementById('years').value,10);if(isNaN(goal)||goal<=0)return;if(isNaN(rPerc)||rPerc<=0)return;if(isNaN(years)||years<=0)return;const annualRate=rPerc/100;const months=years*12;const i=annualRate/12;let sip=0;if(i===0)sip=goal/months;else sip=goal*i/((Math.pow(1+i,months)-1)*(1+i));const series=buildYearlySeries(sip,annualRate,years);const final=series[series.length-1];countUp(document.getElementById('requiredSip'),sip,800);countUp(document.getElementById('totalInvested'),series[series.length-1].invested,800);countUp(document.getElementById('gainValue'),final.value-series[series.length-1].invested,800);renderGoalChart(series);updateGoalHighlight(sip,annualRate,years,goal,final.value);}    
+        function updateGoalHighlight(sip,annualRate,years,goal,final){const el=document.getElementById('goalHighlight');if(!el)return;const invested=sip*12*years;const line=`To reach ₹${formatINR(goal)}, invest about ₹${formatINR(sip)} per month for ${years} year${years===1?'':'s'} (investing ₹${formatINR(invested)} total) at ${ (annualRate*100).toFixed(1) }% could grow to ≈ ₹${formatINR(final)}.`;el.textContent=line;}
+        let goalDebounce;function triggerGoalCalc(){clearTimeout(goalDebounce);goalDebounce=setTimeout(()=>calculateGoal(),180);}['goal','annualReturn','years'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('input',triggerGoalCalc);el.addEventListener('change',triggerGoalCalc);});document.getElementById('calcBtn').addEventListener('click',()=>calculateGoal());
+        window.addEventListener('DOMContentLoaded',()=>{calculateGoal();});
+        // Ripple
+        document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
+    </script>
 </body>
-
 </html>
