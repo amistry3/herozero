@@ -1,366 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>HeroZero – MF Switch / Exit Estimator</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
-    <meta
-      name="description"
-      content="MF Switch / Exit Estimator — estimate capital gains, holding period and approximate tax implications when switching or exiting mutual funds."
-    />
-    <meta
-      name="keywords"
-      content="mf switch estimator, mutual fund exit tax, switch calculator, capital gains estimator, India"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://herozero.in/assets/img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://herozero.in/assets/img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://herozero.in/assets/img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      crossorigin="anonymous"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-      crossorigin="anonymous"
-    ></script>
-    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>  
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "HeroZero - MF Switch / Exit Estimator",
-        "url": "https://herozero.in/pages/calculators/mf-switch-estimator.html"
-      }
-    </script>
-  </head>
 
-  <body>
-    <nav
-      class="navbar navbar-expand-lg fixed-top bg-primary"
-      data-bs-theme="dark"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-          <img
-            src="https://herozero.in/assets/img/favicon-32x32.png"
-            class="me-2"
-            alt="HeroZero Logo"
-          />HeroZero
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="https://herozero.in/"
-                ><i class="bi bi-house-fill me-2"></i>Home</a
-              >
-            </li>
-            <li class="nav-item dropdown" data-bs-theme="light">
-              <a
-                class="nav-link active dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Calculators</a
-              >
-              <div class="dropdown-menu">
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/car-affordability.html"
-                  ><i class="bi bi-car-front-fill"></i> Car Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/house-affordability.html"
-                  ><i class="bi bi-house-door-fill"></i> House Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
-                  ><i class="bi bi-phone"></i> Mobile Affordability</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/stock-average-price.html"
-                  ><i class="bi bi-bar-chart-line-fill"></i> Stock Average
-                  Price</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-calculator.html"
-                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-goal.html"
-                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
-                  ><i class="bi bi-coin"></i> Lumpsum Return</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
-                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
-                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
-                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
-                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
-                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
-                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
-                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
-                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
-                  Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
-                  ><i class="bi bi-layers"></i> MF Direct vs Regular
-                  Estimator</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/blog.html"
-                ><i class="bi bi-journal-text me-2"></i>Blog</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main class="container" style="margin-top: 5.5rem">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <h1><i class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</h1>
-          <p class="text-muted">
-            Estimate taxes and outcomes when switching funds or exiting a mutual
-            fund holding.
-          </p>
-          <div class="card p-3">
-            <div class="mb-3">
-              <label class="form-label">Buy date (DD-MM-YYYY)</label
-              ><input id="buyDate" class="form-control" type="date" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Sell date (DD-MM-YYYY)</label
-              ><input id="sellDate" class="form-control" type="date" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Buy amount (₹)</label
-              ><input
-                id="buyAmt"
-                class="form-control"
-                type="number"
-                value="100000"
-              />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Sell amount (₹)</label
-              ><input
-                id="sellAmt"
-                class="form-control"
-                type="number"
-                value="130000"
-              />
-            </div>
-            <button id="calcBtn" class="btn btn-primary">Estimate</button>
-            <hr />
-            <div id="result" class="d-none">
-              <h4 class="mb-1">
-                <strong>Holding Days:</strong> <span id="days">-</span>
-              </h4>
-              <h4 class="mb-1">
-                <strong>Gain (₹):</strong> <span id="gain">-</span>
-              </h4>
-              <h4 class="mb-1">
-                <strong>Estimated Tax (₹):</strong> <span id="tax" class="text-danger">-</span>
-              </h4>
-              <p class="small text-muted mt-2">
-                Note: For equity funds switching between funds, tax treatment is
-                same as selling. Use capital gains estimator for details.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script>
-      function est() {
-        const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
-        const b = new Date(document.getElementById("buyDate").value);
-        const s = new Date(document.getElementById("sellDate").value);
-        if (isNaN(b) || isNaN(s)) {
-          alert("Enter valid dates");
-          return;
-        }
-        const days = Math.round((s - b) / (1000 * 60 * 60 * 24));
-        const buy = parseFloat(document.getElementById("buyAmt").value) || 0;
-        const sell = parseFloat(document.getElementById("sellAmt").value) || 0;
-        const gain = sell - buy;
-        document.getElementById("days").innerText = days;
-        document.getElementById("gain").innerText = fmtINR.format(gain);
-        // tax rules (updated): LTCG = 12.5% (₹100,000 exemption), STCG = 20%
-        let tax = 0;
-        if (gain <= 0) {
-          tax = 0;
-        } else if (days > 365) {
-          // Long-term capital gains
-          const exempt = 100000;
-          const taxable = Math.max(0, gain - exempt);
-          tax = taxable * 0.125; // 12.5%
-        } else {
-          // Short-term capital gains
-          tax = gain * 0.2; // 20%
-        }
-        document.getElementById("tax").innerText = fmtINR.format(tax);
-        document.getElementById("result").classList.remove("d-none");
-      }
-      document.getElementById("calcBtn").addEventListener("click", est);
-    </script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HeroZero – MF Switch / Exit Estimator</title>
+  <meta name="description"
+    content="Estimate holding period, capital gain, tax and net proceeds when switching or exiting a mutual fund." />
+  <meta name="keywords" content="mf switch estimator, mutual fund exit tax, capital gains, LTCG, STCG" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - MF Switch / Exit Estimator","url":"https://herozero.in/pages/calculators/mf-switch-estimator.html"}</script>
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
+    crossorigin="anonymous"></script>
+</head>
 
-    <!-- Explanation about MF Switch / Exit Estimator -->
-    <div class="container mt-3">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="card mt-3 p-4">
-            <h3>About this MF Switch / Exit Estimator</h3>
-            <p class="mb-2">
-              Use this tool when you are considering switching between mutual
-              fund schemes or exiting a fund holding. It helps estimate the
-              holding period, gain, and approximate tax payable on the gain so
-              you can compare the tax impact of switching now versus later.
-            </p>
-
-            <h4>Why this matters</h4>
-            <ul>
-              <li>
-                Switching between funds is treated as a sale for tax purposes —
-                gains may attract capital gains tax even if you stay within the
-                same fund house.
-              </li>
-              <li>
-                Knowing the holding period and estimated tax helps you decide
-                whether to switch immediately, wait to qualify for long-term
-                treatment, or adjust your exit amount.
-              </li>
-              <li>
-                The tool provides a quick, conservative estimate to guide your
-                decision; for exact tax filing figures consult your tax advisor
-                or fund statements.
-              </li>
-            </ul>
-
-            <h4>Tax rules used</h4>
-            <p class="mb-0">
-              This estimator uses the following simplified assumptions for quick
-              comparison:
-            </p>
-            <ul>
-              <li>
-                <strong>Long-term capital gains (LTCG):</strong> 12.5% (after
-                applicable exemptions)
-              </li>
-              <li><strong>Short-term capital gains (STCG):</strong> 20%</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-      <nav class="mb-2">
-        <a class="text-white mx-2" href="https://herozero.in/pages/about.html"
-          >About</a
-        >
-        <a class="text-white mx-2" href="https://herozero.in/pages/contact.html"
-          >Contact</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/privacy-policy.html"
-          >Privacy Policy</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/terms-of-use.html"
-          >Terms of Use</a
-        >
-        <a
-          class="text-white mx-2"
-          href="https://herozero.in/pages/disclaimer.html"
-          >Disclaimer</a
-        >
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button"
+          class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+          aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
       </nav>
-      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
-    </footer>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1
+        class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow"
+          aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="w-full h-full">
+            <path d="M14 16h14l-4-4" />
+            <path d="M34 32H20l4 4" />
+            <path d="M12 24h24" />
+          </svg>
+        </span>
+        <span>MF Switch / Exit Estimator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Compute holding period,
+        gain, estimated tax (LTCG / STCG) and net gain when switching or redeeming a mutual fund investment.</p>
+    </div>
+  </header>
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+        <!-- Inputs Card -->
+        <div class="card-tw p-8 space-y-8" id="inputsCard">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-2">Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Enter buy / sell dates & amounts to estimate gain and
+              tax.</p>
+          </div>
+          <form id="switchForm" onsubmit="event.preventDefault()" class="grid gap-6">
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Buy Date
+              <input id="buyDate" type="date" class="input-text font-mono" />
+              <span class="text-[10px] text-slate-500 dark:text-slate-400">Trade / allotment date.</span>
+            </label>
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Sell / Switch Date
+              <input id="sellDate" type="date" class="input-text font-mono" />
+              <span class="text-[10px] text-slate-500 dark:text-slate-400">Planned redemption / switch date.</span>
+            </label>
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Buy Amount (₹)
+              <span class="input-wrap"><span class="input-affix">₹</span><input id="buyAmt" type="number" min="0"
+                  value="100000" class="input-text font-mono" /></span>
+            </label>
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Sell Amount (₹)
+              <span class="input-wrap"><span class="input-affix">₹</span><input id="sellAmt" type="number" min="0"
+                  value="130000" class="input-text font-mono" /></span>
+              <span class="text-[10px] text-slate-500 dark:text-slate-400">Net of exit load (if any) for
+                accuracy.</span>
+            </label>
+            <div class="flex justify-end"><button id="calcBtn" type="button"
+                class="btn-primary btn-ripple w-full sm:w-auto"><span
+                  class="inline-flex items-center gap-2"><span>Estimate</span><span
+                    aria-hidden="true">➡</span></span></button></div>
+          </form>
+          <div class="grid sm:grid-cols-3 gap-4 pt-2">
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                  class="font-semibold text-slate-900 dark:text-slate-100 text-xs">LTCG vs STCG</span><svg
+                  class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></summary>
+              <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Currently assumed: holding
+                &gt; 365 days → LTCG 12.5% after ₹1L exemption; otherwise STCG 20% (illustrative).</p>
+            </details>
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                  class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Exemption</span><svg
+                  class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></summary>
+              <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">First ₹100,000 of aggregate
+                equity LTCG in FY assumed exempt for simplicity.</p>
+            </details>
+            <details class="card-tw p-5 sm:col-span-1">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                  class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Tips</span><svg
+                  class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></summary>
+              <ul class="mt-3 list-disc pl-4 text-[11px] text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed">
+                <li>Confirm actual tax slabs.</li>
+                <li>Consider exit loads.</li>
+                <li>Track multiple purchases (FIFO).</li>
+              </ul>
+            </details>
+          </div>
+          <div class="text-[10px] text-slate-500 dark:text-slate-500">Illustrative only – ignores surcharge, cess,
+            grandfathering nuances & indexation.</div>
+        </div>
+        <!-- Results Card -->
+        <div class="card-tw p-8 space-y-8" id="resultsCard">
+          <div class="space-y-6" id="resultsSection">
+            <div
+              class="metric-card bg-violet-50/80 dark:bg-violet-900/25 border-violet-200/60 dark:border-violet-600/40 p-6 sm:p-7 relative overflow-hidden">
+              <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-20"
+                style="background:radial-gradient(circle at 25% 20%,rgba(124,58,237,.35),transparent 65%)"></div>
+              <div class="flex items-start justify-between relative z-10">
+                <div>
+                  <div class="text-[11px] tracking-wide font-semibold uppercase text-violet-700 dark:text-violet-300">
+                    Net Gain After Tax</div>
+                  <div id="netGain"
+                    class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-violet-700 dark:text-violet-300 mt-1">
+                    ₹0</div>
+                </div>
+                <div class="hidden sm:block text-violet-500 dark:text-violet-400" aria-hidden="true"><svg
+                    class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 17l6-6 4 4 8-8" />
+                    <path d="M14 7h7v7" />
+                  </svg></div>
+              </div>
+              <p class="mt-3 text-[10px] sm:text-xs text-violet-700/80 dark:text-violet-300/70 relative z-10">
+                Provisional – final tax depends on aggregate yearly gains & personal tax laws.</p>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-5">
+              <div class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+                <div class="metric-label">Holding Days</div>
+                <div id="holdingDays" class="metric-value font-mono">0</div>
+              </div>
+              <div
+                class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                <div class="metric-label">Gross Gain</div>
+                <div id="grossGain" class="metric-value font-mono">₹0</div>
+              </div>
+              <div class="metric-card bg-rose-50/80 dark:bg-rose-900/20 border-rose-200/70 dark:border-rose-600/40">
+                <div class="metric-label">Est. Tax</div>
+                <div id="estTax" class="metric-value font-mono">₹0</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative h-[300px]" id="chartWrap">
+            <div id="mfSwitchChart" class="h-full" aria-label="Gain vs Tax vs Net chart"></div>
+          </div>
+          <div id="highlight" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+          <div class="text-[10px] text-slate-500 dark:text-slate-500">LTCG exemption applied only if holding &gt; 365
+            days and gain positive.</div>
+        </div>
+      </div>
+      <br />
+      <!-- Info Section -->
+      <div class="mt-20 lg:mt-16 grid gap-4 lg:grid-cols-4">
+        <div class="lg:col-span-2 card-tw p-5 space-y-4">
+          <h2 class="text-lg font-bold flex items-center gap-2 text-slate-900 dark:text-slate-100"><span
+              class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-brand text-white text-sm">i</span>About
+            MF Switch / Exit</h2>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Switching typically counts as a sale for
+            tax. Understand tax hit before reallocating.</p>
+          <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+            <summary
+              class="flex items-center justify-between cursor-pointer px-4 py-3 text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+              Computation Logic<svg class="chevron w-4 h-4 transition-transform group-open:rotate-180"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></summary>
+            <div
+              class="px-4 pb-4 pt-2 text-[11px] sm:text-xs leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+              <p>Holding days = sell − buy (UTC). Gain = sell − buy. If holding &gt; 365 & gain &gt; 0 ⇒ LTCG tax on
+                (gain − 100k). Else STCG tax on gain if positive.</p>
+              <p>Net gain = gain − tax (never negative).</p>
+            </div>
+          </details>
+          <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+            <summary
+              class="flex items-center justify-between cursor-pointer px-4 py-3 text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+              Limitations & Caveats<svg class="chevron w-4 h-4 transition-transform group-open:rotate-180"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></summary>
+            <div
+              class="px-4 pb-4 pt-2 text-[11px] sm:text-xs leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Ignores indexation (debt funds) & surcharge/cess.</li>
+                <li>Multiple purchase lots not modelled (FIFO needed).</li>
+                <li>Corporate actions & dividend reinvestment not adjusted.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    (function () { const root = document.documentElement; const btn = document.getElementById('themeToggle'); const stored = localStorage.getItem('hz-theme'); if (stored === 'dark') { root.classList.add('dark'); btn && btn.setAttribute('aria-pressed', 'true'); btn && (btn.textContent = '☀️'); } btn && btn.addEventListener('click', () => { const d = root.classList.toggle('dark'); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); btn.textContent = d ? '☀️' : '🌙'; localStorage.setItem('hz-theme', d ? 'dark' : 'light'); setTimeout(() => estimate(), 40); }); })();
+    const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+    function formatINR(x) { return '₹' + Number(x).toLocaleString('en-IN', { maximumFractionDigits: 0 }); }
+    function countUp(el, to, duration = 650) { if (el.dataset.raw == null) el.dataset.raw = '0'; const from = Number(el.dataset.raw) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = /Days/.test(el.id) ? Math.round(val) : formatINR(val); if (p < 1) requestAnimationFrame(frame); else el.dataset.raw = String(to); } requestAnimationFrame(frame); }
+    let chart; function renderChart(gain, tax, net) { const isDark = document.documentElement.classList.contains('dark'); const text = isDark ? '#cbd5e1' : '#475569'; if (chart && chart.destroy) chart.destroy(); chart = Highcharts.chart('mfSwitchChart', { chart: { type: 'column', backgroundColor: 'transparent' }, title: null, credits: { enabled: false }, xAxis: { categories: ['Gross Gain', 'Tax', 'Net Gain'], labels: { style: { color: text } }, lineColor: 'transparent', tickLength: 0 }, yAxis: { title: null, gridLineColor: isDark ? '#334155' : '#e2e8f0', labels: { style: { color: text }, formatter() { return '₹' + Number(this.value).toLocaleString('en-IN', { maximumFractionDigits: 0 }); } } }, legend: { enabled: false }, tooltip: { formatter() { return '<b>' + this.x + ':</b> ' + formatINR(this.y); } }, plotOptions: { column: { borderRadius: 4, dataLabels: { enabled: true, formatter() { return formatINR(this.y); }, style: { color: text, fontSize: '11px', textOutline: 'none' } } } }, series: [{ colorByPoint: true, colors: ['#16a34a', '#dc2626', '#7c3aed'], data: [Math.max(gain, 0), Math.max(tax, 0), Math.max(net, 0)] }] }); }
+    function highlightText(days, gain, tax, net, isLTCG, exemptApplied) { const el = document.getElementById('highlight'); if (!el) return; let basis = isLTCG ? 'LTCG (12.5%)' : 'STCG (20%)'; let bits = []; bits.push(`Holding ${days} day${days === 1 ? '' : 's'} → ${basis}`); if (isLTCG && exemptApplied) bits.push('₹100k exemption used'); if (gain <= 0) bits.push('No taxable gain'); bits.push(`Net gain ${formatINR(net)}`); el.textContent = bits.join(' · '); }
+    function estimate() { const buyDate = document.getElementById('buyDate').value; const sellDate = document.getElementById('sellDate').value; const buy = parseFloat(document.getElementById('buyAmt').value) || 0; const sell = parseFloat(document.getElementById('sellAmt').value) || 0; if (!buyDate || !sellDate || buy <= 0 || sell <= 0) return; const b = new Date(buyDate); const s = new Date(sellDate); if (isNaN(b) || isNaN(s) || s < b) return; const days = Math.round((s - b) / (1000 * 60 * 60 * 24)); const gain = sell - buy; let tax = 0; let exemptApplied = false; let isLTCG = false; if (gain > 0) { if (days > 365) { isLTCG = true; const exempt = 100000; const taxable = Math.max(0, gain - exempt); taxable > 0 && (exemptApplied = true); tax = taxable * 0.125; } else { tax = gain * 0.20; } } const net = Math.max(gain - tax, 0); countUp(document.getElementById('holdingDays'), days, 500); countUp(document.getElementById('grossGain'), gain, 750); countUp(document.getElementById('estTax'), tax, 750); countUp(document.getElementById('netGain'), net, 750); renderChart(gain, tax, net); highlightText(days, gain, tax, net, isLTCG, exemptApplied); setTimeout(() => { chart && chart.reflow(); }, 60); }
+    document.getElementById('calcBtn').addEventListener('click', estimate);['buyDate', 'sellDate', 'buyAmt', 'sellAmt'].forEach(id => document.getElementById(id).addEventListener('input', () => { clearTimeout(window._swdeb); window._swdeb = setTimeout(estimate, 180); }));
+    document.addEventListener('click', e => { const t = e.target.closest('.btn-ripple'); if (!t) return; const r = document.createElement('span'); r.className = 'ripple-anim'; const rect = t.getBoundingClientRect(); const size = Math.max(rect.width, rect.height); r.style.width = r.style.height = size + 'px'; r.style.left = (e.clientX - rect.left - size / 2) + 'px'; r.style.top = (e.clientY - rect.top - size / 2) + 'px'; t.appendChild(r); setTimeout(() => r.remove(), 600); });
+    window.addEventListener('resize', () => { chart && chart.reflow(); });
+  </script>
+</body>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>

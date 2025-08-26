@@ -1,239 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HeroZero – SIP Step-up Calculator</title>
-    <meta name="description" content="SIP Step-up Calculator — model regular monthly SIPs with annual step-ups and see year-by-year corpus growth." />
-    <meta name="keywords" content="SIP step up, SIP calculator, step-up SIP, mutual funds, India" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png" />
-    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" />
-    <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - SIP Step-up Calculator","url":"https://herozero.in/pages/calculators/sip-step-up.html"}
-    </script>
-    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>  
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-          <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo" />HeroZero
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/pages/calculators/sip-calculator.html">SIP Calculator</a></li>
-            <li class="nav-item"><a class="nav-link" href="/pages/calculators/sip-topup-planner.html">SIP Top-up Planner</a></li>
-          </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HeroZero – SIP Step-up Calculator</title>
+  <meta name="description" content="Model a monthly SIP that increases by a fixed annual step-up and see year‑by‑year corpus & contributions." />
+  <meta name="keywords" content="SIP step up calculator, step-up SIP, mutual fund SIP, investing India" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - SIP Step-up Calculator","url":"https://herozero.in/pages/calculators/sip-step-up.html"}</script>
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M12 34h6v-8h8v-8h8V10" />
+              <path d="M34 10l2 6 6-2" />
+            </svg>
+        </span>
+        <span>SIP Step-up Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Model a monthly SIP that grows annually by a fixed percentage and see how disciplined step-ups accelerate long‑term wealth.</p>
+    </div>
+  </header>
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+        <!-- Inputs -->         
+        <div class="card-tw p-8 space-y-8" id="inputsCard">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-2">Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Provide appropriate Annual step-up percentage.</p>
+          </div>
+          <form id="stepupForm" onsubmit="event.preventDefault()" class="space-y-8">
+            <div class="grid sm:grid-cols-2 gap-5 pt-2">
+              <label class="space-y-1 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span>Monthly SIP amount (₹)</span>
+                <input id="monthlySIP" type="number" value="5000" class="input-text font-mono" />
+              </label>
+              <label class="space-y-1 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span>Expected annual return (%)</span>
+                <input id="annualReturn" type="number" step="0.1" value="12" class="input-text font-mono" />
+              </label>
+              <label class="space-y-1 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span>Annual step-up (%)</span>
+                <input id="stepUp" type="number" step="0.1" value="10" class="input-text font-mono" />
+              </label>
+              <label class="space-y-1 text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span>Years</span>
+                <input id="years" type="number" value="10" class="input-text font-mono" />
+              </label>
+            </div>
+            <div class="flex flex-wrap gap-3 items-center">
+              <button id="calcBtn" type="button" class="btn-primary btn-ripple px-6">Calculate</button>
+              <button id="resetBtn" type="button" class="px-5 py-2.5 rounded-xl border text-sm font-medium text-slate-600 dark:text-slate-300 border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Reset</button>
+              <div class="text-xs text-slate-500 dark:text-slate-400 md:ml-auto">Assumes monthly SIP & annual step-up at each 12‑month boundary.</div>
+            </div>
+          </form>
+          <div class="text-xs text-slate-500 dark:text-slate-500">Educational illustration only – ignores taxes, exit loads, sequence risk.</div>
         </div>
-      </div>
-    </nav>
-
-    <main class="container" style="margin-top:5.5rem">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <h1 id="overview-heading"><i class="bi bi-arrow-up-right-circle"></i> SIP Step-up Calculator</h1>
-          <p class="lead small text-muted mb-3">Model monthly SIPs where the SIP amount increases by a fixed percentage each year. Useful to see how disciplined step-ups accelerate corpus growth.</p>
-
-          <div class="card p-4 mt-3">
-            <div class="row g-2">
-              <div class="col-md-6">
-                <label class="form-label">Monthly SIP amount (₹)</label>
-                <input id="monthlySIP" class="form-control" type="number" value="5000" />
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Expected annual return (%)</label>
-                <input id="annualReturn" class="form-control" type="number" step="0.1" value="12" />
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Annual step-up (%)</label>
-                <input id="stepUp" class="form-control" type="number" step="0.1" value="10" />
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Years</label>
-                <input id="years" class="form-control" type="number" value="10" />
-              </div>
-
-              <div class="col-12 d-flex gap-2 mt-2">
-                <button id="calcBtn" class="btn btn-primary">Calculate</button>
-                <button id="resetBtn" class="btn btn-outline-secondary">Reset</button>
-                <div class="ms-auto text-muted small align-self-center">Assumes monthly SIP and annual step-up at year boundary.</div>
-              </div>
+        <!-- Results -->
+        <div class="card-tw p-8 space-y-8" id="resultsCard">
+          <div class="grid sm:grid-cols-3 gap-5" id="metricGrid">
+            <div class="metric-card">
+              <div class="metric-label">Final Corpus</div>
+              <div id="finalCorpus" class="metric-value" data-value="0">₹0</div>
             </div>
-
-            <hr />
-
-            <div id="resultArea" class="mt-2"></div>
-
-            <div id="chartContainer" class="mt-3">
-              <canvas id="sipChart" height="120"></canvas>
+            <div class="metric-card">
+              <div class="metric-label">Total Contrib.</div>
+              <div id="totalContrib" class="metric-value" data-value="0">₹0</div>
             </div>
-
-            <div class="mt-3">
-              <h5>How to use</h5>
-              <p class="small text-muted mb-0">Enter your current monthly SIP and expected annual return. The <strong>Annual step-up</strong> is applied once every 12 months to the monthly SIP amount (for example, 10% step-up increases the SIP from ₹5,000 to ₹5,500 in year 2).</p>
+            <div class="metric-card">
+              <div class="metric-label">Wealth Gain</div>
+              <div id="wealthGain" class="metric-value" data-value="0">₹0</div>
             </div>
           </div>
+          <div id="highlight" class="text-sm font-medium text-slate-700 dark:text-slate-300"></div>
+          <div class="relative" id="chartWrap" style="height:320px;min-height:320px;">
+            <div id="stepupChartContainer" class="absolute inset-0" style="min-height:320px;"></div>
+          </div>
+          <div class="text-xs text-slate-500 dark:text-slate-500">Step-up applies to monthly SIP after each completed year. Comparison shows final corpus vs total contributions.</div>
         </div>
       </div>
-    </main>
-
-    <script>
-      // SIP Step-up calculator script — placed after main to ensure DOM is ready
-      (function () {
-        const fmtINR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
-        const monthlySIPEl = document.getElementById('monthlySIP');
-        const annualReturnEl = document.getElementById('annualReturn');
-        const stepUpEl = document.getElementById('stepUp');
-        const yearsEl = document.getElementById('years');
-        const resultArea = document.getElementById('resultArea');
-        const calcBtn = document.getElementById('calcBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        const ctx = document.getElementById('sipChart').getContext('2d');
-        let sipChart = null;
-
-        function buildSeries(monthly, annualReturn, stepUpPct, years) {
-          const monthlyReturn = Math.pow(1 + annualReturn / 100, 1 / 12) - 1;
-          const months = years * 12;
-          let balance = 0;
-          let currentMonthly = monthly;
-          const yearlyData = [];
-          let totalContrib = 0;
-          for (let m = 1; m <= months; m++) {
-            balance = balance * (1 + monthlyReturn) + currentMonthly;
-            totalContrib += currentMonthly;
-            if (m % 12 === 0) {
-              const year = m / 12;
-              yearlyData.push({ year, balance: balance, contributions: totalContrib });
-              // apply step-up for next year
-              currentMonthly = currentMonthly * (1 + stepUpPct / 100);
-            }
-          }
-          return { yearlyData, finalBalance: balance, totalContrib };
-        }
-
-        function renderResult(data) {
-          const { yearlyData, finalBalance, totalContrib } = data;
-          resultArea.innerHTML = '';
-          const container = document.createElement('div');
-          container.className = 'row g-2';
-
-          const left = document.createElement('div');
-          left.className = 'col-md-6';
-          left.innerHTML = `<div class="p-3 bg-light border rounded"><strong>Final corpus</strong><div class="fs-4 mt-1">${fmtINR.format(finalBalance)}</div></div>`;
-
-          const right = document.createElement('div');
-          right.className = 'col-md-6';
-          right.innerHTML = `<div class="p-3 bg-light border rounded"><strong>Total contributions</strong><div class="fs-5 mt-1">${fmtINR.format(totalContrib)}</div></div>`;
-
-          container.appendChild(left);
-          container.appendChild(right);
-
-          const tableWrap = document.createElement('div');
-          tableWrap.className = 'table-responsive mt-3';
-          const t = document.createElement('table');
-          t.className = 'table table-sm table-striped';
-          t.innerHTML = '<thead><tr><th>Year</th><th class="text-end">Contributions (₹)</th><th class="text-end">Year-end balance (₹)</th></tr></thead>';
-          const tb = document.createElement('tbody');
-          for (const r of yearlyData) {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `<td>${r.year}</td><td class="text-end">${fmtINR.format(r.contributions)}</td><td class="text-end">${fmtINR.format(r.balance)}</td>`;
-            tb.appendChild(tr);
-          }
-          t.appendChild(tb);
-          tableWrap.appendChild(t);
-
-          resultArea.appendChild(container);
-          resultArea.appendChild(tableWrap);
-        }
-
-        function renderChart(yearlyData) {
-          const labels = yearlyData.map((d) => 'Y' + d.year);
-          const balances = yearlyData.map((d) => Math.round(d.balance));
-          const contribs = yearlyData.map((d) => Math.round(d.contributions));
-          if (sipChart) sipChart.destroy();
-          sipChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels,
-              datasets: [
-                { type: 'bar', label: 'Contributions', data: contribs, backgroundColor: 'rgba(13,110,253,0.3)', borderColor: 'rgba(13,110,253,0.6)', borderWidth: 1 },
-                { type: 'line', label: 'Year-end balance', data: balances, backgroundColor: 'rgba(25,135,84,0.2)', borderColor: 'rgba(25,135,84,0.8)', tension: 0.3, yAxisID: 'y' }
-              ]
-            },
-            options: {
-              responsive: true,
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  ticks: {
-                    callback: function (v) { return fmtINR.format(v); }
-                  }
-                }
-              },
-              interaction: { mode: 'index', intersect: false },
-              plugins: { tooltip: { callbacks: { label: function (ctx) { return ctx.dataset.label + ': ' + fmtINR.format(ctx.parsed.y || ctx.parsed); } } } }
-            }
-          });
-        }
-
-        function calculate() {
-          const monthly = parseFloat(monthlySIPEl.value) || 0;
-          const annualReturn = parseFloat(annualReturnEl.value) || 0;
-          const stepUpPct = parseFloat(stepUpEl.value) || 0;
-          const years = parseInt(yearsEl.value) || 0;
-          if (monthly <= 0 || years <= 0) return alert('Enter positive monthly SIP and years');
-          const data = buildSeries(monthly, annualReturn, stepUpPct, years);
-          renderResult(data);
-          renderChart(data.yearlyData);
-        }
-
-        calcBtn.addEventListener('click', () => {
-          calculate();
-        });
-
-        resetBtn.addEventListener('click', () => {
-          monthlySIPEl.value = 5000;
-          annualReturnEl.value = 12;
-          stepUpEl.value = 10;
-          yearsEl.value = 10;
-          resultArea.innerHTML = '';
-          if (sipChart) sipChart.destroy();
-        });
-
-        // lazy-load Chart.js then wire initial state
-        const s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js';
-        s.onload = function () {
-          // no-op; user clicks calculate when ready
-        };
-        document.body.appendChild(s);
-      })();
-    </script>
-
-    <footer class="bg-primary text-white text-center py-3 mt-4">
-      <nav class="mb-2">
-        <a class="text-white mx-2" href="/pages/about.html">About</a>
-        <a class="text-white mx-2" href="/pages/contact.html">Contact</a>
-        <a class="text-white mx-2" href="/pages/privacy-policy.html">Privacy Policy</a>
-        <a class="text-white mx-2" href="/pages/terms-of-use.html">Terms of Use</a>
-        <a class="text-white mx-2" href="/pages/disclaimer.html">Disclaimer</a>
+    </section>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
       </nav>
-      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  </body>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>compute(true),40);});})();
+    const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+    function formatINR(x){return Number(x).toLocaleString('en-IN',{maximumFractionDigits:0});}
+    function countUp(el,to,duration=650,prefix='₹'){const from=Number((el.dataset.value||'0').replace(/,/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=prefix+formatINR(val);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
+    function buildSeries(monthly, annualReturn, stepUpPct, years){const monthlyRate=Math.pow(1+annualReturn/100,1/12)-1;let balance=0;let currentMonthly=monthly;let totalContrib=0;const yearly=[];for(let y=1;y<=years;y++){for(let m=0;m<12;m++){balance=balance*(1+monthlyRate)+currentMonthly;totalContrib+=currentMonthly;}yearly.push({year:y,balance,contributions:totalContrib});currentMonthly=currentMonthly*(1+stepUpPct/100);}return {yearly, final:balance, contrib:totalContrib};}
+    let chart;function renderChart(yearly){const isDark=document.documentElement.classList.contains('dark');const grid=isDark?'#334155':'#e2e8f0';const text=isDark?'#cbd5e1':'#475569';if(chart&&chart.destroy)chart.destroy();chart=Highcharts.chart('stepupChartContainer',{chart:{backgroundColor:'transparent'},title:null,credits:{enabled:false},xAxis:{categories:yearly.map(d=>'Y'+d.year),lineColor:grid,tickColor:grid,labels:{style:{color:text}}},yAxis:{title:null,gridLineColor:grid,labels:{style:{color:text},formatter(){return '₹'+formatINR(this.value);}}},tooltip:{shared:true,useHTML:true,formatter:function(){const c=this.points[0].y;const b=this.points[1].y;const gain=b-c;const pct=c?gain/c*100:0;return `<b>${this.x}</b><br/>Contributions: <span style="color:#2563eb;font-weight:600">₹${formatINR(c)}</span><br/>Corpus: <span style="color:#16a34a;font-weight:600">₹${formatINR(b)}</span><br/>Gain: <span style="color:#7c3aed">₹${formatINR(gain)} (${pct.toFixed(1)}%)</span>`;}},legend:{enabled:true,itemStyle:{color:text}},plotOptions:{column:{borderRadius:3}},series:[{name:'Contributions',type:'column',data:yearly.map(d=>Math.round(d.contributions)),color:'#2563eb'},{name:'Corpus',type:'areaspline',data:yearly.map(d=>Math.round(d.balance)),color:'#16a34a',fillOpacity:.25,lineWidth:2}]});}
+    function updateHighlight(years,final,contrib,step){const diff=final-contrib;const pct=contrib?diff/contrib*100:0;document.getElementById('highlight').textContent=`After ${years} year${years===1?'':'s'}, a ${step.toFixed(1)}% annual step-up grows contributions of ₹${formatINR(contrib)} into about ₹${formatINR(final)} (gain ₹${formatINR(diff)} ~ ${pct.toFixed(1)}%).`;}  
+  function compute(){const monthly=parseFloat(document.getElementById('monthlySIP').value)||0;const r=parseFloat(document.getElementById('annualReturn').value)||0;const step=parseFloat(document.getElementById('stepUp').value)||0;const years=parseInt(document.getElementById('years').value)||0;if(monthly<=0||years<=0)return;const data=buildSeries(monthly,r,step,years);countUp(document.getElementById('finalCorpus'),data.final,750);countUp(document.getElementById('totalContrib'),data.contrib,750);countUp(document.getElementById('wealthGain'),data.final-data.contrib,750);renderChart(data.yearly);updateHighlight(years,data.final,data.contrib,step);setTimeout(()=>{chart&&chart.reflow();},80);}    
+  window.addEventListener('resize',()=>{chart&&chart.reflow();});
+    ['monthlySIP','annualReturn','stepUp','years'].forEach(id=>{document.getElementById(id).addEventListener('input',()=>{clearTimeout(window._deb);window._deb=setTimeout(compute,160);});});
+    document.getElementById('calcBtn').addEventListener('click',compute);
+    document.getElementById('resetBtn').addEventListener('click',()=>{monthlySIP.value=5000;annualReturn.value=12;stepUp.value=10;years.value=10;compute();});
+    document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
+    window.addEventListener('DOMContentLoaded',compute);
+  </script>
+</body>
 </html>
