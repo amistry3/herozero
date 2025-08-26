@@ -2,221 +2,298 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
     <title>HeroZero – SIP Top-up Planner</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906">
     <meta name="description"
-        content="SIP Top-up Planner — plan periodic increases to your SIP and estimate final value.">
+        content="Plan annual SIP step-ups (top-ups) and compare growth with vs without incremental increases." />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero - SIP Top-up Planner","url":"https://herozero.in/pages/calculators/sip-topup-planner.html"}</script>
+    <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>  
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
         crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://herozero.in/assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://herozero.in/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://herozero.in/assets/img/favicon-16x16.png">
-    <link rel="manifest" href="https://herozero.in/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "HeroZero - SIP Top-up Planner",
-        "url": "https://herozero.in/pages/calculators/sip-topup-planner.html"
-        }
-    </script>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-                <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo">HeroZero
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+    <header class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+            <a href="/index.html" class="flex items-center gap-2 focus-ring">
+                <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+                <span class="font-extrabold text-slate-900 dark:text-slate-100 text-xl">HeroZero</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="https://herozero.in/"><i
-                                class="bi bi-house-fill me-2"></i>Home</a></li>
-                    <li class="nav-item dropdown" data-bs-theme="light"><a class="nav-link active dropdown-toggle"
-                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">Calculators</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                                    class="bi bi-car-front-fill"></i> Car Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/house-affordability.html"><i
-                                    class="bi bi-house-door-fill"></i> House Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                                    class="bi bi-phone"></i> Mobile Affordability</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                                    class="bi bi-bar-chart-line-fill"></i> Stock Average Price</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                                    class="bi bi-cash-stack"></i> SIP Calculator</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                                    class="bi bi-bullseye"></i> SIP Goal Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                                    class="bi bi-coin"></i> Lumpsum Return</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                                    class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                                    class="bi bi-calculator"></i> XIRR (cashflows)</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                                    class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                                    class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                                    class="bi bi-percent"></i> Expense Ratio Impact</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                                    class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-                            <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                                    class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                                    class="bi bi-arrow-left-right"></i> MF Switch / Exit Estimator</a>
-                            <a class="dropdown-item"
-                                href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                                    class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/blog.html"><i
-                                class="bi bi-journal-text me-2"></i>Blog</a></li>
-                </ul>
-            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+                <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+                <a href="/index.html#calculators"
+                    class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+                <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+                <button id="themeToggle" type="button"
+                    class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+                    aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+            </nav>
         </div>
-    </nav>
-
-    <main class="container" style="margin-top:5.5rem">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</h1>
-                <p class="text-muted">Plan periodic SIP increases (top-ups) and see final value.</p>
-                <div class="card p-3">
-                    <div class="mb-3"><label class="form-label">Initial monthly SIP (₹)</label><input id="sip"
-                            class="form-control" type="number" value="5000"></div>
-                    <div class="mb-3"><label class="form-label">Annual top-up %</label><input id="topup"
-                            class="form-control" type="number" value="10"></div>
-                    <div class="mb-3"><label class="form-label">Expected annual return %</label><input id="annual"
-                            class="form-control" type="number" value="12"></div>
-                    <div class="mb-3"><label class="form-label">Duration (years)</label><input id="years"
-                            class="form-control" type="number" value="10"></div>
-                    <button id="calcBtn" class="btn btn-primary">Calculate</button>
-                    <hr />
-                    <div id="resultArea" class="mt-3 d-none"></div>
-                    <div class="mt-3 d-none" id="chartContainer">
-                        <canvas id="topupChart" style="max-height:360px"></canvas>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+            <h1
+                class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+                <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="w-full h-full">
+                        <path d="M12 32c6-2 10-6 12-12 2 4 5 7 12 8" />
+                        <path d="M10 40h28" />
+                        <path d="M30 14l4-4 4 4" />
+                        <path d="M34 10v10" />
+                    </svg>
+                </span>
+                <span>SIP Top-up Planner</span>
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Model annual
+                increases (step-ups) to a monthly SIP and visualise how top-ups accelerate corpus growth vs keeping
+                contributions flat.</p>
+        </div>
+    </header>
+    <main class="flex-1">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+                <!-- Inputs Card -->
+                <div class="card-tw p-8 space-y-8" id="inputsCard">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                            Inputs</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Enter base SIP, expected return, duration
+                            and top-up %.</p>
+                    </div>
+                    <form id="topupForm" onsubmit="event.preventDefault()" class="grid gap-6">
+                        <label
+                            class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Initial
+                            Monthly SIP (₹)
+                            <span class="input-wrap"><span class="input-affix">₹</span><input id="topupSip"
+                                    type="number" min="500" value="5000"
+                                    class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" /></span>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400">Minimum 500</span>
+                        </label>
+                        <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Annual
+                            Top-up (%)
+                            <input id="topupRate" type="number" step="0.1" min="0" value="10"
+                                class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400">Increase applied at each year
+                                end.</span>
+                        </label>
+                        <label
+                            class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Expected
+                            Annual Return (%)
+                            <input id="topupReturn" type="number" step="0.1" min="0" value="12"
+                                class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                        </label>
+                        <label
+                            class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Investment
+                            Duration (Years)
+                            <div class="flex items-center gap-4">
+                                <div class="range-wrap flex-1"><input id="topupYearsRange" type="range" min="1" max="40"
+                                        value="10" class="range-adv" /><span id="topupYearsBubble"
+                                        class="range-bubble">10 years</span></div>
+                                <input id="topupYears" type="number" min="1" max="40" value="10"
+                                    class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                            </div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 1–40 years</span>
+                        </label>
+                        <div class="flex justify-end"><button id="calcBtn" type="button"
+                                class="btn-primary btn-ripple w-full sm:w-auto"><span
+                                    class="inline-flex items-center gap-2"><span>Calculate</span><span
+                                        aria-hidden="true">➡</span></span></button></div>
+                    </form>
+                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                        <details class="card-tw p-5">
+                            <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                                    class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Why
+                                    Top-up?</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Align SIP
+                                with income growth & inflation; compounding magnifies increases.</p>
+                        </details>
+                        <details class="card-tw p-5">
+                            <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                                    class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Typical
+                                    Range</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <ul
+                                class="mt-3 list-disc pl-4 text-[11px] text-slate-600 dark:text-slate-400 space-y-1 leading-relaxed">
+                                <li>5–10% conservative</li>
+                                <li>10–15% growth</li>
+                                <li>20%+ aggressive</li>
+                            </ul>
+                        </details>
+                        <details class="card-tw p-5 sm:col-span-1">
+                            <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                                    class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Note</span><svg
+                                    class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Return
+                                assumption is a simplifying average; real path varies.</p>
+                        </details>
                     </div>
                 </div>
-                
-                <div class="card mt-3 p-4">
-                    <h3>Why plan SIP top-ups?</h3>
-                    <p class="mb-2">Increasing your SIP periodically (top-up) helps your savings keep pace with inflation and income growth. Even modest annual top-ups compound significantly over long periods and can boost your final corpus.</p>
-
-                    <h4>How this planner works</h4>
-                    <ol>
-                        <li>We assume you invest the monthly SIP each month for the year and it grows at the annual rate you enter (compounded monthly for contributions).</li>
-                        <li>At the end of each year the SIP amount increases by the annual top-up percentage you specify.</li>
-                        <li>The calculator shows the final maturity with your top-up plan and compares it to keeping the SIP constant (no top-ups).</li>
-                    </ol>
-
-                    <h4>How to use</h4>
-                    <ul>
-                        <li>Enter your current monthly SIP and a realistic top-up percentage (for example 5–15%).</li>
-                        <li>Choose an expected annual return — this is an estimate, not a guarantee.</li>
-                        <li>Click Calculate to see final values and a year-by-year growth chart comparing with and without top-ups.</li>
-                    </ul>
+                <!-- Results Card -->
+                <div class="card-tw p-8 space-y-8" id="resultsCard">
+                    <div class="space-y-6" id="resultsSection">
+                        <div
+                            class="metric-card relative overflow-hidden bg-emerald-50 dark:bg-emerald-900/25 border-emerald-300/60 dark:border-emerald-600/40 p-6 sm:p-7">
+                            <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-20"
+                                style="background:radial-gradient(circle at 25% 20%,rgba(16,185,129,.35),transparent 65%)">
+                            </div>
+                            <div class="flex items-start justify-between relative z-10">
+                                <div>
+                                    <div
+                                        class="text-[11px] tracking-wide font-semibold uppercase text-emerald-700 dark:text-emerald-300">
+                                        Maturity (With Top-ups)</div>
+                                    <div id="maturityWith"
+                                        class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-emerald-700 dark:text-emerald-300 mt-1">
+                                        ₹0</div>
+                                </div>
+                                <div class="hidden sm:block text-emerald-500 dark:text-emerald-400" aria-hidden="true">
+                                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 17l6-6 4 4 8-8" />
+                                        <path d="M14 7h7v7" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p
+                                class="mt-3 text-[10px] sm:text-xs text-emerald-700/80 dark:text-emerald-300/70 relative z-10">
+                                Projected corpus including annual step-up adjustments.</p>
+                        </div>
+                        <div class="grid sm:grid-cols-3 gap-5">
+                            <div
+                                class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+                                <div class="metric-label">Maturity (Flat)</div>
+                                <div id="maturityFlat" class="metric-value font-mono">₹0</div>
+                            </div>
+                            <div
+                                class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                                <div class="metric-label">Gain from Top-ups</div>
+                                <div id="gainDiff" class="metric-value font-mono">₹0</div>
+                            </div>
+                            <div
+                                class="metric-card bg-indigo-50/80 dark:bg-indigo-900/20 border-indigo-200/70 dark:border-indigo-600/40">
+                                <div class="metric-label">Boost (%)</div>
+                                <div id="boostPct" class="metric-value font-mono">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-[320px]" id="chartWrap">
+                        <div id="topupChartContainer" class="h-full" aria-label="Top-up vs flat SIP chart"></div>
+                    </div>
+                    <div id="topupHighlight"
+                        class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
                 </div>
             </div>
+            </div>
+            <br />
+            <div class="mt-20 lg:mt-16 grid gap-4 lg:grid-cols-4">
+                <div class="lg:col-span-2 card-tw p-4">
+                    <h2 class="text-lg font-bold mb-2 flex items-center gap-2 text-slate-900 dark:text-slate-100">
+                        <span
+                            class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-brand text-white text-sm">i</span>
+                        How This Planner Works
+                    </h2>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-4">Educational illustration –
+                        ignores taxes, fees & sequence variability.</p>
+                    <div class="space-y-3">
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                                <span>Computation Model</span><svg
+                                    class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <div
+                                class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                                <p>Each month: grow existing balance by monthly rate (annual/12 approximation) then add
+                                    current SIP. At year end SIP increases by top-up %.</p>
+                                <p>We generate year-end snapshots for both scenarios (with & without top-ups) to build
+                                    the comparison chart.</p>
+                            </div>
+                        </details>
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                                <span>Choosing a Top-up %</span><svg
+                                    class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <div
+                                class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Match salary growth (e.g. 8–12%).</li>
+                                    <li>Be conservative if income volatility high.</li>
+                                    <li>Review annually; skip increase in lean years rather than stopping SIP.</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="group border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium bg-slate-50 dark:bg-slate-800/60 group-hover:bg-slate-100 dark:group-hover:bg-slate-700/60">
+                                <span>Limitations</span><svg class="w-4 h-4 transition-transform group-open:rotate-180"
+                                    viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></summary>
+                            <div
+                                class="px-4 pb-4 pt-2 text-xs sm:text-sm leading-relaxed space-y-2 text-slate-600 dark:text-slate-400">
+                                <p>Uses constant average return; real markets fluctuate. Monthly rate simplified
+                                    (annual/12). Tax, expenses, cash drag not included.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+            <nav class="flex gap-5 flex-wrap">
+                <a href="/pages/about.html" class="hover:text-white">About</a>
+                <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+                <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+                <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+            </nav>
+            <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
         </div>
-    </main>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script>
-        let topupChart = null;
-        const inrFormatter = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-        function formatINR(n){
-            if (!isFinite(n)) return n;
-            return '₹' + inrFormatter.format(n);
-        }
-        function monthlySIPSeries(initialSip, annualReturn, years, topupRate) {
-            const monthlyRate = annualReturn / 12;
-            let sip = initialSip;
-            const series = [];
-            let balance = 0;
-            for (let y = 0; y <= years; y++) {
-                // accumulate 12 months for this year
-                for (let m = 0; m < 12; m++) {
-                    balance = balance * (1 + monthlyRate) + sip;
-                }
-                series.push(balance);
-                // top up at year end (if topupRate > 0)
-                sip = sip * (1 + topupRate);
-            }
-            return series;
-        }
-
-        function calcTopup() {
-            const initialSip = parseFloat(document.getElementById('sip').value) || 0;
-            const topup = (parseFloat(document.getElementById('topup').value) || 0) / 100;
-            const r = (parseFloat(document.getElementById('annual').value) || 0) / 100;
-            const years = parseInt(parseFloat(document.getElementById('years').value) || 0, 10);
-
-            const seriesWith = monthlySIPSeries(initialSip, r, years, topup);
-            const seriesWithout = monthlySIPSeries(initialSip, r, years, 0);
-
-            const fvWith = seriesWith[seriesWith.length - 1];
-            const fvWithout = seriesWithout[seriesWithout.length - 1];
-
-            // render result card
-            const out = document.getElementById('resultArea'); out.innerHTML = '';
-            const card = document.createElement('div'); card.className = 'card p-3';
-            card.innerHTML = `<div class="text-center"><h3>Final maturity</h3><h4 class="mb-1">With top-ups: <strong class="text-success">${formatINR(fvWith)}</strong></h4><h4 class="mb-1">Without top-ups: <strong>${formatINR(fvWithout)}</strong></h4><h4 class="mb-0">Difference: <strong class="text-danger">${formatINR(Math.abs(fvWith - fvWithout))}</strong></h4></div>`;
-            out.appendChild(card);
-
-            // draw chart
-            const ctx = document.getElementById('topupChart').getContext('2d');
-            const labels = Array.from({length: years + 1}, (_, i) => i.toString());
-            if (topupChart) topupChart.destroy();
-            topupChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels,
-                    datasets: [
-                        { label: 'With top-ups', data: seriesWith, backgroundColor: '#0d6efd' },
-                        { label: 'Without top-ups', data: seriesWithout, backgroundColor: '#6c757d' }
-                    ]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { callback: v => formatINR(v) } } }, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${formatINR(ctx.parsed.y)}` } } } }
-            });
-            document.getElementById('resultArea').classList.remove('d-none');
-            document.getElementById('chartContainer').classList.remove('d-none');
-        }
-        document.getElementById('calcBtn').addEventListener('click', calcTopup);
-    </script>
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-        <nav class="mb-2">
-            <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-            <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-        </nav>
-        <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        // Theme toggle (reused pattern)
+        (function () { const root = document.documentElement; const btn = document.getElementById('themeToggle'); const stored = localStorage.getItem('hz-theme'); if (stored === 'dark') { root.classList.add('dark'); btn && btn.setAttribute('aria-pressed', 'true'); btn && (btn.textContent = '☀️'); } btn && btn.addEventListener('click', () => { const d = root.classList.toggle('dark'); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); btn.textContent = d ? '☀️' : '🌙'; localStorage.setItem('hz-theme', d ? 'dark' : 'light'); setTimeout(() => compute(true), 30); }); })();
+        const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+        function formatINR(x, fd = 0) { return Number(x).toLocaleString('en-IN', { maximumFractionDigits: fd }); }
+        function countUp(el, to, duration = 700, prefix = '₹', suffix = '') { const from = Number((el.dataset.value || '0').replace(/,/g, '')) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = prefix + formatINR(val, 0) + suffix; if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to); } requestAnimationFrame(frame); }
+        // Slider sync (years)
+        (function () {
+            const r = document.getElementById('topupYearsRange'); const n = document.getElementById('topupYears'); const b = document.getElementById('topupYearsBubble'); function style() { const min = r.min, max = r.max, val = r.value; const pct = ((val - min) / (max - min)) * 100; const dark = document.documentElement.classList.contains('dark'); const filled = dark ? '#3b82f6' : '#0d6efd'; const rest = dark ? '#334155' : '#e2e8f0'; r.style.background = `linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`; b.textContent = val + ' year' + (val === '1' ? '' : 's'); b.style.left = `${pct}%`; }
+            r.addEventListener('input', () => { n.value = r.value; style(); triggerCalc(); }); n.addEventListener('input', () => { let v = parseInt(n.value || 1, 10); v = Math.min(Math.max(v, 1), 40); n.value = v; r.value = v; style(); triggerCalc(); }); style();
+        })();
+        let chart; function buildSeries(initialSip, annualRate, years, topupPerc) { const monthlyRate = annualRate / 12; let balanceWith = 0, balanceFlat = 0; let sip = initialSip; const series = []; for (let y = 1; y <= years; y++) { for (let m = 0; m < 12; m++) { balanceWith = balanceWith * (1 + monthlyRate) + sip; balanceFlat = balanceFlat * (1 + monthlyRate) + initialSip; } series.push({ year: y, with: balanceWith, flat: balanceFlat }); sip = sip * (1 + topupPerc); } return series; }
+        function renderChart(series) { const isDark = document.documentElement.classList.contains('dark'); const gridColor = isDark ? '#334155' : '#e2e8f0'; if (chart && chart.destroy) chart.destroy(); chart = Highcharts.chart('topupChartContainer', { chart: { backgroundColor: 'transparent' }, title: null, credits: { enabled: false }, xAxis: { categories: series.map(s => 'Year ' + s.year), lineColor: gridColor, tickColor: gridColor, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' } } }, yAxis: { title: null, gridLineColor: gridColor, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' }, formatter() { return '₹' + formatINR(this.value); } } }, legend: { align: 'center', verticalAlign: 'top', itemStyle: { color: isDark ? '#e2e8f0' : '#334155' } }, tooltip: { shared: true, useHTML: true, formatter: function () { const w = this.points.find(p => p.series.name === 'With Top-ups')?.y || 0; const f = this.points.find(p => p.series.name === 'Flat SIP')?.y || 0; const diff = w - f; const pct = f ? diff / f * 100 : 0; return `<b>${this.x}</b><br/>With Top-ups: <span style="color:#16a34a;font-weight:600">₹${formatINR(w)}</span><br/>Flat SIP: <span style="color:#2563eb">₹${formatINR(f)}</span><br/>Boost: <span style="color:#7c3aed">₹${formatINR(diff)} (${pct.toFixed(1)}%)</span>`; } }, plotOptions: { areaspline: { fillOpacity: .28, marker: { enabled: false } }, series: { animation: { duration: 700, easing: 'easeOutQuad' } } }, series: [{ name: 'With Top-ups', type: 'areaspline', data: series.map(s => s.with), color: '#16a34a', lineWidth: 2, fillColor: { linearGradient: [0, 0, 0, 260], stops: [[0, 'rgba(16,163,74,.45)'], [1, 'rgba(16,163,74,0)']] } }, { name: 'Flat SIP', type: 'line', data: series.map(s => s.flat), color: '#2563eb', dashStyle: 'ShortDot', lineWidth: 2 }] }); }
+        function compute(fromTheme) { const P = parseFloat(document.getElementById('topupSip').value); const rPerc = parseFloat(document.getElementById('topupReturn').value); const years = parseInt(document.getElementById('topupYears').value, 10); const topPerc = parseFloat(document.getElementById('topupRate').value); if (isNaN(P) || P <= 0) return; if (isNaN(rPerc) || rPerc < 0) return; if (isNaN(years) || years <= 0) return; if (isNaN(topPerc) || topPerc < 0) return; const annualRate = rPerc / 100; const topRate = topPerc / 100; const series = buildSeries(P, annualRate, years, topRate); const final = series[series.length - 1]; const diff = final.with - final.flat; const boostPct = final.flat ? diff / final.flat * 100 : 0; countUp(document.getElementById('maturityWith'), final.with, 800); countUp(document.getElementById('maturityFlat'), final.flat, 800); countUp(document.getElementById('gainDiff'), diff, 800); document.getElementById('boostPct').textContent = boostPct.toFixed(1) + '%'; renderChart(series); updateHighlight(P, annualRate, years, topRate, final.with, final.flat); }
+        function updateHighlight(P, annualRate, years, topRate, withVal, flatVal) { const el = document.getElementById('topupHighlight'); if (!el) return; const diff = withVal - flatVal; const pct = flatVal ? diff / flatVal * 100 : 0; const line = `After ${years} year${years === 1 ? '' : 's'}, annual ${(topRate * 100).toFixed(1)}% step-ups boost corpus from ₹${formatINR(flatVal)} to about ₹${formatINR(withVal)} (extra ₹${formatINR(diff)} ~ ${pct.toFixed(1)}% higher).`; el.textContent = line; }
+        let debounce; function triggerCalc() { clearTimeout(debounce); debounce = setTimeout(() => compute(), 180); } ['topupSip', 'topupReturn', 'topupYears', 'topupRate'].forEach(id => { const el = document.getElementById(id); el.addEventListener('input', triggerCalc); el.addEventListener('change', triggerCalc); }); document.getElementById('calcBtn').addEventListener('click', () => compute()); window.addEventListener('DOMContentLoaded', () => { compute(); });
+        // Ripple effect reuse
+        document.addEventListener('click', e => { const t = e.target.closest('.btn-ripple'); if (!t) return; const r = document.createElement('span'); r.className = 'ripple-anim'; const rect = t.getBoundingClientRect(); const size = Math.max(rect.width, rect.height); r.style.width = r.style.height = size + 'px'; r.style.left = (e.clientX - rect.left - size / 2) + 'px'; r.style.top = (e.clientY - rect.top - size / 2) + 'px'; t.appendChild(r); setTimeout(() => r.remove(), 600); });
+    </script>
 </body>
 
 </html>
