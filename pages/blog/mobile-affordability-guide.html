@@ -1,361 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KKS8Q9YDJG');
-    </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>HeroZero — How to Use the Mobile Affordability Calculator</title>
-    <meta
-      name="description"
-      content="Step-by-step guide to use the Mobile Affordability Calculator on HeroZero."
-    />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://herozero.in/assets/img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://herozero.in/assets/img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://herozero.in/assets/img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      crossorigin="anonymous"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-
-  <body>
-    <nav
-      class="navbar navbar-expand-lg fixed-top bg-primary"
-      data-bs-theme="dark"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-          <img
-            src="https://herozero.in/assets/img/favicon-32x32.png"
-            class="me-2"
-            alt="HeroZero Logo"
-          />HeroZero
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="https://herozero.in/"
-                ><i class="bi bi-house-fill me-2"></i>Home</a
-              >
-            </li>
-            <li class="nav-item dropdown" data-bs-theme="light">
-              <a
-                class="nav-link active dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Calculators</a
-              >
-              <div class="dropdown-menu">
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/car-affordability.html"
-                >
-                  <i class="bi bi-car-front-fill"></i> Car Affordability
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/house-affordability.html"
-                >
-                  <i class="bi bi-house-door-fill"></i> House Affordability
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
-                >
-                  <i class="bi bi-phone"></i> Mobile Affordability
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/stock-average-price.html"
-                >
-                  <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-calculator.html"
-                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-goal.html"
-                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
-                  ><i class="bi bi-coin"></i> Lumpsum Return</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
-                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
-                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
-                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
-                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
-                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
-                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
-                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
-                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
-                  Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
-                  ><i class="bi bi-layers"></i> MF Direct vs Regular
-                  Estimator</a
-                >
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/blog.html"
-                ><i class="bi bi-journal-text me-2"></i>Blog</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main class="container" style="margin-top: 5.5rem">
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <article class="p-4 bg-light rounded shadow-sm">
-            <h1 class="mb-3">How to use the Mobile Affordability Calculator</h1>
-            <p class="lead">
-              A simple, step-by-step guide that maps to the calculator fields
-              and rules (10-2-6-20).
-            </p>
-
-            <h4 class="mt-4">Open the calculator</h4>
-            <p>
-              Open the Mobile Affordability Calculator:
-              <a href="/pages/calculators/mobile-affordability.html#overview"
-                >Mobile Affordability Calculator</a
-              >.
-            </p>
-
-            <h4 class="mt-4">Fields you will fill</h4>
-            <ul>
-              <li>
-                <strong>Annual Salary (₹)</strong> — your yearly income before
-                tax. Used to compute the 10% rule.
-              </li>
-              <li>
-                <strong>Mobile Price (₹)</strong> — total price of the phone.
-              </li>
-              <li>
-                <strong>Upfront Payment (₹)</strong> — amount you pay upfront;
-                used to compute the upfront percentage.
-              </li>
-              <li>
-                <strong>EMI Tenure (months)</strong> — number of months for EMI
-                (ideally ≤ 6 for this rule).
-              </li>
-              <li>
-                <strong>Planned Usage Duration (years)</strong> — how long you
-                plan to keep the phone (≥2 recommended).
-              </li>
-            </ul>
-
-            <h4 class="mt-4">What the calculator shows</h4>
-            <ul>
-              <li>
-                <strong>Price as % of Salary</strong> — phone price divided by
-                annual salary (used for the 10% rule).
-              </li>
-              <li>
-                <strong>Upfront Payment %</strong> — upfront payment as a
-                percent of price (used for the 20% rule).
-              </li>
-              <li>
-                <strong>Rules</strong> — pass/fail indicators for the 10% check
-                (price), 20% upfront check, 6-month EMI check and 2-year usage
-                check.
-              </li>
-              <li>
-                <strong>Final verdict</strong> — a plain-language recommendation
-                summarising the rules.
-              </li>
-              <li>
-                <strong>Chart</strong> — a doughnut visual showing price% vs
-                remaining budget.
-              </li>
-            </ul>
-
-            <h4 class="mt-4">Step-by-step</h4>
-            <ol>
-              <li>
-                Enter Annual Salary, Mobile Price and Upfront Payment in the
-                clearly labeled fields.
-              </li>
-              <li>
-                Set EMI Tenure (months) — keep it ≤ 6 to satisfy the
-                short-tenure guideline for gadgets.
-              </li>
-              <li>
-                Set Planned Usage Duration (years) — aim for ≥ 2 years to get
-                reasonable value from the purchase.
-              </li>
-              <li>
-                Click the <strong>Check Affordability</strong> button or watch
-                the live updates — the results panel will refresh with pass/fail
-                checks and a short verdict.
-              </li>
-            </ol>
-
-            <h4 class="mt-4">How to interpret results</h4>
-            <ul>
-              <li>
-                If the price ≤ 10% of your annual salary, the price check passes
-                and the phone is affordable by that rule.
-              </li>
-              <li>
-                If your upfront payment ≥ 20% of the price, the upfront-check
-                passes and your loan burden is lower.
-              </li>
-              <li>
-                If EMI tenure ≤ 6 months, the short-tenure check passes —
-                preferred for fast-depreciating gadgets.
-              </li>
-              <li>
-                If planned usage ≥ 2 years, the usage check passes — you get
-                better value per rupee.
-              </li>
-              <li>
-                <strong>All pass:</strong> a green verdict suggests a reasonable
-                purchase; any failing check suggests you should lower price,
-                increase upfront or shorten tenure.
-              </li>
-            </ul>
-
-            <h4 class="mt-4">Quick examples</h4>
-            <p>
-              Example 1 — conservative buy: salary=₹600,000; price=₹50,000
-              (price% = 8.3% → passes 10%); upfront=₹15,000 (30% upfront →
-              passes 20%); tenure=6; usage=2 → all pass.
-            </p>
-            <p>
-              Example 2 — risky buy: salary=₹300,000; price=₹50,000 (16.7% →
-              fails 10%); upfront=₹5,000 (10% upfront → fails 20%); tenure=12
-              (fails 6-month rule) → not recommended.
-            </p>
-
-            <h4 class="mt-4">Common mistakes</h4>
-            <ul>
-              <li>
-                Using gross salary without considering other financial
-                obligations — be conservative if you have loans.
-              </li>
-              <li>
-                Choosing long EMIs to lower monthly payment — remember total
-                interest and longer commitment for a fast-depreciating item.
-              </li>
-              <li>
-                Not planning to use the phone for at least 2 years — frequent
-                upgrades lower value per rupee.
-              </li>
-            </ul>
-
-            <hr />
-            <p class="small text-muted">
-              Published: 19 August 2025 • Author: HeroZero
-            </p>
-          </article>
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-      <nav class="mb-2">
-        <a class="text-white mx-2" href="/pages/about.html">About</a>
-        <a class="text-white mx-2" href="/pages/contact.html">Contact</a>
-        <a class="text-white mx-2" href="/pages/privacy-policy.html"
-          >Privacy Policy</a
-        >
-        <a class="text-white mx-2" href="/pages/terms-of-use.html"
-          >Terms of Use</a
-        >
-        <a class="text-white mx-2" href="/pages/disclaimer.html">Disclaimer</a>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KKS8Q9YDJG');</script>
+  <title>HeroZero – Mobile Affordability Calculator Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Step-by-step guide to use the Mobile Affordability Calculator (10-2-6-20 rule)." />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-noise"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
       </nav>
-      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
-    </footer>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100">Mobile Affordability Calculator Guide</h1>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base">A practical walkthrough of the 10‑2‑6‑20 rule to decide if a smartphone fits your budget wisely.</p>
+    </div>
+  </header>
+  <div class="fixed top-0 left-0 h-1 bg-brand shadow z-50" id="readProgress" style="width:0"></div>
+  <main class="flex-1">
+    <br/>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid lg:grid-cols-[1fr_270px] gap-10 lg:gap-14 items-start">
+        <article class="card-tw p-8 lg:p-10 relative" id="articleRoot">
+          <div class="flex flex-wrap items-center gap-3 text-[11px] font-medium tracking-wide uppercase text-slate-500 dark:text-slate-400 mb-6">
+            <span class="badge-pill">Guide</span>
+            <time datetime="2025-08-19" class="flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>19 Aug 2025</time>
+            <span class="flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-500"></span><span id="readTime">~3 min read</span></span>
+          </div>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300 first-letter:text-5xl first-letter:font-extrabold first-letter:float-left first-letter:mr-2 first-letter:leading-[.9] first-letter:text-brand">Use this guide alongside the calculator to quickly test a phone purchase against four simple affordability checks: <strong>10%</strong> of salary, <strong>20%</strong> upfront, <strong>≤ 6</strong> months EMI and <strong>≥ 2</strong> years usage.</p>
+          <br/>
+          <h2 id="open" class="group scroll-mt-28 text-2xl font-bold mt-10 flex items-center gap-2">Open the calculator <a href="#open" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <p>Launch the <a href="/pages/calculators/mobile-affordability.html#overview" class="text-brand hover:underline">Mobile Affordability Calculator</a>. The results area updates live as you change inputs.</p>
+          <br/>
+          <h2 id="fields" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Fields you will fill <a href="#fields" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li><strong>Annual Salary (₹)</strong>: gross yearly income (basis for 10% cap).</li>
+            <li><strong>Mobile Price (₹)</strong>: total device price (MRP or negotiated).</li>
+            <li><strong>Upfront Payment (₹)</strong>: cash you pay now; higher lowers EMI strain.</li>
+            <li><strong>EMI Tenure (months)</strong>: planned instalment length (keep ≤ 6).</li>
+            <li><strong>Planned Usage Duration (years)</strong>: how long you intend to keep the phone (target ≥ 2).</li>
+          </ol>
+          <br/>
+          <h2 id="shows" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">What the calculator shows <a href="#shows" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li><strong>Price % of Salary</strong>: price ÷ annual salary (10% guideline).</li>
+            <li><strong>Upfront %</strong>: upfront ÷ price (aim ≥ 20%).</li>
+            <li><strong>Rules panel</strong>: pass / fail badges for each check.</li>
+            <li><strong>Final verdict</strong>: concise recommendation summarising gaps.</li>
+            <li><strong>Chart</strong>: visual slice of price% vs remaining salary.</li>
+          </ol>
+          <br/>
+          <h2 id="steps" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Step-by-step <a href="#steps" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Enter Salary, Price and Upfront amount.</li>
+            <li>Pick EMI Tenure (≤ 6 to satisfy rapid payoff).</li>
+            <li>Set Usage Duration (≥ 2 for value retention).</li>
+            <li>Review the live rule statuses and verdict; iterate inputs if needed.</li>
+          </ol>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+          <div class="mt-8 p-5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-800/40 text-[13px] leading-relaxed">
+            <p class="font-semibold mb-1 tracking-wide text-xs text-slate-600 dark:text-slate-300">Rule Summary (10‑2‑6‑20)</p>
+            <p><span class="font-mono font-semibold text-brand">10%</span> price ceiling • <span class="font-mono font-semibold text-brand">20%</span> upfront • <span class="font-mono font-semibold text-brand">≤6</span> months EMI • <span class="font-mono font-semibold text-brand">≥2</span> years use.</p>
+          </div>
+          <br/>
+          <h2 id="interpret" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">How to interpret results <a href="#interpret" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li><strong>Price ≤ 10%</strong>: cost proportion is healthy.</li>
+            <li><strong>Upfront ≥ 20%</strong>: reduces financing exposure.</li>
+            <li><strong>EMI ≤ 6 months</strong>: quick payoff on depreciating asset.</li>
+            <li><strong>Usage ≥ 2 years</strong>: better value per rupee.</li>
+            <li><strong>All pass</strong>: green verdict; any fail suggests adjust price, upfront, or tenure.</li>
+          </ol>
+          <br/>
+          <h2 id="examples" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Quick examples <a href="#examples" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <div class="grid sm:grid-cols-2 gap-5 mt-4">
+            <div class="p-4 rounded-lg border border-emerald-300/50 dark:border-emerald-500/40 bg-emerald-50/60 dark:bg-emerald-900/10 text-xs leading-relaxed">
+              <p class="font-semibold text-emerald-700 dark:text-emerald-300 mb-1">Conservative Buy</p>
+              <p>Salary ₹6,00,000 • Price ₹50,000 (8.3%) • Upfront 30% • Tenure 6 • Usage 2 → <span class="font-semibold">All pass</span>.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-rose-300/60 dark:border-rose-500/40 bg-rose-50/60 dark:bg-rose-900/10 text-xs leading-relaxed">
+              <p class="font-semibold text-rose-700 dark:text-rose-300 mb-1">Risky Buy</p>
+              <p>Salary ₹3,00,000 • Price ₹50,000 (16.7%) • Upfront 10% • Tenure 12 → Multiple fails (reconsider).</p>
+            </div>
+          </div>
+          <br/>
+          <h2 id="mistakes" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Common mistakes <a href="#mistakes" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Ignoring other EMIs / obligations when applying the 10% rule.</li>
+            <li>Extending EMI purely to shrink monthly outflow; interest + commitment risk.</li>
+            <li>Upgrading annually — erodes value per rupee rapidly.</li>
+          </ol>
+          <br/>
+          <div class="mt-12 flex flex-wrap gap-2">
+            <span class="badge-pill">mobile</span>
+            <span class="badge-pill">affordability</span>
+            <span class="badge-pill">budgeting</span>
+          </div>
+          <br/>
+          <div class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-4">
+            <div>Published: 19 Aug 2025 • Author: HeroZero • <button id="copyLink" class="underline decoration-dotted hover:text-slate-700 dark:hover:text-slate-300 focus-ring">Copy link</button></div>
+            <div class="flex flex-wrap gap-3 text-[11px] font-medium">
+              <a href="/pages/calculators/mobile-affordability.html" class="btn-primary btn-ripple px-4 py-2 text-xs">Open Calculator →</a>
+              <button data-share="twitter" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition focus-ring">Share X</button>
+              <button data-share="copy" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition focus-ring">Copy URL</button>
+            </div>
+            <nav class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 text-sm">
+              <a href="/pages/blog/stock-average-price-guide.html" class="inline-flex items-center gap-2 text-brand hover:underline focus-ring">← Stock Average Price Guide</a>
+              <a href="/pages/blog/car-affordability-guide.html" class="inline-flex items-center gap-2 text-brand hover:underline focus-ring">Car Affordability Guide →</a>
+            </nav>
+          </div>
+        </article>
+        <aside class="hidden lg:block sticky top-28 space-y-6" aria-label="Table of contents">
+          <div class="card-tw p-5 text-sm" id="tocCard">
+            <h3 class="text-xs font-semibold tracking-wide uppercase text-slate-500 dark:text-slate-400 mb-3">On this page</h3>
+            <ol class="space-y-2 text-[13px]" id="tocList">
+              <li><a href="#open" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Open</a></li>
+              <li><a href="#fields" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Fields</a></li>
+              <li><a href="#shows" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Outputs</a></li>
+              <li><a href="#steps" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Steps</a></li>
+              <li><a href="#interpret" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Interpret</a></li>
+              <li><a href="#examples" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Examples</a></li>
+              <li><a href="#mistakes" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Mistakes</a></li>
+            </ol>
+          </div>
+          <div class="card-tw p-5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+            <p class="font-semibold mb-1">Why 10‑2‑6‑20?</p>
+            <p>Simple guardrails reduce regret on fast-depreciating tech purchases. Adjust thresholds if your situation is unique.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <br/>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script>
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');});})();
+    (function(){const bar=document.getElementById('readProgress');const article=document.getElementById('articleRoot');if(!bar||!article)return;const calc=()=>{const start=article.offsetTop;const height=article.offsetHeight-window.innerHeight;const scroll=window.scrollY||document.documentElement.scrollTop;const progress=Math.min(1,Math.max(0,(scroll-start)/height));bar.style.width=(progress*100)+'%';};window.addEventListener('scroll',calc,{passive:true});window.addEventListener('resize',calc);calc();})();
+    (function(){const article=document.getElementById('articleRoot');const target=document.getElementById('readTime');if(!article||!target)return;const words=article.textContent.trim().split(/\s+/).length;const mins=Math.max(1,Math.round(words/200));target.textContent=`~${mins} min read`;})();
+    (function(){const headings=[...document.querySelectorAll('#open,#fields,#shows,#steps,#interpret,#examples,#mistakes')];const links=[...document.querySelectorAll('.toc-link')];if(!headings.length)return;const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('text-brand','font-semibold'));const id=e.target.id;const link=links.find(a=>a.getAttribute('href')==='#'+id);link&&link.classList.add('text-brand','font-semibold');}});},{rootMargin:'-55% 0px -35% 0px'});headings.forEach(h=>obs.observe(h));})();
+    (function(){const base=window.location.href.split('#')[0];document.querySelectorAll('[data-share]')?.forEach(btn=>{btn.addEventListener('click',()=>{const t=btn.getAttribute('data-share');if(t==='copy'&&navigator.clipboard){navigator.clipboard.writeText(base);btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy URL',1600);}else if(t==='twitter'){const text=encodeURIComponent('Mobile Affordability Calculator Guide – HeroZero');const url=encodeURIComponent(base);window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`,'_blank','noopener');}});});})();
+    (function(){const btn=document.getElementById('copyLink');if(!btn)return;btn.addEventListener('click',()=>{const url=window.location.href.split('#')[0];navigator.clipboard?.writeText(url);btn.textContent='Link copied';setTimeout(()=>btn.textContent='Copy link',1700);});})();
+  </script>
+</body>
 </html>

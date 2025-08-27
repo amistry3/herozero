@@ -1,420 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KKS8Q9YDJG');
-    </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>HeroZero — How to Use the Car Affordability Calculator</title>
-    <meta
-      name="description"
-      content="Step-by-step guide to using the Car Affordability Calculator on HeroZero."
-    />
-    <meta
-      name="keywords"
-      content="Car Affordability Calculator, HeroZero, Financial Tools"
-    />
-    <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://herozero.in/assets/img/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://herozero.in/assets/img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://herozero.in/assets/img/favicon-16x16.png"
-    />
-    <link rel="manifest" href="https://herozero.in/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      crossorigin="anonymous"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <nav
-      class="navbar navbar-expand-lg fixed-top bg-primary"
-      data-bs-theme="dark"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-          <img
-            src="https://herozero.in/assets/img/favicon-32x32.png"
-            class="me-2"
-            alt="HeroZero Logo"
-          />HeroZero
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="https://herozero.in/"
-                ><i class="bi bi-house-fill me-2"></i>Home</a
-              >
-            </li>
-            <li class="nav-item dropdown" data-bs-theme="light">
-              <a
-                class="nav-link active dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Calculators</a
-              >
-              <div class="dropdown-menu">
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/car-affordability.html"
-                >
-                  <i class="bi bi-car-front-fill"></i> Car Affordability
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/house-affordability.html"
-                >
-                  <i class="bi bi-house-door-fill"></i> House Affordability
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mobile-affordability.html"
-                >
-                  <i class="bi bi-phone"></i> Mobile Affordability
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/stock-average-price.html"
-                >
-                  <i class="bi bi-bar-chart-line-fill"></i> Stock Average Price
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-calculator.html"
-                  ><i class="bi bi-cash-stack"></i> SIP Calculator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-goal.html"
-                  ><i class="bi bi-bullseye"></i> SIP Goal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/lumpsum-return.html"
-                  ><i class="bi bi-coin"></i> Lumpsum Return</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"
-                  ><i class="bi bi-sliders"></i> SIP vs Lumpsum</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/xirr-calculator.html"
-                  ><i class="bi bi-calculator"></i> XIRR (cashflows)</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/capital-gains-estimator.html"
-                  ><i class="bi bi-graph-up"></i> Capital Gains Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/portfolio-rebalance.html"
-                  ><i class="bi bi-vector-pen"></i> Portfolio Rebalancer</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/expense-ratio-impact.html"
-                  ><i class="bi bi-percent"></i> Expense Ratio Impact</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/sip-topup-planner.html"
-                  ><i class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/swp-withdrawal.html"
-                  ><i class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-switch-estimator.html"
-                  ><i class="bi bi-arrow-left-right"></i> MF Switch / Exit
-                  Estimator</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"
-                  ><i class="bi bi-layers"></i> MF Direct vs Regular
-                  Estimator</a
-                >
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pages/blog.html"
-                ><i class="bi bi-journal-text me-2"></i>Blog</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-KKS8Q9YDJG');</script>
+  <title>HeroZero – Car Affordability Calculator Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Step-by-step guide to use the Car Affordability Calculator: inputs, interpretation, affordability ratio and examples." />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906"
+    crossorigin="anonymous"></script>
+</head>
 
-    <main class="container" style="margin-top: 5.5rem">
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <article class="p-4 bg-light rounded shadow-sm">
-            <h1 class="mb-3">How to use the Car Affordability Calculator</h1>
-            <p class="lead">
-              A simple, step-by-step guide to help you get accurate estimates
-              and make a sensible buying decision.
-            </p>
-
-            <h4 class="mt-4">Quick overview</h4>
-            <p>
-              The Car Affordability Calculator helps estimate the monthly EMI,
-              total ownership cost (including fuel and insurance), and an
-              <strong>affordability ratio</strong> — how much of your monthly
-              income would go towards the car loan EMI. Open the calculator
-              here:
-              <a href="/pages/calculators/car-affordability.html#overview"
-                >Car Affordability Calculator</a
-              >.
-            </p>
-
-            <h4 class="mt-4">What you need before you start</h4>
-            <ul>
-              <li>Annual income (gross)</li>
-              <li>Expected down payment percentage</li>
-              <li>
-                Expected on-road price (ex-showroom price + road tax + other
-                costs)
-              </li>
-              <li>Loan tenure (years) and expected interest rate (% p.a.)</li>
-              <li>Approximate annual insurance cost</li>
-              <li>
-                Estimated monthly driving distance, expected mileage (km/l) and
-                current fuel price (₹/litre)
-              </li>
-              <li>How long you plan to keep the car (lifespan in years)</li>
-            </ul>
-
-            <h4 class="mt-4">Step-by-step</h4>
-            <ol>
-              <li>
-                <strong>Open the calculator</strong> — go to the calculator page
-                and scroll to the calculator card, or click here:
-                <a href="/pages/calculators/car-affordability.html#calcForm"
-                  >Open calculator</a
-                >.
-              </li>
-              <li>
-                <strong>Enter Annual Income</strong> — put your total yearly
-                income before taxes in the field labelled "Annual Income". The
-                calculator will use this to compute your monthly income and
-                affordability ratio.
-              </li>
-              <li>
-                <strong>Income Tax</strong> — if you don't know exact tax, you
-                can leave it as 0; the calculator will assume no tax. To be
-                conservative, enter an approximate tax amount you currently pay
-                per year.
-              </li>
-              <li>
-                <strong>Price and On-road costs</strong> — enter the car's
-                ex-showroom price in the field labelled "Price (Ex-Showroom)"
-                and add expected Road Tax + Others (registration, road tax,
-                handling, accessories). Together these form the on-road price.
-              </li>
-              <li>
-                <strong>Down Payment (%)</strong> — enter the percent you plan
-                to pay upfront. Higher down payment reduces loan amount and EMI.
-                We recommend at least <strong>20%</strong> to keep EMI
-                manageable.
-              </li>
-              <li>
-                <strong>Loan Tenure</strong> — choose number of years to repay
-                the loan. Shorter tenures lower total interest but increase EMI;
-                longer tenures lower EMI but increase total interest paid.
-              </li>
-              <li>
-                <strong>Interest Rate (% p.a.)</strong> — enter the approximate
-                annual interest rate your bank or lender charges. Use the
-                expected rate after offers/negotiation.
-              </li>
-              <li>
-                <strong>Insurance</strong> — enter your expected annual
-                insurance premium (comprehensive). This contributes to total
-                ownership cost.
-              </li>
-              <li>
-                <strong>Fuel assumptions</strong> — add Monthly Distance (km),
-                Mileage (km/l), and Fuel Price (₹/litre). The calculator
-                estimates fuel spend over the car lifespan using these.
-              </li>
-              <li>
-                <strong>Car Lifespan</strong> — choose how many years you intend
-                to keep the car. This is used to project fuel costs over
-                ownership duration.
-              </li>
-              <li>
-                <strong>Calculate</strong> — click the
-                <em>Calculate</em> button. The results panel will appear showing
-                key numbers.
-              </li>
-            </ol>
-
-            <h4 class="mt-4">Reading the results</h4>
-            <p>
-              After calculation, the results card shows these labeled values
-              (look for the same labels on the right panel):
-            </p>
-            <ul>
-              <li>
-                <strong>Affordability Ratio</strong> — shown as "Affordability
-                Ratio" on the results card. This is the % of your monthly net
-                income that would go to EMI. Guidance used by the tool:
-                <ul>
-                  <li>&lt;= 15% — Affordable</li>
-                  <li>15%–25% — Stretching</li>
-                  <li>&gt; 25% — Not affordable</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Monthly EMI</strong> — look for the value labeled
-                "Monthly EMI"; it is computed using the standard EMI formula.
-              </li>
-              <li>
-                <strong>Fuel Cost (Over Lifespan)</strong> — shown as "Fuel Cost
-                (Over Lifespan)"; the estimate totals fuel spend across your
-                planned ownership period.
-              </li>
-              <li>
-                <strong>Total Ownership Cost</strong> — shown as "Total
-                Ownership Cost"; this sums the on-road price, fuel cost and
-                insurance over the lifespan you entered.
-              </li>
-              <li>
-                <strong>Verdict &amp; Tips</strong> — short, plain-language
-                advice appears under the headings "Verdict" and "Tips".
-              </li>
-            </ul>
-
-            <h4 class="mt-4">Practical examples</h4>
-            <p>
-              Example 1: If your monthly net income is ₹50,000 and EMI is
-              ₹7,500, affordability ratio = 15% — comfortable.
-            </p>
-            <p>
-              Example 2: If your monthly net income is ₹40,000 and EMI is
-              ₹12,000, affordability ratio = 30% — too high; consider increasing
-              down payment or choosing a cheaper model.
-            </p>
-
-            <h4 class="mt-4">Common mistakes to avoid</h4>
-            <ul>
-              <li>
-                Ignoring on-road costs — registration and handling can add a
-                large chunk to the sticker price.
-              </li>
-              <li>
-                Underestimating fuel usage — be realistic about how much you
-                drive.
-              </li>
-              <li>
-                Using optimistic interest rates — base calculations on the rate
-                you expect to get realistically.
-              </li>
-              <li>
-                Not accounting for other monthly obligations — EMIs for other
-                loans or ongoing commitments reduce what you can comfortably
-                afford.
-              </li>
-            </ul>
-
-            <h4 class="mt-4">Next steps after you calculate</h4>
-            <ol>
-              <li>
-                If verdict is <strong>Affordable</strong>, still check insurance
-                and maintenance costs and plan for emergency fund equal to 3–6
-                months of expenses.
-              </li>
-              <li>
-                If <strong>Stretching</strong>, try increasing down payment or
-                extending tenure slightly and re-check total interest impact.
-              </li>
-              <li>
-                If <strong>Not affordable</strong>, pick a lower priced car or
-                postpone buying until you can raise a larger down payment.
-              </li>
-            </ol>
-
-            <h4 class="mt-4">Need help?</h4>
-            <p>
-              For general guidance, consult a financial advisor before taking a
-              big loan.
-            </p>
-
-            <hr />
-            <p class="small text-muted">
-              Published: 19 August 2025 • Author: HeroZero
-            </p>
-          </article>
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-      <nav class="mb-2">
-        <a class="text-white mx-2" href="/pages/about.html">About</a>
-        <a class="text-white mx-2" href="/pages/contact.html">Contact</a>
-        <a class="text-white mx-2" href="/pages/privacy-policy.html"
-          >Privacy Policy</a
-        >
-        <a class="text-white mx-2" href="/pages/terms-of-use.html"
-          >Terms of Use</a
-        >
-        <a class="text-white mx-2" href="/pages/disclaimer.html">Disclaimer</a>
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-noise"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button"
+          class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+          aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
       </nav>
-      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
-    </footer>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100">Car Affordability
+        Calculator Guide</h1>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base">Understand inputs, affordability ratio
+        thresholds and total ownership cost before committing to a car purchase.</p>
+    </div>
+  </header>
+  <div class="fixed top-0 left-0 h-1 bg-brand shadow z-50" id="readProgress" style="width:0"></div>
+  <main class="flex-1">
+    <br />
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid lg:grid-cols-[1fr_270px] gap-10 lg:gap-14 items-start">
+        <article class="card-tw p-8 lg:p-10 relative" id="articleRoot">
+          <div
+            class="flex flex-wrap items-center gap-3 text-[11px] font-medium tracking-wide uppercase text-slate-500 dark:text-slate-400 mb-6">
+            <span class="badge-pill">Guide</span>
+            <time datetime="2025-08-19" class="flex items-center gap-1"><span
+                class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>19 Aug 2025</time>
+            <span class="flex items-center gap-1"><span
+                class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-500"></span><span id="readTime">~3 min
+                read</span></span>
+          </div>
+          <p
+            class="text-base leading-relaxed text-slate-700 dark:text-slate-300 first-letter:text-5xl first-letter:font-extrabold first-letter:float-left first-letter:mr-2 first-letter:leading-[.9] first-letter:text-brand">
+            This guide walks you through every field of the Car Affordability Calculator so you can judge if a car
+            comfortably fits your budget or is stretching your finances.</p>
+          <br />
+          <h2 id="overview" class="group scroll-mt-28 text-2xl font-bold mt-10 flex items-center gap-2">Quick overview
+            <a href="#overview" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <p>The calculator estimates monthly EMI, projected fuel & insurance spend (over your intended ownership years)
+            and an <strong>Affordability Ratio</strong> = EMI ÷ Monthly Net Income. Open it here: <a
+              href="/pages/calculators/car-affordability.html#overview" class="text-brand hover:underline">Car
+              Affordability Calculator</a>.</p>
+          <br />
+          <h2 id="inputs" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Inputs you will
+            need <a href="#inputs" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ul class="mt-4 list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Annual Income (gross) & optional annual Tax paid.</li>
+            <li>Ex‑showroom Price + Road Tax + Other costs (on‑road total).</li>
+            <li>Planned Down Payment % (≥ 20% recommended).</li>
+            <li>Loan Tenure (years) & expected Interest Rate (% p.a.).</li>
+            <li>Annual Insurance premium.</li>
+            <li>Monthly Distance (km), Mileage (km/l), Fuel Price (₹/litre).</li>
+            <li>Intended Car Lifespan (years you will keep it).</li>
+          </ul>
+          <br />
+          <h2 id="steps" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Step-by-step <a
+              href="#steps" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Open the calculator and scroll to the form (or use the <em>Open Calculator</em> link on this page).</li>
+            <li>Enter Annual Income (and optional Tax to reflect net affordability).</li>
+            <li>Add Price (Ex‑Showroom) and Road Tax + Others → on‑road basis.</li>
+            <li>Set Down Payment % (higher cuts EMI/interest).</li>
+            <li>Choose Tenure and Interest Rate.</li>
+            <li>Enter Insurance, then Fuel assumptions (distance, mileage, fuel price).</li>
+            <li>Pick Car Lifespan (projects cumulative fuel + insurance).</li>
+            <li>Click <strong>Calculate</strong> to view EMI, ratio and ownership totals.</li>
+          </ol>
+          <div
+            class="mt-8 p-5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-800/40 text-[13px] leading-relaxed">
+            <p class="font-semibold mb-1 tracking-wide text-xs text-slate-600 dark:text-slate-300">Affordability Ratio
+              Bands</p>
+            <p><span class="font-mono font-semibold text-emerald-600">≤ 15%</span> Affordable • <span
+                class="font-mono font-semibold text-amber-600">15–25%</span> Stretching • <span
+                class="font-mono font-semibold text-rose-600">&gt; 25%</span> Not affordable.</p>
+          </div>
+          <br />
+          <h2 id="results" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Reading the
+            results <a href="#results" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a>
+          </h2>
+          <ul class="mt-4 list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li><strong>Affordability Ratio</strong>: EMI ÷ Monthly Net Income (see bands above).</li>
+            <li><strong>Monthly EMI</strong>: computed using standard amortising loan (EMI) formula.</li>
+            <li><strong>Fuel Cost (Over Lifespan)</strong>: projected fuel spend (monthly distance × lifespan × fuel
+              price ÷ mileage).</li>
+            <li><strong>Total Ownership Cost</strong>: On‑road price + Fuel Cost + Insurance (across lifespan).</li>
+            <li><strong>Verdict & Tips</strong>: plain-language guidance summarising gaps and suggestions.</li>
+          </ul>
+          <br />
+          <h2 id="examples" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Practical
+            examples <a href="#examples" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a>
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-5 mt-4">
+            <div
+              class="p-4 rounded-lg border border-emerald-300/50 dark:border-emerald-500/40 bg-emerald-50/60 dark:bg-emerald-900/10 text-xs leading-relaxed">
+              <p class="font-semibold text-emerald-700 dark:text-emerald-300 mb-1">Comfortable Scenario</p>
+              <p>Net Monthly Income ₹50,000 • EMI ₹7,500 → Ratio 15% (Affordable).</p>
+            </div>
+            <div
+              class="p-4 rounded-lg border border-rose-300/60 dark:border-rose-500/40 bg-rose-50/60 dark:bg-rose-900/10 text-xs leading-relaxed">
+              <p class="font-semibold text-rose-700 dark:text-rose-300 mb-1">Too High</p>
+              <p>Net Monthly Income ₹40,000 • EMI ₹12,000 → Ratio 30% (Not affordable).</p>
+            </div>
+          </div>
+          <br />
+          <h2 id="mistakes" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Common mistakes
+            <a href="#mistakes" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Ignoring on‑road additions (registration, handling, accessories).</li>
+            <li>Overestimating mileage or underestimating distance driven.</li>
+            <li>Using optimistic interest rate instead of bank quote.</li>
+            <li>Forgetting other EMIs which lower safe capacity.</li>
+          </ol>
+          <br />
+          <h2 id="next" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Next steps <a
+              href="#next" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>If <strong>Affordable</strong> still verify insurance, maintenance & build emergency fund (3–6 months).
+            </li>
+            <li>If <strong>Stretching</strong> raise down payment or shorten tenure & re‑check interest impact.</li>
+            <li>If <strong>Not affordable</strong> pick a lower priced model or postpone until you can save more.</li>
+          </ol>
+          <br />
+          <h2 id="help" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Need help? <a
+              href="#help" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <p class="text-sm leading-relaxed">Talk to a qualified advisor before taking a large loan
+            commitment—especially if your affordability ratio is near the upper band.</p>
+          <br />
+          <div class="mt-12 flex flex-wrap gap-2">
+            <span class="badge-pill">car</span>
+            <span class="badge-pill">affordability</span>
+            <span class="badge-pill">budgeting</span>
+          </div>
+          <br />
+          <div
+            class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-4">
+            <div>Published: 19 Aug 2025 • Author: HeroZero • <button id="copyLink"
+                class="underline decoration-dotted hover:text-slate-700 dark:hover:text-slate-300 focus-ring">Copy
+                link</button></div>
+            <div class="flex flex-wrap gap-3 text-[11px] font-medium">
+              <a href="/pages/calculators/car-affordability.html" class="btn-primary btn-ripple px-4 py-2 text-xs">Open
+                Calculator →</a>
+              <button data-share="twitter"
+                class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition focus-ring">Share
+                X</button>
+              <button data-share="copy"
+                class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition focus-ring">Copy
+                URL</button>
+            </div>
+            <nav class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 text-sm">
+              <a href="/pages/blog/mobile-affordability-guide.html"
+                class="inline-flex items-center gap-2 text-brand hover:underline focus-ring">← Mobile Affordability
+                Guide</a>
+              <a href="/pages/blog/stock-average-price-guide.html"
+                class="inline-flex items-center gap-2 text-brand hover:underline focus-ring">Stock Average Price Guide
+                →</a>
+            </nav>
+          </div>
+        </article>
+        <aside class="hidden lg:block sticky top-28 space-y-6" aria-label="Table of contents">
+          <div class="card-tw p-5 text-sm" id="tocCard">
+            <h3 class="text-xs font-semibold tracking-wide uppercase text-slate-500 dark:text-slate-400 mb-3">On this
+              page</h3>
+            <ol class="space-y-2 text-[13px]" id="tocList">
+              <li><a href="#overview"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Overview</a>
+              </li>
+              <li><a href="#inputs"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Inputs</a></li>
+              <li><a href="#steps"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Steps</a></li>
+              <li><a href="#results"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Results</a></li>
+              <li><a href="#examples"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Examples</a>
+              </li>
+              <li><a href="#mistakes"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Mistakes</a>
+              </li>
+              <li><a href="#next"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Next</a></li>
+              <li><a href="#help"
+                  class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Help</a></li>
+            </ol>
+          </div>
+          <div class="card-tw p-5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+            <p class="font-semibold mb-1">Why the ratio matters</p>
+            <p>Keeping EMI ≤ 15% of net income preserves flexibility for savings and emergencies. Above 25% increases
+              stress risk.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <br />
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script>
+    (function () { const root = document.documentElement; const btn = document.getElementById('themeToggle'); const stored = localStorage.getItem('hz-theme'); if (stored === 'dark') { root.classList.add('dark'); btn && btn.setAttribute('aria-pressed', 'true'); btn && (btn.textContent = '☀️'); } btn && btn.addEventListener('click', () => { const d = root.classList.toggle('dark'); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); btn.textContent = d ? '☀️' : '🌙'; localStorage.setItem('hz-theme', d ? 'dark' : 'light'); }); })();
+    (function () { const bar = document.getElementById('readProgress'); const article = document.getElementById('articleRoot'); if (!bar || !article) return; const calc = () => { const start = article.offsetTop; const height = article.offsetHeight - window.innerHeight; const scroll = window.scrollY || document.documentElement.scrollTop; const progress = Math.min(1, Math.max(0, (scroll - start) / height)); bar.style.width = (progress * 100) + '%'; }; window.addEventListener('scroll', calc, { passive: true }); window.addEventListener('resize', calc); calc(); })();
+    (function () { const article = document.getElementById('articleRoot'); const target = document.getElementById('readTime'); if (!article || !target) return; const words = article.textContent.trim().split(/\s+/).length; const mins = Math.max(1, Math.round(words / 200)); target.textContent = `~${mins} min read`; })();
+    (function () { const ids = ['overview', 'inputs', 'steps', 'results', 'examples', 'mistakes', 'next', 'help']; const headings = ids.map(id => document.getElementById(id)).filter(Boolean); const links = [...document.querySelectorAll('.toc-link')]; if (!headings.length) return; const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { links.forEach(a => a.classList.remove('text-brand', 'font-semibold')); const link = links.find(a => a.getAttribute('href') === '#' + e.target.id); link && link.classList.add('text-brand', 'font-semibold'); } }); }, { rootMargin: '-55% 0px -35% 0px' }); headings.forEach(h => obs.observe(h)); })();
+    (function () { const base = window.location.href.split('#')[0]; document.querySelectorAll('[data-share]')?.forEach(btn => { btn.addEventListener('click', () => { const t = btn.getAttribute('data-share'); if (t === 'copy' && navigator.clipboard) { navigator.clipboard.writeText(base); btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy URL', 1600); } else if (t === 'twitter') { const text = encodeURIComponent('Car Affordability Calculator Guide – HeroZero'); const url = encodeURIComponent(base); window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'noopener'); } }); }); })();
+    (function () { const btn = document.getElementById('copyLink'); if (!btn) return; btn.addEventListener('click', () => { const url = window.location.href.split('#')[0]; navigator.clipboard?.writeText(url); btn.textContent = 'Link copied'; setTimeout(() => btn.textContent = 'Copy link', 1700); }); })();
+  </script>
+</body>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
 </html>
