@@ -1,103 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Top level -->
     <url>
         <loc>https://herozero.in/</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/about.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/contact.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/privacy-policy.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/terms-of-use.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/disclaimer.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/guides/guides.html</loc>
-        <lastmod>2025-08-19</lastmod>
-    </url>    
+        <lastmod>2025-08-28</lastmod>
+    </url>
+
+    <!-- Calculators -->
     <url>
         <loc>https://herozero.in/pages/calculators/car-affordability.html</loc>
-        <lastmod>2025-08-24</lastmod>
-    </url>    
+        <lastmod>2025-08-28</lastmod>
+    </url>
     <url>
         <loc>https://herozero.in/pages/calculators/mobile-affordability.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/stock-average-price.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/sip-calculator.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/sip-goal.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/lumpsum-return.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/sip-vs-lumpsum.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/xirr-calculator.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/capital-gains-estimator.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/portfolio-rebalance.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/expense-ratio-impact.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/sip-topup-planner.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/swp-withdrawal.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/calculators/mf-switch-estimator.html</loc>
-        <lastmod>2025-08-24</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
+        <loc>https://herozero.in/pages/calculators/mf-direct-vs-regular.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/sip-step-up.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/fd-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/income-tax-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/ppf-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/rd-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/nps-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/emi-prepayment-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/epf-interest-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/hra-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://herozero.in/pages/calculators/gratuity-calculator.html</loc>
+        <lastmod>2025-08-28</lastmod>
+    </url>
+
+    <!-- Blog / Guides -->
+    <url>
         <loc>https://herozero.in/pages/blog.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/blog/car-affordability-guide.html</loc>
-        <lastmod>2025-08-19</lastmod>
-    </url>    
+        <lastmod>2025-08-28</lastmod>
+    </url>
     <url>
         <loc>https://herozero.in/pages/blog/mobile-affordability-guide.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
     <url>
         <loc>https://herozero.in/pages/blog/stock-average-price-guide.html</loc>
-        <lastmod>2025-08-19</lastmod>
+        <lastmod>2025-08-28</lastmod>
     </url>
 </urlset>

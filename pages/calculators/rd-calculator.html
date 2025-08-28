@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-KKS8Q9YDJG');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <title>RD Calculator (India) – Recurring Deposit Maturity & Interest | HeroZero Finance Calculators (India)</title>
+  <meta name="description" content="India / INR — RD Calculator — estimate maturity amount for recurring deposits with monthly/quarterly/yearly installments and chosen compounding frequency (values in ₹)." />
+  <meta name="keywords" content="rd calculator, recurring deposit calculator, India, INR, maturity amount, recurring deposit interest, monthly deposit" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://herozero.in/index.html#calculators"},{"@type":"ListItem","position":3,"name":"RD Calculator","item":"https://herozero.in/pages/calculators/rd-calculator.html"}]},{"@type":"SoftwareApplication","name":"RD Calculator","description":"Estimate maturity for Recurring Deposits with configurable installment frequency and compounding.","operatingSystem":"Web","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"url":"https://herozero.in/pages/calculators/rd-calculator.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What frequencies are supported?","acceptedAnswer":{"@type":"Answer","text":"Monthly, quarterly and yearly installments are supported. Choose compounding frequency to match bank product."}},{"@type":"Question","name":"How is maturity computed?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses standard annuity future-value formula for periodic deposits and per-period compounding; results are approximate and for guidance only."}}]}]}
+  </script>
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M8 34h32" />
+              <path d="M12 26h24M12 18h24" />
+            </svg>
+        </span>
+        <span>RD Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">India · Values in INR (₹)</p>
+      <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Estimate maturity for recurring deposits — choose installment frequency, tenure and compounding.</p>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+        <!-- Inputs -->
+        <div class="card-tw p-8 space-y-6">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Set installment amount, frequency, tenure and interest rate. Sliders + numeric inputs provided.</p>
+          </div>
+          <form id="rdForm" onsubmit="event.preventDefault()" class="grid gap-5">
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Installment frequency
+              <select id="instFreq" class="input-text w-full">
+                <option value="12">Monthly</option>
+                <option value="4">Quarterly</option>
+                <option value="1">Yearly</option>
+              </select>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Installment amount (₹)
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="instRange" type="range" min="100" max="200000" step="100" value="5000" class="range-adv" /></div>
+                <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="instAmt" type="number" min="100" max="200000" step="100" value="5000" class="input-text font-mono w-full" /></span></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Enter amount per installment (per month/quarter/year based on frequency).</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Tenure
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="yearsRange" type="range" min="1" max="30" step="1" value="5" class="range-adv" /></div>
+                <div class="w-28"><input id="years" type="number" min="1" max="30" value="5" class="input-text font-mono w-full" /></div>
+                <div class="w-20"><input id="months" type="number" min="0" max="11" value="0" class="input-text font-mono w-full" /></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Tenure in years and months (total periods derived from frequency).</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Interest rate (% p.a.)
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="rateRange" type="range" min="1" max="15" step="0.1" value="7.0" class="range-adv" /></div>
+                <div class="w-28"><input id="rate" type="number" step="0.1" min="0" max="40" value="7.0" class="input-text font-mono w-full" /></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Use the RD rate offered by your bank; compounding frequency affects effective yield.</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Compounding frequency
+              <select id="compFreq" class="input-text w-full">
+                <option value="12">Monthly</option>
+                <option value="4">Quarterly</option>
+                <option value="1">Annually</option>
+              </select>
+            </label>
+
+            <div class="flex justify-end"><button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Calculate</span><span aria-hidden="true">➡</span></span></button></div>
+          </form>
+
+          <div class="grid sm:grid-cols-3 gap-4 pt-2">
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">How RD works</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">RD involves periodic deposits; interest is calculated on the outstanding balance and compounded per bank frequency.</p></details>
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Installment timing</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">This calculator assumes installments are deposited at period end (common bank practice). Results are approximate.</p></details>
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">FAQ</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><dl class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed"><div><dt class="font-semibold">Premature closure?</dt><dd>Rules vary; interest rates and penalties may apply.</dd></div><div><dt class="font-semibold">TDS?</dt><dd>Interest may be taxable as per your profile.</dd></div></dl></details>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card-tw p-8 space-y-6">
+          <div class="space-y-4">
+            <div class="metric-card relative overflow-hidden bg-amber-50 dark:bg-amber-900/20 border-amber-300/60 dark:border-amber-600/40 p-6 sm:p-7">
+              <div class="flex items-start justify-between relative z-10">
+                <div>
+                  <div class="text-[11px] tracking-wide font-semibold uppercase text-amber-700 dark:text-amber-300">Maturity Amount</div>
+                  <div id="maturity" class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-amber-700 dark:text-amber-300 mt-1">₹0</div>
+                </div>
+                <div class="hidden sm:block text-amber-500 dark:text-amber-400" aria-hidden="true"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6" /><path d="M21 12h-6" /><path d="M3 12h6" /></svg></div>
+              </div>
+              <p class="mt-3 text-[10px] sm:text-xs text-amber-700/80 dark:text-amber-300/70">Projected maturity given inputs. Bank rounding and rules not modelled.</p>
+            </div>
+            <br />
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+                <div class="metric-label">Total contributions</div>
+                <div id="contribOut" class="metric-value font-mono">₹0</div>
+              </div>
+              <div class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                <div class="metric-label">Total interest earned</div>
+                <div id="interestOut" class="metric-value font-mono">₹0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative h-[320px]" id="chartWrap">
+            <div id="rdChartContainer" class="h-full" aria-label="RD balance over time chart"></div>
+          </div>
+
+          <div id="summaryText" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    // Theme toggle
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculate(true),30);});})();
+    // Helpers
+    const clamp = (v, m, M) => Math.min(Math.max(v, m), M);
+    function formatINR(x, fd = 0) { return Number(x).toLocaleString('en-IN', { maximumFractionDigits: fd }); }
+    function countUp(el, to, duration = 700) { const from = Number((el.dataset.value || '0').replace(/,/g, '')) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = '₹' + formatINR(val, 0); if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to); } requestAnimationFrame(frame); }
+
+    // Element refs
+    const instFreq = document.getElementById('instFreq');
+    const instRange = document.getElementById('instRange'); const instAmt = document.getElementById('instAmt');
+    const yearsRange = document.getElementById('yearsRange'); const yearsInput = document.getElementById('years'); const monthsInput = document.getElementById('months');
+    const rateRange = document.getElementById('rateRange'); const rateInput = document.getElementById('rate');
+    const compFreq = document.getElementById('compFreq');
+    const calcBtn = document.getElementById('calcBtn');
+
+    // Sync ranges
+    function sync(range,input){range.addEventListener('input',()=>{input.value=range.value;styleRange(range);triggerCalc();});input.addEventListener('input',()=>{let v=Number(input.value||0);if(isNaN(v))v=0;v=Math.round(v);input.value=v;range.value=v;styleRange(range);triggerCalc();});}
+    function styleRange(r){const min=r.min,max=r.max,val=r.value;const pct=((val-min)/(max-min))*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';r.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`;}
+    sync(instRange,instAmt);sync(yearsRange,yearsInput);sync(rateRange,rateInput);
+    yearsRange.addEventListener('input',()=>{if(Number(yearsRange.value)<1)yearsRange.value=1;}); monthsInput.addEventListener('input',()=>{let v=parseInt(monthsInput.value||0,10);if(isNaN(v))v=0;v=clamp(v,0,11);monthsInput.value=v;triggerCalc();});
+
+    // Calculation: future value of annuity with periodic rate
+    function calcFV(M, i, N){ // M = installment per period, i = periodic rate, N = total periods
+      if(i===0) return M * N; return M * ( (Math.pow(1+i,N)-1) / i );
+    }
+
+    function buildSeries({inst,instFreq,years,months,rate,compFreq}){
+      const totalMonths = years*12 + months; const periodsPerYear = Number(instFreq); const totalPeriods = Math.round(totalMonths/12*periodsPerYear);
+      const periodicRate = rate/100/Number(compFreq); // per compounding period
+      // For charting, create yearly buckets showing balance after each year (approx)
+      const series=[]; let balance=0; // simulate per-period deposits and compounding per compFreq
+      const perPeriodRate = rate/100/periodsPerYear; // approximate rate matching installment frequency
+      for(let p=1;p<=totalPeriods;p++){
+        // deposit at period end
+        balance = balance + Number(inst);
+        balance = balance * (1 + perPeriodRate);
+        // if end of year, push
+        const monthsElapsed = Math.round(p*(12/periodsPerYear));
+        const year = Math.min(Math.ceil(monthsElapsed/12), Math.ceil(totalMonths/12));
+        if(series.length<year) series.push({year:year,bal:Math.round(balance)}); else series[year-1].bal = Math.round(balance);
+      }
+      return series;
+    }
+
+    function renderChart(series){ const categories = series.map(s=>'Year '+s.year); const data = series.map(s=>s.bal); const isDark=document.documentElement.classList.contains('dark'); const gridColor=isDark?'#334155':'#e2e8f0'; if(window.rdChart && window.rdChart.destroy) window.rdChart.destroy(); window.rdChart = Highcharts.chart('rdChartContainer',{chart:{backgroundColor:'transparent'},title:null,credits:{enabled:false},xAxis:{categories,labels:{style:{color:isDark?'#cbd5e1':'#475569'}},tickInterval:Math.ceil(categories.length/6)},yAxis:{title:null,gridLineColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'},formatter(){return '₹'+formatINR(this.value);}}},tooltip:{pointFormatter:function(){return '<b>Balance:</b> ₹'+formatINR(this.y);}},series:[{name:'Balance',type:'areaspline',data:data,color:'#f59e0b',lineWidth:2,fillColor:{linearGradient:[0,0,0,260],stops:[[0,'rgba(245,158,11,.35)'],[1,'rgba(245,158,11,0)']]}}]}); }
+
+    function calculate(){ const inst = Number(instAmt.value||0); const instFreqVal = Number(instFreq.value); const years = Number(yearsInput.value||0); const months = Number(monthsInput.value||0); const rate = Number(rateInput.value||0); const comp = Number(compFreq.value||12);
+      const totalMonths = years*12 + months; const totalPeriods = Math.round(totalMonths/12*instFreqVal);
+      const periodicRate = rate/100/instFreqVal;
+      // future value using annuity formula (deposit at period end)
+      const fv = calcFV(inst, periodicRate, totalPeriods);
+      const totalContrib = inst * totalPeriods; const interest = Math.max(0, Math.round(fv - totalContrib)); const maturity = Math.round(fv);
+      countUp(document.getElementById('maturity'), maturity); countUp(document.getElementById('contribOut'), Math.round(totalContrib)); countUp(document.getElementById('interestOut'), interest);
+      document.getElementById('summaryText').textContent = `${instFreq.options[instFreq.selectedIndex].text} installment of ₹${formatINR(inst)} for ${years}y${months?('+'+months+'m'):''} @ ${rate}% p.a.`;
+      const series = buildSeries({inst,instFreq:instFreqVal,years,months,rate,compFreq:comp}); renderChart(series);
+    }
+
+    // Wiring
+    let debounce; function triggerCalc(){clearTimeout(debounce);debounce=setTimeout(()=>calculate(),140);} [instRange,instAmt,yearsRange,yearsInput,monthsInput,rateRange,rateInput,instFreq,compFreq].forEach(el=>el.addEventListener('input',triggerCalc)); calcBtn.addEventListener('click',calculate); window.addEventListener('DOMContentLoaded',()=>{styleRange(instRange);styleRange(yearsRange);styleRange(rateRange);calculate();});
+
+    // Ripple
+    document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
+  </script>
+</body>
+</html>

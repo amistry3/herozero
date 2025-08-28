@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-KKS8Q9YDJG');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <title>EPF Interest Calculator (India) – Estimate EPF Corpus | HeroZero Finance Calculators (India)</title>
+  <meta name="description" content="India / INR — EPF Interest Calculator — project EPF corpus using monthly contributions (employee + employer) and expected interest rate (values in ₹)." />
+  <meta name="keywords" content="epf calculator, epf interest, employee provident fund, India, corpus calculator, INR" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://herozero.in/index.html#calculators"},{"@type":"ListItem","position":3,"name":"EPF Interest Calculator","item":"https://herozero.in/pages/calculators/epf-interest-calculator.html"}]},{"@type":"SoftwareApplication","name":"EPF Interest Calculator","description":"Estimate EPF corpus using monthly contributions and assumed interest rate.","operatingSystem":"Web","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"url":"https://herozero.in/pages/calculators/epf-interest-calculator.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How often is EPF interest credited?","acceptedAnswer":{"@type":"Answer","text":"EPF interest is declared annually by EPFO and credited yearly. This calculator approximates using monthly compounding for a close estimate."}},{"@type":"Question","name":"Does employer contribution include EPS?","acceptedAnswer":{"@type":"Answer","text":"Employer contribution includes EPF and EPS components; this calculator models employer contribution as a percent of employee contribution for simplicity."}}]}]}
+  </script>
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M8 34h32" />
+              <path d="M16 18v12M32 18v12" />
+            </svg>
+        </span>
+        <span>EPF Interest Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">India · Values in INR (₹)</p>
+      <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Project EPF corpus using monthly contributions and an expected interest rate. Use sliders or numeric inputs for quick tuning.</p>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+        <!-- Inputs -->
+        <div class="card-tw p-8 space-y-6">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Set current balance, monthly contributions and expected EPF rate. Sliders + inputs provided for each bound.</p>
+          </div>
+          <form id="epfForm" onsubmit="event.preventDefault()" class="grid gap-5">
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Current EPF balance (₹)
+              <div class="flex items-center gap-3"><div class="flex-1"><input id="balanceRange" type="range" min="0" max="10000000" step="1000" value="200000" class="range-adv" /></div><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="balance" type="number" min="0" max="100000000" step="1000" value="200000" class="input-text font-mono w-full" /></span></div></div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Employee monthly contribution (₹)
+              <div class="flex items-center gap-3"><div class="flex-1"><input id="empMonthlyRange" type="range" min="0" max="200000" step="100" value="2000" class="range-adv" /></div><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="empMonthly" type="number" min="0" max="200000" step="100" value="2000" class="input-text font-mono w-full" /></span></div></div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Employer contribution (% of employee)
+              <div class="flex items-center gap-3"><input id="empPctRange" type="range" min="0" max="100" step="1" value="12" class="range-adv flex-1" /><div class="w-24"><input id="empPct" type="number" min="0" max="100" step="1" value="12" class="input-text font-mono w-full" /></div></div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Employer contribution modelled as % of employee contribution for simplicity (EPF+EPS split not modelled).</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Expected EPF interest (% p.a.)
+              <div class="flex items-center gap-3"><div class="flex-1"><input id="rateRange" type="range" min="0" max="12" step="0.1" value="8.15" class="range-adv" /></div><div class="w-28"><input id="rate" type="number" step="0.01" min="0" max="20" value="8.15" class="input-text font-mono w-full" /></div></div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">EPFO declares annual rates; historical rates around 8%–9% in recent years.</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Projection years
+              <div class="flex items-center gap-3"><div class="flex-1"><input id="yearsRange" type="range" min="1" max="40" step="1" value="20" class="range-adv" /></div><div class="w-20"><input id="years" type="number" min="1" max="40" value="20" class="input-text font-mono w-full" /></div></div>
+            </label>
+
+            <div class="flex justify-end"><button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Project</span><span aria-hidden="true">➡</span></span></button></div>
+          </form>
+
+          <div class="grid sm:grid-cols-3 gap-4 pt-2">
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Calculation note</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">This calculator approximates EPF growth using monthly compounding of monthly contributions and an annual rate; EPFO interest is credited yearly on average balances.</p></details>
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Employer split</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">Employer contribution includes EPF & EPS components; this tool models employer as percent of employee contribution for simplicity.</p></details>
+            <details class="card-tw p-5"><summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">FAQ</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><dl class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed"><div><dt class="font-semibold">Partial withdrawals?</dt><dd>EPF partial withdrawals are allowed under certain conditions; not modelled here.</dd></div></dl></details>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card-tw p-8 space-y-6">
+          <div class="space-y-4">
+            <div class="metric-card relative overflow-hidden bg-amber-50 dark:bg-amber-900/20 border-amber-300/60 dark:border-amber-600/40 p-6 sm:p-7">
+              <div class="flex items-start justify-between relative z-10">
+                <div>
+                  <div class="text-[11px] tracking-wide font-semibold uppercase text-amber-700 dark:text-amber-300">Projected EPF Corpus</div>
+                  <div id="maturity" class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-amber-700 dark:text-amber-300 mt-1">₹0</div>
+                </div>
+                <div class="hidden sm:block text-amber-500 dark:text-amber-400" aria-hidden="true"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6" /><path d="M21 12h-6" /><path d="M3 12h6" /></svg></div>
+              </div>
+              <p class="mt-3 text-[10px] sm:text-xs text-amber-700/80 dark:text-amber-300/70">Projected EPF corpus after chosen years (approx). Annual interest, deposits and employer contributions modelled monthly.</p>
+            </div>
+            <br />
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+                <div class="metric-label">Total employee contributions</div>
+                <div id="contribOut" class="metric-value font-mono">₹0</div>
+              </div>
+              <div class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                <div class="metric-label">Total interest earned</div>
+                <div id="interestOut" class="metric-value font-mono">₹0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative h-[320px]" id="chartWrap">
+            <div id="epfChartContainer" class="h-full" aria-label="EPF balance over time chart"></div>
+          </div>
+
+          <div id="summaryText" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    // Theme toggle
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculate(true),30);});})();
+
+    // Helpers
+    const clamp = (v, m, M) => Math.min(Math.max(v, m), M);
+    function formatINR(x, fd = 0) { return Number(x).toLocaleString('en-IN', { maximumFractionDigits: fd }); }
+    function countUp(el, to, duration = 700) { const from = Number((el.dataset.value || '0').replace(/,/g, '')) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = '₹' + formatINR(val, 0); if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to); } requestAnimationFrame(frame); }
+
+    // Element refs
+    const balanceRange = document.getElementById('balanceRange'); const balanceInput = document.getElementById('balance');
+    const empMonthlyRange = document.getElementById('empMonthlyRange'); const empMonthly = document.getElementById('empMonthly');
+    const empPctRange = document.getElementById('empPctRange'); const empPct = document.getElementById('empPct');
+    const rateRange = document.getElementById('rateRange'); const rateInput = document.getElementById('rate');
+    const yearsRange = document.getElementById('yearsRange'); const yearsInput = document.getElementById('years');
+    const calcBtn = document.getElementById('calcBtn');
+
+    // Sync ranges and inputs
+    function syncRange(range, input, roundTo) { range.addEventListener('input', () => { input.value = range.value; styleRange(range); triggerCalc(); }); input.addEventListener('input', () => { let v = Number(input.value || 0); if (isNaN(v)) v = 0; if (roundTo) v = Math.round(v * (1 / roundTo)) / (1 / roundTo); input.value = v; range.value = v; styleRange(range); triggerCalc(); }); }
+    function styleRange(r) { const min = Number(r.min), max = Number(r.max), val = Number(r.value); const pct = ((val - min) / (max - min)) * 100; const dark = document.documentElement.classList.contains('dark'); const filled = dark ? '#3b82f6' : '#0d6efd'; const rest = dark ? '#334155' : '#e2e8f0'; r.style.background = `linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`; }
+    syncRange(balanceRange, balanceInput, 1000); syncRange(empMonthlyRange, empMonthly, 100); syncRange(empPctRange, empPct, 1); syncRange(rateRange, rateInput, 0.01); syncRange(yearsRange, yearsInput, 1);
+
+    // Simulation: monthly compounding approximation
+    function buildSeries(balance, empMonthly, empPct, annualRate, years){
+      const series=[]; const monthlyRate = annualRate/100/12; let bal = Number(balance);
+      for(let y=1;y<=years;y++){
+        for(let m=0;m<12;m++){
+          const emp = Number(empMonthly);
+          const er = emp * (empPct/100);
+          bal += emp + er; // contributions at period start
+          // approximate monthly crediting
+          bal *= (1+monthlyRate);
+        }
+        series.push({year:y,bal:Math.round(bal)});
+      }
+      return series;
+    }
+
+    function renderChart(series){ const categories = series.map(s=>'Year '+s.year); const data = series.map(s=>s.bal); const isDark = document.documentElement.classList.contains('dark'); const gridColor = isDark ? '#334155' : '#e2e8f0'; if(window.epfChart && window.epfChart.destroy) window.epfChart.destroy(); window.epfChart = Highcharts.chart('epfChartContainer',{chart:{backgroundColor:'transparent'},title:null,credits:{enabled:false},xAxis:{categories,labels:{style:{color:isDark?'#cbd5e1':'#475569'}}},yAxis:{title:null,gridLineColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'},formatter(){return '₹'+formatINR(this.value);}}},tooltip:{pointFormatter:function(){return '<b>Balance:</b> ₹'+formatINR(this.y);}},series:[{name:'Balance',type:'areaspline',data:data,color:'#f59e0b',lineWidth:2,fillColor:{linearGradient:[0,0,0,260],stops:[[0,'rgba(245,158,11,.35)'],[1,'rgba(245,158,11,0)']]}}]}); }
+
+    function calculate(){ const bal0 = Number(balanceInput.value||0); const empM = Number(empMonthly.value||0); const pct = Number(empPct.value||0); const rate = Number(rateInput.value||0); const yrs = Math.max(1, Number(yearsInput.value||1)); const series = buildSeries(bal0, empM, pct, rate, yrs); const maturity = series[series.length-1].bal || 0; const totalEmp = empM * 12 * yrs; const totalEmpMatch = totalEmp * (pct/100); const principal = Math.round(bal0 + totalEmp + totalEmpMatch); const interest = Math.max(0, Math.round(maturity - (bal0 + totalEmp + totalEmpMatch))); countUp(document.getElementById('maturity'), Math.round(maturity)); countUp(document.getElementById('contribOut'), Math.round(totalEmp)); countUp(document.getElementById('interestOut'), Math.round(interest)); document.getElementById('summaryText').textContent = `Starting balance: ₹${formatINR(bal0)} · Employee contrib (total): ₹${formatINR(totalEmp)} · Employer contrib (total): ₹${formatINR(totalEmpMatch)} · Approx. interest: ₹${formatINR(interest)}.`; renderChart(series);
+    }
+
+    // Wiring
+    let debounce; function triggerCalc(){ clearTimeout(debounce); debounce = setTimeout(()=>calculate(),120); }
+    [balanceRange,balanceInput,empMonthlyRange,empMonthly,empPctRange,empPct,rateRange,rateInput,yearsRange,yearsInput].forEach(el=>el.addEventListener('input',triggerCalc)); calcBtn.addEventListener('click',calculate);
+    window.addEventListener('DOMContentLoaded',()=>{ styleRange(balanceRange); styleRange(empMonthlyRange); styleRange(empPctRange); styleRange(rateRange); styleRange(yearsRange); calculate(); });
+
+    // Ripple
+    document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple'); if(!t) return; const r=document.createElement('span'); r.className='ripple-anim'; const rect=t.getBoundingClientRect(); const size=Math.max(rect.width,rect.height); r.style.width=r.style.height=size+'px'; r.style.left=(e.clientX-rect.left-size/2)+'px'; r.style.top=(e.clientY-rect.top-size/2)+'px'; t.appendChild(r); setTimeout(()=>r.remove(),600);});
+  </script>
+</body>
+
+</html>

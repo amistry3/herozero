@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-KKS8Q9YDJG');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EMI Prepayment Calculator (India) – Interest Saved & Term Reduction | HeroZero Finance Calculators (India)</title>
+  <meta name="description" content="India / INR — EMI Prepayment Calculator — estimate interest saved and loan term reduction from one-time or recurring prepayments (values in ₹)." />
+  <meta name="keywords" content="emi prepayment calculator, emi prepay, loan prepayment, interest saved, tenure reduction, India, INR" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://herozero.in/index.html#calculators"},{"@type":"ListItem","position":3,"name":"EMI Prepayment Calculator","item":"https://herozero.in/pages/calculators/emi-prepayment-calculator.html"}]},{"@type":"SoftwareApplication","name":"EMI Prepayment Calculator","description":"Estimate savings and term reduction from prepaying your loan EMI.","operatingSystem":"Web","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"url":"https://herozero.in/pages/calculators/emi-prepayment-calculator.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do prepayments reduce EMI or tenure?","acceptedAnswer":{"@type":"Answer","text":"Depends on lender choice — you may reduce EMI or tenure; specify preference in the calculator."}},{"@type":"Question","name":"Are prepayments penalty-free?","acceptedAnswer":{"@type":"Answer","text":"Some lenders charge a prepayment penalty; check your loan agreement."}}]}]}
+  </script>
+  <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+</head>
+
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button"
+          class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+          aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="w-full h-full">
+              <path d="M8 34h32" />
+              <path d="M12 26h24M12 18h12" />
+            </svg>
+        </span>
+        <span>EMI Prepayment Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">India · Values in INR (₹)</p>
+      <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Model one-time or recurring prepayments and compare baseline vs prepayment scenarios (interest saved, term reduction or new EMI).</p>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <br/>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+        <!-- Inputs -->
+        <div class="card-tw p-8 space-y-6">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Provide outstanding principal, annual rate, remaining tenure and current EMI. Add one-time or recurring prepayments and choose behaviour.</p>
+          </div>
+
+          <form id="emiForm" onsubmit="event.preventDefault()" class="grid gap-6">
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Outstanding Principal (₹)
+              <div class="flex items-center gap-3">
+                <div class="flex-1">
+                  <input id="principalRange" type="range" min="10000" max="100000000" step="1000" value="500000" class="range-adv" />
+                  <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Use the slider for quick tuning or type the exact number.</div>
+                </div>
+                <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="principal" type="number" min="1000" max="100000000" step="1000" value="500000" class="input-text font-mono w-full" /></span></div>
+              </div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Interest Rate (% p.a.)
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="rateRange" type="range" min="1" max="20" step="0.1" value="8.5" class="range-adv" /></div>
+                <div class="w-28"><input id="rate" type="number" step="0.1" min="0" max="50" value="8.5" class="input-text font-mono w-full" /></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Typical home loan/public rates in India vary; enter your repo rate.</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Remaining Tenure
+              <div class="flex items-center gap-3">
+                <div class="flex-1">
+                  <input id="yearsRange" type="range" min="0" max="40" step="1" value="15" class="range-adv" />
+                  <div class="mt-1 text-[10px] text-slate-500 dark:text-slate-400">Years (0–40). Use months for fractions.</div>
+                </div>
+                <div class="w-20"><input id="years" type="number" min="0" max="40" value="15" class="input-text font-mono w-full" /></div>
+                <div class="w-20"><input id="months" type="number" min="0" max="11" value="0" class="input-text font-mono w-full" /></div>
+              </div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2">Auto-calc EMI
+              <input id="autoEmi" type="checkbox" checked class="ml-2" />
+              <span class="ml-2 text-[10px] text-slate-500 dark:text-slate-400">Calculate EMI from principal/rate/tenure when checked.</span>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Current EMI (₹)
+              <div class="flex items-center gap-3">
+                <div class="flex-1">
+                  <input id="emiRange" type="range" min="1000" max="200000" step="100" value="4600" class="range-adv" />
+                </div>
+                <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="emi" type="number" min="1" step="1" value="4600" class="input-text font-mono w-full" /></span></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">If unsure, enable Auto-calc EMI to compute a baseline EMI.</div>
+            </label>
+
+            <fieldset class="text-xs text-slate-600 dark:text-slate-300">
+              <legend class="font-medium">Prepayment Type</legend>
+              <div class="flex gap-4 mt-2">
+                <label class="inline-flex items-center gap-2"><input id="oneTimeRadio" type="radio" name="prepayType" value="one" checked /> <span>One-time prepayment</span></label>
+                <label class="inline-flex items-center gap-2"><input id="recurringRadio" type="radio" name="prepayType" value="recurring" /> <span>Recurring extra payment</span></label>
+              </div>
+            </fieldset>
+
+            <div id="oneTimeBlock" class="grid gap-2">
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">One-time Prepayment Amount (₹)
+                <div class="flex items-center gap-3">
+                  <div class="flex-1"><input id="oneRange" type="range" min="1000" max="10000000" step="500" value="50000" class="range-adv" /></div>
+                  <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="oneAmt" type="number" min="0" step="500" value="50000" class="input-text font-mono w-full" /></span></div>
+                </div>
+              </label>
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300">When (month)
+                <input id="oneAt" type="number" min="1" value="12" class="input-text w-28" />
+                <div class="text-[10px] text-slate-500 dark:text-slate-400">Month number counting from now (1 = next EMI).</div>
+              </label>
+            </div>
+
+            <div id="recurringBlock" class="hidden grid gap-2">
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Extra Monthly Payment (₹)
+                <div class="flex items-center gap-3">
+                  <div class="flex-1"><input id="recRange" type="range" min="500" max="200000" step="100" value="1000" class="range-adv" /></div>
+                  <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="recAmt" type="number" min="0" step="100" value="1000" class="input-text font-mono w-full" /></span></div>
+                </div>
+              </label>
+              <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Start at month
+                <input id="recStart" type="number" min="1" value="1" class="input-text w-28" />
+                <div class="text-[10px] text-slate-500 dark:text-slate-400">Start month counting from now (1 = next EMI).</div>
+              </label>
+            </div>
+
+            <fieldset class="text-xs text-slate-600 dark:text-slate-300">
+              <legend class="font-medium">Apply Prepayment As</legend>
+              <div class="flex gap-4 mt-2">
+                <label class="inline-flex items-center gap-2"><input id="reduceTenure" type="radio" name="applyMode" value="tenure" checked /> <span>Keep EMI same — reduce tenure</span></label>
+                <label class="inline-flex items-center gap-2"><input id="reduceEmi" type="radio" name="applyMode" value="emi" /> <span>Recalculate EMI — keep tenure</span></label>
+              </div>
+            </fieldset>
+
+            <div class="flex justify-end"><button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Calculate</span><span aria-hidden="true">➡</span></span></button></div>
+          </form>
+
+          <div class="grid sm:grid-cols-3 gap-4 pt-2">
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">How prepayment affects loans</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></summary>
+              <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">Prepayments lower outstanding principal. You can either reduce the EMI (keeping tenure same) or keep EMI and shorten the loan — check with your lender for exact rules.</p>
+            </details>
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Prepayment penalties</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></summary>
+              <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">Some loans charge a penalty for prepayment. This calculator does not model penalties; subtract any fee from your estimated savings.</p>
+            </details>
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span class="font-semibold text-slate-900 dark:text-slate-100 text-xs">FAQ</span><svg class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></summary>
+              <dl class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                <div>
+                  <dt class="font-semibold">Should I prepay or invest?</dt>
+                  <dd>Compare guaranteed interest saved vs expected returns from investments; choose based on risk profile.</dd>
+                </div>
+              </dl>
+            </details>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card-tw p-8 space-y-6">
+          <div class="space-y-4">
+            <div class="metric-card relative overflow-hidden bg-amber-50 dark:bg-amber-900/20 border-amber-300/60 dark:border-amber-600/40 p-6 sm:p-7">
+              <div class="flex items-start justify-between relative z-10">
+                <div>
+                  <div class="text-[11px] tracking-wide font-semibold uppercase text-amber-700 dark:text-amber-300">Interest Saved</div>
+                  <div id="interestSaved" class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-amber-700 dark:text-amber-300 mt-1">₹0</div>
+                </div>
+                <div class="hidden sm:block text-amber-500 dark:text-amber-400" aria-hidden="true">
+                  <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6" /><path d="M21 12h-6" /><path d="M3 12h6" /></svg>
+                </div>
+              </div>
+              <p class="mt-3 text-[10px] sm:text-xs text-amber-700/80 dark:text-amber-300/70">Estimated interest saved when comparing baseline schedule vs prepayment scenario.</p>
+            </div>
+            <br/>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+                <div class="metric-label">Baseline Total Interest</div>
+                <div id="baselineInterest" class="metric-value font-mono">₹0</div>
+              </div>
+              <div class="metric-card bg-emerald-50/80 dark:bg-emerald-900/20 border-emerald-200/70 dark:border-emerald-600/40">
+                <div class="metric-label">Scenario Total Interest</div>
+                <div id="scenarioInterest" class="metric-value font-mono">₹0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="card-tw p-4">
+              <div class="text-xs font-medium text-slate-600">Baseline Months Remaining</div>
+              <div id="baselineMonths" class="font-mono text-lg font-semibold">0</div>
+            </div>
+            <div class="card-tw p-4">
+              <div class="text-xs font-medium text-slate-600">Scenario Months Remaining</div>
+              <div id="scenarioMonths" class="font-mono text-lg font-semibold">0</div>
+            </div>
+          </div>
+
+          <div class="relative h-[340px]" id="chartWrap">
+            <div id="emiChartContainer" class="h-full" aria-label="Loan balance over time chart"></div>
+          </div>
+
+          <div id="notes" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+        </div>
+      </div>
+    </section>
+    <br/>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    // Theme toggle
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculate(true),30);});})();
+
+    // Helpers
+    const clamp = (v,m,M) => Math.min(Math.max(v,m),M);
+    function formatINR(x,fd=0){return Number(x).toLocaleString('en-IN',{maximumFractionDigits:fd});}
+    function countUp(el,to,duration=700){const from=Number((el.dataset.value||'0').replace(/,/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent='₹'+formatINR(val,0);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}
+
+    // Element refs
+    const principalRange = document.getElementById('principalRange');
+    const principalInput = document.getElementById('principal');
+    const rateRange = document.getElementById('rateRange');
+    const rateInput = document.getElementById('rate');
+    const yearsRange = document.getElementById('yearsRange');
+    const yearsInput = document.getElementById('years');
+    const monthsInput = document.getElementById('months');
+    const autoEmi = document.getElementById('autoEmi');
+    const emiRange = document.getElementById('emiRange');
+    const emiInput = document.getElementById('emi');
+    const oneRange = document.getElementById('oneRange');
+    const oneAmt = document.getElementById('oneAmt');
+    const oneAt = document.getElementById('oneAt');
+    const recRange = document.getElementById('recRange');
+    const recAmt = document.getElementById('recAmt');
+    const recStart = document.getElementById('recStart');
+    const oneTimeBlock = document.getElementById('oneTimeBlock');
+    const recurringBlock = document.getElementById('recurringBlock');
+    const oneTimeRadio = document.getElementById('oneTimeRadio');
+    const recurringRadio = document.getElementById('recurringRadio');
+    const calcBtn = document.getElementById('calcBtn');
+
+    // Sync helpers
+    function syncRange(range,input){range.addEventListener('input',()=>{input.value=range.value;styleRange(range);triggerCalc();});input.addEventListener('input',()=>{let v=Number(input.value||0);if(isNaN(v))v=0;input.value=Math.round(v);range.value=v;styleRange(range);triggerCalc();});}
+    function styleRange(r){const min=r.min,max=r.max,val=r.value;const pct=((val-min)/(max-min))*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';r.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`;}
+    syncRange(principalRange,principalInput);syncRange(rateRange,rateInput);syncRange(yearsRange,yearsInput);syncRange(emiRange,emiInput);syncRange(oneRange,oneAmt);syncRange(recRange,recAmt);
+    monthsInput.addEventListener('input',()=>{let v=parseInt(monthsInput.value||0,10);if(isNaN(v))v=0;v=clamp(v,0,11);monthsInput.value=v;triggerCalc();});
+
+    // Toggle prepay blocks
+    function updatePrepayUI(){if(oneTimeRadio.checked){oneTimeBlock.classList.remove('hidden');recurringBlock.classList.add('hidden');}else{oneTimeBlock.classList.add('hidden');recurringBlock.classList.remove('hidden');}}
+    oneTimeRadio.addEventListener('change',updatePrepayUI);recurringRadio.addEventListener('change',updatePrepayUI);
+
+    // EMI formula
+    function calcEmi(P, annualRate, months){if(months<=0) return 0; const r = annualRate/100/12; if(r===0) return P/months; const num = P*r*Math.pow(1+r,months); const den = Math.pow(1+r,months)-1; return num/den; }
+
+    // Amortization simulation
+    function simulate(P, annualRate, months, emiAmount, prepay){
+      // prepay: {type:'one'|'recurring', oneAmt, oneAt, recAmt, recStart}
+      const r = annualRate/100/12; let bal = P; let month=0; let totalInterest=0; const balances=[{m:0,bal:P}]; while(bal>0 && month<1200){month++; const interest = bal*r; totalInterest += interest; let principalPay = Math.max(0, emiAmount - interest); bal = Math.max(0, bal - principalPay);
+        // apply prepayments (after regular EMI)
+        if(prepay.type==='one' && month===Number(prepay.oneAt)){ const amt=Number(prepay.oneAmt)||0; bal = Math.max(0, bal - amt); }
+        if(prepay.type==='recurring' && month>=Number(prepay.recStart)){ const amt=Number(prepay.recAmt)||0; bal = Math.max(0, bal - amt); }
+        balances.push({m:month, bal: bal}); if(month>10000) break; }
+      return {monthsElapsed:balances[balances.length-1].m, totalInterest, balances}; }
+
+    // Recalculate EMI to amortize remaining principal over remaining months
+    function emiForRemaining(principal, annualRate, months){return calcEmi(principal, annualRate, months);}
+
+    // Chart
+    let chart;
+    function renderChart(baselineBalances, scenarioBalances, recalcBalances){
+      // Use monthly x labels for up to 240 months, else show yearly ticks
+      const maxM = Math.max(baselineBalances.length-1, scenarioBalances.length-1, (recalcBalances||[]).length-1);
+      const categories = Array.from({length:maxM+1}, (_,i)=>i===0?'Now':'M'+i);
+      const getSeries = (arr)=>{const map=Array(maxM+1).fill(null);arr.forEach(pt=>{map[pt.m]=pt.bal}); // fill forward
+        for(let i=1;i<map.length;i++){if(map[i]===null) map[i]=map[i-1];}
+        return map.map(v=>Math.round(v)); };
+      const s1 = getSeries(baselineBalances); const s2 = getSeries(scenarioBalances); const s3 = recalcBalances?getSeries(recalcBalances):null;
+      const isDark=document.documentElement.classList.contains('dark'); const gridColor=isDark?'#334155':'#e2e8f0';
+      if(chart&&chart.destroy) chart.destroy();
+      const series=[{name:'Baseline balance', type:'line', data:s1, color:'#0d6efd'},{name:'With prepayment', type:'line', data:s2, color:'#16a34a'}]; if(s3) series.push({name:'Recalc EMI scenario', type:'line', data:s3, color:'#f59e0b'});
+      chart = Highcharts.chart('emiChartContainer',{chart:{backgroundColor:'transparent',zoomType:'x'},title:null,credits:{enabled:false},xAxis:{categories,labels:{style:{color:isDark?'#cbd5e1':'#475569'}},lineColor:gridColor,tickColor:gridColor},yAxis:{title:null,gridLineColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'},formatter(){return '₹'+formatINR(this.value);} }},tooltip:{pointFormatter:function(){return '<b>Balance:</b> ₹'+formatINR(this.y);} },series});
+    }
+
+    function calculate(force){
+      const P = Number(principalInput.value||0); const annualRate = Number(rateInput.value||0); const years = Number(yearsInput.value||0); const months = Number(monthsInput.value||0); const totalMonths = years*12 + months; if(totalMonths<=0||P<=0) return;
+      // auto-calc EMI
+      let emiAmt = Number(emiInput.value||0);
+      if(autoEmi.checked || emiAmt<=0){ emiAmt = Math.round(calcEmi(P, annualRate, totalMonths)); emiInput.value = emiAmt; emiRange.value = emiAmt; styleRange(emiRange); }
+
+      // baseline
+      const baseline = simulate(P, annualRate, totalMonths, emiAmt, {type:'none'});
+
+      // scenario with prepayments but EMI unchanged (reduces tenure)
+      const prepayType = oneTimeRadio.checked ? 'one' : 'recurring';
+      const prepay = {type:prepayType, oneAmt:Number(oneAmt.value||0), oneAt:Math.max(1,Number(oneAt.value||1)), recAmt:Number(recAmt.value||0), recStart:Math.max(1,Number(recStart.value||1)) };
+      const scenarioKeepEmi = simulate(P, annualRate, totalMonths, emiAmt, prepay);
+
+      // scenario where EMI is recalculated after first prepayment event to keep tenure same (approx)
+      let recalcBalances=null; let scenarioRecalc = {monthsElapsed:baseline.monthsElapsed, totalInterest:baseline.totalInterest};
+      // find first prepayment month
+      let firstPrepayMonth = null; if(prepay.type==='one') firstPrepayMonth = prepay.oneAt; else if(prepay.type==='recurring') firstPrepayMonth = prepay.recStart;
+      if(firstPrepayMonth!=null && firstPrepayMonth<=totalMonths){
+        // simulate month-by-month until firstPrepayMonth, applying regular EMI
+        let bal=P; const r=annualRate/100/12; const balances=[{m:0,bal:P}]; let month=0; let totalInterest=0; let emiNow = emiAmt;
+        while(month<firstPrepayMonth && bal>0){month++; const interest = bal*r; totalInterest+=interest; const prin = Math.max(0, emiNow - interest); bal = Math.max(0, bal - prin); balances.push({m:month, bal}); }
+        // apply first prepayment
+        if(prepay.type==='one'){ bal = Math.max(0, bal - prepay.oneAmt); }
+        if(prepay.type==='recurring'){ bal = Math.max(0, bal - prepay.recAmt); }
+        balances.push({m:month,bal});
+        const remainingMonths = Math.max(1, totalMonths - month);
+        const newEmi = emiForRemaining(bal, annualRate, remainingMonths);
+        // now amortize with newEmi for remaining months
+        let remMonth=0; while(bal>0 && remMonth<1200 && remMonth<remainingMonths){ remMonth++; const interest = bal*r; totalInterest+=interest; const prin = Math.max(0, newEmi - interest); bal = Math.max(0, bal - prin); balances.push({m: month+remMonth, bal}); }
+        recalcBalances = balances; scenarioRecalc = {monthsElapsed: month+remMonth, totalInterest};
+      }
+
+      // compute outputs
+      const baselineInterest = Math.round(baseline.totalInterest); const scenarioInterest = Math.round(scenarioKeepEmi.totalInterest); const interestSaved = Math.max(0, baselineInterest - scenarioInterest);
+      const baselineMonths = baseline.monthsElapsed; const scenarioMonths = scenarioKeepEmi.monthsElapsed; const recalcMonths = scenarioRecalc.monthsElapsed;
+
+      // Update UI
+      countUp(document.getElementById('interestSaved'), interestSaved); document.getElementById('baselineInterest').textContent = '₹'+formatINR(baselineInterest); document.getElementById('scenarioInterest').textContent = '₹'+formatINR(scenarioInterest);
+      document.getElementById('baselineMonths').textContent = baselineMonths + ' mo'; document.getElementById('scenarioMonths').textContent = scenarioMonths + ' mo';
+      // notes
+      let note = `Baseline EMI: ₹${formatINR(Math.round(emiAmt))} · Baseline months: ${baselineMonths} months.`;
+      if(prepay.type==='one') note += ` One-time prepayment ₹${formatINR(prepay.oneAmt)} at month ${prepay.oneAt}.`;
+      else note += ` Recurring extra ₹${formatINR(prepay.recAmt)} starting month ${prepay.recStart}.`;
+      note += ` Interest saved: ₹${formatINR(interestSaved)}.`;
+      if(document.getElementById('reduceEmi').checked && recalcBalances){ note += ` After recalculation, EMI would reduce (approx) and payoff in ${recalcMonths} months.`; }
+      document.getElementById('notes').textContent = note;
+
+      // Chart
+      renderChart(baseline.balances, scenarioKeepEmi.balances, recalcBalances);
+    }
+
+    // Debounce
+    let debounce; function triggerCalc(){ clearTimeout(debounce); debounce=setTimeout(()=>calculate(),120); }
+    [principalRange, principalInput, rateRange, rateInput, yearsRange, yearsInput, monthsInput, emiRange, emiInput, oneRange, oneAmt, oneAt, recRange, recAmt, recStart].forEach(el=>el.addEventListener('input', triggerCalc));
+    [oneTimeRadio, recurringRadio].forEach(r=>r.addEventListener('change', triggerCalc));
+    calcBtn.addEventListener('click', ()=> calculate(true));
+    window.addEventListener('DOMContentLoaded', ()=>{ styleRange(principalRange); styleRange(rateRange); styleRange(yearsRange); styleRange(emiRange); styleRange(oneRange); styleRange(recRange); updatePrepayUI(); calculate(); });
+
+    // Ripple
+    document.addEventListener('click', e=>{ const t = e.target.closest('.btn-ripple'); if(!t) return; const r = document.createElement('span'); r.className='ripple-anim'; const rect=t.getBoundingClientRect(); const size=Math.max(rect.width,rect.height); r.style.width=r.style.height=size+'px'; r.style.left=(e.clientX-rect.left-size/2)+'px'; r.style.top=(e.clientY-rect.top-size/2)+'px'; t.appendChild(r); setTimeout(()=>r.remove(),600); });
+  </script>
+</body>
+
+</html>

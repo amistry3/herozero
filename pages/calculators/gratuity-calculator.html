@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-KKS8Q9YDJG');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <title>Gratuity Calculator (India) – Estimate Gratuity Payable | HeroZero Finance Calculators (India)</title>
+  <meta name="description"
+    content="India / INR — Gratuity Calculator — estimate gratuity payable under Indian rules (15 days × years of service) with statutory cap. Values in ₹." />
+  <meta name="keywords" content="gratuity calculator, gratuity India, 15/26, service years, gratuity cap, INR" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://herozero.in/index.html#calculators"},{"@type":"ListItem","position":3,"name":"Gratuity Calculator","item":"https://herozero.in/pages/calculators/gratuity-calculator.html"}]},{"@type":"SoftwareApplication","name":"Gratuity Calculator","description":"Estimate gratuity payable using (Basic+DA) * 15/26 * years of service and apply statutory cap.","operatingSystem":"Web","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"url":"https://herozero.in/pages/calculators/gratuity-calculator.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is gratuity calculated?","acceptedAnswer":{"@type":"Answer","text":"Under the Payment of Gratuity Act gratuity = (last drawn basic + DA) × 15/26 × number of years of service (completed years)."}},{"@type":"Question","name":"Is there a cap on gratuity?","acceptedAnswer":{"@type":"Answer","text":"Yes — statutory maximum applies (e.g., ₹20,00,000 as of recent rules). This calculator shows uncapped and capped amounts."}}]}]}
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button"
+          class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+          aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1
+        class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="w-full h-full">
+            <path d="M8 34h32" />
+            <path d="M12 22h24M12 16h24" />
+          </svg>
+        </span>
+        <span>Gratuity Calculator</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">India · Values in INR
+        (₹)</p>
+      <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Estimate gratuity
+        payable under Indian rules. Use sliders or numeric inputs for quick adjustments.</p>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 lg:gap-12 lg:grid-cols-2">
+        <!-- Inputs -->
+        <div class="card-tw p-8 space-y-6">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900 dark:text-slate-100">Inputs</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Provide last drawn monthly Basic + DA, service
+              duration and statutory cap (defaults to ₹20,00,000).</p>
+          </div>
+          <form id="gratForm" onsubmit="event.preventDefault()" class="grid gap-5">
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Last drawn Basic
+              (monthly, ₹)
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="basicRange" type="range" min="5000" max="500000" step="500" value="50000"
+                    class="range-adv" /></div>
+                <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="basic"
+                      type="number" min="0" max="5000000" step="100" value="50000"
+                      class="input-text font-mono w-full" /></span></div>
+              </div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Dearness allowance
+              (DA) as % of basic
+              <div class="flex items-center gap-3"><input id="daRange" type="range" min="0" max="200" step="1" value="0"
+                  class="range-adv flex-1" />
+                <div class="w-24"><input id="daPct" type="number" min="0" max="200" step="1" value="0"
+                    class="input-text font-mono w-full" /></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Enter DA percent if applicable (many private
+                firms have DA ≈ 0).</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Years of service
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="yearsRange" type="range" min="0" max="50" step="1" value="10"
+                    class="range-adv" /></div>
+                <div class="w-20"><input id="years" type="number" min="0" max="50" value="10"
+                    class="input-text font-mono w-full" /></div>
+                <div class="w-20"><input id="months" type="number" min="0" max="11" value="0"
+                    class="input-text font-mono w-full" /></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Years and months of continuous service.
+                Gratuity is usually calculated on completed years; this tool shows both completed-year and pro-rated
+                results.</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Statutory cap (₹)
+              <div class="flex items-center gap-3">
+                <div class="flex-1"><input id="capRange" type="range" min="100000" max="5000000" step="10000"
+                    value="2000000" class="range-adv" /></div>
+                <div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="cap"
+                      type="number" min="0" max="50000000" step="1000" value="2000000"
+                      class="input-text font-mono w-full" /></span></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Statutory maximum gratuity (commonly
+                ₹20,00,000). Update if rules change.</div>
+            </label>
+
+            <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Calculation method
+              <select id="method" class="input-text w-full">
+                <option value="act">Act (15 days × years)</option>
+                <option value="custom">Custom multiplier</option>
+              </select>
+            </label>
+
+            <label id="customMultiplierBlock"
+              class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2 hidden">Custom days per
+              year
+              <div class="flex items-center gap-3"><input id="multRange" type="range" min="1" max="30" step="0.5"
+                  value="15" class="range-adv flex-1" />
+                <div class="w-24"><input id="mult" type="number" min="1" max="30" step="0.5" value="15"
+                    class="input-text font-mono w-full" /></div>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400">Use if your company calculates gratuity
+                differently (days per year).</div>
+            </label>
+
+            <div class="flex justify-end"><button id="calcBtn" type="button"
+                class="btn-primary btn-ripple w-full sm:w-auto"><span
+                  class="inline-flex items-center gap-2"><span>Calculate</span><span
+                    aria-hidden="true">➡</span></span></button></div>
+          </form>
+
+          <div class="grid sm:grid-cols-3 gap-4 pt-2">
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                  class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Law summary</span><svg
+                  class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></summary>
+              <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">Typical formula: (Basic + DA) × 15/26 ×
+                years of service (completed years). This is an estimator only.</p>
+            </details>
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                  class="font-semibold text-slate-900 dark:text-slate-100 text-xs">Completed vs Pro-rated</span><svg
+                  class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></summary>
+              <p class="mt-3 text-[11px] text-slate-600 dark:text-slate-400">Many employers pay for completed years
+                only; some offer pro-rated for months. This tool shows both.</p>
+            </details>
+            <details class="card-tw p-5">
+              <summary class="flex items-center justify-between cursor-pointer select-none"><span
+                  class="font-semibold text-slate-900 dark:text-slate-100 text-xs">FAQ</span><svg
+                  class="chevron w-4 h-4 text-slate-500" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M6 8l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></summary>
+              <dl class="mt-3 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                <div>
+                  <dt class="font-semibold">Is gratuity taxable?</dt>
+                  <dd>Yes — gratuity may be taxable subject to exemptions; consult tax rules for details.</dd>
+                </div>
+              </dl>
+            </details>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card-tw p-8 space-y-6">
+          <div class="space-y-4">
+            <div
+              class="metric-card relative overflow-hidden bg-emerald-50 dark:bg-emerald-900/20 border-emerald-300/60 dark:border-emerald-600/40 p-6 sm:p-7">
+              <div class="flex items-start justify-between relative z-10">
+                <div>
+                  <div class="text-[11px] tracking-wide font-semibold uppercase text-emerald-700 dark:text-emerald-300">
+                    Estimated Gratuity</div>
+                  <div id="gratuityOut"
+                    class="font-mono font-extrabold text-2xl sm:text-3xl md:text-4xl text-emerald-700 dark:text-emerald-300 mt-1">
+                    ₹0</div>
+                </div>
+                <div class="hidden sm:block text-emerald-500 dark:text-emerald-400" aria-hidden="true"><svg
+                    class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v6" />
+                    <path d="M21 12h-6" />
+                    <path d="M3 12h6" />
+                  </svg></div>
+              </div>
+              <p class="mt-3 text-[10px] sm:text-xs text-emerald-700/80 dark:text-emerald-300/70">Shows uncapped and
+                capped gratuity amounts; consult employer/HR for exact payout policy.</p>
+            </div>
+            <br />
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="metric-card bg-blue-50/80 dark:bg-blue-900/20 border-blue-200/70 dark:border-blue-600/40">
+                <div class="metric-label">Uncapped (pro-rated)</div>
+                <div id="uncappedOut" class="metric-value font-mono">₹0</div>
+              </div>
+              <div class="metric-card bg-rose-50/80 dark:bg-rose-900/20 border-rose-200/70 dark:border-rose-600/40">
+                <div class="metric-label">After statutory cap</div>
+                <div id="cappedOut" class="metric-value font-mono">₹0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative h-[320px]" id="chartWrap">
+            <div id="gratChartContainer" class="h-full" aria-label="Gratuity over years chart"></div>
+          </div>
+
+          <div id="summaryText" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+    // Theme toggle (kept minimal; site-level script expected)
+    (function () { const root = document.documentElement; const btn = document.getElementById('themeToggle'); const stored = localStorage.getItem('hz-theme'); if (stored === 'dark') { root.classList.add('dark'); btn && btn.setAttribute('aria-pressed', 'true'); btn && (btn.textContent = '☀️'); } btn && btn.addEventListener('click', () => { const d = root.classList.toggle('dark'); btn.setAttribute('aria-pressed', d ? 'true' : 'false'); btn.textContent = d ? '☀️' : '🌙'; localStorage.setItem('hz-theme', d ? 'dark' : 'light'); setTimeout(() => calculate(true), 30); }); })();
+
+    // Helpers
+    const clamp = (v, m, M) => Math.min(Math.max(v, m), M);
+    function formatINR(x, fd = 0) { return Number(x).toLocaleString('en-IN', { maximumFractionDigits: fd }); }
+    function countUp(el, to, duration = 700) { const from = Number((el.dataset.value || '0').replace(/,/g, '')) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = '₹' + formatINR(val, 0); if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to); } requestAnimationFrame(frame); }
+
+    // Element refs
+    const basicRange = document.getElementById('basicRange'); const basic = document.getElementById('basic');
+    const daRange = document.getElementById('daRange'); const daPct = document.getElementById('daPct');
+    const yearsRange = document.getElementById('yearsRange'); const yearsInput = document.getElementById('years'); const monthsInput = document.getElementById('months');
+    const capRange = document.getElementById('capRange'); const capInput = document.getElementById('cap');
+    const methodSelect = document.getElementById('method'); const customBlock = document.getElementById('customMultiplierBlock');
+    const multRange = document.getElementById('multRange'); const multInput = document.getElementById('mult');
+    const calcBtn = document.getElementById('calcBtn');
+
+    // Sync helper
+    function sync(range, input, step) { range.addEventListener('input', () => { input.value = range.value; styleRange(range); triggerCalc(); }); input.addEventListener('input', () => { let v = Number(input.value || 0); if (isNaN(v)) v = 0; if (step) v = Math.round(v * (1 / step)) / (1 / step); input.value = v; range.value = v; styleRange(range); triggerCalc(); }); }
+    function styleRange(r) { const min = Number(r.min), max = Number(r.max), val = Number(r.value); const pct = ((val - min) / (max - min)) * 100; const dark = document.documentElement.classList.contains('dark'); const filled = dark ? '#10b981' : '#059669'; const rest = dark ? '#334155' : '#e2e8f0'; r.style.background = `linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`; }
+    sync(basicRange, basic, 100); sync(daRange, daPct, 1); sync(yearsRange, yearsInput, 1); sync(capRange, capInput, 1000); sync(multRange, multInput, 0.5);
+
+    // toggle custom multiplier block
+    methodSelect.addEventListener('change', () => { customBlock.classList.toggle('hidden', methodSelect.value !== 'custom'); triggerCalc(); });
+
+    // Calculation
+    function calcGratuity({ basicMonthly, daPercent, years, months, daysPerYear, cap }) {
+      const daMonthly = basicMonthly * (daPercent / 100); const lastDrawn = basicMonthly + daMonthly; const totalYears = Number(years) + Number(months) / 12; const completedYears = Math.floor(totalYears);
+      const multiplier = daysPerYear / 26; // days per year / 26
+      const uncappedProRated = lastDrawn * multiplier * totalYears; const uncappedCompleted = lastDrawn * multiplier * completedYears; const cappedProRated = Math.min(uncappedProRated, cap); const cappedCompleted = Math.min(uncappedCompleted, cap);
+      return { lastDrawn, totalYears, completedYears, uncappedProRated, uncappedCompleted, cappedProRated, cappedCompleted };
+    }
+
+    // Series for chart: year-wise uncapped & capped
+    function buildSeries({ basicMonthly, daPercent, years, months, daysPerYear, cap }) {
+      const seriesUncapped = []; const seriesCapped = []; const daMonthly = basicMonthly * (daPercent / 100); const lastDrawn = basicMonthly + daMonthly; const totalYears = Math.max(1, Math.ceil(Number(years) + Number(months) / 12)); for (let y = 1; y <= totalYears; y++) { const v = lastDrawn * (daysPerYear / 26) * y; seriesUncapped.push(Math.round(v)); seriesCapped.push(Math.round(Math.min(v, cap))); } return { seriesUncapped, seriesCapped };
+    }
+
+    // Chart
+    let chart; function renderChart(uncapped, capped) { const categories = uncapped.map((_, i) => 'Year ' + (i + 1)); const isDark = document.documentElement.classList.contains('dark'); const gridColor = isDark ? '#334155' : '#e2e8f0'; if (chart && chart.destroy) chart.destroy(); chart = Highcharts.chart('gratChartContainer', { chart: { backgroundColor: 'transparent' }, title: null, credits: { enabled: false }, xAxis: { categories, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' } } }, yAxis: { title: null, gridLineColor: gridColor, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' }, formatter() { return '₹' + formatINR(this.value); } } }, tooltip: { shared: true, formatter: function () { let s = '<b>' + this.x + '</b>'; this.points.forEach(p => s += '<br/>' + p.series.name + ': ₹' + formatINR(p.y)); return s; } }, series: [{ name: 'Uncapped gratuity', type: 'column', data: uncapped, color: '#10b981' }, { name: 'Capped (statutory)', type: 'column', data: capped, color: '#f59e0b' }] }); }
+
+    function calculate() {
+      const basicMonthly = Number(basic.value || 0); const daPercent = Number(daPct.value || 0); const yrs = Number(yearsInput.value || 0); const mos = Number(monthsInput.value || 0); const cap = Number(capInput.value || 0); const days = methodSelect.value === 'custom' ? Number(multInput.value || 15) : 15; const { uncappedProRated, uncappedCompleted, cappedProRated, cappedCompleted, totalYears, completedYears, lastDrawn } = calcGratuity({ basicMonthly, daPercent, years: yrs, months: mos, daysPerYear: days, cap }); const displayVal = methodSelect.value === 'act' ? uncappedCompleted : uncappedProRated; const displayCapped = methodSelect.value === 'act' ? cappedCompleted : cappedProRated; countUp(document.getElementById('gratuityOut'), Math.round(displayVal)); countUp(document.getElementById('uncappedOut'), Math.round(displayVal)); countUp(document.getElementById('cappedOut'), Math.round(displayCapped)); document.getElementById('summaryText').textContent = `Last drawn (Basic+DA): ₹${formatINR(Math.round(lastDrawn))}. Service: ${completedYears} yrs ${Math.round((totalYears - completedYears) * 12)} months (pro-rated ${totalYears.toFixed(2)} yrs).`;
+      const { seriesUncapped, seriesCapped } = buildSeries({ basicMonthly, daPercent, years: yrs, months: mos, daysPerYear: days, cap }); renderChart(seriesUncapped, seriesCapped);
+    }
+
+    // Wiring
+    let debounce; function triggerCalc() { clearTimeout(debounce); debounce = setTimeout(() => calculate(), 130); }
+    [basicRange, basic, daRange, daPct, yearsRange, yearsInput, monthsInput, capRange, capInput, methodSelect, multRange, multInput].forEach(el => el.addEventListener('input', triggerCalc)); calcBtn.addEventListener('click', calculate);
+    window.addEventListener('DOMContentLoaded', () => { styleRange(basicRange); styleRange(daRange); styleRange(yearsRange); styleRange(capRange); styleRange(multRange); calculate(); });
+
+    // Ripple effect
+    document.addEventListener('click', e => { const t = e.target.closest('.btn-ripple'); if (!t) return; const r = document.createElement('span'); r.className = 'ripple-anim'; const rect = t.getBoundingClientRect(); const size = Math.max(rect.width, rect.height); r.style.width = r.style.height = size + 'px'; r.style.left = (e.clientX - rect.left - size / 2) + 'px'; r.style.top = (e.clientY - rect.top - size / 2) + 'px'; t.appendChild(r); setTimeout(() => r.remove(), 600); });
+  </script>
+</body>
+
+</html>
