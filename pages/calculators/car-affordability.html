@@ -323,5 +323,6 @@
   document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
     let debounce;function triggerCalc(){clearTimeout(debounce);debounce=setTimeout(calculate,250);}document.querySelectorAll('#calcForm input').forEach(i=>{i.addEventListener('input',triggerCalc);i.addEventListener('change',triggerCalc);});document.getElementById('calcBtn').addEventListener('click',calculate);window.addEventListener('DOMContentLoaded',calculate);
   </script>
+  <script src="/assets/js/related-calculators.js"></script>
 </body>
 </html>
