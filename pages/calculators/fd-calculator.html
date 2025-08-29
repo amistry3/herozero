@@ -253,13 +253,13 @@
   </footer>
 
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="/assets/js/ui-helpers.js"></script>
   <script>
     // Theme toggle
     (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculate(true),30);});})();
-    // Helpers
-    const clamp = (v, m, M) => Math.min(Math.max(v, m), M);
-    function formatINR(x, fd = 0) { return Number(x).toLocaleString('en-IN', { maximumFractionDigits: fd }); }
-    function countUp(el, to, duration = 700) { const from = Number((el.dataset.value || '0').replace(/,/g, '')) || 0; const start = performance.now(); function frame(t) { const p = clamp((t - start) / duration, 0, 1); const ease = 1 - Math.pow(1 - p, 3); const val = from + (to - from) * ease; el.textContent = '₹' + formatINR(val, 0); if (p < 1) requestAnimationFrame(frame); else el.dataset.value = String(to); } requestAnimationFrame(frame); }
+  // Helpers
+  const clamp = (v, m, M) => Math.min(Math.max(v, m), M);
+  function countUp(el, to, duration = 700) { window.HZ_countUp(el, to, duration, false); }
 
     // Element refs
     const principalRange = document.getElementById('principalRange');
@@ -299,7 +299,7 @@
       return yearBuckets.map(y => ({ year: y.year, bal: y.bal }));
     }
 
-    function renderChart(series, rPerc) { const categories = series.map(s => 'Year ' + s.year); const data = series.map(s => s.bal); const isDark = document.documentElement.classList.contains('dark'); const gridColor = isDark ? '#334155' : '#e2e8f0'; if (chart && chart.destroy) chart.destroy(); chart = Highcharts.chart('fdChartContainer', { chart: { backgroundColor: 'transparent' }, title: null, credits: { enabled: false }, xAxis: { categories, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' } }, lineColor: gridColor, tickColor: gridColor }, yAxis: { title: null, gridLineColor: gridColor, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' }, formatter() { return '₹' + formatINR(this.value); } } }, tooltip: { pointFormatter: function () { return '<b>Balance:</b> ₹' + formatINR(this.y); } }, series: [{ name: 'Balance', type: 'areaspline', data: data, color: '#f59e0b', lineWidth: 2, fillColor: { linearGradient: [0, 0, 0, 260], stops: [[0, 'rgba(245,158,11,.35)'], [1, 'rgba(245,158,11,0)']] } }] }); }
+  function renderChart(series, rPerc) { const categories = series.map(s => 'Year ' + s.year); const data = series.map(s => s.bal); const isDark = document.documentElement.classList.contains('dark'); const gridColor = isDark ? '#334155' : '#e2e8f0'; if (chart && chart.destroy) chart.destroy(); chart = Highcharts.chart('fdChartContainer', { chart: { backgroundColor: 'transparent' }, title: null, credits: { enabled: false }, xAxis: { categories, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' } }, lineColor: gridColor, tickColor: gridColor }, yAxis: { title: null, gridLineColor: gridColor, labels: { style: { color: isDark ? '#cbd5e1' : '#475569' }, formatter() { return '₹' + window.HZ_formatINR(this.value); } } }, tooltip: { pointFormatter: function () { return '<b>Balance:</b> ₹' + window.HZ_formatINR(this.y); } }, series: [{ name: 'Balance', type: 'areaspline', data: data, color: '#f59e0b', lineWidth: 2, fillColor: { linearGradient: [0, 0, 0, 260], stops: [[0, 'rgba(245,158,11,.35)'], [1, 'rgba(245,158,11,0)']] } }] }); }
 
     function calculate() {
       const P = Number(principalInput.value || 0); const rPerc = Number(rateInput.value || 0); const years = Number(yearsInput.value || 0); const months = Number(monthsInput.value || 0); const freq = freqSelect.value; const option = document.querySelector('input[name="option"]:checked').value; if (P <= 0 || rPerc < 0 || years < 0 || months < 0) return; const periodsPerYear = Number(freq); const totalMonths = years * 12 + months; const totalPeriods = Math.round((totalMonths / 12) * periodsPerYear);
@@ -314,7 +314,7 @@
       countUp(document.getElementById('maturity'), Math.round(maturity)); countUp(document.getElementById('principalOut'), Math.round(P)); countUp(document.getElementById('interestOut'), Math.round(totalInterest));
       // Summary
       const yrsText = years + (months ? ('+' + months + 'm') : '') + ' (' + totalMonths + ' months)';
-      const summary = `₹${formatINR(P)} invested for ${yrsText} @ ${rPerc}% p.a. (${freq === '12' ? 'Monthly' : freq === '4' ? 'Quarterly' : 'Annual'} compounding), option: ${option === 'reinvest' ? 'Reinvest (compounding)' : 'Payout (no compounding)'}. Estimated maturity: ₹${formatINR(Math.round(maturity))}.`;
+  const summary = `₹${window.HZ_formatINR(P)} invested for ${yrsText} @ ${rPerc}% p.a. (${freq === '12' ? 'Monthly' : freq === '4' ? 'Quarterly' : 'Annual'} compounding), option: ${option === 'reinvest' ? 'Reinvest (compounding)' : 'Payout (no compounding)'}. Estimated maturity: ₹${window.HZ_formatINR(Math.round(maturity))}.`;
       document.getElementById('summaryText').textContent = summary;
       // Chart
       const series = buildSeries(P, rPerc, years, months, freq, option);
@@ -324,7 +324,7 @@
     let debounce; function triggerCalc() { clearTimeout(debounce); debounce = setTimeout(() => calculate(), 120); }
     [principalRange, principalInput, rateRange, rateInput, yearsRange, yearsInput, monthsInput, freqSelect].forEach(el => el.addEventListener('input', triggerCalc));
     calcBtn.addEventListener('click', () => calculate());
-    window.addEventListener('DOMContentLoaded', () => { styleRange(principalRange); styleRange(rateRange); styleRange(yearsRange); calculate(); });
+  window.addEventListener('DOMContentLoaded', () => { [principalRange, rateRange, yearsRange].forEach(r=>{try{window.HZ_styleRange(r);}catch(e){}}); calculate(); });
 
     // Ripple effect for buttons
     document.addEventListener('click', e => { const t = e.target.closest('.btn-ripple'); if (!t) return; const r = document.createElement('span'); r.className = 'ripple-anim'; const rect = t.getBoundingClientRect(); const size = Math.max(rect.width, rect.height); r.style.width = r.style.height = size + 'px'; r.style.left = (e.clientX - rect.left - size / 2) + 'px'; r.style.top = (e.clientY - rect.top - size / 2) + 'px'; t.appendChild(r); setTimeout(() => r.remove(), 600); });

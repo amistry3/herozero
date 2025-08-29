@@ -9,7 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-KKS8Q9YDJG');
   </script>
-  <title>Car Affordability Calculator (India) – EMI, Ownership Cost & Affordability Ratio | HeroZero</title>
+  <title>Car Affordability Calculator (India) – EMI, Ownership Cost & Affordability Ratio | HeroZero Finance Calculators (India)</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
@@ -22,12 +22,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HeroZero – Car Affordability Calculator","url":"https://herozero.in/pages/calculators/car-affordability.html"}</script>
   <script>(function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "szq30hz6u5");</script>  
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/assets/css/main.css" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://herozero.in/index.html#calculators"},{"@type":"ListItem","position":3,"name":"Car Affordability Calculator","item":"https://herozero.in/pages/calculators/car-affordability.html"}]},{"@type":"SoftwareApplication","name":"Car Affordability Calculator","description":"Estimate EMI, fuel & insurance costs and affordability ratio for car purchases.","operatingSystem":"Web","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"url":"https://herozero.in/pages/calculators/car-affordability.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is affordability ratio?","acceptedAnswer":{"@type":"Answer","text":"Affordability ratio = EMI ÷ Monthly Net Income; bands indicate comfortable, stretching or not affordable."}},{"@type":"Question","name":"Should I include on-road costs?","acceptedAnswer":{"@type":"Answer","text":"Yes — registration, taxes and handling can materially change total ownership cost and EMI."}}]}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://herozero.in/index.html#calculators"},{"@type":"ListItem","position":3,"name":"Car Affordability Calculator","item":"https://herozero.in/pages/calculators/car-affordability.html"}]},{"@type":"SoftwareApplication","name":"Car Affordability Calculator | HeroZero Finance Calculators (India)","description":"Estimate EMI, fuel & insurance costs and affordability ratio for car purchases.","operatingSystem":"Web","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"url":"https://herozero.in/pages/calculators/car-affordability.html"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is affordability ratio?","acceptedAnswer":{"@type":"Answer","text":"Affordability ratio = EMI ÷ Monthly Net Income; bands indicate comfortable, stretching or not affordable."}},{"@type":"Question","name":"Should I include on-road costs?","acceptedAnswer":{"@type":"Answer","text":"Yes — registration, taxes and handling can materially change total ownership cost and EMI."}}]}]}
   </script>
 </head>
 <body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
@@ -74,17 +75,26 @@
               <div>
                 <div class="group-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18"/><path d="M5 7h14"/><path d="M8 3h8"/><path d="M7 15h10"/><path d="M9 19h6"/></svg> Income & Price</div>
                 <div class="group-box">
-                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Annual Income
-                    <span class="input-wrap"><span class="input-affix">₹</span><input placeholder="e.g. 1000000" id="annualIncome" type="number" value="1000000" min="0" inputmode="decimal" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Annual Income
+                    <div class="flex items-center gap-3">
+                      <input id="annualIncomeRange" type="range" min="0" max="5000000" value="1000000" step="10000" class="range-adv" />
+                      <span class="input-wrap"><span class="input-affix">₹</span><input placeholder="e.g. 1000000" id="annualIncome" type="number" value="1000000" min="0" inputmode="decimal" class="input-text font-mono w-full" /></span>
+                    </div>
                   </label>
                   <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Income Tax
                     <input id="incomeTax" type="number" value="0" readonly class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-sm focus:outline-none font-mono" />
                   </label>
-                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1" data-tooltip="Base price (no tax/insurance)">Price (Ex-Showroom)
-                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price" type="number" value="1500000" min="0" inputmode="decimal" placeholder="e.g. 1500000" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Base price (no tax/insurance)">Price (Ex-Showroom)
+                    <div class="flex items-center gap-3">
+                      <input id="priceRange" type="range" min="0" max="10000000" value="1500000" step="10000" class="range-adv" />
+                      <span class="input-wrap"><span class="input-affix">₹</span><input id="price" type="number" value="1500000" min="0" inputmode="decimal" placeholder="e.g. 1500000" class="input-text font-mono w-full" /></span>
+                    </div>
                   </label>
-                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1" data-tooltip="Registration, tax, accessories">Road Tax + Others
-                    <span class="input-wrap"><span class="input-affix">₹</span><input id="roadTax" type="number" value="100000" min="0" inputmode="decimal" placeholder="e.g. 100000" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Registration, tax, accessories">Road Tax + Others
+                    <div class="flex items-center gap-3">
+                      <input id="roadTaxRange" type="range" min="0" max="1000000" value="100000" step="1000" class="range-adv" />
+                      <span class="input-wrap"><span class="input-affix">₹</span><input id="roadTax" type="number" value="100000" min="0" inputmode="decimal" placeholder="e.g. 100000" class="input-text font-mono w-full" /></span>
+                    </div>
                   </label>
                 </div>
               </div>
@@ -93,47 +103,56 @@
                 <div class="group-box">
                   <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Higher reduces EMI burden">Down Payment (%)
                     <div class="flex items-center gap-3">
-                      <input id="downPaymentPercentRange" type="range" min="0" max="100" value="20" step="1" class="grow" />
-                      <span class="input-wrap w-20"><input id="downPaymentPercent" type="number" value="20" min="0" max="100" step="1" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                      <div class="flex-1"><input id="downPaymentPercentRange" type="range" min="0" max="100" value="20" step="1" class="range-adv" /></div>
+                      <div class="w-28"><span class="input-wrap"><span class="input-affix">%</span><input id="downPaymentPercent" type="number" value="20" min="0" max="100" step="1" class="input-text font-mono w-full" /></span></div>
                     </div>
                   </label>
                   <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Loan Tenure (Years)
                     <div class="flex items-center gap-3">
-                      <input id="loanTenureRange" type="range" min="1" max="15" value="5" step="1" class="grow" />
-                      <span class="input-wrap w-20"><input id="loanTenure" type="number" value="5" min="1" max="15" step="1" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                      <div class="flex-1"><input id="loanTenureRange" type="range" min="1" max="15" value="5" step="1" class="range-adv" /></div>
+                      <div class="w-28"><span class="input-wrap"><input id="loanTenure" type="number" value="5" min="1" max="15" step="1" class="input-text font-mono w-full" /></span></div>
                     </div>
                   </label>
                   <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Annual interest rate">Interest Rate (% p.a.)
                     <div class="flex items-center gap-3">
-                      <input id="interestRateRange" type="range" min="1" max="15" value="9.5" step="0.1" class="grow" />
-                      <span class="input-wrap w-20"><input id="interestRate" type="number" value="9.5" min="1" max="15" step="0.1" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                      <div class="flex-1"><input id="interestRateRange" type="range" min="1" max="15" value="9.5" step="0.1" class="range-adv" /></div>
+                      <div class="w-28"><span class="input-wrap w-20"><input id="interestRate" type="number" value="9.5" min="1" max="15" step="0.1" class="input-text font-mono w-full" /></span></div>
                     </div>
                   </label>
-                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1" data-tooltip="Annual insurance cost">Insurance Premium (Annual)
-                    <span class="input-wrap"><span class="input-affix">₹</span><input id="insurance" type="number" value="25000" min="0" inputmode="decimal" placeholder="25000" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Annual insurance cost">Insurance Premium (Annual)
+                    <div class="flex items-center gap-3">
+                      <input id="insuranceRange" type="range" min="0" max="200000" value="25000" step="500" class="range-adv" />
+                      <span class="input-wrap"><span class="input-affix">₹</span><input id="insurance" type="number" value="25000" min="0" inputmode="decimal" placeholder="25000" class="input-text font-mono w-full" /></span>
+                    </div>
                   </label>
                 </div>
               </div>
               <div>
                 <div class="group-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 8h8"/><path d="M8 12h5"/><path d="M2 20h20"/></svg> Running & Life</div>
                 <div class="group-box">
-                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Monthly Distance (km)
-                    <input id="monthlyDistance" type="number" value="500" min="0" step="1" inputmode="numeric" placeholder="500" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Monthly Distance (km)
+                    <div class="flex items-center gap-3">
+                      <input id="monthlyDistanceRange" type="range" min="0" max="5000" value="500" step="10" class="range-adv" />
+                      <span class="input-wrap w-28"><input id="monthlyDistance" type="number" value="500" min="0" step="1" inputmode="numeric" placeholder="500" class="input-text font-mono w-full" /></span>
+                    </div>
                   </label>
                   <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Higher mileage lowers fuel cost">Mileage (km/litre)
                     <div class="flex items-center gap-3">
-                      <input id="mileageRange" type="range" min="5" max="30" value="14" step="0.1" class="grow" />
-                      <span class="input-wrap w-24"><input id="mileage" type="number" value="14" min="5" max="30" step="0.1" inputmode="decimal" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                      <div class="flex-1"><input id="mileageRange" type="range" min="5" max="30" value="14" step="0.1" class="range-adv" /></div>
+                      <div class="w-28"><span class="input-wrap w-24"><input id="mileage" type="number" value="14" min="5" max="30" step="0.1" inputmode="decimal" class="input-text font-mono w-full" /></span></div>
                     </div>
                   </label>
                   <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Fuel Price (₹/litre)
                     <div class="flex items-center gap-3">
-                      <input id="fuelPriceRange" type="range" min="50" max="200" value="110" step="1" class="grow" />
-                      <span class="input-wrap w-24"><span class="input-affix">₹</span><input id="fuelPrice" type="number" value="110" min="50" max="200" step="1" inputmode="decimal" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                      <div class="flex-1"><input id="fuelPriceRange" type="range" min="50" max="200" value="110" step="1" class="range-adv" /></div>
+                      <div class="w-28"><span class="input-wrap w-24"><span class="input-affix">₹</span><input id="fuelPrice" type="number" value="110" min="50" max="200" step="1" inputmode="decimal" class="input-text font-mono w-full" /></span></div>
                     </div>
                   </label>
-                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1" data-tooltip="Ownership horizon">Car Lifespan (Years)
-                    <input id="lifespan" type="number" value="7" min="1" step="1" placeholder="7" class="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                  <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2" data-tooltip="Ownership horizon">Car Lifespan (Years)
+                    <div class="flex items-center gap-3">
+                      <input id="lifespanRange" type="range" min="1" max="15" value="7" step="1" class="range-adv" />
+                      <span class="input-wrap"><input id="lifespan" type="number" value="7" min="1" step="1" placeholder="7" class="input-text font-mono w-full" /></span>
+                    </div>
                   </label>
                 </div>
               </div>
@@ -289,30 +308,38 @@
   </footer>
 
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="/assets/js/ui-helpers.js"></script>
   <script>
     // Dark mode toggle (shared pattern) with chart refresh
     (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}
       function refreshChartTheme(){ if(window.chart && chart.series && chart.series[0]) { const ratioVal=parseFloat(document.getElementById('ratioPill').textContent)||0; const color=ratioVal<=15? '#16a34a' : (ratioVal<=25? '#f59e0b':'#dc2626'); renderChart(ratioVal,color,true); }}
       btn&&btn.addEventListener('click',()=>{const isDark=root.classList.toggle('dark');btn.setAttribute('aria-pressed',isDark?'true':'false');btn.textContent=isDark?'☀️':'🌙';localStorage.setItem('hz-theme',isDark?'dark':'light');setTimeout(refreshChartTheme,20);});})();
 
-    const fmtINR=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0});
-    const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
-    function countUp(el,to,duration=700,isPercent=false){const from=Number((el.dataset.value||'0').replace(/[^0-9.-]/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=isPercent?`${val.toFixed(1)}%`:fmtINR.format(val);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
+  const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+  function countUp(el,to,duration=700,isPercent=false){ window.HZ_countUp(el,to,duration,isPercent); }
   let chart;function renderChart(ratio,color,fromThemeToggle=false){const pct=clamp(ratio,0,100);if(chart&&chart.destroy)chart.destroy();const isDark=document.documentElement.classList.contains('dark');const remainingColor=isDark?'#334155':'#e2e8f0';chart=Highcharts.chart('affordChart',{chart:{type:'pie',backgroundColor:'transparent',animation:true,spacing:[0,0,0,0]},title:null,tooltip:{enabled:false},plotOptions:{pie:{innerSize:'68%',borderWidth:0,shadow:false,animation:!fromThemeToggle,dataLabels:{enabled:false},states:{hover:{enabled:false}}}},series:[{name:'Share',data:[{name:'EMI %',y:pct,color:color},{name:'Remaining',y:100-pct,color:remainingColor}]}],credits:{enabled:false},legend:{enabled:false}});document.getElementById('chartCenter').textContent=`${pct.toFixed(1)}%`;}
     function calculateTax(income){let tax=0;if(income>2400000){tax=0.30*(income-2400000)+0.25*400000+0.20*400000+0.15*400000+0.10*400000+0.05*400000;}else if(income>2000000){tax=0.25*(income-2000000)+0.20*400000+0.15*400000+0.10*400000+0.05*400000;}else if(income>1600000){tax=0.20*(income-1600000)+0.15*400000+0.10*400000+0.05*400000;}else if(income>1200000){tax=0.15*(income-1200000)+0.10*400000+0.05*400000;}else if(income>800000){tax=0.10*(income-800000)+0.05*400000;}else if(income>400000){tax=0.05*(income-400000);}if(income<=1200000){tax=0;}return tax;}
   function calculate(){const btn=document.getElementById('calcBtn');btn.disabled=true;const annualIncome=+document.getElementById('annualIncome').value||0;const incomeTaxEl=document.getElementById('incomeTax');const calculatedTax=calculateTax(annualIncome);incomeTaxEl.value=Math.round(calculatedTax);const incomeTax=calculatedTax;const price=+document.getElementById('price').value||0;const roadTax=+document.getElementById('roadTax').value||0;const dpPct=clamp(+document.getElementById('downPaymentPercent').value||0,0,100);const tenureYears=Math.max(+document.getElementById('loanTenure').value||0,1);const rateAnnual=Math.max(+document.getElementById('interestRate').value||0,0);const monthlyKm=+document.getElementById('monthlyDistance').value||0;const mileage=Math.max(+document.getElementById('mileage').value||1,0.1);const fuelPrice=+document.getElementById('fuelPrice').value||0;const lifespan=Math.max(+document.getElementById('lifespan').value||0,1);const insurance=+document.getElementById('insurance').value||0;const netAnnual=Math.max(annualIncome-incomeTax,0);const onRoad=price+roadTax;const downPayment=onRoad*(dpPct/100);const loan=Math.max(onRoad-downPayment,0);const n=tenureYears*12;const r=rateAnnual/12/100;let emi=0;if(loan>0&&n>0){emi=r===0?(loan/n):(loan*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);}const fuelYear=(monthlyKm*12/mileage)*fuelPrice;const totalFuel=fuelYear*lifespan;const totalOwnership=onRoad+totalFuel+(insurance*lifespan);const monthlyNet=netAnnual/12;const ratio=monthlyNet>0?(emi/monthlyNet)*100:100;let verdict,color,tip,badgeClass;if(ratio<=15){verdict='Affordable – fits budget.';color='#16a34a';badgeClass='badge-good';tip='Healthy range: maintain savings momentum.';}else if(ratio<=25){verdict='Stretching – optimise.';color='#f59e0b';badgeClass='badge-warn';tip='Increase down payment or reconsider variant.';}else{verdict='Not Affordable – reconsider.';color='#dc2626';badgeClass='badge-bad';tip='Lower price or raise down payment to reduce risk.';}const results=document.getElementById('results');results.classList.remove('hidden');document.getElementById('verdict').textContent=verdict;document.getElementById('tips').textContent=tip;const badge=document.getElementById('verdictBadge');badge.classList.remove('badge-good','badge-warn','badge-bad','hidden');badge.classList.add(badgeClass);badge.textContent=badgeClass==='badge-good'?'Affordable':(badgeClass==='badge-warn'?'Stretch':'Not OK');countUp(document.getElementById('ratioPill'),ratio,700,true);countUp(document.getElementById('emi'),emi);countUp(document.getElementById('fuelCost'),totalFuel);countUp(document.getElementById('totalCost'),totalOwnership);renderChart(ratio,color);const dpNotice=document.getElementById('dpNotice');if(dpPct<20)dpNotice.classList.remove('hidden');else dpNotice.classList.add('hidden');btn.disabled=false;}
   // Sync sliders and number inputs
+  function styleRange(r) { try{ window.HZ_styleRange(r); }catch(e){} }
+
   const sliderPairs=[
     ['downPaymentPercentRange','downPaymentPercent'],
     ['loanTenureRange','loanTenure'],
     ['interestRateRange','interestRate'],
-    ['mileageRange','mileage'],
-    ['fuelPriceRange','fuelPrice']
+  ['mileageRange','mileage'],
+  ['fuelPriceRange','fuelPrice'],
+  ['annualIncomeRange','annualIncome'],
+  ['priceRange','price'],
+  ['roadTaxRange','roadTax'],
+  ['insuranceRange','insurance'],
+  ['monthlyDistanceRange','monthlyDistance'],
+  ['lifespanRange','lifespan']
   ];
   sliderPairs.forEach(([rangeId,inputId])=>{
     const rangeEl=document.getElementById(rangeId);const inputEl=document.getElementById(inputId);if(!rangeEl||!inputEl) return;
     const sync=(src,dst)=>{dst.value=src.value;triggerCalc();};
-    rangeEl.addEventListener('input',()=>sync(rangeEl,inputEl));
+    rangeEl.addEventListener('input',()=>{ sync(rangeEl,inputEl); styleRange(rangeEl); });
     inputEl.addEventListener('input',()=>{ // clamp manually to range bounds
       if(inputEl.min!==''&&+inputEl.value<+inputEl.min) inputEl.value=inputEl.min;
       if(inputEl.max!==''&&+inputEl.value>+inputEl.max) inputEl.value=inputEl.max;
@@ -321,7 +348,11 @@
   });
   // Ripple
   document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
-    let debounce;function triggerCalc(){clearTimeout(debounce);debounce=setTimeout(calculate,250);}document.querySelectorAll('#calcForm input').forEach(i=>{i.addEventListener('input',triggerCalc);i.addEventListener('change',triggerCalc);});document.getElementById('calcBtn').addEventListener('click',calculate);window.addEventListener('DOMContentLoaded',calculate);
+    let debounce;function triggerCalc(){clearTimeout(debounce);debounce=setTimeout(calculate,250);}document.querySelectorAll('#calcForm input').forEach(i=>{i.addEventListener('input',triggerCalc);i.addEventListener('change',triggerCalc);});document.getElementById('calcBtn').addEventListener('click',calculate);window.addEventListener('DOMContentLoaded',()=>{
+      // apply initial range styling for visual parity with FD page
+  document.querySelectorAll('input[type="range"].range-adv').forEach(r=>{try{window.HZ_styleRange(r);}catch(e){}});
+      calculate();
+    });
   </script>
   <script src="/assets/js/related-calculators.js"></script>
 </body>

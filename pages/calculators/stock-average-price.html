@@ -71,10 +71,10 @@
                             <div class="group-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-6"/></svg> Initial Purchase</div>
                             <div class="group-box grid gap-5 sm:grid-cols-2 mt-2">
                                 <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">#</span><span>Shares (Qty)</span></span>
-                                    <input id="shares1" type="number" min="0" step="1" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                                    <input id="shares1" type="number" min="0" step="1" value="100" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
                                 </label>
                                 <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">₹</span><span>Avg Price (₹)</span></span>
-                                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price1" type="number" min="0" step="0.01" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price1" type="number" min="0" step="0.01" value="250.00" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
                                 </label>
                             </div>
                         </div>
@@ -82,10 +82,10 @@
                             <div class="group-title"><svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg> New Purchase</div>
                             <div class="group-box grid gap-5 sm:grid-cols-2 mt-2">
                                 <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">#</span><span>Shares (Qty)</span></span>
-                                    <input id="shares2" type="number" min="0" step="1" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
+                                    <input id="shares2" type="number" min="0" step="1" value="50" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" />
                                 </label>
                                 <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1"><span class="inline-flex items-center gap-1"><span aria-hidden="true">₹</span><span>Avg Price (₹)</span></span>
-                                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price2" type="number" min="0" step="0.01" value="0" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
+                                    <span class="input-wrap"><span class="input-affix">₹</span><input id="price2" type="number" min="0" step="0.01" value="200.00" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandRing font-mono" /></span>
                                 </label>
                             </div>
                         </div>
@@ -159,7 +159,9 @@
         const INR=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2});
         function countUp(el,to,dur=600,fmt){const from=parseFloat(el.dataset.value||'0');const start=performance.now();function frame(t){const p=clamp((t-start)/dur,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent=fmt?fmt(val):val.toFixed(2);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);} 
         function calculate(){const s1=+document.getElementById('shares1').value||0;const p1=+document.getElementById('price1').value||0;const s2=+document.getElementById('shares2').value||0;const p2=+document.getElementById('price2').value||0;const totalShares=s1+s2;const totalCost=s1*p1+s2*p2;const avg= totalShares>0? totalCost/totalShares:0;const results=document.getElementById('resultsCard');results.classList.remove('hidden');countUp(document.getElementById('totalShares'),totalShares,500,v=>Math.round(v).toString());countUp(document.getElementById('avgPrice'),avg,600,v=>INR.format(v));countUp(document.getElementById('totalInvested'),totalCost,600,v=>INR.format(v));document.getElementById('summaryLine').textContent= totalShares?`Breakeven now at ${INR.format(avg)} for ${totalShares} share(s).`:'Enter values above to compute weighted cost.';}
-        function schedule(){clearTimeout(schedule.t);schedule.t=setTimeout(calculate,180);}['shares1','price1','shares2','price2'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('input',schedule);el.addEventListener('change',schedule);});document.getElementById('calcBtn').addEventListener('click',calculate);document.getElementById('year').textContent=new Date().getFullYear();
+    function schedule(){clearTimeout(schedule.t);schedule.t=setTimeout(calculate,180);}['shares1','price1','shares2','price2'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('input',schedule);el.addEventListener('change',schedule);});document.getElementById('calcBtn').addEventListener('click',calculate);document.getElementById('year').textContent=new Date().getFullYear();
+    // Show initial sample results on page load
+    window.addEventListener('DOMContentLoaded',()=>{ calculate(); });
         // Ripple
         document.addEventListener('click',e=>{const t=e.target.closest('.btn-ripple');if(!t)return;const r=document.createElement('span');r.className='ripple-anim';const rect=t.getBoundingClientRect();const size=Math.max(rect.width,rect.height);r.style.width=r.style.height=size+'px';r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';t.appendChild(r);setTimeout(()=>r.remove(),600);});
     </script>
