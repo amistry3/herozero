@@ -22,10 +22,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,175 +53,104 @@
       padding: 1rem;
       border-radius: 0.375rem;
     }
+    html { scroll-behavior:smooth; }
+    .toc a { position:relative; display:block; padding:.375rem .5rem; border-radius:4px; line-height:1.3; }
+    .toc a:hover { background:rgba(148,163,184,.15); }
+    .toc a.active { background:#2563eb; color:#fff; font-weight:500; }
+    .dark .toc a.active { background:#3b82f6; }
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:#2563eb; width:0; z-index:60; transition:width .15s linear; }
+    .dark .reading-progress { background:#3b82f6; }
+    #backToTop { position:fixed; right:1rem; bottom:1rem; background:#2563eb; color:#fff; width:40px; height:40px; border-radius:9999px; display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:0 4px 14px rgba(0,0,0,.18); opacity:0; pointer-events:none; transform:translateY(8px); transition:opacity .18s ease, transform .18s ease; z-index:60; }
+    #backToTop.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+    .dark #backToTop { background:#3b82f6; }
+    .dark pre.checklist { background:#1e293b; }
+    /* smoother section readability */
+    section.guide-section p, section.guide-section li { line-height:1.55; }
+    @media (min-width: 1024px){
+  .toc-wrapper { position:sticky; top:5rem; max-height:calc(100vh - 6rem); overflow:auto; }
+      .toc-wrapper::-webkit-scrollbar { width:6px; }
+      .toc-wrapper::-webkit-scrollbar-thumb { background:rgba(100,116,139,.4); border-radius:3px; }
+    }
+  section.guide-section + section.guide-section { border-top:1px solid rgba(100,116,139,.25); padding-top:1.25rem; }
+  .dark section.guide-section + section.guide-section { border-color:rgba(100,116,139,.4); }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="https://herozero.in/index.html">
-        <img src="https://herozero.in/assets/img/favicon-32x32.png" class="me-2" alt="HeroZero Logo" />HeroZero
+  <div class="reading-progress" id="readingProgress"></div>
+  <header class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring">
+        <img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" />
+        <span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="d-none" aria-hidden="true"></a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="https://herozero.in/"><i class="bi bi-house-fill me-2"></i>Home</a>
-          </li>
-          <li class="nav-item dropdown" data-bs-theme="light">
-            <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-              aria-haspopup="true" aria-expanded="false">Calculators</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/car-affordability.html"><i
-                  class="bi bi-car-front-fill"></i> Car Affordability</a>              
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/mobile-affordability.html"><i
-                  class="bi bi-phone"></i> Mobile Affordability</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/stock-average-price.html"><i
-                  class="bi bi-bar-chart-line-fill"></i> Stock Average
-                Price</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-calculator.html"><i
-                  class="bi bi-cash-stack"></i> SIP Calculator</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-goal.html"><i
-                  class="bi bi-bullseye"></i> SIP Goal Planner</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/lumpsum-return.html"><i
-                  class="bi bi-coin"></i> Lumpsum Return</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-vs-lumpsum.html"><i
-                  class="bi bi-sliders"></i> SIP vs Lumpsum</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/xirr-calculator.html"><i
-                  class="bi bi-calculator"></i> XIRR (cashflows)</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/capital-gains-estimator.html"><i
-                  class="bi bi-graph-up"></i> Capital Gains Estimator</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/portfolio-rebalance.html"><i
-                  class="bi bi-vector-pen"></i> Portfolio Rebalancer</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/expense-ratio-impact.html"><i
-                  class="bi bi-percent"></i> Expense Ratio Impact</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/sip-topup-planner.html"><i
-                  class="bi bi-arrow-repeat"></i> SIP Top-up Planner</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/swp-withdrawal.html"><i
-                  class="bi bi-wallet2"></i> SWP / Withdrawal Planner</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/mf-switch-estimator.html"><i
-                  class="bi bi-arrow-left-right"></i> MF Switch / Exit
-                Estimator</a>
-              <a class="dropdown-item" href="https://herozero.in/pages/calculators/mf-direct-vs-regular.html"><i
-                  class="bi bi-layers"></i> MF Direct vs Regular Estimator</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/blog.html"><i class="bi bi-journal-text me-2"></i>Blog</a>
-          </li>
-        </ul>
-      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
     </div>
-  </nav>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
+        <span class="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-brand text-white shadow">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full"><path d="M12 20h24M12 28h24"/></svg>
+        </span>
+        <span>Personal Finance Guides</span>
+      </h1>
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Practical, original guides to build confident, lasting money habits (India focus).</p>
+      <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-500 max-w-2xl mx-auto">Examples use Indian rupees (₹) and common India instruments (SIP, PPF, EPF). Regulations change; consult local guidance for jurisdiction‑specific rules.</p>
+    </div>
+  </header>
 
-  <main class="container hero" style="margin-top: 4.5rem">
-    <div class="row align-items-center">
-      <div class="col-md-7">
-        <div class="p-4 bg-light rounded shadow-sm">
-          <h1 class="text-start mb-1">
-            <i class="bi bi-book-fill"></i> Personal Finance Guides
-          </h1>
-          <p class="text-start small text-muted mb-0">
-            Practical, original guides to build confident, lasting money
-            habits.
-          </p>
-          <div class="mt-2">
-            <small class="text-muted">Note: examples use Indian rupees (₹) and common India financial
-              instruments (SIP, PPF, EPF). Tax and regulatory details change;
-              consult local guidance for jurisdiction‑specific rules.</small>
+  <main class="max-w-6xl mx-auto px-4 pt-10">
+    <br/>
+    <div class="lg:grid lg:grid-cols-12 lg:gap-10">
+      <aside class="mb-8 lg:mb-0 lg:col-span-5 xl:col-span-4">
+        <div class="toc-wrapper">
+          <h2 class="text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400 mb-3 px-1">Quick Table of Contents</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Card 1 -->
+            <nav aria-label="Foundations" class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow ring-1 ring-slate-200 dark:ring-slate-600/40 toc">
+              <h3 class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500 mb-2">Foundations</h3>
+              <ul class="space-y-1 text-sm">
+                <li><a href="#budgeting" data-toc>💡 Budgeting & Cashflow</a></li>
+                <li><a href="#saving" data-toc>🏦 Saving Strategies</a></li>
+                <li><a href="#emergency" data-toc>🛟 Emergency Fund</a></li>
+                <li><a href="#debt" data-toc>💳 Debt & Credit Management</a></li>
+                <li><a href="#investing-basics" data-toc>📈 Investing – Basics</a></li>
+                <li><a href="#asset-allocation" data-toc>⚖️ Asset Allocation</a></li>
+              </ul>
+            </nav>
+            <!-- Card 2 -->
+            <nav aria-label="Planning & Advanced" class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow ring-1 ring-slate-200 dark:ring-slate-600/40 toc">
+              <h3 class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500 mb-2">Planning & Advanced</h3>
+              <ul class="space-y-1 text-sm">
+                <li><a href="#taxes" data-toc>📑 Taxes Tips</a></li>
+                <li><a href="#insurance" data-toc>🛡️ Insurance Primer</a></li>
+                <li><a href="#retirement" data-toc>⏳ Retirement Planning</a></li>
+                <li><a href="#major-purchases" data-toc>🏠 Home / Car Buying</a></li>
+                <li><a href="#investing-advanced" data-toc>🔬 Advanced Investing</a></li>
+                <li><a href="#checklist" data-toc>✅ Checklist</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </div>
-      <div class="col-md-5 text-center d-none d-md-block">
-        <!-- simple hero SVG illustration -->
-        <svg width="220" height="140" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="6" y="28" width="208" height="96" rx="8" fill="#e9f2ff" />
-          <g transform="translate(20,40)" fill="#0d6efd">
-            <rect x="0" y="0" width="28" height="8" rx="3" />
-            <rect x="0" y="16" width="60" height="10" rx="3" />
-            <rect x="0" y="34" width="40" height="6" rx="3" />
-            <circle cx="100" cy="28" r="18" fill="#cfe4ff" />
-            <path d="M92 24h16v8H92z" fill="#0d6efd" />
-          </g>
-        </svg>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-lg-10 offset-lg-1">
-        <div class="p-3 bg-white rounded shadow-sm">
-          <h4>Quick Table of Contents</h4>
-          <div class="row">
-            <div class="col-md-6">
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#budgeting">💡 Budgeting & Cashflow — get clarity on where money
-                    goes</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#saving">🏦 Saving Strategies — build flexible goals</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#emergency">🛟 Emergency Fund — protect against shocks</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#debt">💳 Debt & Credit Management — reduce costly interest</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#investing-basics">📈 Investing — The Basics — start growing wealth</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#asset-allocation">⚖️ Asset Allocation — balance risk and reward</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="#taxes">📑 Taxes — Simple Tips</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#insurance">🛡️ Insurance Primer</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#retirement">⏳ Retirement Planning</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#major-purchases">🏠 Buying a Home / Car</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#investing-advanced">🔬 Advanced Investing Topics</a>
-                </li>
-                <li class="mb-2">
-                  <a href="#checklist">✅ Financial Checklist</a>
-                </li>
-              </ul>
-            </div>
+      </aside>
+    <div class="lg:col-span-7 xl:col-span-8 space-y-10" id="guideContent">
+      <br/>
+  <section id="budgeting" class="guide-section scroll-mt-24">
+      <h3 class="text-lg font-semibold mb-2">Budgeting & Cashflow</h3>
+      <p class="text-slate-600">A budget shows how much money comes in and where it goes. It helps you take control — not feel limited.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/expense-ratio-impact.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Expense Ratio Impact</a>
+            <a href="/pages/calculators/portfolio-rebalance.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Portfolio Rebalance</a>
+            <a href="/pages/calculators/sip-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Calc</a>
+            <a href="/pages/calculators/sip-goal.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Goal</a>
+            <a href="/pages/calculators/sip-topup-planner.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Top-up</a>
+            <a href="/pages/calculators/xirr-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">XIRR</a>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Guides -->
-    <div class="row mt-4">
-      <div class="col-lg-10 offset-lg-1">
-        <section id="budgeting" class="mb-5">
-          <h3>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="me-2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 7h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z" stroke="#0d6efd" stroke-width="1.2"
-                stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M7 3h10v4H7z" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>Budgeting & Cashflow
-          </h3>
-          <p class="text-muted">
-            A budget shows how much money comes in and where it goes. It helps
-            you take control — not feel limited.
-          </p>
           <h5>Easy steps</h5>
           <ol>
             <li>
@@ -244,333 +171,382 @@
               so you save before you spend.
             </li>
           </ol>
-          <h6>Practical tip</h6>
-          <ul>
-            <li>
-              Plan for irregular costs (vehicle service, festival gifts) by
-              saving a little each month into a separate "sinking fund".
-            </li>
-            <li>
-              Keep the budget flexible: review and adjust next month if
-              needed.
-            </li>
+          <h6 class="mt-4 font-medium">Practical tip</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
+            <li>Plan for irregular costs (vehicle service, festival gifts) by saving a little each month into a separate "sinking fund".</li>
+            <li>Keep the budget flexible: review and adjust next month if needed.</li>
+          </ul>
+          <h6 class="mt-4 font-medium">Why it matters</h6>
+          <p class="text-slate-600 text-sm">Without a written view, money leaks into impulse spends. A simple 3‑bucket view (Needs / Savings & EMIs / Wants) gives instant clarity.</p>
+          <h6 class="mt-3 font-medium">Mini example</h6>
+          <p class="text-slate-600 text-sm">Take‑home ₹60,000. Essentials 55% (₹33k), Savings+EMIs 25% (₹15k), Wants 20% (₹12k). If Wants creep to ₹18k you immediately see what to trim.</p>
+          <h6 class="mt-3 font-medium">Common mistakes</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Tracking every rupee forever (burnout) — track tightly for 1 month, then just review totals.</li>
+            <li>Zero buffer — keep a small “misc” line so the plan survives small surprises.</li>
+            <li>Ignoring annual / seasonal costs (insurance premium, school fees, festivals).</li>
+          </ul>
+          <h6 class="mt-3 font-medium">Quick wins (do one today)</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Auto‑transfer ₹2,000 on salary day to a separate savings a/c.</li>
+            <li>List 5 biggest variable spends last month and cap or swap one (e.g., eating out 5→3 times).</li>
+            <li>Start a small sinking fund: ₹500/month for upcoming festival gifts or school fees.</li>
+          </ul>
+  </section>
+  <section id="saving" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Saving Strategies</h3>
+          <p class="text-slate-600">Saving regularly, even small amounts, gives you options for the future.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/sip-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Calc</a>
+            <a href="/pages/calculators/sip-goal.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Goal Planner</a>
+            <a href="/pages/calculators/sip-step-up.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Step-up</a>
+            <a href="/pages/calculators/sip-topup-planner.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Top-up</a>
+            <a href="/pages/calculators/lumpsum-return.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Lumpsum Return</a>
+            <a href="/pages/calculators/ppf-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">PPF</a>
+            <a href="/pages/calculators/rd-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">RD</a>
+            <a href="/pages/calculators/fd-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">FD</a>
+          </div>
+          <h5 class="mt-3 font-medium">Simple habits</h5>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700">
+            <li>Set up an automatic transfer to a savings account or SIP each payday.</li>
+            <li>Use small separate accounts or bank labels for short-term goals (phone), medium (car), and long-term (house, retirement).</li>
+            <li>For short-term goals prefer safe accounts or short FDs; for long-term consider mutual funds or PPF.</li>
+          </ul>
+          <p class="text-sm text-slate-500 mt-2">India note: SIPs (Systematic Investment Plans) let you invest fixed monthly amounts into mutual funds and are a good way to start investing steadily.</p>
+          <h6 class="mt-4 font-medium">Goal ladder</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li><span class="font-semibold">Emergency (0–1 yr):</span> Savings / Liquid funds (safety first).</li>
+            <li><span class="font-semibold">Short (1–3 yrs):</span> Recurring Deposit, short FDs, conservative debt funds.</li>
+            <li><span class="font-semibold">Long (5+ yrs):</span> Equity mutual funds via SIP / PPF / NPS.</li>
+          </ul>
+          <h6 class="mt-3 font-medium">Simple formula</h6>
+          <p class="text-slate-600 text-sm">Required monthly saving = Goal amount ÷ (months left). Use SIP calculators to add expected growth.</p>
+          <h6 class="mt-3 font-medium">Avoid</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Parking long‑term money in low interest accounts (inflation erodes it).</li>
+            <li>Putting emergency cash fully in equity or locked instruments.</li>
           </ul>
         </section>
 
-        <section id="saving" class="mb-5">
-          <h3>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="me-2" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="9" stroke="#0d6efd" stroke-width="1.2" />
-              <path d="M8 12c1.333-1.333 4-1.333 6 0" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>Saving Strategies
-          </h3>
-          <p class="text-muted">
-            Saving regularly, even small amounts, gives you options for the
-            future.
-          </p>
-          <h5>Simple habits</h5>
-          <ul>
-            <li>
-              Set up an automatic transfer to a savings account or SIP each
-              payday.
-            </li>
-            <li>
-              Use small separate accounts or bank labels for short-term goals
-              (phone), medium (car), and long-term (house, retirement).
-            </li>
-            <li>
-              For short-term goals prefer safe accounts or short FDs; for
-              long-term consider mutual funds or PPF.
-            </li>
+  <section id="emergency" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Emergency Fund</h3>
+          <p class="text-slate-600">Keep money you can use quickly so a surprise bill doesn't force you to borrow.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/fd-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">FD</a>
+            <a href="/pages/calculators/rd-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">RD</a>
+            <a href="/pages/calculators/ppf-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">PPF</a>
+            <a href="/pages/calculators/epf-interest-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">EPF Interest</a>
+            <a href="/pages/calculators/lumpsum-return.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Lumpsum Return</a>
+          </div>
+          <h5 class="mt-3 font-medium">Where to start</h5>
+          <p>Begin with a small, achievable target — for example, ₹15,000 — then build toward 3 months of essential expenses. If your income varies, aim for 6 months.</p>
+          <h5 class="mt-3 font-medium">Where to keep it</h5>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700">
+            <li>Use a savings account, short‑term fixed deposit or a liquid mutual fund to keep funds accessible.</li>
+            <li>Avoid locking emergency money in long-term investments that charge penalties for withdrawal.</li>
           </ul>
-          <p class="small text-muted">
-            India note: SIPs (Systematic Investment Plans) let you invest
-            fixed monthly amounts into mutual funds and are a good way to
-            start investing steadily.
-          </p>
-        </section>
-
-        <section id="emergency" class="mb-5">
-          <h3>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="me-2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2v6" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round" />
-              <path d="M5 12h14" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round" />
-              <path d="M6 18h12" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round" />
-            </svg>Emergency Fund
-          </h3>
-          <p class="text-muted">
-            Keep money you can use quickly so a surprise bill doesn't force
-            you to borrow.
-          </p>
-          <h5>Where to start</h5>
-          <p>
-            Begin with a small, achievable target — for example, ₹15,000 —
-            then build toward 3 months of essential expenses. If your income
-            varies, aim for 6 months.
-          </p>
-          <h5>Where to keep it</h5>
-          <ul>
-            <li>
-              Use a savings account, short‑term fixed deposit or a liquid
-              mutual fund to keep funds accessible.
-            </li>
-            <li>
-              Avoid locking emergency money in long-term investments that
-              charge penalties for withdrawal.
-            </li>
+          <h6 class="mt-3 font-medium">Target guide</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Stable salaried job: 3 months essential expenses.</li>
+            <li>Variable / self‑employed: 6 months (sometimes 9–12 for high volatility).</li>
           </ul>
-        </section>
-
-        <section id="debt" class="mb-5">
-          <h3>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="me-2" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="7" width="18" height="11" rx="2" stroke="#0d6efd" stroke-width="1.2" />
-              <path d="M7 11h.01M11 11h.01M15 11h.01" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>Debt & Credit Management
-          </h3>
-          <p class="text-muted">
-            Some loans help (home loan) and some cost a lot (credit cards).
-            Reduce the costly ones first.
-          </p>
-          <h5>Simple plan</h5>
-          <ol>
-            <li>
-              List each loan with its interest rate and monthly payment.
-            </li>
-            <li>
-              Pay off high-interest loans (credit cards, personal loans) as a
-              priority.
-            </li>
-            <li>
-              Pay at least the minimum on time to avoid penalties and credit
-              score damage.
-            </li>
-            <li>
-              Choose a method you can follow long-term: small‑debt first for
-              motivation or highest‑rate first to save interest.
-            </li>
+          <h6 class="mt-3 font-medium">Build method</h6>
+          <ol class="list-decimal pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Open a separate “Safety” account.</li>
+            <li>Set automatic monthly transfer right after salary credit.</li>
+            <li>Top up with any bonus / tax refund until target reached.</li>
           </ol>
-          <h6>Good habits</h6>
-          <ul>
-            <li>
-              Keep credit card usage low (under ~30% of limit) and clear
-              balances monthly if possible.
-            </li>
-            <li>
-              Avoid taking multiple high-interest loans at once; compare
-              offers and hidden fees before choosing.
-            </li>
+          <h6 class="mt-3 font-medium">Do not</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Chase high returns here — liquidity > yield.</li></ul>
+        </section>
+
+  <section id="debt" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Debt & Credit Management</h3>
+          <p class="text-slate-600">Some loans help (home loan) and some cost a lot (credit cards). Reduce the costly ones first.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/emi-prepayment-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">EMI Prepayment</a>
+            <a href="/pages/calculators/car-affordability.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Car Affordability</a>
+            <a href="/pages/calculators/sip-vs-lumpsum.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP vs Lumpsum</a>
+            <a href="/pages/calculators/mf-direct-vs-regular.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Direct vs Regular</a>
+          </div>
+          <h5 class="mt-3 font-medium">Simple plan</h5>
+          <ol class="list-decimal pl-5 mt-2 space-y-1 text-slate-700">
+            <li>List each loan with its interest rate and monthly payment.</li>
+            <li>Pay off high-interest loans (credit cards, personal loans) as a priority.</li>
+            <li>Pay at least the minimum on time to avoid penalties and credit score damage.</li>
+            <li>Choose a method you can follow long-term: small‑debt first for motivation or highest‑rate first to save interest.</li>
+          </ol>
+          <h6 class="mt-3 font-medium">Good habits</h6>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700">
+            <li>Keep credit card usage low (under ~30% of limit) and clear balances monthly if possible.</li>
+            <li>Avoid taking multiple high-interest loans at once; compare offers and hidden fees before choosing.</li>
+          </ul>
+          <h6 class="mt-3 font-medium">Snowball vs Avalanche</h6>
+          <p class="text-slate-600 text-sm"><span class="font-semibold">Snowball:</span> Pay smallest balance first (quick wins). <span class="font-semibold">Avalanche:</span> Pay highest rate first (lowest cost). Pick the one you will stick to.</p>
+          <h6 class="mt-3 font-medium">Warning signs</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>EMIs + mandatory bills > 50% of take‑home.</li>
+            <li>Rolling credit card balance for 3+ months.</li>
+            <li>Taking a new loan to pay another (except structured refinance at lower rate).</li>
           </ul>
         </section>
 
-        <section id="investing-basics" class="mb-5">
-          <h3>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="me-2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 17h18" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round" />
-              <path d="M6 13l4-4 4 4 4-6" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>Investing — The Basics
-          </h3>
-          <p class="text-muted">
-            Investing helps your money grow over years. You don't need big
-            sums to start.
-          </p>
-          <h5>Practical rules</h5>
-          <ul>
-            <li>
-              Start small and be regular — SIPs let you invest a fixed amount
-              into mutual funds monthly.
-            </li>
+  <section id="investing-basics" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Investing — The Basics</h3>
+          <p class="text-slate-600">Investing helps your money grow over years. You don't need big sums to start.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/sip-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP Calc</a>
+            <a href="/pages/calculators/lumpsum-return.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Lumpsum Return</a>
+            <a href="/pages/calculators/sip-vs-lumpsum.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP vs Lumpsum</a>
+            <a href="/pages/calculators/mf-direct-vs-regular.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Direct vs Regular</a>
+            <a href="/pages/calculators/mf-switch-estimator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">MF Switch</a>
+          </div>
+          <h5 class="mt-3 font-medium">Practical rules</h5>
+          <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-700">
+            <li>Start small and be regular — SIPs let you invest a fixed amount into mutual funds monthly.</li>
             <li>Give time: equity investments are usually for 5+ years.</li>
-            <li>
-              Prefer low-cost, diversified funds (index or large-cap funds)
-              unless you understand stock picking.
-            </li>
+            <li>Prefer low-cost, diversified funds (index or large-cap funds) unless you understand stock picking.</li>
           </ul>
-        </section>
-
-        <section id="asset-allocation" class="mb-5">
-          <h3>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="me-2" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 20h16" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round" />
-              <path d="M12 4v12" stroke="#0d6efd" stroke-width="1.2" stroke-linecap="round" />
-            </svg>Asset Allocation & Diversification
-          </h3>
-          <p class="text-muted">
-            Spread your investments so one loss doesn't derail your goals.
-          </p>
-          <h5>Simple method</h5>
-          <ol>
-            <li>
-              Decide how much risk you can handle. Younger people can have
-              more equity; older people more debt/cash.
-            </li>
-            <li>
-              Use a rule of thumb like "100 minus age" for equity percentage,
-              or choose a mix that fits your comfort.
-            </li>
-            <li>
-              Check once a year and rebalance if one part grows too large.
-            </li>
+          <h6 class="mt-3 font-medium">Simple path to begin</h6>
+          <ol class="list-decimal pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Emergency fund in place (at least starter size).</li>
+            <li>Repay toxic debt (credit card, high personal loans).</li>
+            <li>Start SIP in a broad index / large cap fund.</li>
+            <li>Increase SIP with each salary hike (e.g., +10%).</li>
           </ol>
-        </section>
-
-        <section id="taxes" class="mb-5">
-          <h3>Taxes — Simple Tips</h3>
-          <p class="text-muted">
-            Taxes affect what you finally keep. Plan with take-home pay in
-            mind.
-          </p>
-          <ul>
-            <li>
-              Budget using your net salary (take-home after tax and
-              deductions).
-            </li>
-            <li>
-              In India, common options to reduce tax include Section 80C (PPF,
-              ELSS, life insurance) and NPS for retirement — understand rules
-              before using them.
-            </li>
-            <li>
-              Keep simple records of investments and receipts to make filing
-              easier.
-            </li>
+          <h6 class="mt-3 font-medium">Common errors</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Stopping SIP during a market fall (that is when units are cheaper).</li>
+            <li>Chasing last year’s top performer every year.</li>
+            <li>Using too many overlapping funds (hard to monitor).</li>
           </ul>
         </section>
 
-        <section id="insurance" class="mb-5">
-          <h3>Insurance Primer</h3>
-          <p class="text-muted">
-            Insurance protects you from large unexpected bills.
-          </p>
-          <h5>What to buy first</h5>
-          <ul>
+  <section id="asset-allocation" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Asset Allocation & Diversification</h3>
+          <p class="text-slate-600">Spread your investments so one loss doesn't derail your goals.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/portfolio-rebalance.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Rebalance</a>
+            <a href="/pages/calculators/sip-vs-lumpsum.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP vs Lumpsum</a>
+            <a href="/pages/calculators/xirr-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">XIRR</a>
+            <a href="/pages/calculators/expense-ratio-impact.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Expense Ratio</a>
+          </div>
+          <h5 class="mt-3 font-medium">Simple method</h5>
+          <ol class="list-decimal pl-5 mt-2 space-y-1 text-slate-700">
+            <li>Decide how much risk you can handle. Younger people can have more equity; older people more debt/cash.</li>
+            <li>Use a rule of thumb like "100 minus age" for equity percentage, or choose a mix that fits your comfort.</li>
+            <li>Check once a year and rebalance if one part grows too large.</li>
+          </ol>
+          <h6 class="mt-3 font-medium">Rebalance example</h6>
+          <p class="text-slate-600 text-sm">Target 70% Equity / 30% Debt. If Equity grows to 78%: sell a little equity or direct new money to debt until back near 70/30. Prevents over‑risking late in a bull run.</p>
+          <h6 class="mt-3 font-medium">Diversify by</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Asset class (Equity / Debt / Gold / Cash).</li><li>Within equity: index or broad funds (avoid heavy single stock bets early).</li><li>Across time: invest monthly rather than one big lump (unless valuation attractive).</li></ul>
+        </section>
+
+  <section id="taxes" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Taxes — Simple Tips</h3>
+          <p class="text-slate-600">Taxes affect what you finally keep. Plan with take-home pay in mind.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/income-tax-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Income Tax</a>
+            <a href="/pages/calculators/capital-gains-estimator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Capital Gains</a>
+            <a href="/pages/calculators/hra-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">HRA</a>
+            <a href="/pages/calculators/gratuity-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Gratuity</a>
+          </div>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
+            <li>Budget using your net salary (take-home after tax and deductions).</li>
+            <li>In India, common options to reduce tax include Section 80C (PPF, ELSS, life insurance) and NPS for retirement — understand rules before using them.</li>
+            <li>Keep simple records of investments and receipts to make filing easier.</li>
+          </ul>
+          <h6 class="mt-3 font-medium">Simple approach</h6>
+          <ol class="list-decimal pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li>Pick regime (old vs new) using an income tax calculator.</li>
+            <li>Use only deductions you understand (avoid products sold only for “saving tax”).</li>
+            <li>Keep a folder (physical or digital) for proofs — update monthly.</li>
+          </ol>
+          <h6 class="mt-3 font-medium">Avoid</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Buying unsuitable insurance‑investment combos just for 80C.</li><li>Last week tax panic investing.</li></ul>
+        </section>
+
+  <section id="insurance" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Insurance Primer</h3>
+          <p class="text-slate-600">Insurance protects you from large unexpected bills.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/swp-withdrawal.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SWP Withdrawal</a>
+            <a href="/pages/calculators/nps-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">NPS</a>
+          </div>
+          <h5 class="mt-3 font-medium">What to buy first</h5>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
             <li>Health insurance (Mediclaim) to cover hospital expenses.</li>
-            <li>
-              Term life insurance for main earners — cheaper and clearer than
-              endowment policies.
-            </li>
-            <li>
-              Motor or property insurance if you own those assets or if a
-              lender requires them.
-            </li>
+            <li>Term life insurance for main earners — cheaper and clearer than endowment policies.</li>
+            <li>Motor or property insurance if you own those assets or if a lender requires them.</li>
           </ul>
-          <p class="small text-muted">
-            Compare features, exclusions and claim settlement records before
-            choosing a policy.
-          </p>
+          <p class="text-sm text-slate-500 mt-2">Compare features, exclusions and claim settlement records before choosing a policy.</p>
+          <h6 class="mt-3 font-medium">Cover basics</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm">
+            <li><span class="font-semibold">Term life sum assured:</span> often 10–15× annual expenses or income (tailor to dependents + liabilities).</li>
+            <li><span class="font-semibold">Health:</span> Base individual/family floater + consider super top‑up for higher cover cheaply.</li>
+          </ul>
+          <h6 class="mt-3 font-medium">Red flags</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Mixing investment + insurance (ULIP/endowment) when pure protection needed.</li><li>Not disclosing pre‑existing conditions (can void claims).</li></ul>
         </section>
 
-        <section id="retirement" class="mb-5">
-          <h3>Retirement Planning</h3>
-          <p class="text-muted">
-            Retirement means replacing your work income with savings and
-            investments.
-          </p>
-          <h5>Easy steps</h5>
-          <ol>
-            <li>
-              Estimate how much monthly income you'll want in retirement (use
-              today's rupees).
-            </li>
-            <li>
-              Start a regular contribution to retirement accounts: in India
-              use EPF/PPF/NPS or mutual fund SIPs depending on your situation.
-            </li>
-            <li>
-              Shift to safer investments as you near retirement to protect
-              what you've built.
-            </li>
+  <section id="retirement" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Retirement Planning</h3>
+          <p class="text-slate-600">Retirement means replacing your work income with savings and investments.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/sip-goal.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Retirement Goal</a>
+            <a href="/pages/calculators/swp-withdrawal.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SWP Income</a>
+            <a href="/pages/calculators/epf-interest-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">EPF Interest</a>
+            <a href="/pages/calculators/ppf-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">PPF</a>
+            <a href="/pages/calculators/nps-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">NPS</a>
+          </div>
+          <h5 class="mt-3 font-medium">Easy steps</h5>
+          <ol class="list-decimal pl-5 mt-2 text-slate-700 space-y-1">
+            <li>Estimate how much monthly income you'll want in retirement (use today's rupees).</li>
+            <li>Start a regular contribution to retirement accounts: in India use EPF/PPF/NPS or mutual fund SIPs depending on your situation.</li>
+            <li>Shift to safer investments as you near retirement to protect what you've built.</li>
           </ol>
+          <h6 class="mt-3 font-medium">Quick estimating</h6>
+          <p class="text-slate-600 text-sm">Needed corpus ≈ Annual expenses × (Years of retirement) minus expected pensions. Or use a withdrawal rule (e.g., 3.5–4% initial) to translate ₹ income target into corpus: Desired yearly income ÷ 0.04.</p>
+          <h6 class="mt-3 font-medium">Phases</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Accumulation: maximize SIP/NPS, higher equity share.</li><li>Transition (5–7 yrs left): gradually raise debt allocation; build 2 years cash buffer.</li><li>Distribution: use SWP / laddered debt for regular income.</li></ul>
         </section>
 
-        <section id="major-purchases" class="mb-5">
-          <h3>Buying a Home or Car</h3>
-          <p class="text-muted">
-            Big purchases change monthly budgets. Plan both upfront and
-            ongoing costs.
-          </p>
-          <h5>Checklist</h5>
-          <pre class="checklist">
-• Save a reasonable down payment (20%+ reduces loan and interest)
+  <section id="major-purchases" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Buying a Home or Car</h3>
+          <p class="text-slate-600">Big purchases change monthly budgets. Plan both upfront and ongoing costs.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/car-affordability.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Car Affordability</a>
+            <a href="/pages/calculators/emi-prepayment-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">EMI Prepayment</a>
+            <a href="/pages/calculators/hra-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">HRA</a>
+            <a href="/pages/calculators/income-tax-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Income Tax</a>
+          </div>
+          <h5 class="mt-3 font-medium">Checklist</h5>
+          <pre class="checklist mt-2 text-sm">• Save a reasonable down payment (20%+ reduces loan and interest)
 • Estimate total ownership cost: taxes, insurance, maintenance, fuel/utility, repairs
 • Compare loan offers: look at interest rate, processing fee and prepayment rules
 • Keep EMI within a comfortable portion of monthly take-home pay (typically 15–25%)</pre>
+          <h6 class="mt-3 font-medium">Hidden costs</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Car: insurance renewal, service packages, tyres, fuel hikes.</li><li>Home: maintenance, society charges, property tax, interiors.</li></ul>
+          <h6 class="mt-3 font-medium">Loan sanity checks</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Total EMI (all loans) &lt; ~40% of take‑home pay.</li><li>Keep an emergency fund separate from down payment.</li><li>Prepay high‑rate parts early if bonus arrives.</li></ul>
         </section>
 
-        <section id="investing-advanced" class="mb-5">
-          <h3>Advanced Investing Topics</h3>
-          <p class="text-muted">
-            Once you know the basics, learn about evaluating stocks, managing
-            risk and costs.
-          </p>
-          <ul>
-            <li>
-              Learn simple valuation ideas (for example, compare a company's
-              price to its profit).
-            </li>
-            <li>
-              Understand that factor strategies (value, momentum) help some
-              investors but can be bumpy.
-            </li>
-            <li>
-              Keep taxes and transaction costs low — they reduce long-term
-              returns.
-            </li>
-            <li>
-              If you take concentrated bets (single stocks), limit how much of
-              your portfolio you risk.
-            </li>
+  <section id="investing-advanced" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Advanced Investing Topics</h3>
+          <p class="text-slate-600">Once you know the basics, learn about evaluating stocks, managing risk and costs.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Related:</span>
+            <a href="/pages/calculators/mf-direct-vs-regular.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Direct vs Regular</a>
+            <a href="/pages/calculators/mf-switch-estimator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">MF Switch</a>
+            <a href="/pages/calculators/expense-ratio-impact.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Expense Ratio</a>
+            <a href="/pages/calculators/capital-gains-estimator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Capital Gains</a>
+            <a href="/pages/calculators/stock-average-price.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Stock Avg Price</a>
+            <a href="/pages/calculators/xirr-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">XIRR</a>
+          </div>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
+            <li>Learn simple valuation ideas (for example, compare a company's price to its profit).</li>
+            <li>Understand that factor strategies (value, momentum) help some investors but can be bumpy.</li>
+            <li>Keep taxes and transaction costs low — they reduce long-term returns.</li>
+            <li>If you take concentrated bets (single stocks), limit how much of your portfolio you risk.</li>
           </ul>
+          <h6 class="mt-3 font-medium">Advance carefully</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Document each stock thesis in 2–3 lines (why buy, when re‑evaluate).</li><li>Position size: keep any single stock &lt;10% of portfolio early on.</li><li>Compare post‑tax returns vs a low‑cost index — if you cannot beat net of costs, simplify.</li></ul>
+          <h6 class="mt-3 font-medium">Risk controls</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Avoid leverage (margin trading) until fully experienced.</li><li>Track turnover: excessive churning = higher taxes + slippage.</li></ul>
         </section>
 
-        <section id="checklist" class="mb-5">
-          <h3>Financial Checklist — A Simple Roadmap</h3>
-          <ol>
+  <section id="checklist" class="guide-section scroll-mt-24">
+          <h3 class="text-lg font-semibold mb-2">Financial Checklist — A Simple Roadmap</h3>
+          <ol class="list-decimal pl-5 mt-2 text-slate-700 space-y-1">
             <li>Track one month of expenses and make a simple budget.</li>
-            <li>
-              Start a small emergency fund (example: ₹15,000) and grow it to
-              cover 3 months of essentials.
-            </li>
-            <li>
-              Clear high-interest debt (credit cards, personal loans) first.
-            </li>
-            <li>
-              Begin a small SIP or recurring investment — consistency matters
-              more than size.
-            </li>
-            <li>
-              Buy health insurance and consider term life cover if you have
-              dependents.
-            </li>
-            <li>
-              Review goals and rebalance investments at least once a year.
-            </li>
+            <li>Start a small emergency fund (example: ₹15,000) and grow it to cover 3 months of essentials.</li>
+            <li>Clear high-interest debt (credit cards, personal loans) first.</li>
+            <li>Begin a small SIP or recurring investment — consistency matters more than size.</li>
+            <li>Buy health insurance and consider term life cover if you have dependents.</li>
+            <li>Review goals and rebalance investments at least once a year.</li>
           </ol>
-          <p class="small text-muted">
-            Tip: use the calculators on this site to check EMIs and ownership
-            costs before borrowing or buying.
-          </p>
+          <p class="text-sm text-slate-500 mt-2">Tip: use the calculators on this site to check EMIs and ownership costs before borrowing or buying.</p>
+          <h6 class="mt-3 font-medium">Next layer (after basics)</h6>
+          <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1 text-sm"><li>Increase SIP annually (inflation + income growth).</li><li>Create a simple one‑page net worth tracker (update quarterly).</li><li>Write a short “investment policy” (target allocation, rebalancing rule, max single holding %).</li></ul>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 pr-1">Try:</span>
+            <a href="/pages/calculators/sip-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">SIP</a>
+            <a href="/pages/calculators/sip-goal.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Goal</a>
+            <a href="/pages/calculators/portfolio-rebalance.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Rebalance</a>
+            <a href="/pages/calculators/emi-prepayment-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">EMI</a>
+            <a href="/pages/calculators/income-tax-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Income Tax</a>
+            <a href="/pages/calculators/capital-gains-estimator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">Capital Gains</a>
+            <a href="/pages/calculators/xirr-calculator.html" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600">XIRR</a>
+          </div>
         </section>
-      </div>
-    </div>
+      </div> <!-- /col content -->
+    </div> <!-- /layout grid -->
   </main>
+  <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
-  <footer class="bg-primary text-white text-center py-3 mt-5">
-    <nav class="mb-2">
-      <a class="text-white mx-2" href="https://herozero.in/pages/about.html">About</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/contact.html">Contact</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/privacy-policy.html">Privacy Policy</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/terms-of-use.html">Terms of Use</a>
-      <a class="text-white mx-2" href="https://herozero.in/pages/disclaimer.html">Disclaimer</a>
-    </nav>
-    <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
+  <footer class="bg-slate-900 text-white text-center py-6 mt-8">
+    <div class="max-w-5xl mx-auto px-4">
+      <nav class="mb-3 flex justify-center gap-4">
+        <a class="text-white/90 hover:text-white" href="/pages/about.html">About</a>
+        <a class="text-white/90 hover:text-white" href="/pages/contact.html">Contact</a>
+        <a class="text-white/90 hover:text-white" href="/pages/privacy-policy.html">Privacy Policy</a>
+        <a class="text-white/90 hover:text-white" href="/pages/terms-of-use.html">Terms of Use</a>
+        <a class="text-white/90 hover:text-white" href="/pages/disclaimer.html">Disclaimer</a>
+      </nav>
+      <small>&copy; 2025 HeroZero. All Rights Reserved.</small>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
+  <script>
+    // Scrollspy + progress + back to top
+    (function(){
+      const tocLinks = Array.from(document.querySelectorAll('[data-toc]'));
+      const progressEl = document.getElementById('readingProgress');
+      const backBtn = document.getElementById('backToTop');
+      const sections = tocLinks.map(l=> document.querySelector(l.getAttribute('href'))).filter(Boolean);
+      const activate = (id)=>{ tocLinks.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href') === '#'+id); }); };
+      let ticking=false;
+      function onScroll(){
+        if(!ticking){
+          window.requestAnimationFrame(()=>{
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if(progressEl){ progressEl.style.width = (docHeight? (scrollTop/docHeight)*100:0) + '%'; }
+            if(backBtn){ if(scrollTop > 500){ backBtn.classList.add('visible'); } else { backBtn.classList.remove('visible'); } }
+            // current section
+            let current = sections[0]?.id;
+            for(const s of sections){ if(s.getBoundingClientRect().top <= 80){ current = s.id; } }
+            if(current) activate(current);
+            ticking=false;
+          });
+          ticking=true;
+        }
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+      backBtn?.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+    })();
+    // Theme & mobile menu wiring (keeps behavior consistent with site)
+    (function(){
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem('hz-theme');
+  const desktopTheme = document.getElementById('themeToggle');
+  // initialize theme state
+  if (storedTheme === 'dark') { root.classList.add('dark'); desktopTheme && desktopTheme.setAttribute('aria-pressed', 'true'); desktopTheme && (desktopTheme.textContent = '☀️'); }
+  function setTheme(isDark){ if(isDark){ root.classList.add('dark'); desktopTheme && desktopTheme.setAttribute('aria-pressed','true'); desktopTheme && (desktopTheme.textContent='☀️'); } else { root.classList.remove('dark'); desktopTheme && desktopTheme.setAttribute('aria-pressed','false'); desktopTheme && (desktopTheme.textContent='🌙'); } localStorage.setItem('hz-theme', isDark ? 'dark' : 'light'); }
+  desktopTheme?.addEventListener('click', ()=>{ const isDark = root.classList.toggle('dark'); setTheme(isDark); });
+    })();
+  </script>
 </body>
 
 </html>
