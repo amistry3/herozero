@@ -405,14 +405,23 @@
       document.getElementById('chartCenter').textContent = `${pct.toFixed(1)}%`;
     }
 
-    // simple tax estimator (approx) — small slabs used for quick net income
-    function calculateTax(income) {
-      // fallback conservative simple estimate (not detailed slab calc)
-      if (!income) return 0;
-      if (income <= 300000) return 0;
-      if (income <= 500000) return 0.05 * (income - 300000);
-      if (income <= 1000000) return 10000 + 0.2 * (income - 500000);
-      return 10000 + 100000 + 0.3 * (income - 1000000);
+    function calculateTax(income){
+      let tax=0;
+      if(income>2400000){
+        tax=0.30*(income-2400000)+0.25*400000+0.20*400000+0.15*400000+0.10*400000+0.05*400000;
+      }else if(income>2000000){
+        tax=0.25*(income-2000000)+0.20*400000+0.15*400000+0.10*400000+0.05*400000;
+      }else if(income>1600000){
+        tax=0.20*(income-1600000)+0.15*400000+0.10*400000+0.05*400000;
+      }else if(income>1200000){
+        tax=0.15*(income-1200000)+0.10*400000+0.05*400000;
+      }else if(income>800000){
+        tax=0.10*(income-800000)+0.05*400000;
+      }else if(income>400000){
+        tax=0.05*(income-400000);
+      }
+      if(income<=1200000){tax=0;}
+      return tax;
     }
 
     function syncRange(range, input) {
@@ -463,9 +472,10 @@
     // Calculation, UI updates and event wiring
     function calculate() {
       const btn = document.getElementById('calcBtn'); if (btn) btn.disabled = true;
-      const annualIncome = +document.getElementById('annualIncome').value || 0;
-      const calculatedTax = calculateTax(annualIncome);
-      const incomeTaxEl = document.getElementById('incomeTax'); if (incomeTaxEl) incomeTaxEl.value = Math.round(calculatedTax);
+  const annualIncome = +document.getElementById('annualIncome').value || 0;
+  const calculatedTax = calculateTax(annualIncome);
+  const incomeTaxEl = document.getElementById('incomeTax'); if (incomeTaxEl) incomeTaxEl.value = Math.round(calculatedTax);
+  const incomeTax = calculatedTax;
 
       const price = +document.getElementById('price').value || 0;
       const roadTax = +document.getElementById('roadTax').value || 0;
