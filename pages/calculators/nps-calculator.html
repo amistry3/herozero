@@ -41,6 +41,7 @@
         <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
         <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
         <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
+    <a href="/pages/guides/guides.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Guides</a>
         <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
       </nav>
     </div>
@@ -76,50 +77,50 @@
 
             <div id="monthlyBlock">
               <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Employee monthly contribution (₹)
-                <div class="flex items-center gap-3"><div class="flex-1"><input id="empMonthlyRange" type="range" min="0" max="200000" step="100" value="5000" class="range-adv" /></div><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="empMonthly" type="number" min="0" max="200000" step="100" value="5000" class="input-text font-mono w-full" /></span></div></div>
+                <div class="flex items-center gap-3"><div class="flex-1"><input id="empMonthlyRange" type="range" min="0" max="200000" step="100" value="5000" class="range-adv" /></div><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="empMonthly" aria-label="Employee monthly contribution" type="number" min="0" max="200000" step="100" value="5000" class="input-text font-mono w-full" /></span></div></div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400">Monthly employee contribution.</div>
               </label>
             </div>
 
             <div id="yearlyBlock" class="hidden">
               <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Employee yearly contribution (₹)
-                <div class="flex items-center gap-3"><input id="empYearlyRange" type="range" min="0" max="2400000" step="500" value="60000" class="range-adv flex-1" /><div class="w-36"><input id="empYearly" type="number" min="0" max="2400000" step="500" value="60000" class="input-text font-mono w-full" /></div></div>
+                <div class="flex items-center gap-3"><input id="empYearlyRange" type="range" min="0" max="2400000" step="500" value="60000" class="range-adv flex-1" /><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="empYearly" aria-label="Employee yearly contribution" type="number" min="0" max="2400000" step="500" value="60000" class="input-text font-mono w-full" /></span></div></div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400">Yearly total employee contribution.</div>
               </label>
             </div>
 
             <div id="lumpBlock" class="hidden">
               <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Lump sum deposit (₹)
-                <div class="flex items-center gap-3"><input id="lumpRange" type="range" min="1000" max="50000000" step="1000" value="500000" class="range-adv flex-1" /><div class="w-36"><input id="lump" type="number" min="1000" max="50000000" step="1000" value="500000" class="input-text font-mono w-full" /></div></div>
+                <div class="flex items-center gap-3"><input id="lumpRange" type="range" min="1000" max="50000000" step="1000" value="500000" class="range-adv flex-1" /><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="lump" aria-label="Lump sum deposit" type="number" min="1000" max="50000000" step="1000" value="500000" class="input-text font-mono w-full" /></span></div></div>
                 <div class="text-[10px] text-slate-500 dark:text-slate-400">One-time lump contribution to NPS.</div>
               </label>
             </div>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Employer contribution (% of employee)
-              <div class="flex items-center gap-3"><input id="empPctRange" type="range" min="0" max="200" step="1" value="10" class="range-adv flex-1" /><div class="w-24"><input id="empPct" type="number" min="0" max="200" step="1" value="10" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="empPctRange" type="range" min="0" max="200" step="1" value="10" class="range-adv flex-1" /><div class="w-24"><span class="input-wrap"><input id="empPct" aria-label="Employer match percent" type="number" min="0" max="200" step="1" value="10" class="input-text font-mono w-full" /><span class="input-affix">%</span></span></div></div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400">Set employer match as percent of employee contribution.</div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Current age
-              <div class="flex items-center gap-3"><input id="ageRange" type="range" min="18" max="65" step="1" value="30" class="range-adv flex-1" /><div class="w-20"><input id="age" type="number" min="18" max="65" value="30" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="ageRange" type="range" min="18" max="65" step="1" value="30" class="range-adv flex-1" /><div class="w-20"><span class="input-wrap"><input id="age" aria-label="Current age" type="number" min="18" max="65" value="30" class="input-text font-mono w-full" /></span></div></div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Retirement age
-              <div class="flex items-center gap-3"><input id="retireRange" type="range" min="50" max="75" step="1" value="60" class="range-adv flex-1" /><div class="w-20"><input id="retire" type="number" min="50" max="75" value="60" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="retireRange" type="range" min="50" max="75" step="1" value="60" class="range-adv flex-1" /><div class="w-20"><span class="input-wrap"><input id="retire" aria-label="Retirement age" type="number" min="50" max="75" value="60" class="input-text font-mono w-full" /></span></div></div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400">Years to invest = retirement age − current age (min 1 year).</div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Equity allocation (%)
-              <div class="flex items-center gap-3"><input id="equityRange" type="range" min="0" max="100" step="1" value="50" class="range-adv flex-1" /><div class="w-24"><input id="equity" type="number" min="0" max="100" step="1" value="50" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="equityRange" type="range" min="0" max="100" step="1" value="50" class="range-adv flex-1" /><div class="w-24"><span class="input-wrap"><input id="equity" aria-label="Equity allocation percent" type="number" min="0" max="100" step="1" value="50" class="input-text font-mono w-full" /><span class="input-affix">%</span></span></div></div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400">Choose equity vs debt split for your NPS allocation.</div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Expected equity return (% p.a.)
-              <div class="flex items-center gap-3"><input id="equityRateRange" type="range" min="0" max="20" step="0.1" value="10" class="range-adv flex-1" /><div class="w-28"><input id="equityRate" type="number" step="0.1" min="0" max="40" value="10" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="equityRateRange" type="range" min="0" max="20" step="0.1" value="10" class="range-adv flex-1" /><div class="w-28"><span class="input-wrap"><input id="equityRate" aria-label="Expected equity return percent" type="number" step="0.1" min="0" max="40" value="10" class="input-text font-mono w-full" /><span class="input-affix">%</span></span></div></div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Expected debt return (% p.a.)
-              <div class="flex items-center gap-3"><input id="debtRateRange" type="range" min="0" max="15" step="0.1" value="7" class="range-adv flex-1" /><div class="w-28"><input id="debtRate" type="number" step="0.1" min="0" max="30" value="7" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="debtRateRange" type="range" min="0" max="15" step="0.1" value="7" class="range-adv flex-1" /><div class="w-28"><span class="input-wrap"><input id="debtRate" aria-label="Expected debt return percent" type="number" step="0.1" min="0" max="30" value="7" class="input-text font-mono w-full" /><span class="input-affix">%</span></span></div></div>
             </label>
 
             <div class="flex justify-end"><button id="calcBtn" type="button" class="btn-primary btn-ripple w-full sm:w-auto"><span class="inline-flex items-center gap-2"><span>Estimate</span><span aria-hidden="true">➡</span></span></button></div>

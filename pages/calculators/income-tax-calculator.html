@@ -36,7 +36,8 @@
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
         <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
-        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+  <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+  <a href="/pages/guides/guides.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Guides</a>
         <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
         <button id="themeToggle" type="button"
           class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
@@ -88,18 +89,18 @@
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Gross Annual Income (₹)
               <div class="flex items-center gap-3">
                 <div class="flex-1"><input id="incomeRange" type="range" min="0" max="100000000" step="1000" value="1200000" class="range-adv" /></div>
-                <div class="w-44"><span class="input-wrap"><span class="input-affix">₹</span><input id="income" type="number" min="0" max="100000000" step="1000" value="1200000" class="input-text font-mono w-full" /></span></div>
+                <div class="w-44"><span class="input-wrap"><span class="input-affix">₹</span><input id="income" aria-label="Gross annual income" type="number" min="0" max="100000000" step="1000" value="1200000" class="input-text font-mono w-full" /></span></div>
               </div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400">Enter total gross taxable income (salary + other income).</div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Section 80C Deductions (₹)
-              <div class="flex items-center gap-3"><input id="sec80cRange" type="range" min="0" max="150000" step="500" value="150000" class="range-adv flex-1" /><div class="w-36"><input id="sec80c" type="number" min="0" max="150000" step="500" value="150000" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="sec80cRange" type="range" min="0" max="150000" step="500" value="150000" class="range-adv flex-1" /><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="sec80c" aria-label="Section 80C deductions" type="number" min="0" max="150000" step="500" value="150000" class="input-text font-mono w-full" /></span></div></div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400">Max allowed under 80C is ₹1,50,000.</div>
             </label>
 
             <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Other Deductions (₹)
-              <div class="flex items-center gap-3"><input id="otherDedRange" type="range" min="0" max="1000000" step="1000" value="0" class="range-adv flex-1" /><div class="w-36"><input id="otherDed" type="number" min="0" max="1000000" step="1000" value="0" class="input-text font-mono w-full" /></div></div>
+              <div class="flex items-center gap-3"><input id="otherDedRange" type="range" min="0" max="1000000" step="1000" value="0" class="range-adv flex-1" /><div class="w-36"><span class="input-wrap"><span class="input-affix">₹</span><input id="otherDed" aria-label="Other deductions" type="number" min="0" max="1000000" step="1000" value="0" class="input-text font-mono w-full" /></span></div></div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400">Use this for 80D (health), 80E, NPS, etc. (Some deductions may not apply to new regime.)</div>
             </label>
 

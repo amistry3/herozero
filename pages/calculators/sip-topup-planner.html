@@ -41,6 +41,7 @@
                 <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
                 <a href="/index.html#calculators"
                     class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+                    <a href="/pages/guides/guides.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Guides</a>
                 <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
                 <button id="themeToggle" type="button"
                     class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition"
@@ -87,16 +88,14 @@
                         </label>
                         <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Annual
                             Top-up (%)
-                            <input id="topupRate" type="number" step="0.1" min="0" value="10"
-                                class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                            <span class="input-wrap"><input id="topupRate" aria-label="Annual top-up percent" type="number" step="0.1" min="0" value="10" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" /><span class="input-affix">%</span></span>
                             <span class="text-[10px] text-slate-500 dark:text-slate-400">Increase applied at each year
                                 end.</span>
                         </label>
                         <label
                             class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Expected
                             Annual Return (%)
-                            <input id="topupReturn" type="number" step="0.1" min="0" value="12"
-                                class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                            <span class="input-wrap"><input id="topupReturn" aria-label="Expected annual return percent" type="number" step="0.1" min="0" value="12" class="calc-input w-full rounded-md border bg-white dark:bg-slate-800 px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" /><span class="input-affix">%</span></span>
                         </label>
                         <label
                             class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Investment
@@ -105,8 +104,7 @@
                                 <div class="range-wrap flex-1"><input id="topupYearsRange" type="range" min="1" max="40"
                                         value="10" class="range-adv" /><span id="topupYearsBubble"
                                         class="range-bubble">10 years</span></div>
-                                <input id="topupYears" type="number" min="1" max="40" value="10"
-                                    class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" />
+                                <span class="input-wrap"><input id="topupYears" aria-label="Investment duration years" type="number" min="1" max="40" value="10" class="calc-input w-24 rounded-md border bg-white dark:bg-slate-800 px-2 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brandRing" /></span>
                             </div>
                             <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 1–40 years</span>
                         </label>

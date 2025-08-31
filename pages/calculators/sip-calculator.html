@@ -24,6 +24,13 @@
   <link rel="stylesheet" href="/assets/css/tailwind.css" />
   <link rel="stylesheet" href="/assets/css/tailwind-input.css" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+  <style>
+    /* Hide number input spinners (Chrome, Safari, Edge) */
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    /* Firefox */
+    input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,7 +75,8 @@
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
         <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
-        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+  <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+  <a href="/pages/guides/guides.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Guides</a>
         <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Blog</a>
         <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
       </nav>
@@ -104,12 +112,12 @@
           <span class="text-[10px] text-slate-500 dark:text-slate-400">Minimum 500</span>
         </label>
         <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-1">Expected Annual Return (%)
-          <input id="annualReturn" type="number" step="0.1" min="0" value="12" class="input-text font-mono" />
+          <span class="input-wrap"><input id="annualReturn" aria-label="Expected annual return percent" type="number" step="0.1" min="0" value="12" class="input-text font-mono" /><span class="input-affix">%</span></span>
         </label>
         <label class="text-xs font-medium text-slate-600 dark:text-slate-300 flex flex-col gap-2">Investment Duration (Years)
           <div class="flex items-center gap-4">
             <div class="range-wrap flex-1"><input id="yearsRange" type="range" min="1" max="40" value="10" class="range-adv" /><span id="yearsBubble" class="range-bubble">10 years</span></div>
-            <div class="w-24 shrink-0"><input id="years" type="number" min="1" max="40" value="10" class="input-text font-mono w-full" /></div>
+            <div class="w-24 shrink-0"><span class="input-wrap"><input id="years" aria-label="Investment duration years" type="number" min="1" max="40" value="10" class="input-text font-mono w-full" /></span></div>
           </div>
           <span class="text-[10px] text-slate-500 dark:text-slate-400">Range 1–40 years</span>
         </label>
@@ -123,7 +131,7 @@
     </div>
     <!-- Results Card -->
     <div class="card-tw p-8 space-y-8" id="resultsCard">
-      <div class="space-y-6" id="resultsSection">
+  <div class="space-y-6" id="resultsSection" role="status" aria-live="polite" aria-atomic="true">
         <div class="metric-card relative overflow-hidden bg-emerald-50 dark:bg-emerald-900/25 border-emerald-300/60 dark:border-emerald-600/40 p-6 sm:p-7">
           <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-20" style="background:radial-gradient(circle at 25% 20%,rgba(16,185,129,.35),transparent 65%)"></div>
           <div class="flex items-start justify-between relative z-10">
@@ -341,12 +349,20 @@
   <script>
     // Theme toggle
     (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');setTimeout(()=>calculate(true),30);});})();
+    // Range styling helper (matches bike-affordability.html HZ_styleRange behavior)
+    function HZ_styleRange(rangeEl, bubbleEl){
+      if(!rangeEl) return; const min=Number(rangeEl.min||0), max=Number(rangeEl.max||100);
+      function update(){const val=Number(rangeEl.value);const pct=((val-min)/(max-min))*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?getComputedStyle(document.documentElement).getPropertyValue('--hz-range-fill-dark')?.trim()||'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';rangeEl.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`; if(bubbleEl){bubbleEl.textContent=val+(bubbleEl.dataset.suffix||''); bubbleEl.style.left=pct+'%';}}
+      rangeEl.addEventListener('input',update); rangeEl.addEventListener('change',update); update(); return update;
+    }
     const clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
     function formatINR(x,fd=0){return Number(x).toLocaleString('en-IN',{maximumFractionDigits:fd});}
     function countUp(el,to,duration=700){const from=Number((el.dataset.value||'0').replace(/,/g,''))||0;const start=performance.now();function frame(t){const p=clamp((t-start)/duration,0,1);const ease=1-Math.pow(1-p,3);const val=from+(to-from)*ease;el.textContent='₹'+formatINR(val,0);if(p<1)requestAnimationFrame(frame);else el.dataset.value=String(to);}requestAnimationFrame(frame);}    
     // Slider sync (years)
-  (function(){const r=document.getElementById('yearsRange');const n=document.getElementById('years');const b=document.getElementById('yearsBubble');function style(){const min=r.min,max=r.max,val=r.value;const pct=((val-min)/(max-min))*100;const dark=document.documentElement.classList.contains('dark');const filled=dark?'#3b82f6':'#0d6efd';const rest=dark?'#334155':'#e2e8f0';r.style.background=`linear-gradient(90deg, ${filled} 0%, ${filled} ${pct}%, ${rest} ${pct}%, ${rest} 100%)`;b.textContent=val+' year'+(val==='1'?'':'s');b.style.left=`${pct}%`;} 
-  r.addEventListener('input',()=>{n.value=r.value;style();triggerCalc();});n.addEventListener('input',()=>{let v=parseInt(n.value||1,10);v=Math.min(Math.max(v,1),40);n.value=v;r.value=v;style();triggerCalc();});style();})();
+  (function(){const r=document.getElementById('yearsRange');const n=document.getElementById('years');const b=document.getElementById('yearsBubble');const styleFn=HZ_styleRange(r,b); if(b) b.dataset.suffix=' year'+(Number(r.value)===1?'':'s');
+  r.addEventListener('input',()=>{n.value=r.value; if(b) b.dataset.suffix=' year'+(r.value==='1'?'':'s'); styleFn(); triggerCalc();});n.addEventListener('input',()=>{let v=parseInt(n.value||1,10);v=Math.min(Math.max(v,1),40);n.value=v;r.value=v; if(b) b.dataset.suffix=' year'+(r.value==='1'?'':'s'); styleFn(); triggerCalc();});
+  // ensure styled after theme toggle
+  const observer=new MutationObserver(()=>styleFn()); observer.observe(document.documentElement,{attributes:true,attributeFilter:['class']});})();
     let chart;function buildYearlySeries(P, annualRate, years){const monthlyRate=annualRate/12;const series=[];let balance=0,totalInvested=0;for(let y=1;y<=years;y++){for(let m=0;m<12;m++){balance=balance*(1+monthlyRate)+P;totalInvested+=P;}series.push({year:y,invested:totalInvested,value:balance});}return series;}
   function renderChart(series){const investedData=series.map(s=>s.invested);const totalValue=series.map(s=>s.value);const isDark=document.documentElement.classList.contains('dark');const gridColor=isDark?'#334155':'#e2e8f0';if(chart&&chart.destroy)chart.destroy();chart=Highcharts.chart('sipChartContainer',{chart:{backgroundColor:'transparent'},title:null,credits:{enabled:false},xAxis:{categories:series.map(s=>'Year '+s.year),lineColor:gridColor,tickColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'}}},yAxis:{title:null,gridLineColor:gridColor,labels:{style:{color:isDark?'#cbd5e1':'#475569'},formatter(){return '₹'+formatINR(this.value);}}},legend:{align:'center',verticalAlign:'top',itemStyle:{color:isDark?'#e2e8f0':'#334155'}},tooltip:{shared:true,useHTML:true,formatter:function(){const invested=this.points.find(p=>p.series.name==='Invested')?.y||0;const total=this.points.find(p=>p.series.name==='Total Value')?.y||0;const gain=total-invested;return `<b>${this.x}</b><br/>Invested: <span style=\"color:#2563eb\">₹${formatINR(invested)}</span><br/>Total Value: <span style=\"color:#16a34a;font-weight:600\">₹${formatINR(total)}</span><br/>Gain: <span style=\"color:#16a34a\">₹${formatINR(gain)}</span>`;}},plotOptions:{areaspline:{fillOpacity:.28,marker:{enabled:false}},series:{animation:{duration:700,easing:'easeOutQuad'}}},series:[{name:'Total Value',type:'areaspline',data:totalValue,color:'#16a34a',lineWidth:2,fillColor:{linearGradient:[0,0,0,260],stops:[[0,'rgba(16,163,74,.45)'],[1,'rgba(16,163,74,0)']]}},{name:'Invested',type:'line',data:investedData,color:'#2563eb',dashStyle:'ShortDot',lineWidth:2}]});}
   function calculate(fromTheme){const P=parseFloat(document.getElementById('sipAmount').value);const rPerc=parseFloat(document.getElementById('annualReturn').value);const years=parseInt(document.getElementById('years').value,10);if(isNaN(P)||P<=0)return;if(isNaN(rPerc)||rPerc<0)return;if(isNaN(years)||years<=0)return;const annualRate=rPerc/100;const yearly=buildYearlySeries(P,annualRate,years);const final=yearly[yearly.length-1];countUp(document.getElementById('maturity'),final.value,800);countUp(document.getElementById('invested'),final.invested,800);countUp(document.getElementById('gain'),final.value-final.invested,800);renderChart(yearly);updateHighlight(P,annualRate,years);}    
