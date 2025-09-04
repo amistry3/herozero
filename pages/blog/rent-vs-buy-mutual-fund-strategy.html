@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKS8Q9YDJG"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KKS8Q9YDJG');</script>
+  <title>Rent vs Buy (India) – Invest the Difference Strategy Framework | HeroZero</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Rent vs Buy in India: compare EMI vs rent, opportunity cost and investing the difference in mutual funds. Framework, variables, sensitivity and break-even horizon." />
+  <meta name="keywords" content="rent vs buy India, invest the difference, EMI vs rent, mutual fund SIP, property yield" />
+  <meta property="og:title" content="Rent vs Buy (India) – Invest the Difference Strategy Framework" />
+  <meta property="og:description" content="Structured framework to evaluate buying a home vs renting & investing the difference in India." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://herozero.in/pages/blog/rent-vs-buy-mutual-fund-strategy.html" />
+  <meta property="og:image" content="/assets/img/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rent vs Buy (India) – Invest the Difference Strategy Framework" />
+  <meta name="twitter:description" content="Framework for EMI vs rent and SIP investing advantage." />
+  <meta name="twitter:image" content="/assets/img/android-chrome-512x512.png" />
+  <meta name="google-adsense-account" content="ca-pub-2137440189333906" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://herozero.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://herozero.in/pages/blog.html"},{"@type":"ListItem","position":3,"name":"Rent vs Buy Framework","item":"https://herozero.in/pages/blog/rent-vs-buy-mutual-fund-strategy.html"}]},{"@type":"Article","headline":"Rent vs Buy (India) – Invest the Difference Strategy Framework","datePublished":"2025-09-04","dateModified":"2025-09-04","author":{"@type":"Organization","name":"HeroZero"},"publisher":{"@type":"Organization","name":"HeroZero","logo":{"@type":"ImageObject","url":"https://herozero.in/assets/img/favicon-32x32.png"}}}]} </script>
+  <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","szq30hz6u5");</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2137440189333906" crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <style>
+    .chart-caption{font-size:11px;color:rgb(100 116 139/.9)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-200">
+  <header class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-noise"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2 focus-ring"><img src="/assets/img/favicon-32x32.png" alt="HeroZero" class="w-8 h-8" /><span class="font-extrabold text-slate-900 dark:text-slate-100 text-2xl">HeroZero</span></a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+        <a href="/" class="hover:text-slate-900 dark:hover:text-white focus-ring">Home</a>
+        <a href="/index.html#calculators" class="hover:text-slate-900 dark:hover:text-white focus-ring">Calculators</a>
+        <a href="/pages/guides/guides.html" class="hover:text-slate-900 dark:hover:text-white focus-ring">Guides</a>
+        <a href="/pages/blog.html" class="hover:text-slate-900 dark:hover:text-white focus-ring font-semibold">Blog</a>
+        <button id="themeToggle" type="button" class="focus-ring rounded px-3 py-1.5 border border-slate-300 dark:border-slate-600 text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 text-center">
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100">Rent vs Buy Framework: Invest the Difference</h1>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base">Evidence‑based approach for metros with low rental yields and higher equity compounding potential.</p>
+    </div>
+  </header>
+  <div class="fixed top-0 left-0 h-1 bg-brand shadow z-50" id="readProgress" style="width:0"></div>
+  <main class="flex-1">
+    <br/>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid lg:grid-cols-[1fr_270px] gap-10 lg:gap-14 items-start">
+        <article class="card-tw p-8 lg:p-10 relative" id="articleRoot">
+          <div class="flex flex-wrap items-center gap-3 text-[11px] font-medium tracking-wide uppercase text-slate-500 dark:text-slate-400 mb-6">
+            <span class="badge-pill">Strategy</span>
+            <time datetime="2025-09-04" class="flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>4 Sep 2025</time>
+            <span class="flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-500"></span><span id="readTime">~8 min read</span></span>
+          </div>
+          <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300 first-letter:text-5xl first-letter:font-extrabold first-letter:float-left first-letter:mr-2 first-letter:leading-[.9] first-letter:text-brand">Should you buy or rent? This simple guide compares buying a home vs renting and investing the money you save. We use clear, plausible numbers so you can see likely costs and how wealth might grow over time.</p>
+          <br/>
+          <h2 id="summary" class="group scroll-mt-28 text-2xl font-bold mt-10 flex items-center gap-2">Quick summary <a href="#summary" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ul class="mt-4 list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>In many big cities, rents are low compared with property prices.</li>
+            <li>Early loan payments are mostly interest, so home equity builds slowly at first.</li>
+            <li>If you invest the difference (monthly + down payment) in equity MFs, that money can grow faster than home equity over 15–20 years.</li>
+            <li>Buying still makes sense if you plan to stay >15 years or need the non‑financial benefits of owning.</li>
+          </ul>
+          <br/>
+          <h2 id="variables" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Core variables <a href="#variables" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <table class="text-sm">
+            <thead><tr><th class="text-left">Variable</th><th class="text-left">Symbol</th><th class="text-left">Example</th></tr></thead>
+            <tbody>
+              <tr><td>Property Price</td><td class="mono">P</td><td>₹1.2 Cr</td></tr>
+              <tr><td>Down Payment (incl. costs)</td><td class="mono">DP</td><td>₹30L (≈25%)</td></tr>
+              <tr><td>Loan Rate</td><td class="mono">r<sub>loan</sub></td><td>8.5% p.a.</td></tr>
+              <tr><td>Tenor</td><td class="mono">n</td><td>25 yrs</td></tr>
+              <tr><td>Current Rent</td><td class="mono">R<sub>0</sub></td><td>₹35K / mo</td></tr>
+              <tr><td>Rent Escalation</td><td class="mono">g<sub>rent</sub></td><td>5% p.a.</td></tr>
+              <tr><td>MF Return (post tax)</td><td class="mono">r<sub>mf</sub></td><td>11% p.a.</td></tr>
+              <tr><td>Property Appreciation</td><td class="mono">g<sub>prop</sub></td><td>5% p.a.</td></tr>
+              <tr><td>Maint + Society</td><td class="mono">m</td><td>1.2% value p.a.</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">Opportunity cost = future value of the down payment plus the monthly amount you would save by renting and investing the difference.</p>
+          <br/>
+          <h2 id="cashflow" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Year 1 cash flow <a href="#cashflow" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <figure class="not-prose bg-slate-50 dark:bg-slate-800/60 p-4 rounded-lg border border-slate-200 dark:border-slate-700" role="group" aria-labelledby="cashflowTitle">
+            <figcaption id="cashflowTitle" class="chart-caption mb-2">Illustrative cash flow & wealth build snapshot (selected years). MF path assumes investing monthly <em>positive</em> EMI−Rent delta + lump‑sum down payment (STP Year 1) at 11% CAGR. Ownership equity uses stylised principal curve & 5% appreciation. Values in ₹ Lakhs.</figcaption>
+            <div class="overflow-x-auto">
+              <table class="text-xs sm:text-[13px] w-full border-collapse" id="cashflowTable">
+                <thead>
+                  <tr class="text-slate-500 dark:text-slate-400 text-[10px] sm:text-[11px]">
+                    <th class="text-left font-semibold py-1 pr-4">Year</th>
+                    <th class="text-right font-semibold py-1 pr-4">Annual Rent</th>
+                    <th class="text-right font-semibold py-1 pr-4">Annual Invest Delta</th>
+                    <th class="text-right font-semibold py-1 pr-4">MF Corpus FV</th>
+                    <th class="text-right font-semibold py-1 pr-4">Ownership Outflow</th>
+                    <th class="text-right font-semibold py-1 pr-4">Home Equity</th>
+                    <th class="text-right font-semibold py-1 pr-4">Advantage (MF−Eq)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700"></tbody>
+                <tfoot>
+                  <tr class="font-semibold bg-slate-100 dark:bg-slate-700/40" id="cashflowSummaryRow"></tr>
+                </tfoot>
+              </table>
+            </div>
+            <p class="mt-2 text-[11px] text-slate-500 dark:text-slate-500">Simplifications: constant ownership outflow (ex tax relief variation), no vacancy, no step‑up SIP; maintenance kept in equity calc, not separate column. For precise decisions build a month‑level model.</p>
+          </figure>
+          <br/>
+          <h2 id="growth" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Equity vs home equity growth <a href="#growth" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <figure class="not-prose bg-slate-50 dark:bg-slate-800/60 p-4 rounded-lg border border-slate-200 dark:border-slate-700" role="group" aria-labelledby="growthTitle">
+            <div id="chartGrowth" class="w-full h-60"></div>
+            <figcaption id="growthTitle" class="chart-caption mt-2">Projected value over time: 'Invest the difference' (mutual funds) vs home equity (principal + price gain − upkeep).</figcaption>
+          </figure>
+          <br/>
+          <h2 id="breakeven" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Break‑even horizon <a href="#breakeven" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">In low‑yield markets the buy path often only catches up after <strong>15–18 years</strong> (assuming 11% MF CAGR, 5% property growth). Higher rent escalation or lower MF returns compress gap.</p>
+          <p class="text-sm mt-3 text-slate-600 dark:text-slate-400"><span class="font-semibold">Formula</span>: Find year where FV(SIP + Lump Sum) ≥ (Property Value − Loan Outstanding − Accumulated Costs).</p>
+          <br/>
+          <h2 id="sensitivity" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Sensitivity (single variable) <a href="#sensitivity" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <figure class="not-prose bg-slate-50 dark:bg-slate-800/60 p-4 rounded-lg border border-slate-200 dark:border-slate-700" role="group" aria-labelledby="sensTitle">
+            <div id="chartSensitivity" class="w-full h-56"></div>
+            <figcaption id="sensTitle" class="chart-caption mt-2">How the year you 'catch up' changes when we change one input at a time (simple examples).</figcaption>
+          </figure>
+          <br/>
+          <h2 id="approach" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Structured approach (DIY) <a href="#approach" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ol class="mt-4 list-decimal pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Collect real rent quotes (not inflated listings).</li>
+            <li>Compute total ownership cost: stamp, registration, interiors, furnishing, maintenance, insurance, tax.</li>
+            <li>Amortisation schedule: quantify interest share first 10 yrs.</li>
+            <li>State honest stay horizon. (&lt;8 yrs → renting almost always wins.)</li>
+            <li>Model opportunity cost: SIP (delta) + STP of down payment.</li>
+            <li>Stress test ±2% appreciation, −2–3% MF return, vacancy & higher upkeep.</li>
+            <li>Behaviour filter: will you actually invest surplus monthly?</li>
+          </ol>
+          <br/>
+          <h2 id="whenbuy" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">When buying still wins <a href="#whenbuy" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ul class="mt-4 list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>You will stay 15+ years.</li>
+            <li>You capture mispriced / redevelopment / distress opportunity.</li>
+            <li>High non‑financial utility (stability, control, customisation).</li>
+            <li>High income growth enabling accelerated principal prepayment.</li>
+          </ul>
+          <br/>
+          <h2 id="mistakes" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Common mistakes <a href="#mistakes" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <ul class="mt-4 list-disc pl-5 text-sm text-slate-600 dark:text-slate-400 space-y-2 leading-relaxed">
+            <li>Projecting past property boom cycles forward.</li>
+            <li>No haircut to optimistic MF return expectations.</li>
+            <li>Ignoring upkeep / vacancy / furnishing refresh cycles.</li>
+            <li>Failing to auto‑invest the surplus (leakage to lifestyle creep).</li>
+          </ul>
+          <br/>
+          <h2 id="conclusion" class="group scroll-mt-28 text-2xl font-bold mt-12 flex items-center gap-2">Conclusion <a href="#conclusion" class="opacity-0 group-hover:opacity-100 text-brand text-sm focus-ring">#</a></h2>
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">In low yield markets the <strong>Rent + Invest the Difference</strong> path often produces higher liquid net worth for disciplined investors. Personalise the model before committing — and incorporate lifestyle priorities, not just spreadsheets.</p>
+          <p class="mt-4 text-[11px] text-slate-500 dark:text-slate-500">Educational purpose only. Not investment, tax or legal advice.</p>
+          <br/>
+          <div class="mt-12 flex flex-wrap gap-2">
+            <span class="badge-pill">housing</span>
+            <span class="badge-pill">rent-vs-buy</span>
+            <span class="badge-pill">investing</span>
+            <span class="badge-pill">strategy</span>
+          </div>
+          <br/>
+          <div class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-4">
+            <div>Published: 4 Sep 2025 • Author: HeroZero • <button id="copyLink" class="underline decoration-dotted hover:text-slate-700 dark:hover:text-slate-300 focus-ring">Copy link</button></div>
+            <div class="flex flex-wrap gap-3 text-[11px] font-medium">
+              <a href="/pages/calculators/house-affordability.html" class="btn-primary btn-ripple px-4 py-2 text-xs">House Affordability Calculator →</a>
+              <button data-share="twitter" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition focus-ring">Share X</button>
+              <button data-share="copy" class="px-3 py-1.5 rounded-full border border-slate-300 dark:border-slate-600 text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition focus-ring">Copy URL</button>
+            </div>
+            <nav class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 text-sm">
+              <a href="/pages/blog/car-affordability-guide.html" class="inline-flex items-center gap-2 text-brand hover:underline focus-ring">← Car Affordability Guide</a>
+              <a href="/pages/blog.html" class="inline-flex items-center gap-2 text-brand hover:underline focus-ring">Blog Home →</a>
+            </nav>
+          </div>
+        </article>
+        <aside class="hidden lg:block sticky top-28 space-y-6" aria-label="Table of contents">
+          <div class="card-tw p-5 text-sm" id="tocCard">
+            <h3 class="text-xs font-semibold tracking-wide uppercase text-slate-500 dark:text-slate-400 mb-3">On this page</h3>
+            <ol class="space-y-2 text-[13px]" id="tocList">
+              <li><a href="#summary" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Summary</a></li>
+              <li><a href="#variables" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Variables</a></li>
+              <li><a href="#cashflow" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Cash Flow</a></li>
+              <li><a href="#growth" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Growth</a></li>
+              <li><a href="#breakeven" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Break‑even</a></li>
+              <li><a href="#sensitivity" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Sensitivity</a></li>
+              <li><a href="#approach" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Approach</a></li>
+              <li><a href="#whenbuy" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">When Buy</a></li>
+              <li><a href="#mistakes" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Mistakes</a></li>
+              <li><a href="#conclusion" class="toc-link text-slate-600 dark:text-slate-300 hover:text-brand focus-ring block">Conclusion</a></li>
+            </ol>
+          </div>
+          <div class="card-tw p-5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+            <p class="font-semibold mb-1">Why yields matter</p>
+            <p>Low rental yields vs higher equity CAGR create a compounding gap. Quantify before committing irreversible capital.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <br/>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <nav class="flex gap-5 flex-wrap">
+        <a href="/pages/about.html" class="hover:text-white">About</a>
+        <a href="/pages/contact.html" class="hover:text-white">Contact</a>
+        <a href="/pages/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="/pages/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+        <a href="/pages/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </nav>
+      <div class="text-slate-500">&copy; 2025 HeroZero. All Rights Reserved.</div>
+    </div>
+  </footer>
+  <script>
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');const stored=localStorage.getItem('hz-theme');if(stored==='dark'){root.classList.add('dark');btn&&btn.setAttribute('aria-pressed','true');btn&&(btn.textContent='☀️');}btn&&btn.addEventListener('click',()=>{const d=root.classList.toggle('dark');btn.setAttribute('aria-pressed',d?'true':'false');btn.textContent=d?'☀️':'🌙';localStorage.setItem('hz-theme',d?'dark':'light');});})();
+    (function(){const bar=document.getElementById('readProgress');const article=document.getElementById('articleRoot');if(!bar||!article)return;const calc=()=>{const start=article.offsetTop;const height=article.offsetHeight-window.innerHeight;const scroll=window.scrollY||document.documentElement.scrollTop;const progress=Math.min(1,Math.max(0,(scroll-start)/height));bar.style.width=(progress*100)+'%';};window.addEventListener('scroll',calc,{passive:true});window.addEventListener('resize',calc);calc();})();
+    (function(){const article=document.getElementById('articleRoot');const target=document.getElementById('readTime');if(!article||!target)return;const words=article.textContent.trim().split(/\s+/).length;const mins=Math.max(1,Math.round(words/215));target.textContent=`~${mins} min read`;})();
+    (function(){const headings=[...document.querySelectorAll('#summary,#variables,#cashflow,#growth,#breakeven,#sensitivity,#approach,#whenbuy,#mistakes,#conclusion')];const links=[...document.querySelectorAll('.toc-link')];if(!headings.length)return;const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('text-brand','font-semibold'));const id=e.target.id;const link=links.find(a=>a.getAttribute('href')==='#'+id);link&&link.classList.add('text-brand','font-semibold');}});},{rootMargin:'-55% 0px -35% 0px'});headings.forEach(h=>obs.observe(h));})();
+    (function(){const base=window.location.href.split('#')[0];document.querySelectorAll('[data-share]')?.forEach(btn=>{btn.addEventListener('click',()=>{const t=btn.getAttribute('data-share');if(t==='copy'&&navigator.clipboard){navigator.clipboard.writeText(base);btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy URL',1600);}else if(t==='twitter'){const text=encodeURIComponent('Rent vs Buy Framework – HeroZero');const url=encodeURIComponent(base);window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`,'_blank','noopener');}});});})();
+    (function(){const btn=document.getElementById('copyLink');if(!btn)return;btn.addEventListener('click',()=>{const url=window.location.href.split('#')[0];navigator.clipboard?.writeText(url);btn.textContent='Link copied';setTimeout(()=>btn.textContent='Copy link',1700);});})();
+    // Highcharts rendering with dark/light adaptive theme
+    window.renderCharts = function(){
+      if(typeof Highcharts==='undefined') return;
+      const dark = document.documentElement.classList.contains('dark');
+      const textColor = dark ? '#cbd5e1' : '#334155';
+      const gridColor = dark ? 'rgba(148,163,184,0.25)' : 'rgba(148,163,184,0.35)';
+      const bg = 'transparent';
+
+      // Growth chart hypothetical data generation
+      const years = Array.from({length: 26}, (_,i)=> i); // 0..25
+      // Simple hypothetical compounding: SIP + STP vs slower equity build
+      const sipMonthly = 42310; // from example delta
+      const mfRate = 0.11; // annual
+      const homeApp = 0.05;
+      const loanPrincipal = 9000000; // ₹90L
+      const homeValue0 = 12000000; // 1.2 Cr
+      const downPay = 3000000; // 30L
+
+      let sipSeries = [], homeEqSeries = [];
+      let sipCorpus = 0; let homeValue = homeValue0; let principalRepaid = 0;
+      const annualEMI = 72310 * 12;
+      for(let y=0;y<=25;y++){
+        if(y>0){
+          // MF corpus: grow existing then add new contributions (monthly converted approx)
+          sipCorpus = sipCorpus * (1+mfRate) + sipMonthly*12; // rough annual approximation
+          // Home value appreciates
+          homeValue = homeValue * (1+homeApp);
+          // Approximate principal repaid heavier later: simplistic curve
+          const principalThisYear = annualEMI * (0.25 + 0.75 * (y/25)) * 0.35; // stylised principal fraction
+          principalRepaid += principalThisYear;
+        }
+        // Home equity = down payment + principal repaid + (homeValue - homeValue0) - nominal upkeep (1.2%) * years fraction
+        const upkeep = homeValue0 * 0.012 * y;
+        const equity = Math.max(0, downPay + principalRepaid + (homeValue - homeValue0) - upkeep);
+        sipSeries.push(parseFloat((sipCorpus/100000).toFixed(2))); // in lakhs
+        homeEqSeries.push(parseFloat((equity/100000).toFixed(2)));
+      }
+
+      Highcharts.chart('chartGrowth', {
+        chart: { type: 'areaspline', backgroundColor: bg },
+        title: { text: null },
+        credits: { enabled: false },
+        xAxis: { categories: years, tickInterval:5, title:{ text:'Year', style:{ color:textColor }}, labels:{ style:{ color:textColor }} , gridLineColor:gridColor},
+        yAxis: { title:{ text:'Value (₹ Lakhs)', style:{ color:textColor }}, labels:{ style:{ color:textColor }}, gridLineColor:gridColor },
+        legend: { itemStyle:{ color:textColor }, itemHoverStyle:{ color: dark ? '#fff':'#000'} },
+        tooltip: { shared:true, valueSuffix:' L' },
+        plotOptions:{ areaspline:{ fillOpacity:0.18, marker:{ enabled:false } } },
+        series: [
+          { name:'Invested savings (MF)', data:sipSeries, color:'#0ea5e9' },
+          { name:'Home equity', data:homeEqSeries, color:'#6366f1' }
+        ]
+      });
+
+      // Sensitivity chart
+  const scenarios = ['Base','MF 9%','Prop 7%','Rent 7%','DP 35%'];
+  const yearsData = [18,14,15,16,19];
+      Highcharts.chart('chartSensitivity', {
+        chart:{ type:'bar', backgroundColor:bg },
+        title:{ text:null },
+        credits:{ enabled:false },
+        xAxis:{ categories:scenarios, labels:{ style:{ color:textColor } }, lineColor:gridColor },
+  yAxis:{ min:0, title:{ text:'Catch-up year', style:{ color:textColor }}, labels:{ style:{ color:textColor }}, gridLineColor:gridColor },
+        legend:{ enabled:false },
+        tooltip:{ valueSuffix:' years' },
+        plotOptions:{ series:{ borderRadius:4, dataLabels:{ enabled:true, color:textColor } } },
+  series:[{ name:'Catch-up year', data:yearsData, color:'#0ea5e9' }]
+      });
+    };
+  </script>
+  <script>
+    // Re-render charts after theme scripts & interactions (append to existing logic)
+    (function(){window.renderCharts && window.renderCharts();})();
+    document.getElementById('themeToggle')?.addEventListener('click',()=>{setTimeout(()=>window.renderCharts&&window.renderCharts(),40);});
+    // Cashflow comparative table generation (selected years + 20Y summary)
+    (function(){
+      const tblBody = document.querySelector('#cashflowTable tbody');
+      if(!tblBody) return;
+      // Base assumptions (sync with narrative)
+      const price = 12000000; // 1.2 Cr
+      const downPay = 3000000; // 25%
+      const loan = price - downPay; // 90L
+      const rateLoan = 0.085; // 8.5%
+      const tenor = 25; // years
+      const maintPct = 0.012; // 1.2% p.a.
+      const mfCAGR = 0.11;
+      const propCAGR = 0.05;
+      const startRent = 35000; // monthly
+      const rentEsc = 0.05;
+      const emi = 72310; // approx from earlier
+      const taxReliefYr1 = 7000 * 12; // simplistic annual relief first year
+      // We approximate an interest heavy schedule with a stylised principal fraction similar to chart logic
+      let mfCorpus = 0; let homeValue = price; let principalRepaid = 0; let rentAnnual = startRent*12; let investDeltaMonthly = (emi - (startRent)) - ( (price*maintPct)/12 );
+      // For STP of down payment we add down payment across year 1 in monthly parts to MF path (opportunity cost) then consider it fully invested; simplified: treat as lumpsum at mid-year -> growth (mfCAGR * 0.5)
+      let downPayInvestedFV = downPay * (1 + mfCAGR*0.5); // mid-year assumption
+      const selectedYears = new Set([0,1,5,10,15,20]);
+      const rows = [];
+      const fmtL = v => (v/100000).toFixed(1); // lakhs one decimal
+      for(let y=0;y<=20;y++){
+        if(y>0){
+          // grow MF corpus first
+            mfCorpus = (mfCorpus + (investDeltaMonthly>0?investDeltaMonthly*12:0)) * (1+mfCAGR);
+            if(y===1){ // add down payment invested FV after first year to represent opportunity cost capital staying invested
+              mfCorpus += downPayInvestedFV;
+            }
+          // property appreciation
+          homeValue *= (1+propCAGR);
+          // principal repaid stylised (increasing share over time)
+          const annualEMI = emi*12;
+          const principalThisYear = annualEMI * (0.25 + 0.75*(y/tenor)) * 0.35; // same stylised fraction used earlier
+          principalRepaid += principalThisYear;
+          // rent escalates
+          rentAnnual *= (1+rentEsc);
+          // recompute invest delta monthly (EMI - rent - maintenance) – floor at 0
+          investDeltaMonthly = Math.max(0, emi - (rentAnnual/12) - (homeValue*maintPct/12));
+        }
+        const maintenance = homeValue * maintPct; // annual cost implied
+        const ownershipOutflow = (emi*12 + maintenance - (y===0?taxReliefYr1:0));
+        const upkeepAccrued = price * maintPct * y; // same basis as earlier equity calc (simplification)
+        const homeEquity = Math.max(0, downPay + principalRepaid + (homeValue - price) - upkeepAccrued);
+        const advantage = mfCorpus - homeEquity;
+        if(selectedYears.has(y)){
+          rows.push({y,rentAnnual,investDeltaMonthly,mfCorpus,ownershipOutflow,homeEquity,advantage});
+        }
+      }
+      rows.forEach(r=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML = `<td class="py-1 text-center pr-4 font-medium">${r.y}</td>
+          <td class="py-1 pr-4 text-center">${fmtL(r.rentAnnual)}</td>
+          <td class="py-1 pr-4 text-center">${fmtL(r.investDeltaMonthly*12)}</td>
+          <td class="py-1 pr-4 text-center font-medium text-sky-600 dark:text-sky-400">${fmtL(r.mfCorpus)}</td>
+          <td class="py-1 pr-4 text-center">${fmtL(r.ownershipOutflow)}</td>
+          <td class="py-1 pr-4 text-center font-medium text-indigo-600 dark:text-indigo-400">${fmtL(r.homeEquity)}</td>
+          <td class="py-1 pr-4 text-center font-semibold ${r.advantage>=0?'text-emerald-600 dark:text-emerald-400':'text-rose-600 dark:text-rose-400'}">${fmtL(r.advantage)}</td>`;
+        tblBody.appendChild(tr);
+      });
+      const last = rows[rows.length-1];
+      const sumRow=document.getElementById('cashflowSummaryRow');
+      if(sumRow && last){
+        sumRow.innerHTML = `<td class="py-1 text-center pr-4">20Y</td>
+          <td class="py-1 pr-4 text-center">—</td>
+          <td class="py-1 pr-4 text-center">CAGR ${ (mfCAGR*100).toFixed(0)}%</td>
+          <td class="py-1 pr-4 text-center">${fmtL(last.mfCorpus)}</td>
+          <td class="py-1 pr-4 text-center">—</td>
+          <td class="py-1 pr-4 text-center">${fmtL(last.homeEquity)}</td>
+          <td class="py-1 pr-4 text-center ${last.advantage>=0?'text-emerald-600 dark:text-emerald-400':'text-rose-600 dark:text-rose-400'}">${fmtL(last.advantage)}</td>`;
+      }
+    })();
+  </script>
+</body>
+</html>
